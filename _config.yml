@@ -29,7 +29,8 @@ gems:      []
 
 # Conversion
 markdown:    kramdown
-highlighter: rogue
+#highlighter: rouge
+highlighter: pygments
 lsi:         false
 excerpt_separator: "\n\n"
 
@@ -63,14 +64,14 @@ defaults: []
 #  extensions: []
 
 #redcarpet:
-#  extensions: []
+#  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
 
-#kramdown:
-#  auto_ids:      true
-#  footnote_nr:   1
-#  entity_output: as_char
-#  toc_levels:    1..6
-#  smart_quotes:  lsquo,rsquo,ldquo,rdquo
+kramdown:
+  auto_ids:      true
+  footnote_nr:   1
+  entity_output: as_char
+  toc_levels:    1..6
+  smart_quotes:  lsquo,rsquo,ldquo,rdquo
 #  use_coderay:   false
 
 #  coderay:
@@ -84,7 +85,12 @@ defaults: []
 #redcloth:
 #  hard_breaks: true
 
-rogue:          true
+#pygments:       true
+#rouge:          true
+
+#sass:
+#  sass_dir:     css/scss
+#  style:        compressed
 
 # Setup
 title:          rmaicle
