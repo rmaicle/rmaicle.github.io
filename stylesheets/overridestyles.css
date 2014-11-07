@@ -249,8 +249,7 @@ pre {
     /* background: #202020; */
     background: none;
     border: none;
-    /* margin-bottom height = p bottom padding + pre top padding */
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     overflow: auto;
     overflow-y: hidden;
 }
