@@ -6,14 +6,13 @@ excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisq
 
 <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Cras scelerisque orci quam, vitae <code>condimentum</code> eros euismod in. Suspendisse egestas nibh id pulvinar hendrerit. Phasellus in <a href="" title="sample link description">elementum ante</a>, non placerat sem. Nulla facilisi. Praesent eu leo sed libero maximus fermentum. Praesent maximus ultrices hendrerit. Nunc lacinia fringilla orci, et pharetra nibh pulvinar pellentesque. Sed posuere ex ex, vel fermentum velit ultrices et. Integer lacus ligula, maximus dictum massa non, aliquam volutpat purus. Donec malesuada nulla vitae nulla suscipit, gravida mattis velit malesuada. Cras cursus, erat eu sodales ullamcorper, dui dolor convallis velit, eu consectetur magna risus vitae quam.</p>
 
-~~~ cpp
+{% highlight cpp %}
 int main()
 {
     std::cout << "Hello world!" << std::endl;
-    std::cout << "The quick brown fox jumped over the lazy dog near the bank of the river." << std::endl;
     return 0;
 }
-~~~
+{% endhighlight %}
 
 <ul>
 <li>Mauris consequat lacus a ligula elementum, id interdum mauris imperdiet.</li>
