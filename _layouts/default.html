@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+    {% include head.html %}
+
+<body>
+
+    {% include header.html %}
+
+<div id="headernav">
+	<nav>
+        <!-- NOTE: -->
+        <!-- For two-line items, wrap the second line between <span></span> -->
+        <!-- Adjust the width padding in #header nav li a -->
+        <!-- Class 'active' highlights the entire box -->
+        {% for page in site.pages_list %}
+        <li><a href="{{ site.baseurl }}{{ page[1]  }}">{{ page[0] }}</a></li>
+        {% endfor %}
+        <li><a href="https://github.com/rmaicle" class="active" title="GitHub" target="_blank">GitHub</a></li>
+	</nav>
+    <!--
+    <nav class="right">
+        <li><a href="https://github.com/rmaicle" class="active" title="GitHub" target="_blank">GitHub</a></li>
+    </nav>
+    -->
+    <p id="layoutdims">&nbsp;</p>
+</div><!-- end headernav -->
+
+<div class="colmask threecol">
+	<div class="colmid">
+		<div class="colleft">
+
+            {{ content }}
+
+		</div><!-- end colleft -->
+	</div>
+</div>
+
+{% include footer.html %}
+
+<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+<!-- Twitter Widget (Must be before the closing body tag) -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</body>
+</html>

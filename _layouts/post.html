@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<section>
+<div class="column_main">
+
+<h3 class="pagetitle">{{ page.title }}</h3>
+<p class="excerpt">{{ page.excerpt }}</p>
+<p class="date vspace">{{ page.date | date_to_string }}</p>
+
+{{ content }}
+
+<!-- Add vertical space before the 'hr' so it does not look cramped -->
+<p>&nbsp;</p>
+{% include post_bottom.html %}
+
+</div>
+</section>
+
+<!-- ---------------------------------------------------------------------- -->
+
+<section>
+<div class="column_left_sidebar">
+</div>
+</section>
+
+<!-- ---------------------------------------------------------------------- -->
+
+{% include post_right_sidebar.html %}

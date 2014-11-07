@@ -1,0 +1,451 @@
+/* From: http://talesofcpp.fusionfenix.com/ */
+/*
+@import url(https://fonts.googleapis.com/css?family=Muli:400,300);
+*/
+@font-face {
+    font-family: 'NegernsCourier';
+    src: url("../fonts/NegernsCourier.ttf");
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    /* Make the page background the same with the footer background color */
+    /* so if the page is shorter the bottom part will just appear as if */
+    /* it is part of the footer */
+    background: #333333;
+    /* font: 13px/1.5 "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    color: #b3b3b3; /* gray70 */
+}
+
+a {
+    color: #FFB90F;
+}
+
+a:hover {
+    color: white;
+    border-bottom: 1px dotted white;
+}
+
+hr {
+    border: 0;
+    outline: none;
+    height: 3px;
+    background: #ffcc00;
+    background: #FFB90F;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+hr.thin {
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 17px;
+    background: #555555;
+}
+
+hr.compact {
+    margin-top: 3px;
+    margin-bottom: 4px;
+}
+
+ul {
+    list-style-type: disc;
+    list-style-image: none;
+}
+
+p strong {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+p code {
+    font-size: 13px;
+}
+
+blockquote {
+    font-size: 13px;
+    border-left: 3px solid #555555;
+    margin-left: 30px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 0 0 0 12px;
+    width: 80%;
+}
+
+aside {
+    font-size: 13px;
+    line-height: 16px;
+    text-align: right;
+    color: #28ffb0;
+    color: #e8e8e8;
+    float: right;
+    /* width: 300px; */
+    padding: 6px 8px 6px 8px;
+    margin-left: 10px;
+    border: 1px dotted #555555;
+
+}
+
+.threecol {
+    background: #252525;    /* right column background colour */
+}
+.threecol .colmid {
+    background: #252525;    /* center column background colour */
+    padding-bottom: 30px;   /* main content bottom padding */
+}
+.threecol .colleft {
+    background :#252525;    /* left column background colour */
+}
+
+.threecol .column_right_sidebar {
+    /* Expand; override */
+    /* From the original we add width to expand it and from */
+    /* the left (0 to where this column starts) we take away. */
+    width: 23%;
+    left: 83%;
+}
+
+section .column_main,
+section .column_left_sidebar,
+section .column_right_sidebar {
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Main content column                                                       */
+/* ------------------------------------------------------------------------- */
+
+section .column_main h3,
+section .column_main h4,
+section .column_main h5 {
+    /* font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
+    font-weight: bold;
+    /* text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4); */
+    text-shadow: 1px 1px 1px #000;
+}
+
+section .column_main h3.pagetitle {
+    font-size: 18px;
+    /* Align top with the left and right column 'titles' */
+    margin-top: 6px;
+}
+
+section .column_main h4 { font-size: 15px; }
+section .column_main h5 { font-size: 12px; }
+
+section .column_main a {
+    color: #b3b3b3;
+    border-bottom: 1px dotted #555555;
+}
+section .column_main a:hover {
+    color: #FFB90F;
+    border-bottom: 1px dotted #FFB90F;
+}
+section .column_main p,
+section .column_main li,
+section .column_main dl {
+    font-family: "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: left;
+}
+
+section .column_main p {
+    margin: 0 0 8px 0;
+}
+
+section .column_main p.excerpt,
+section .column_main p.date {
+    font-size: 12px;
+    margin: 0;
+}
+
+section .column_main p.excerpt {
+    /* font-style: italic; */
+}
+
+section .column_main ul {
+    margin-bottom: 10px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Left sidebar column                                                       */
+/* ------------------------------------------------------------------------- */
+
+section .column_left_sidebar h3,
+section .column_left_sidebar h4,
+section .column_left_sidebar h5 {
+    /* font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+section .column_left_sidebar h3 {
+    font-size: 15px;
+    line-height: 18px;
+}
+section .column_left_sidebar h4 { font-size: 14px; }
+section .column_left_sidebar h5 { font-size: 12px; }
+
+section .column_left_sidebar p {
+    font-size: 11px;
+    line-height: 15px;
+    text-align: justify;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Right sidebar column                                                       */
+/* ------------------------------------------------------------------------- */
+
+section .column_right_sidebar h3,
+section .column_right_sidebar h4,
+section .column_right_sidebar h5 {
+    /* font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    /* text-align: right; */
+}
+
+section .column_right_sidebar h3 {
+    font-size: 15px;
+    line-height: 18px;
+}
+section .column_right_sidebar h4 { font-size: 14px; }
+section .column_right_sidebar h5 { font-size: 12px; }
+
+section .column_right_sidebar p {
+    font-size: 11px;
+    line-height: 15px;
+    text-align: left;
+}
+
+section .column_right_sidebar ul li a {
+    font-family: "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+section .column_right_sidebar ul li a:before {
+    /* content: "\00BB  "; */
+}
+
+code {
+    font: 13px/1.0 "NegernsCourier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+    margin: 0 4px;
+}
+
+code.highlight {
+    color: #28ffb0;
+}
+
+pre {
+    line-height: 16px;
+    padding: 5px 10px;
+    /* background: #202020; */
+    background: none;
+    border: none;
+    /* margin-bottom height = p bottom padding + pre top padding */
+    margin-bottom: 10px;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+pre code {
+    text-shadow: none;
+    border: none;
+    border-radius: 0px;
+}
+
+pre.output code {
+    color: #009900;
+}
+
+pre.output code span.highlight {
+    color: #00dd00;
+}
+
+pre.code code {
+    color: #aaaaaa;
+    background: #202020;
+    border-radius: 5px;
+    border: 1px solid #373737;
+}
+
+pre.file code {
+    color: #b3b3b3;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Header and header navigation                                              */
+/* ------------------------------------------------------------------------- */
+
+#header {
+    background: black;
+}
+
+#header #title h1 {
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+    text-align: left;
+    line-height: 28px;
+    color: #FFB90F;
+}
+
+#header #subtitle h2 {
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-size: 11px;
+    text-align: left;
+    line-height: 14px;
+}
+
+#headernav nav {
+    background: black;
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+#headernav nav li a {
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+
+    padding-top: 2px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    /* Override lines separating each item */
+    margin: 0 0 0 4px;
+
+    border-radius: 3px 3px 0px 0px;
+
+    /* Set a border here but without the bottom */
+    /* This is to allow a hollow-look during hover event */
+    border-left: 1px solid #FFB90F;
+    border-right: 1px solid #FFB90F;
+    border-top: 1px solid #FFB90F;
+    border-bottom: 0px;
+}
+
+#headernav nav li a:hover {
+    background: black;
+    color: #ffcc00;
+    color: #FFB90F;
+    background: white;
+    background: #FFB90F;
+    color: black;
+    /* Remove the bottom dotted line in common link styles */
+    border-bottom: 0px;
+}
+
+#headernav nav li a.active {
+    color: black;
+    background: #FFB90F;
+}
+
+#headernav nav li a.active:hover {
+    /*
+    color: #e8e8e8;
+    background: #252525;
+    border-left: 1px solid #FFB90F;
+    border-right: 1px solid #FFB90F;
+    border-top: 1px solid #FFB90F;
+    border-bottom: 0px;
+
+    background: white;
+    color: black;
+    */
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 0px;
+}
+
+#headernav nav.right {
+    background: black;
+    margin-top: 0px;
+    padding-top: 10px;
+
+}
+
+#layoutdims {
+    background: black; /* same as header background */
+    background: #333333;
+    border-top: 5px solid #ffcc00;
+    border-top: 5px solid #FFB90F;
+    border-bottom: 1px solid #555555;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Footer                                                                    */
+/* ------------------------------------------------------------------------- */
+
+#footer {
+    font: 10px/1.4 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #e8e8e8;
+    background: #333333;
+    border-top: 3px solid #555555;
+    padding: 20px 0px 10px 0px;
+}
+
+#footer #content {
+    padding-left: 27px;
+}
+
+#footer #content #footer_column_one,
+#footer #content #footer_column_two {
+    float: left;
+	position: relative;
+    width: 282px;
+	/* padding: 0 0 1em 0; */
+    padding-right: 30px;
+}
+
+#footer_bottom {
+    clear:both;
+	float:left;
+    padding-top: 20px;
+}
+
+#footer p {
+    /* Override */
+	padding: 0px;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.list_style_none {
+    list-style-type: none;
+}
+
+.list_style_nopadding {
+    padding-left: 0;
+}
+
+.link_color {
+    color: #FFB90F;
+}
+
+.vspace {
+    padding-bottom: 25px;
+}
+
+.small {
+    font-size: 84%;
+}
+
+/* Markdown fix on unsorted list */
+/* It is translated as ul li p wherein p should no be present. */
+/* We just remove the extra spaces between p */
+section .column_main ul li p {
+    margin-bottom: 0;
+}

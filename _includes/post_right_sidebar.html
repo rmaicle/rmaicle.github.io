@@ -1,0 +1,37 @@
+<section>
+<div class="column_right_sidebar">
+    <!-- Column 3 start -->
+    <!--
+    <div id="ads">
+        <a href="http://matthewjamestaylor.com">
+            <img src="mjt-125x125.gif" width="125" border="0" height="125" alt="Art and Design by Matthew James Taylor" />
+        </a>
+    </div>
+    -->
+
+    <h3>Related Posts</h3>
+    <ul class="list_style_none list_style_nopadding vspace">
+        {% for post in site.related_posts limit:3 %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a><br/><span class="small">{{ post.date | date_to_string }}</span></li>
+        {% endfor %}
+    </ul>
+
+    <h3>Recent Posts</h3>
+    <ul class="list_style_none list_style_nopadding vspace">
+        <li>none</li>
+    </ul>
+
+    <h3>Links</h3>
+    <ul class="list_style_none list_style_nopadding vspace">
+        <li><a href="http://isocpp.org">C++ Programming Language</a></li>
+        <li><a href="http://dlang.org">D Programming Language</a></li>
+        <li><a href="http://wxwidgets.org/">wxWidgets</a></li>
+        <li><a href="https://www.kernel.org/pub/software/scm/git/docs/">Git</a></li>
+        <hr class="thin compact">
+        <li><a href="http://jekyllrb.com" class="active" target=_blank>Jekyll</a></li>
+        <li><a href="http://kramdown.gettalong.org" class="active" target=_blank>kramdown</a></li>
+    </ul>
+
+    <!-- Column 3 end -->
+</div>
+</section>
