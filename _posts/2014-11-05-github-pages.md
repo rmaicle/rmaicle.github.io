@@ -18,30 +18,6 @@ Markdown. As of this post, it is in pre<br/>
 version 1.0.<br/>
 </aside>
 
-~~~
-def what?
-  42
-end
-~~~
-{: .language-ruby}
-
-{% highlight c %}
-int a = 10;
-std::string s = "hello";
-{% endhighlight %}
-
-{% highlight yaml %}
-# Where things are
-source:      .
-destination: ./_site
-plugins:     ./_plugins
-layouts:     ./_layouts
-data_source: ./_data
-collections:
-  rmcollections:
-    output: true
-{% endhighlight %}
-
 GitHub Pages uses [Jekyll].
 Jekyll is the tool that transforms plain text into static web pages.
 Installing Jekyll on my machine allows testing of how posts or pages will look before uploading them --- nifty!
@@ -61,10 +37,11 @@ Verify that the installation has actually set the User Executable PATH.
 Open a command prompt and go to a directory other than the Ruby directory and execute the command `ruby --version`{:.highlight}.
 You should see something like:
 
-<pre class="output"><code>
+~~~
 C:\><span class="highlight">ruby --version</span>
 ruby 2.1.4p265 (2014-10-27 revision 48166) [x64-mingw32]
-</code></pre>
+~~~
+{: .output }
 
 Download and _install_ the [Ruby Development Kit] which is a 43MB self-extracting archive file.
 Installing the DevKit means extracting the contents into a directory like `C:\RubyDevKit` and will take about 411MB.
@@ -72,20 +49,22 @@ After extracting the DevKit, it must be initialized to bind it to the Ruby insta
 And then installed; `ruby dk.rb install`{:.highlight}.
 Here are the output of the commands:
 
-<pre class="output"><code>
+~~~
 C:\RubyDevKit><span class="highlight">ruby dk.rb init</span>
 [INFO] found RubyInstaller v2.1.4 at C:/Ruby21-x64
-</code></pre>
+~~~
+{: .output }
 
 Initialization complete! Please review and modify the auto-generated
 'config.yml' file to ensure it contains the root directories to all
 of the installed Rubies you want enhanced by the DevKit.
 
-<pre class="output"><code>
+~~~
 C:\RubyDevKit><span class="highlight">ruby dk.rb install</span>
 [INFO] Updating convenience notice gem override for 'C:/Ruby21-x64'
 [INFO] Installing 'C:/Ruby21-x64/lib/ruby/site_ruby/devkit.rb'
-</code></pre>
+~~~
+{: .output }
 
 From the [GitHub Pages Basics] site, we need [Bundler]:
 
@@ -100,7 +79,7 @@ The following is the output of the command:
 Where do we execute the command?
 {:/comment}
 
-<pre class="output"><code>
+~~~
 C:\Ruby21-x64><span class="highlight">gem install bundler</span>
 Fetching: bundler-1.7.4.gem (100%)
 Successfully installed bundler-1.7.4
@@ -108,7 +87,8 @@ Parsing documentation for bundler-1.7.4
 Installing ri documentation for bundler-1.7.4
 Done installing documentation for bundler after 4 seconds
 1 gem installed
-</code></pre>
+~~~
+{: .output }
 
 In the site repository, create the file `Gemfile`{:.highlight} and add the following lines:
 
@@ -121,7 +101,7 @@ gem 'github-pages'
 Run the command `bundle install`{:.highlight} to install all needed files for the GitHub Pages.
 Below is a fragment of the output:
 
-<pre class="output"><code>
+~~~
 d:\projects\github\testsite.github.io><span class="highlight">bundle install</span>
 DL is deprecated, please use Fiddle
 Fetching gem metadata from https://rubygems.org/.......
@@ -131,7 +111,8 @@ Using bundler 1.7.4
 Your bundle is complete!
 Use `bundle show [gemname]` to see where a bundled gem is installed.
 ...
-</code></pre>
+~~~
+{: .output }
 
 If an error is encountered, just correct it and rerun the `bundle install`{:.highlight} command.
 Here is an example of an error I encountered when I was trying the steps above.
@@ -160,7 +141,9 @@ Open address `http://localhost:4000/` in your browser to see your page(s).
 The following links are additional references about GitHub Pages:
 
 * [Kramdown] is a fast, pure-Ruby Markdown-superset converter used.
-
+* [GitHub Dark] to help you choose the color schemes for your theme.
+* [Loyc] Blogging on GitHub --- More information on syntax highlighter and site setup.
+* [Yi Zeng] Setup Jekyll on Windows
 * How [Joshua Lande] created his blog site in GitHub Pages --- A good reference on what else you can do to configure your GitHub Pages. It has a short description on how to use Disqus, Google Analytics and a Twitter Plug with your GitHub Pages. A great addition indeed.
 
 * How [erjjones] built his blog in one day --- Here is another great way to enhance your GitHub Pages; Twitter Bootstrap, Feedback Button, Dynamic GitHub Followers and Repository Buttons, Social Buzz Widgets and more.
@@ -187,5 +170,8 @@ Additional links:
 [Run Jekyll on Windows]: http://jekyll-windows.juthilo.com/ "Run Jekyll on Windows"
 [Bundler]: http://bundler.io/ "Bundler"
 [Kramdown]: http://kramdown.gettalong.org/index.html "Kramdown Markdown"
+[GitHub Dark]: https://userstyles.org/styles/37035/github-dark
+[Loyc]: http://loyc.net/2014/blogging-on-github.html "Language of your choice"
+[Yi Zeng]: http://yizeng.me/2013/05/10/setup-jekyll-on-windows/ "Yi Zeng's Blog"
 [Joshua Lande]: http://joshualande.com/jekyll-github-pages-poole/ "How Joshua Lande Created His Blog Site in GitHub Pages"
 [erjjones]: http://erjjones.github.io/blog/How-I-built-my-blog-in-one-day/ "How erjjones built his blog in one day"
