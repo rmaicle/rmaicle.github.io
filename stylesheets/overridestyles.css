@@ -269,7 +269,7 @@ pre.output code span.highlight {
     color: #00dd00;
 }
 
-pre.code code {
+div.highlight {
     color: #aaaaaa;
     background: #202020;
     border-radius: 5px;
