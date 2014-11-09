@@ -12,25 +12,15 @@
     <h3>Related Posts</h3>
     <ul class="list_style_none list_style_nopadding vspace">
         {% for post in site.related_posts limit:3 %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a><br/><span class="small">{{ post.date | date_to_string }}</span></li>
+        <li>
+            <a href="{{ post.url }}">{{ post.title }} &ndash; {{ post.date | date_to_string }}</a>
+        </li>
         {% endfor %}
     </ul>
 
-    <h3>Recent Posts</h3>
-    <ul class="list_style_none list_style_nopadding vspace">
-        <li>none</li>
-    </ul>
+    {% include recent_posts.html %}
 
-    <h3>Links</h3>
-    <ul class="list_style_none list_style_nopadding vspace">
-        <li><a href="http://isocpp.org">C++ Programming Language</a></li>
-        <li><a href="http://dlang.org">D Programming Language</a></li>
-        <li><a href="http://wxwidgets.org/">wxWidgets</a></li>
-        <li><a href="https://www.kernel.org/pub/software/scm/git/docs/">Git</a></li>
-        <hr class="thin compact">
-        <li><a href="http://jekyllrb.com" class="active" target=_blank>Jekyll</a></li>
-        <li><a href="http://kramdown.gettalong.org" class="active" target=_blank>kramdown</a></li>
-    </ul>
+    {% include common_links.html %}
 
     <!-- Column 3 end -->
 </div>

@@ -28,7 +28,8 @@ whitelist: []
 gems:      []
 
 # Conversion
-markdown:    kramdown
+#markdown:    kramdown
+markdown:    redcarpet
 #highlighter: rouge
 highlighter: pygments
 lsi:         false
@@ -108,12 +109,12 @@ github: github.com/rmaicle
 
 # This is the list of pages to incldue in the header of the website.
 pages_list: {
-  'Archive': '/archive.html',
+  'Posts': '/archive.html',
   'Collection': '/rmcollections/collection.html',
   'About': '/about.html',
 }
 pages_list:
-  Archive: '/archive.html'
+  Posts: '/archive.html'
   Collection: '/rmcollections/collection.html'
   About: '/about.html'
 

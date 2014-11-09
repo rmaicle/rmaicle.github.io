@@ -1,0 +1,8 @@
+section .column_main a {
+    color: #FFB90F;
+    border-bottom: none;
+}
+section .column_main a:hover {
+    color: #FFB90F;
+    border-bottom: 1px dotted #FFB90F;
+}

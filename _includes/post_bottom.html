@@ -1,7 +1,13 @@
 <hr class="thin compact">
-<div><p>{{ page.tags }}</p>
-<!-- Twitter -->
-<a href="https://twitter.com/share" class="twitter-share-button" data-via="rickymaicle">Tweet</a>
-<!-- Google + -->
-<p><g:plusone size="medium"></g:plusone></p>
+<div>
+    <p>Tags:&nbsp;
+    {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+    {% endfor %}
+    </p>
+    <br/>
+    <!-- Twitter -->
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="rickymaicle">Tweet</a>
+    <!-- Google + -->
+    <p><g:plusone size="medium"></g:plusone></p>
 </div>

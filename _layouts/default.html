@@ -7,24 +7,8 @@
 
     {% include header.html %}
 
-<div id="headernav">
-	<nav>
-        <!-- NOTE: -->
-        <!-- For two-line items, wrap the second line between <span></span> -->
-        <!-- Adjust the width padding in #header nav li a -->
-        <!-- Class 'active' highlights the entire box -->
-        {% for page in site.pages_list %}
-        <li><a href="{{ site.baseurl }}{{ page[1]  }}">{{ page[0] }}</a></li>
-        {% endfor %}
-        <li><a href="https://github.com/rmaicle" class="active" title="GitHub" target="_blank">GitHub</a></li>
-	</nav>
-    <!--
-    <nav class="right">
-        <li><a href="https://github.com/rmaicle" class="active" title="GitHub" target="_blank">GitHub</a></li>
-    </nav>
-    -->
+
     <p id="layoutdims">&nbsp;</p>
-</div><!-- end headernav -->
 
 <div class="colmask threecol">
 	<div class="colmid">

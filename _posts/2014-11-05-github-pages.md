@@ -1,160 +1,140 @@
 ---
 layout: post
-title: Starting with GitHub Pages
-excerpt: References to getting started with GitHub Pages on Windows.
-category: Blog
-tags: blog, github pages
+title: Local GitHub Pages on Windows
+excerpt: How I initially configured Jekyll to run GitHub Pages on my local Windows machine
+categories: [GitHub Pages]
+tags: [blog, github pages]
 ---
 
 I recently started using [GitHub Pages].
 GitHub Pages allows you to get your site up and running in no time.
 If you're like me, you can fiddle with the site much more than than what other blogging platform allows you.
-And, this is what I like --- create pages and posts using [Markdown].
+And, this is what I like - create pages and posts using [Markdown].
 
 <aside>
-<a href="http://commonmark.org/" target="_blank">CommonMark</a> is a strongly specified,<br/>
-highly compatible implementation of<br/>
-Markdown. As of this post, it is in pre<br/>
-version 1.0.<br/>
+<a href="http://commonmark.org/" target="_blank">CommonMark</a> is a strongly specified,
+highly compatible implementation of
+Markdown. As of this post, it is in pre
+version 1.0.
 </aside>
 
 GitHub Pages uses [Jekyll].
 Jekyll is the tool that transforms plain text into static web pages.
-Installing Jekyll on my machine allows testing of how posts or pages will look before uploading them --- nifty!
+Installing Jekyll on my machine allows testing of how posts or pages will look before uploading them - nifty!
 
 This post documents the installation of Jekyll on my Windows machine.
-As a reference, here is a link on how to [Run Jekyll on Windows].
+Here is a reference on how to [Run Jekyll on Windows] which slightly differs from what I have done.
+
+#### Download and Install Ruby
+
 I downloaded [Ruby] 2.1.4 64-bit from the [Ruby Installer for Windows] site (17MB).
 The installation takes 48MB of disk space.
 
-<aside>
-Make sure that the Ruby executable<br/>
-path is set in the User Executable<br/>
-PATH environment variable.
-</aside>
+Verify that the installation has set the User Executable PATH to point to the Ruby directory.
 
-Verify that the installation has actually set the User Executable PATH.
-Open a command prompt and go to a directory other than the Ruby directory and execute the command `ruby --version`{:.highlight}.
-You should see something like:
+* Open a command prompt
+* Go to a directory other than the Ruby installation directory
+* Execute the command `ruby --version`
 
-~~~
-C:\><span class="highlight">ruby --version</span>
-ruby 2.1.4p265 (2014-10-27 revision 48166) [x64-mingw32]
-~~~
-{: .output }
+    ~~~
+    ruby 2.1.4p265 (2014-10-27 revision 48166) [x64-mingw32]
+    ~~~
 
-Download and _install_ the [Ruby Development Kit] which is a 43MB self-extracting archive file.
-Installing the DevKit means extracting the contents into a directory like `C:\RubyDevKit` and will take about 411MB.
-After extracting the DevKit, it must be initialized to bind it to the Ruby installation; `ruby dk.rb init`{:.highlight}.
-And then installed; `ruby dk.rb install`{:.highlight}.
-Here are the output of the commands:
+#### Download and Install the Ruby Development Kit
 
-~~~
-C:\RubyDevKit><span class="highlight">ruby dk.rb init</span>
-[INFO] found RubyInstaller v2.1.4 at C:/Ruby21-x64
-~~~
-{: .output }
+I downloaded the [Ruby Development Kit] (DevKit) which is a 43MB self-extracting archive file.
+Installing the DevKit means _extracting_ the contents into a directory like `C:\RubyDevKit` and will take about 411MB.
 
-Initialization complete! Please review and modify the auto-generated
-'config.yml' file to ensure it contains the root directories to all
-of the installed Rubies you want enhanced by the DevKit.
+* Extract the DevKit;
+* Initialize to bind the DevKit to the Ruby installation; `ruby dk.rb init`;
 
-~~~
-C:\RubyDevKit><span class="highlight">ruby dk.rb install</span>
-[INFO] Updating convenience notice gem override for 'C:/Ruby21-x64'
-[INFO] Installing 'C:/Ruby21-x64/lib/ruby/site_ruby/devkit.rb'
-~~~
-{: .output }
+    ~~~
+    C:\RubyDevKit>ruby dk.rb init
+    [INFO] found RubyInstaller v2.1.4 at C:/Ruby21-x64
 
-From the [GitHub Pages Basics] site, we need [Bundler]:
+    Initialization complete! Please review and modify the auto-generated
+    'config.yml' file to ensure it contains the root directories to all
+    of the installed Rubies you want enhanced by the DevKit.
+    ~~~
 
-> Bundler is a package manager that makes versioning Ruby software like Jekyll
-> a heck of a lot easier if you're going to be building GitHub Pages sites
-> locally.
+* Install the DevKit; `ruby dk.rb install`.
 
-Download and install Bundler, currently version 1.7, by running the command `gem install bundler`{:.highlight}.
-The following is the output of the command:
+    ~~~
+    C:\RubyDevKit>ruby dk.rb install
+    [INFO] Updating convenience notice gem override for 'C:/Ruby21-x64'
+    [INFO] Installing 'C:/Ruby21-x64/lib/ruby/site_ruby/devkit.rb'
+    ~~~
 
-{::comment}
-Where do we execute the command?
-{:/comment}
+#### Download and Install Dependencies
 
-~~~
-C:\Ruby21-x64><span class="highlight">gem install bundler</span>
-Fetching: bundler-1.7.4.gem (100%)
-Successfully installed bundler-1.7.4
-Parsing documentation for bundler-1.7.4
-Installing ri documentation for bundler-1.7.4
-Done installing documentation for bundler after 4 seconds
-1 gem installed
-~~~
-{: .output }
+From the [GitHub Pages Basics] site, we need to download and install the [Bundler].
+It is a package manager that makes versioning the Ruby software like Jekyll easier when building GitHub Pages sites locally.
 
-In the site repository, create the file `Gemfile`{:.highlight} and add the following lines:
+* Download and install Bundler; `gem install bundler`
 
-~~~
-source 'https://rubygems.org'
-gem 'github-pages'
-~~~
-{: .file }
+    ~~~
+    C:\Ruby21-x64>gem install bundler
+    Fetching: bundler-1.7.4.gem (100%)
+    Successfully installed bundler-1.7.4
+    Parsing documentation for bundler-1.7.4
+    Installing ri documentation for bundler-1.7.4
+    Done installing documentation for bundler after 4 seconds
+    1 gem installed
+    ~~~
 
-Run the command `bundle install`{:.highlight} to install all needed files for the GitHub Pages.
-Below is a fragment of the output:
+* Create an empty file named `Gemfile` in the local site repository and add the following two lines:
 
-~~~
-d:\projects\github\testsite.github.io><span class="highlight">bundle install</span>
-DL is deprecated, please use Fiddle
-Fetching gem metadata from https://rubygems.org/.......
-...
-Installing github-pages 28
-Using bundler 1.7.4
-Your bundle is complete!
-Use `bundle show [gemname]` to see where a bundled gem is installed.
-...
-~~~
-{: .output }
+    ~~~
+    source 'https://rubygems.org'
+    gem 'github-pages'
+    ~~~
 
-If an error is encountered, just correct it and rerun the `bundle install`{:.highlight} command.
-Here is an example of an error I encountered when I was trying the steps above.
+    We can just use the `echo` command and send it to the file through piping:
 
-~~~
-Gem::RemoteFetcher::FetchError: Errno::ECONNREFUSED: No connection could be
-made because the target machine actively refused it. - connect(2) for "s3.a
-mazonaws.com" port 443 (https://rubygems.org/gems/kramdown-1.3.1.gem)
-An error occurred while installing kramdown (1.3.1), and Bundler cannot
-continue.
-Make sure that `gem install kramdown -v '1.3.1'` succeeds before bundling.
+    ~~~
+    d:\test.github.io>echo source 'https://rubygems.org' > Gemfile
+    d:\test.github.io>echo gem 'github-pages' >> Gemfile
+    ~~~
 
-d:\projects\github\testsite.github.io>gem install kramdown -v '1.3.1'
-Fetching: kramdown-1.3.1.gem (100%)
-Successfully installed kramdown-1.3.1
-Parsing documentation for kramdown-1.3.1
-Installing ri documentation for kramdown-1.3.1
-Done installing documentation for kramdown after 2 seconds
-1 gem installed
-~~~
-{: .output }
+* Install required files for GitHub Pages; `bundle install`
 
-After that, Jekyll can be started by running the command `bundle exec jekyll serve` in the site repository.
-Open address `http://localhost:4000/` in your browser to see your page(s).
+    ~~~
+    d:\test.github.io>bundle install
+    DL is deprecated, please use Fiddle
+    Fetching gem metadata from https://rubygems.org/.......
+    ...
+    Your bundle is complete!
+    Use `bundle show [gemname]` to see where a bundled gem is installed.
+    ...
+    ~~~
+
+As mentioned, you can use `bundle show [gemname]` to see where a bundled gem is installed.
+If an error occurs, correct it and rerun `bundle install`.
+
+#### Now, Try It!
+
+Start Jekyll in your local site repository; `bundle exec jekyll serve`.
+Open the URL `http://localhost:4000/` in your browser.
+
+#### Links
+
+* [Jekyll Documentation](http://jekyllrb.com/docs/home/)
+* [GitHub Pages Features](https://help.github.com/categories/github-pages-features/)
+* [Kramdown](http://kramdown.gettalong.org/index.html) is a fast, pure-Ruby Markdown-superset converter
+* [Repository metadata on GitHub Pages](https://help.github.com/articles/repository-metadata-on-github-pages/)
+* [RedCarpet Fenced Code Block Languages](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
+* [GitHub Pages Troubleshooting](https://help.github.com/categories/github-pages-troubleshooting/)
+* [Google+ Platform](https://developers.google.com/+/web/+1button/)
+
+#### References
 
 The following links are additional references about GitHub Pages:
 
-* [Kramdown] is a fast, pure-Ruby Markdown-superset converter used.
 * [GitHub Dark] to help you choose the color schemes for your theme.
 * [Loyc] Blogging on GitHub --- More information on syntax highlighter and site setup.
 * [Yi Zeng] Setup Jekyll on Windows
 * How [Joshua Lande] created his blog site in GitHub Pages --- A good reference on what else you can do to configure your GitHub Pages. It has a short description on how to use Disqus, Google Analytics and a Twitter Plug with your GitHub Pages. A great addition indeed.
-
 * How [erjjones] built his blog in one day --- Here is another great way to enhance your GitHub Pages; Twitter Bootstrap, Feedback Button, Dynamic GitHub Followers and Repository Buttons, Social Buzz Widgets and more.
-
-Additional links:
-
-* [Jekyll Documentation](http://jekyllrb.com/docs/home/)
-* [GitHub Pages Features](https://help.github.com/categories/github-pages-features/)
-* [Repository metadata on GitHub Pages](https://help.github.com/articles/repository-metadata-on-github-pages/)
-* [GitHub Pages Troubleshooting](https://help.github.com/categories/github-pages-troubleshooting/)
-* [Google+ Platform](https://developers.google.com/+/web/+1button/)
 
 
 
@@ -169,7 +149,7 @@ Additional links:
 [Jekyll]: http://jekyllrb.com "Jekyll"
 [Run Jekyll on Windows]: http://jekyll-windows.juthilo.com/ "Run Jekyll on Windows"
 [Bundler]: http://bundler.io/ "Bundler"
-[Kramdown]: http://kramdown.gettalong.org/index.html "Kramdown Markdown"
+
 [GitHub Dark]: https://userstyles.org/styles/37035/github-dark
 [Loyc]: http://loyc.net/2014/blogging-on-github.html "Language of your choice"
 [Yi Zeng]: http://yizeng.me/2013/05/10/setup-jekyll-on-windows/ "Yi Zeng's Blog"
