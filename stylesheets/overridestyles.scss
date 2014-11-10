@@ -226,6 +226,7 @@ nav li a.active {
     color: black;
     background: $color_primary;
     border-top: 3px solid $color_primary;
+    border-bottom: 1px solid $color_primary;
     border-radius: 3px 3px 0px 0px;
 }
 
