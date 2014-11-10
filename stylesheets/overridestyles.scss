@@ -1,0 +1,574 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+$color_primary:         #FFB90F;
+
+$color_text:            #b3b3b3;
+$color_text_highlight:  #dddddd;
+
+$color_aside_text:      #e8e8e8;
+
+$color_link: #FFB90F;
+$color_link_hover:      white;
+
+$color_footer_bg:       #333333;
+
+$color_code:            #b3b3b3;
+$color_code_highlight:  #28ffb0;
+
+// Background colors
+
+$color_bg:              #252525;
+$color_lbg:             #555555;
+
+$color_aside_bg:        #252525;
+$color_tag_bg:          #404040;
+$color_nav_bg:          #333333;
+
+$font_default:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_heading:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_footer:           "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_code:             "NegernsCourier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+$font_size_default:     12px;
+$font_size_code:        13px;
+
+$font_size_title:           28px;
+$font_size_title_tagline:   $font_size_default - 1;
+
+$font_size_footer:      10px;
+$font_size_license:     10px;
+
+@font-face {
+    font-family: 'NegernsCourier';
+    src: url("../fonts/NegernsCourier.ttf");
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background: $color_bg;
+    font: $font_size_default/1.5 $font_default;
+    color: $color_text;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font_heading;
+}
+
+li, a, p, dl {
+    font-family: $font_default;
+    font-size: $font_size_default;
+}
+
+a {
+    color: $color_primary;
+}
+
+a:hover {
+    color: $color_link_hover;
+    border-bottom: 1px dotted $color_link_hover;
+}
+
+hr {
+    border: 0;
+    outline: none;
+    height: 3px;
+    background: $color_lbg;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+hr.thin {
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 17px;
+    background: $color_lbg;
+}
+
+hr.compact {
+    margin-top: 3px;
+    margin-bottom: 4px;
+}
+
+ul {
+    list-style-type: disc;
+    list-style-image: none;
+    margin-bottom: 0;
+}
+
+p strong {
+    font-weight: bold;
+    color: $color_text_highlight;
+}
+
+pre {
+    font-size: 13px;
+}
+
+p code {
+    font-size: 13px;
+}
+
+blockquote {
+    font-size: $font_size_default;
+    border-left: 3px solid $color_lbg;
+    margin-left: 30px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding: 0 0 0 12px;
+    width: 80%;
+}
+
+aside {
+    font-size: $font_size_default;
+    line-height: 18px;
+    text-align: right;
+    color: $color_aside_text;
+    float: right;
+    /* width: 300px; */
+    width: 34%;
+    padding: 6px 8px 6px 8px;
+    margin-left: 10px;
+    border-right: 3px solid $color_lbg;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Header and header navigation                                              */
+/* ------------------------------------------------------------------------- */
+
+header {
+    background: black;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+}
+
+header h1 {
+    margin: 0;
+    padding: 10px 0 0 15px;
+}
+
+header h1 a {
+    font-size: $font_size_title;
+    font-weight: normal;
+    text-align: left;
+    line-height: 28px;
+    color: $color_primary;
+}
+
+header h2 {
+    font-weight: normal;
+    font-size: $font_size_title_tagline;
+    text-align: left;
+    line-height: 14px;
+
+    margin: 0;
+    padding: 10px 0 10px 15px;
+}
+
+header div.nav_background {
+    background: black;
+    /* Manually adjusted if the header navigation gets taller/shorter */
+    height: 30px;
+}
+
+nav {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 9px;
+    padding-bottom: 2px;
+}
+
+nav.left {
+    float: left;
+    margin-left: 15px;
+}
+
+nav.right {
+    float: right;
+    margin-right: 15px;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+nav li:first-child {
+    /* Override margin separating each item */
+    margin: 0 0 0 0px;
+}
+
+nav li a {
+    font-family: $font_default;
+    font-size: $font_default - 1;
+    font-weight: normal;
+
+    text-transform: uppercase;
+
+    padding-top: 2px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-top: 3px solid black;
+    border-bottom: 0px;
+}
+
+nav li a:hover {
+    /* Remove the bottom dotted line in common link styles */
+    border-bottom: 0px;
+    border-top: 3px solid $color_primary;
+}
+
+nav li a.active {
+    color: black;
+    background: $color_primary;
+    border-top: 3px solid $color_primary;
+    border-radius: 3px 3px 0px 0px;
+}
+
+nav li a.active:hover {
+}
+
+nav.navbar {
+    background: $color_nav_bg;
+    padding: 0;
+    margin: 0;
+    border-top: 5px solid $color_primary;
+    border-bottom: 1px solid $color_lbg;
+    height: 25px;
+}
+
+nav.navbar p {
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Columns                                                                   */
+/* ------------------------------------------------------------------------- */
+
+section.column_left_sidebar,
+section.column_main,
+section.column_right_sidebar {
+    float: left;
+
+    font-family: $font_default;
+    margin-top: 17px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+section.column_left_sidebar {
+    width: 22%
+}
+section.column_main {
+    width: 47%;
+}
+section.column_right_sidebar {
+    width: 22%;
+
+    border-radius: 10px;
+    background: #1a1a1a;
+    padding: 12px 15px 15px 15px;
+}
+
+@media print, screen and (max-width: 1280px) {
+    section[class="column_left_sidebar"] { width: 24%; }
+    section[class="column_main"] { width: 40%; }
+    section[class="column_right_sidebar"] { width: 24%; }
+}
+
+@media print, screen and (max-width: 1024px) {
+    section[class="column_left_sidebar"] { width: 25%; }
+    section[class="column_main"] { width: 39%; }
+    section[class="column_right_sidebar"] { width: 25%; }
+}
+
+/* Intermediate transition */
+/* Expand the main column only */
+@media print, screen and (max-width: 850px) {
+    section[class="column_left_sidebar"] { width: 25%; }
+    section[class="column_main"] { width: 37%; }
+    section[class="column_right_sidebar"] { width: 25%; }
+}
+
+@media print, screen and (max-width: 720px) {
+    section[class="column_left_sidebar"] { width: 35%; }
+    section[class="column_main"] { width: 56%; }
+    section[class="column_right_sidebar"] { width: 95%; }
+}
+
+@media print, screen and (max-width: 480px) {
+    section[class="column_left_sidebar"] { width: 93%; }
+    section[class="column_main"] { width: 93%; }
+    section[class="column_right_sidebar"] { width: 84%; }
+}
+
+/* ------------------------------------------------------------------------- */
+/* Main content column                                                       */
+/* ------------------------------------------------------------------------- */
+
+section.column_main h3 { font-size: 18px; }
+section.column_main h4 { font-size: 15px; }
+section.column_main h5 { font-size: 12px; }
+
+section.column_main h3,
+section.column_main h4,
+section.column_main h5 {
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000;
+}
+
+section.column_main h3:first-child {
+    line-height: 1em;
+    /* Align top with the left and right column 'titles' */
+    margin-top: 6px;
+    margin-top: 0;
+
+}
+
+section.column_main h4,
+section.column_main h5 {
+    padding-top: 20px;
+}
+
+section.column_main a {
+    color: $color_text;
+    border-bottom: 1px dotted $color_lbg;
+}
+section.column_main a:hover {
+    color: $color_primary;
+    border-bottom: 1px dotted $color_primary;
+}
+section.column_main p,
+section.column_main li,
+section.column_main dl {
+    font-family: $font_default;
+    font-size: $font_default;
+    line-height: 18px;
+    text-align: left;
+}
+
+section.column_main p {
+    margin: 0 0 8px 0;
+}
+section.column_main p strong { font-weight: normal; }
+
+section.column_main p.excerpt,
+section.column_main p.category,
+section.column_main p.date {
+    font-size: 12px;
+    margin: 0;
+}
+
+section.column_main ul {
+    margin-bottom: 10px;
+}
+
+/* Collapse bottom margin of inner 'ul' */
+section.column_main ul ul {
+    margin-bottom: 0px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Left sidebar column                                                       */
+/* ------------------------------------------------------------------------- */
+
+section.column_left_sidebar h3,
+section.column_left_sidebar h4,
+section.column_left_sidebar h5 {
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+section.column_left_sidebar h3:first-child {
+    margin-top: 0;
+}
+
+section.column_left_sidebar h3 {
+    font-size: 15px;
+    line-height: 18px;
+}
+section.column_left_sidebar h4 { font-size: 14px; }
+section.column_left_sidebar h5 { font-size: 12px; }
+
+section.column_left_sidebar p {
+    font-size: 12px;
+    text-align: justify;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Right sidebar column                                                       */
+/* ------------------------------------------------------------------------- */
+
+section.column_right_sidebar h3 { font-size: 12px; }
+section.column_right_sidebar h4 { font-size: 11px; }
+section.column_right_sidebar h5 { font-size: 10px; }
+
+section.column_right_sidebar h3,
+section.column_right_sidebar h4,
+section.column_right_sidebar h5 {
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+section.column_right_sidebar h3 {
+    line-height: 18px;
+    color: $color_primary;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+section.column_right_sidebar p {
+    font-size: $font_size_default;
+    line-height: 15px;
+    text-align: left;
+}
+
+section.column_right_sidebar ul li {
+    padding: 0;
+    line-height: 16px;
+}
+section.column_right_sidebar ul li a {
+    color: $color_text;
+}
+section.column_right_sidebar a:hover {
+    color: $color_primary;
+    border-bottom: none;
+}
+section.column_right_sidebar ul li a:before {
+    /* content: "\00BB  "; */
+}
+
+code {
+    font-family: $font_code;
+    font-size: $font_size_code;
+    color: $color_code_highlight;
+    margin: 0 4px;
+}
+
+pre {
+    line-height: 16px;
+    padding: 7px 10px;
+    background: none;
+    border: none;
+    margin-bottom: 5px;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+pre code {
+    color: $color_text - 20;
+    text-shadow: none;
+    border: none;
+    border-radius: 0px;
+}
+
+/* Fenced code blocks */
+div.highlight {
+    background: #202020;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Footer                                                                    */
+/* ------------------------------------------------------------------------- */
+
+footer {
+    float: left;
+    width: 100%;
+
+    font-family: $font_footer;
+    font-size: $font_size_footer;
+    color: $color_text;
+    background: $color_footer_bg;
+    border-top: 3px solid $color_lbg;
+    padding: 20px 0px 15px 0px;
+}
+
+footer #content {
+    padding: 0px 0 0 25px;
+}
+
+footer #content {
+    #footer_column_one,
+    #footer_column_two,
+    #footer_column_three,
+    #footer_column_four {
+        float: left;
+        width: 282px;
+        padding-right: 30px;
+    }
+}
+
+footer #content #footer_column_one.license {
+    p, p a {
+        font-size: $font_size_license;
+    }
+}
+
+footer #footer_bottom {
+    p, p a {
+        font-size: $font_size_license;
+    }
+}
+
+footer #footer_bottom {
+    float: left;
+    padding: 10px 25px 0 25px;
+}
+
+footer p {
+    padding: 0px;
+    word-wrap: normal;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.list_style_none {
+    list-style-type: none;
+}
+
+.list_style_nopadding {
+    padding-left: 0;
+}
+
+.link_color {
+    color: $color_primary;
+}
+
+.vspace {
+    padding-bottom: 25px;
+}
+
+.small {
+    font-size: 84%;
+}
+
+.tag {
+    background: $color_tag_bg;
+    padding: 0px 8px 2px 8px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+
+
+/* Markdown fix on unsorted list */
+/* It is translated as ul li p wherein p should no be present. */
+/* We just remove the extra spaces between p */
+section .column_main ul li p {
+    margin-bottom: 0;
+}

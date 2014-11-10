@@ -89,8 +89,8 @@ kramdown:
 #pygments:       true
 #rouge:          true
 
-#sass:
-#  sass_dir:     css/scss
+sass:
+  sass_dir:     css/scss
 #  style:        compressed
 
 # Setup
