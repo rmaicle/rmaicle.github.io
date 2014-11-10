@@ -264,13 +264,13 @@ section.column_right_sidebar {
 }
 
 section.column_left_sidebar {
-    width: 21%
+    width: 20%
 }
 section.column_main {
     width: 47%;
 }
 section.column_right_sidebar {
-    width: 23%;
+    width: 24%;
 
     border-radius: 10px;
     background: #1a1a1a;
@@ -280,25 +280,25 @@ section.column_right_sidebar {
 @media print, screen and (max-width: 1280px) {
     section[class="column_left_sidebar"] { width: 23%; }
     section[class="column_main"] { width: 40%; }
-    section[class="column_right_sidebar"] { width: 25%; }
+    section[class="column_right_sidebar"] { width: 24%; }
 }
 
 @media print, screen and (max-width: 1024px) {
-    section[class="column_left_sidebar"] { width: 24%; }
+    section[class="column_left_sidebar"] { width: 22%; }
     section[class="column_main"] { width: 39%; }
-    section[class="column_right_sidebar"] { width: 26%; }
+    section[class="column_right_sidebar"] { width: 23%; }
 }
 
 /* Intermediate transition */
 /* Expand the main column only */
 @media print, screen and (max-width: 850px) {
-    section[class="column_left_sidebar"] { width: 24%; }
+    section[class="column_left_sidebar"] { width: 23%; }
     section[class="column_main"] { width: 37%; }
-    section[class="column_right_sidebar"] { width: 26%; }
+    section[class="column_right_sidebar"] { width: 23%; }
 }
 
 @media print, screen and (max-width: 720px) {
-    section[class="column_left_sidebar"] { width: 35%; }
+    section[class="column_left_sidebar"] { width: 31%; }
     section[class="column_main"] { width: 56%; }
     section[class="column_right_sidebar"] { width: 95%; }
 }
