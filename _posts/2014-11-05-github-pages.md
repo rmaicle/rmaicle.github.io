@@ -118,12 +118,13 @@ Open the URL `http://localhost:4000/` in your browser.
 
 #### Links
 
-* [Jekyll Documentation](http://jekyllrb.com/docs/home/)
 * [GitHub Pages Features](https://help.github.com/categories/github-pages-features/)
-* [Kramdown](http://kramdown.gettalong.org/index.html) is a fast, pure-Ruby Markdown-superset converter
-* [Repository metadata on GitHub Pages](https://help.github.com/articles/repository-metadata-on-github-pages/)
-* [RedCarpet Fenced Code Block Languages](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
 * [GitHub Pages Troubleshooting](https://help.github.com/categories/github-pages-troubleshooting/)
+* [Repository metadata on GitHub Pages](https://help.github.com/articles/repository-metadata-on-github-pages/)
+* [Jekyll Documentation](http://jekyllrb.com/docs/home/)
+* [Sass](http://sass-lang.com/)
+* [Kramdown](http://kramdown.gettalong.org/index.html) is a fast, pure-Ruby Markdown-superset converter
+* [RedCarpet Fenced Code Block Languages](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
 * [Google+ Platform](https://developers.google.com/+/web/+1button/)
 
 #### References
