@@ -168,7 +168,8 @@ header h2 {
     line-height: 14px;
 
     margin: 0;
-    padding: 10px 0 10px 15px;
+	/* If the title changes, the top padding may need to be adjusted */
+    padding: 7px 0 10px 15px;
 }
 
 header div.nav_background {
