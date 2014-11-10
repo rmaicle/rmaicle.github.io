@@ -158,6 +158,7 @@ header h1 a {
     text-align: left;
     line-height: 28px;
     color: $color_primary;
+	border: none;
 }
 
 header h2 {
@@ -203,6 +204,7 @@ nav li a {
     font-family: $font_default;
     font-size: $font_default - 1;
     font-weight: normal;
+	color: $color_primary;
 
     text-transform: uppercase;
 
@@ -497,12 +499,20 @@ footer #content #footer_column_one.license {
     p, p a {
         font-size: $font_size_license;
     }
+	p a {
+		color: $color_primary;
+		border: none;
+	}
 }
 
 footer #footer_bottom {
     p, p a {
         font-size: $font_size_license;
     }
+	p a {
+		color: $color_primary;
+		border: none;
+	}
 }
 
 footer #footer_bottom {
