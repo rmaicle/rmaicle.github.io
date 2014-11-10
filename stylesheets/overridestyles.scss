@@ -250,6 +250,16 @@ nav.navbar p {
 /* Columns                                                                   */
 /* ------------------------------------------------------------------------- */
 
+
+section a {
+    color: $color_text;
+    border-bottom: 1px dotted $color_lbg;
+}
+section a:hover {
+    color: $color_primary;
+    border-bottom: 1px dotted $color_primary;
+}
+
 section.column_left_sidebar,
 section.column_main,
 section.column_right_sidebar {
@@ -336,14 +346,6 @@ section.column_main h5 {
     padding-top: 20px;
 }
 
-section.column_main a {
-    color: $color_text;
-    border-bottom: 1px dotted $color_lbg;
-}
-section.column_main a:hover {
-    color: $color_primary;
-    border-bottom: 1px dotted $color_primary;
-}
 section.column_main p,
 section.column_main li,
 section.column_main dl {
@@ -436,13 +438,6 @@ section.column_right_sidebar p {
 section.column_right_sidebar ul li {
     padding: 0;
     line-height: 16px;
-}
-section.column_right_sidebar ul li a {
-    color: $color_text;
-}
-section.column_right_sidebar a:hover {
-    color: $color_primary;
-    border-bottom: none;
 }
 section.column_right_sidebar ul li a:before {
     /* content: "\00BB  "; */
