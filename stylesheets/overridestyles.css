@@ -15,8 +15,11 @@ body {
     /* so if the page is shorter the bottom part will just appear as if */
     /* it is part of the footer */
     background: #333333;
+	background: #252525;
     font: 13px/1.5 "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #b3b3b3; /* gray70 */
+	padding-bottom: 0;
+	margin-bottom: 0;
 }
 
 a {
@@ -95,224 +98,6 @@ aside {
 
 }
 
-.threecol {
-    background: #252525;    /* right column background colour */
-}
-.threecol .colmid {
-    background: #252525;    /* center column background colour */
-    padding-bottom: 30px;   /* main content bottom padding */
-}
-.threecol .colleft {
-    background :#252525;    /* left column background colour */
-}
-
-.threecol .column_right_sidebar {
-    /* Override to expand */
-    /* From the original we add width to expand it and from */
-    /* the left (0 to where this column starts) we take away. */
-    width: 22.2%;
-    left: 82.2%;
-
-	/* Make the border the same color as the background of the whole page */
-	/* so the 'bars' appear to be 'connected' with the background */
-	/* The 'bars' are the title for each list category */
-	/* border: 1px solid #252525; */
-	border-radius: 10px;
-	background: black;
-	background: #191919;
-	background: #1a1a1a;
-	padding: 12px 15px 15px 15px;
-}
-
-section .column_main,
-section .column_left_sidebar,
-section .column_right_sidebar {
-    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-top: 20px;
-}
-
-/* ------------------------------------------------------------------------- */
-/* Main content column                                                       */
-/* ------------------------------------------------------------------------- */
-
-section .column_main h3,
-section .column_main h4,
-section .column_main h5 {
-    /* font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
-    font-weight: bold;
-    /* text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4); */
-    text-shadow: 1px 1px 1px #000;
-}
-
-section .column_main h3.pagetitle {
-    font-size: 18px;
-    /* Align top with the left and right column 'titles' */
-    margin-top: 6px;
-}
-
-section .column_main h4,
-section .column_main h5 {
-	padding-top: 20px;
-}
-
-section .column_main h4 { font-size: 15px; }
-section .column_main h5 { font-size: 12px; }
-
-section .column_main a {
-    color: #b3b3b3;
-    border-bottom: 1px dotted #555555;
-}
-section .column_main a:hover {
-    color: #FFB90F;
-    border-bottom: 1px dotted #FFB90F;
-}
-section .column_main p,
-section .column_main li,
-section .column_main dl {
-    font-family: "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    line-height: 18px;
-    text-align: left;
-}
-
-section .column_main p {
-    margin: 0 0 8px 0;
-}
-section .column_main p strong { font-weight: normal; }
-
-section .column_main p.excerpt,
-section .column_main p.category,
-section .column_main p.date {
-    font-size: 12px;
-    margin: 0;
-}
-
-section .column_main ul {
-    margin-bottom: 10px;
-}
-
-/* Collapse bottom margin of inner 'ul' */
-section .column_main ul ul {
-	margin-bottom: 0px;
-}
-
-/* ------------------------------------------------------------------------- */
-/* Left sidebar column                                                       */
-/* ------------------------------------------------------------------------- */
-
-section .column_left_sidebar h3,
-section .column_left_sidebar h4,
-section .column_left_sidebar h5 {
-    /* font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
-    font-weight: bold;
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-section .column_left_sidebar h3 {
-    font-size: 15px;
-    line-height: 18px;
-}
-section .column_left_sidebar h4 { font-size: 14px; }
-section .column_left_sidebar h5 { font-size: 12px; }
-
-section .column_left_sidebar p {
-    font-size: 11px;
-    line-height: 15px;
-    text-align: justify;
-}
-
-/* ------------------------------------------------------------------------- */
-/* Right sidebar column                                                       */
-/* ------------------------------------------------------------------------- */
-
-section .column_right_sidebar h3,
-section .column_right_sidebar h4,
-section .column_right_sidebar h5 {
-    /* font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
-    font-weight: bold;
-    margin-top: 8px;
-    margin-bottom: 8px;
-
-    /* text-align: right; */
-}
-
-section .column_right_sidebar h3 {
-    font-size: 15px;
-    line-height: 18px;
-
-	color: #FFB90F;
-	font-size: 12px;
-	font-weight: normal;
-	text-transform: uppercase;
-	margin: 0;
-	/* padding: 4px 0px 6px 10px; */
-	/* border-left: 3px solid #FFB90F; */
-}
-section .column_right_sidebar h4 { font-size: 14px; }
-section .column_right_sidebar h5 { font-size: 12px; }
-
-section .column_right_sidebar p {
-    font-size: 12px;
-    line-height: 15px;
-    text-align: left;
-}
-
-section .column_right_sidebar ul li {
-	padding: 0;
-	line-height: 16px;
-}
-section .column_right_sidebar ul li a {
-    font-family: "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 12px;
-	color: #b3b3b3;
-}
-section .column_right_sidebar a:hover {
-    color: #FFB90F;
-	border-bottom: none;
-    /* border-bottom: 1px dotted #FFB90F; */
-}
-section .column_right_sidebar ul li a:before {
-    /* content: "\00BB  "; */
-}
-
-code {
-    font: 13px/1.0 "NegernsCourier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-	color: #28ffb0;			/* Cyan-like colored text */
-    margin: 0 4px;
-}
-
-pre {
-    line-height: 16px;
-    padding: 5px 10px;
-    /* background: #202020; */
-    background: none;
-    border: none;
-    margin-bottom: 5px;
-    overflow: auto;
-    overflow-y: hidden;
-}
-
-pre code {
-	/* The old green colored-text display will be the default */
-	/* it will be overridden if the code block have syntax coloring */
-	/* color: #00cd00;			/* green 3 */
-	color: #b3b3b3;
-	color: #888;
-    text-shadow: none;
-    border: none;
-    border-radius: 0px;
-}
-
-div.highlight {
-    color: #aaaaaa;
-	/*
-    background: #202020;
-    border-radius: 5px;
-    border: 1px solid #373737;
-	*/
-}
-
 /* ------------------------------------------------------------------------- */
 /* Header and header navigation                                              */
 /* ------------------------------------------------------------------------- */
@@ -358,6 +143,7 @@ header div.nav_background {
 
 nav {
 	margin-top: 0px;
+	margin-bottom: 0px;
     padding-top: 9px;
 	padding-bottom: 2px;
 }
@@ -414,49 +200,314 @@ nav li a.active {
 nav li a.active:hover {
 }
 
-#layoutdims {
-    background: black; /* same as header background */
+nav.navbar {
     background: #333333;
+	padding: 0;
+	margin: 0;
     border-top: 5px solid #ffcc00;
     border-top: 5px solid #FFB90F;
     border-bottom: 1px solid #555555;
+	height: 25px;
+}
+
+nav.navbar p {
+	margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Columns                                                                   */
+/* ------------------------------------------------------------------------- */
+
+main {
+}
+
+section.column_left_sidebar,
+section.column_main,
+section.column_right_sidebar {
+	float: left;
+
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 17px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 20px;
+}
+
+section.column_left_sidebar {
+	width: 22%
+}
+section.column_main {
+	width: 47%;
+}
+section.column_right_sidebar {
+	width: 22%;
+
+	border-radius: 10px;
+	background: #1a1a1a;
+	padding: 12px 15px 15px 15px;
+}
+
+@media print, screen and (max-width: 1280px) {
+	section[class="column_left_sidebar"] { width: 24%; }
+	section[class="column_main"] { width: 40%; }
+	section[class="column_right_sidebar"] { width: 24%; }
+}
+
+@media print, screen and (max-width: 1024px) {
+	section[class="column_left_sidebar"] { width: 25%; }
+	section[class="column_main"] { width: 39%; }
+	section[class="column_right_sidebar"] { width: 25%; }
+}
+
+/* Intermediate transition */
+/* Expand the main column only */
+@media print, screen and (max-width: 850px) {
+	section[class="column_left_sidebar"] { width: 25%; }
+	section[class="column_main"] { width: 37%; }
+	section[class="column_right_sidebar"] { width: 25%; }
+}
+
+@media print, screen and (max-width: 720px) {
+	section[class="column_left_sidebar"] { width: 35%; }
+	section[class="column_main"] { width: 56%; }
+	section[class="column_right_sidebar"] { width: 95%; }
+}
+
+@media print, screen and (max-width: 480px) {
+	section[class="column_left_sidebar"] { width: 93%; }
+	section[class="column_main"] { width: 93%; }
+	section[class="column_right_sidebar"] { width: 84%; }
+}
+
+/* ------------------------------------------------------------------------- */
+/* Main content column                                                       */
+/* ------------------------------------------------------------------------- */
+
+section.column_main h3,
+section.column_main h4,
+section.column_main h5 {
+    /* font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
+    font-weight: bold;
+    /* text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4); */
+    text-shadow: 1px 1px 1px #000;
+}
+
+/* section.column_main h3.pagetitle { */
+section.column_main h3:first-child {
+    font-size: 18px;
+	line-height: 1em;
+    /* Align top with the left and right column 'titles' */
+    margin-top: 6px;
+	margin-top: 0;
+
+}
+
+section.column_main h4,
+section.column_main h5 {
+	padding-top: 20px;
+}
+
+section.column_main h4 { font-size: 15px; }
+section.column_main h5 { font-size: 12px; }
+
+section.column_main a {
+    color: #b3b3b3;
+    border-bottom: 1px dotted #555555;
+}
+section.column_main a:hover {
+    color: #FFB90F;
+    border-bottom: 1px dotted #FFB90F;
+}
+section.column_main p,
+section.column_main li,
+section.column_main dl {
+    font-family: "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+}
+
+section.column_main p {
+    margin: 0 0 8px 0;
+}
+section.column_main p strong { font-weight: normal; }
+
+section.column_main p.excerpt,
+section.column_main p.category,
+section.column_main p.date {
+    font-size: 12px;
+    margin: 0;
+}
+
+section.column_main ul {
+    margin-bottom: 10px;
+}
+
+/* Collapse bottom margin of inner 'ul' */
+section.column_main ul ul {
+	margin-bottom: 0px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Left sidebar column                                                       */
+/* ------------------------------------------------------------------------- */
+
+section.column_left_sidebar h3,
+section.column_left_sidebar h4,
+section.column_left_sidebar h5 {
+    /* font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+section.column_left_sidebar h3:first-child {
+	margin-top: 0;
+}
+
+section.column_left_sidebar h3 {
+    font-size: 15px;
+    line-height: 18px;
+}
+section.column_left_sidebar h4 { font-size: 14px; }
+section.column_left_sidebar h5 { font-size: 12px; }
+
+section.column_left_sidebar p {
+    font-size: 12px;
+    /* line-height: 15px; */
+    text-align: justify;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Right sidebar column                                                       */
+/* ------------------------------------------------------------------------- */
+
+section.column_right_sidebar h3,
+section.column_right_sidebar h4,
+section.column_right_sidebar h5 {
+    /* font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    /* text-align: right; */
+}
+
+section.column_right_sidebar h3 {
+    font-size: 15px;
+    line-height: 18px;
+
+	color: #FFB90F;
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: uppercase;
+	margin: 0;
+	/* padding: 4px 0px 6px 10px; */
+	/* border-left: 3px solid #FFB90F; */
+}
+section.column_right_sidebar h4 { font-size: 14px; }
+section.column_right_sidebar h5 { font-size: 12px; }
+
+section.column_right_sidebar p {
+    font-size: 12px;
+    line-height: 15px;
+    text-align: left;
+}
+
+section.column_right_sidebar ul li {
+	padding: 0;
+	line-height: 16px;
+}
+section.column_right_sidebar ul li a {
+    font-family: "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+	color: #b3b3b3;
+}
+section.column_right_sidebar a:hover {
+    color: #FFB90F;
+	border-bottom: none;
+    /* border-bottom: 1px dotted #FFB90F; */
+}
+section.column_right_sidebar ul li a:before {
+    /* content: "\00BB  "; */
+}
+
+code {
+    font: 13px/1.0 "NegernsCourier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+	color: #28ffb0;			/* Cyan-like colored text */
+    margin: 0 4px;
+}
+
+pre {
+    line-height: 16px;
+    padding: 7px 10px;
+    /* background: #202020; */
+    background: none;
+    border: none;
+    margin-bottom: 5px;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+pre code {
+	/* The old green colored-text display will be the default */
+	/* it will be overridden if the code block have syntax coloring */
+	/* color: #00cd00;			/* green 3 */
+	color: #b3b3b3;
+	color: #888;
+    text-shadow: none;
+    border: none;
+    border-radius: 0px;
+}
+
+/* Fenced code blocks */
+div.highlight {
+    color: #aaaaaa;
+	background: #202020;
+	/*
+    background: #202020;
+    border-radius: 5px;
+    border: 1px solid #373737;
+	*/
 }
 
 /* ------------------------------------------------------------------------- */
 /* Footer                                                                    */
 /* ------------------------------------------------------------------------- */
 
-#footer {
+footer {
+	float: left;
+	width: 100%;
+
     font: 10px/1.4 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #e8e8e8;
     background: #333333;
     border-top: 3px solid #555555;
-    padding: 20px 0px 30px 0px;
-	height: auto;
+    padding: 20px 0px 15px 0px;
 }
 
-#footer #content {
-    padding-left: 27px;
+footer #content {
+    padding: 0px 0 0 25px;
 }
 
-#footer #content #footer_column_one,
-#footer #content #footer_column_two {
+footer #content #footer_column_one,
+footer #content #footer_column_two,
+footer #content #footer_column_three,
+footer #content #footer_column_four {
     float: left;
-	position: relative;
     width: 282px;
-	/* padding: 0 0 1em 0; */
     padding-right: 30px;
 }
 
-#footer_bottom {
-    clear:both;
-	float:left;
-    padding: 10px 0 0 25px;
+footer #footer_bottom {
+	float: left;
+    padding: 10px 25px 0 25px;
+
 }
 
-#footer p {
-    /* Override */
+footer p {
 	padding: 0px;
+	word-wrap: normal;
 }
 
 .justify {
@@ -484,9 +535,7 @@ nav li a.active:hover {
 }
 
 .tag {
-	color: black;
-	/* text-shadow: 1px 1px 1px #252525; */
-	background: #555555;
+	background: #404040;
 	padding: 0px 8px 2px 8px;
 	border-radius: 3px;
 	margin-right: 5px;

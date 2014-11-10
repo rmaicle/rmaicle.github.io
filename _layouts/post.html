@@ -3,34 +3,25 @@ layout: default
 group: Posts
 ---
 
-<section>
-<div class="column_main">
+{% include post_left_sidebar.html %}
 
-<h3 class="pagetitle">{{ page.title }}</h3>
-<p class="excerpt">{{ page.excerpt }}</p>
-<p class="category">Filed under:&nbsp;
-{% for category in page.categories %}
-    <span>{{ category }}</span>&nbsp;
-{% endfor %}
-</p>
-<p class="date vspace">{{ page.date | date_to_string }}</p>
+<section class="column_main">
 
-{{ content }}
+    <h3 class="pagetitle">{{ page.title }}</h3>
+    <p class="excerpt">{{ page.excerpt }}</p>
+    <p class="category">Filed under:&nbsp;
+    {% for category in page.categories %}
+        <span>{{ category }}</span>&nbsp;
+    {% endfor %}
+    </p>
+    <p class="date vspace">{{ page.date | date_to_string }}</p>
 
-<!-- Add vertical space before the 'hr' so it does not look cramped -->
-<p>&nbsp;</p>
-{% include post_bottom.html %}
+    {{ content }}
 
-</div>
+    <!-- Add vertical space before the 'hr' so it does not look cramped -->
+    <p>&nbsp;</p>
+    {% include post_bottom.html %}
+
 </section>
-
-<!-- ---------------------------------------------------------------------- -->
-
-<section>
-<div class="column_left_sidebar">
-</div>
-</section>
-
-<!-- ---------------------------------------------------------------------- -->
 
 {% include post_right_sidebar.html %}

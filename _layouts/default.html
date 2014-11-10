@@ -7,23 +7,18 @@
 
     {% include header.html %}
 
+    <main>
+    <nav class="navbar"><p>&nbsp;</p></nav>
 
-    <p id="layoutdims">&nbsp;</p>
+    {{ content }}
 
-<div class="colmask threecol">
-	<div class="colmid">
-		<div class="colleft">
-
-            {{ content }}
-
-		</div><!-- end colleft -->
-	</div>
-</div>
+    </main>
 
 {% include footer.html %}
 
 <!--[if !IE]><script>fixScale(document);</script><![endif]-->
 <!-- Twitter Widget (Must be before the closing body tag) -->
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 </body>
 </html>

@@ -20,11 +20,11 @@ int main()
 * Quisque nec dui quis arcu facilisis ullamcorper sed quis sem.</li>
 * Praesent at ex ac tellus suscipit sollicitudin.</li>
 
-Term
+    Term
 
-:Definition1
+    :Definition1
 
-:Definition2
+    :Definition2
 
 <hr>
 
