@@ -438,7 +438,11 @@ section.column_right_sidebar p {
 section.column_right_sidebar ul li {
     padding: 0;
     line-height: 16px;
+	a, a:hover {
+		border-bottom: none;
+	}
 }
+
 section.column_right_sidebar ul li a:before {
     /* content: "\00BB  "; */
 }
