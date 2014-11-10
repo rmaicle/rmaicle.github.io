@@ -199,11 +199,6 @@ nav li {
     margin-right: 4px;
 }
 
-nav li:first-child {
-    /* Override margin separating each item */
-    margin: 0 0 0 0px;
-}
-
 nav li a {
     font-family: $font_default;
     font-size: $font_default - 1;
