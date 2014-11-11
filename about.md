@@ -20,6 +20,7 @@ I accidentally came across GitHub Pages a few days ago and now I'm here.
 I hope it fares better this time.
 
 <section class="social">
+<p>&nbsp;</p>
 <p>
 You can find me on
 <a href="{{ site.author.github }}">GitHub</a>
