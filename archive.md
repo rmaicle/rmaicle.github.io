@@ -7,16 +7,19 @@ group: Posts
 
 The list is sorted chronologically.
 
-<ul class="list_style_none list_style_nopadding">
-    {% for post in site.posts %}
+<div id="archive">
+<ol>
+{% for post in site.posts limit:3 %}
     <li>
-        <article>
-        <span class="article_date">{{ post.date | date: "%b %-d, %Y" }}</span>:
-        <span class="article_link"><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></span>
-        <span class="article_excerpt">{{post.excerpt}}</span>
-        </article>
+    <article class="summary">
+    <a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
+    <p>
+    {{ post.excerpt }}<br/>
+    {{ post.date | | date: "%b %-d, %Y" }}
+    </p>
+    <a href="{{ post.url }}">Read more...</a>
+    </article>
     </li>
-
-    {% endfor %}
-</ul>
-
+{% endfor %}
+</ol>
+</div>

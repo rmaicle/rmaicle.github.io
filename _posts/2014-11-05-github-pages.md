@@ -2,14 +2,14 @@
 layout: post
 title: Local GitHub Pages on Windows
 excerpt: How I initially configured Jekyll to run GitHub Pages on my local Windows machine
-categories: [GitHub Pages]
-tags: [blog, github pages]
+categories: [Blog]
+tags: [github pages, jekyll, ruby]
 ---
 
 I recently started using [GitHub Pages].
 GitHub Pages allows you to get your site up and running in no time.
-If you're like me, you can fiddle with the site much more than than what other blogging platform allows you.
-And, this is what I like - create pages and posts using [Markdown].
+If you're like me, you can fiddle with the site much more than what other blogging platform allows you.
+And, this is what I like, create pages and posts using [Markdown].
 
 <aside>
 <a href="http://commonmark.org/" target="_blank">CommonMark</a> is a strongly specified,
@@ -39,6 +39,17 @@ Verify that the installation has set the User Executable PATH to point to the Ru
     ~~~
     ruby 2.1.4p265 (2014-10-27 revision 48166) [x64-mingw32]
     ~~~
+
+If, in any case, the command above failed that means the Ruby directory was not set in the User Executable PATH.
+We will set it manually. Since the Ruby installer sets it in front of all the other User Executable PATHs then we will do the same.
+We will be using the Ruby directory I used. You need to replace it with the directory where you installed Ruby.
+
+~~~
+set path=C:\Ruby21-x64\bin;%PATH%;
+~~~
+
+Note that this is not permanent.
+You need to set it in the Computer Properties | Advance System Settings | Environment Variables to make it permanent.
 
 #### Download and Install the Ruby Development Kit
 

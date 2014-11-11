@@ -5,9 +5,13 @@ layout: default
 {% include page_left_sidebar.html %}
 
 <section class="column_main">
-    <h3 class="pagetitle">{{ page.title }}</h3>
-    <p class="excerpt vspace">{{ page.excerpt }}</p>
+    {% if page.title != "Home" %}
+        <h3 class="pagetitle">{{ page.title }}</h3>
+        <p class="excerpt vspace">{{ page.excerpt }}</p>
+    {% endif %}
+
     {{ content }}
+
 </section>
 
 {% include page_right_sidebar.html %}

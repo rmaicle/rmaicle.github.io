@@ -39,7 +39,10 @@ excerpt_separator: "\n\n"
 detach:  false
 port:    4000
 host:    0.0.0.0
-baseurl: "" # does not include hostname
+# For projects, use the baseurl to set host/[baseurl]/
+# http://blog.parkermoore.de/2014/04/27/clearing-up-confusion-around-baseurl/
+# baseurl: "/project" # does not include hostname
+baseurl: ""
 
 # Backwards-compatibility
 relative_permalinks: false
@@ -64,8 +67,8 @@ defaults: []
 #rdiscount:
 #  extensions: []
 
-#redcarpet:
-#  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables"]
 
 kramdown:
   auto_ids:      true
@@ -100,7 +103,10 @@ description:    'Personal GitHub Page'
 
 author:
   name:         'rmaicle'
-  url:          https://twitter.com/rickymaicle
+  url:          http://rmaicle.github.io/
+  github:       http://github.com/rmaicle
+  twitter:      https://twitter.com/rickymaicle
+
 
 # Custom vars
 version:        0.1.0
@@ -110,12 +116,12 @@ github: github.com/rmaicle
 # This is the list of pages to incldue in the header of the website.
 pages_list: {
   'Posts': '/archive.html',
-  'Collection': '/rmcollections/collection.html',
+#  'Collection': '/rmcollections/collection.html',
   'About': '/about.html',
 }
 pages_list:
   Posts: '/archive.html'
-  Collection: '/rmcollections/collection.html'
+#  Collection: '/rmcollections/collection.html'
   About: '/about.html'
 
 

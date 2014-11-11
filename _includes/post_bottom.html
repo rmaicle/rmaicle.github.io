@@ -6,8 +6,35 @@
     {% endfor %}
     </p>
     <br/>
-    <!-- Twitter -->
-    <a href="https://twitter.com/share" class="twitter-share-button" data-via="rickymaicle">Tweet</a>
-    <!-- Google + -->
-    <p><g:plusone size="medium"></g:plusone></p>
+
+    <div class="vspace">
+        <!-- Twitter -->
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rickymaicle">Tweet</a>
+        <!-- Google + -->
+        <p><g:plusone size="medium"></g:plusone></p>
+    </div>
+
+    <div id="page_previous">
+        {% if page.previous != nil %}
+        <a href="{{ page.previous.url }}">Previous</a>
+        <h1>{{ page.previous.title }}</h1>
+        <p>
+        {{ page.previous.excerpt }}<br/><br/>
+        {{ page.previous.date | | date: "%b %-d, %Y" }}
+        </p>
+        {% endif %}
+    </div>
+
+    <div id="page_next">
+        {% if page.next != nil %}
+            <a href="{{ page.next.url }}">Next</a>
+            <h1>{{ page.next.title }}</h1>
+            <p>
+            {{ page.next.excerpt }}<br/><br/>
+            {{ page.next.date | | date: "%b %-d, %Y" }}
+            </p>
+        {% endif %}
+    </div>
+
+    <div class="vspace">&nbsp;</div>
 </div>

@@ -7,14 +7,45 @@
     </div>
     -->
 
-    <h3>Related Posts</h3>
-    <ul class="list_style_none list_style_nopadding vspace">
-        {% for post in site.related_posts limit:3 %}
-        <li>
-            <a href="{{ post.url }}">{{ post.title }} &ndash; {{ post.date | date_to_string }}</a>
-        </li>
+    <!-- The following code snippet was taken from http://zhangwenli.com -->
+    <!-- http://zhangwenli.com/blog/2014/07/15/jekyll-related-posts-without-plugin/ -->
+    {% assign hasSimilar = '' %}
+    {% for post in site.related_posts %}
+        {% assign postHasSimilar = false %}
+        {% for tag in post.tags %}
+            {% for thisTag in page.tags %}
+                {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
+                    {% if hasSimilar.size == 0 %}
+                        <h3>Related Posts</h3>
+                        <ul class="list_style_none list_style_nopadding vspace">
+                    {% endif %}
+                    <li>
+                        {% if post.date == nil %}
+                        <a href="{{ post.url }}">
+                            {{ post.title }}
+                            {% if post.series %}
+                                (Series: {{ post.series }})
+                            {% endif %}
+                        </a>
+                        {% else %}
+                        <a href="{{ post.url }}">
+                            {{ post.title }} &ndash; {{ post.date | date_to_string }}
+                            {% if post.series %}
+                                (Series: {{ post.series }})
+                            {% endif %}
+                        </a>
+                        {% endif %}
+                    </li>
+                    {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
+                    {% assign postHasSimilar = true %}
+                {% endif %}
+            {% endfor %}
         {% endfor %}
-    </ul>
+    {% endfor %}
+
+    {% if hasSimilar.size > 0 %}
+        </ul>
+    {% endif %}
 
     {% include recent_posts.html %}
 
