@@ -5,7 +5,7 @@ excerpt:
 group: Home
 ---
 
-This is a scratchpad for my ideas and anything that comes to mind.
+This is my scratchpad of ideas and anything that comes to mind.
 I wanted a reference of things I have read, tried or have thought that maybe someday will be of help for me or someone else.
 I hope I can brew some good things out of this.
 
