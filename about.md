@@ -21,5 +21,6 @@ Now, I got excited with GitHub Pages and I hope it fares better.
 You can find me on
 <a href="{{ site.author.github }}">GitHub</a>
 <a href="{{ site.author.twitter }}">Twitter</a>
+<a href="{{ site.author.wordpress }}">WordPress</a>
 </p>
 </section>
