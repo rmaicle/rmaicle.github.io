@@ -5,19 +5,24 @@ excerpt: A little bit about myself
 group: About
 ---
 
-I have been proramming since my college days and still loving it.
-As one who gets older, I started getting my exposures to different areas of software development.
-I have used some major programming languages but I don't anymore.
-Although I'm trying to learn a couple more.
-I have done a few web development projects too but they're just a scratch.
-Learning software engineering since 2000.
-I still recall getting very excited with the strawman version.
+I'm a programmer from the Philippines.
+Been exposed to different areas of software development as, i think, many of us do.
+Did programming using some major programming languages and did some web front-ends too.
+Also keeping up with software engineering. I still recall getting very excited back then with the strawman version.
 
-I have heard about blogging back then but haven't really paid much attention.
-I started creating blog accounts back in 2009 but I haven't really written anything worth sharing.
-I tried blogging about software development since 2011 but all I have were a few posts.
-I accidentally came across GitHub Pages a few days ago and now I'm here.
+Heard about blogging back then but haven't really paid much attention.
+Started creating blog accounts back in 2009 but I haven't really written anything worth sharing.
+Tried blogging about software development since 2011 but all I have were a few posts.
+Accidentally came across GitHub Pages a few days ago and now I'm here.
 I hope it fares better this time.
+
+Aside from all these digital/electronic/techie stuff, I like poetry (used to write some), music, history, science fiction, good laughs and a cold, big mug of beer.
+But a more is better! Just don't expect me to do programming when I wake up.
+
+Term
+
+  : Hello world!
+  : This one too!
 
 <section class="social">
 <p>&nbsp;</p>
