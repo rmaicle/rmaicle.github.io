@@ -1,56 +1,3 @@
----
-# Front matter comment to ensure Jekyll properly reads file.
----
-
-$color_primary:         #FFB90F;
-
-$color_text:            #b3b3b3;
-$color_text_darker:     $color_text - 20;
-$color_text_highlight:  #dddddd;
-
-$color_aside_text:      #e8e8e8;
-
-$color_link:			#FFB90F;
-
-$color_footer_bg:       #333333;
-
-$color_code:            #b3b3b3;
-$color_code_highlight:  #eeeeee;
-
-$color_table_border:    #434343;
-
-// Background colors
-
-$color_bg:              #252525;
-$color_lbg:             #555555;
-
-$color_aside_bg:        #252525;
-$color_tag_bg:          #404040;
-$color_nav_bg:          #333333;
-
-$font_default:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_heading:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_footer:           "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_code:             "NegernsCourier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-$font_size_default:     12px;
-$font_size_code:        13px;
-
-$font_size_title:           28px;
-$font_size_title_tagline:   $font_size_default - 1;
-
-$font_size_page_nav:	14px;
-
-$font_size_footer:		10px;
-$font_size_license:     10px;
-
-@font-face {
-    font-family: 'NegernsCourier';
-    src: url("../fonts/NegernsCourier.ttf");
-    font-weight: normal;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-}
-
 body {
     background: $color_bg;
     font: $font_size_default/1.5 $font_default;
@@ -119,19 +66,16 @@ p code {
     font-size: $font_size_code;
 }
 
-table {
+table, th, td {
+	font-size: $font_size_default;
 	border: 1px solid $color_table_border;
 }
 
 th {
-	font-size: $font_size_default;
-	border-left: 1px solid $color_table_border;
 	padding: 3px 10px;
 }
 
 td {
-	font-size: $font_size_default;
-	border-left: 1px solid $color_table_border;
 	padding: 1px 10px 2px 10px;
 }
 
@@ -230,7 +174,7 @@ nav.right {
 
 nav li {
     display: inline-block;
-    margin-right: 4px;
+    margin-right: 1px;
 }
 
 nav li a {

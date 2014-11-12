@@ -93,7 +93,7 @@ kramdown:
 #rouge:          true
 
 sass:
-  sass_dir:     css/scss
+  sass_dir:  _sass
 #  style:        compressed
 
 # Setup

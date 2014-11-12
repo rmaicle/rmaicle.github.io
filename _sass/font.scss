@@ -1,0 +1,22 @@
+$font_default:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_heading:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_footer:           "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_code:             "NegernsCourier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+$font_size_default:     12px;
+$font_size_code:        13px;
+
+$font_size_title:           28px;
+$font_size_title_tagline:   $font_size_default - 1;
+
+$font_size_page_nav:	14px;
+
+$font_size_footer:		10px;
+$font_size_license:     10px;
+
+@font-face {
+    font-family: 'NegernsCourier';
+    src: url("../fonts/NegernsCourier.ttf");
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
