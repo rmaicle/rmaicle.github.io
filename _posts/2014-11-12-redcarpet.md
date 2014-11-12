@@ -2,7 +2,7 @@
 layout: post
 title: Redcarpet
 excerpt: Ruby library for Markdown processing
-category: [Blog]
+categories: [Blog]
 tags: [github pages, markdown, redcarpet]
 ---
 
@@ -38,6 +38,9 @@ int main() {
     return 0;
 }
 ~~~
+
+I want to be able to show the reader the code on how to display a fenced code block with syntax highlighting.
+I will discuss it in [Liquid](/blog/2014/11/12/liquid.html).
 
 
 
