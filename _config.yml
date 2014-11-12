@@ -111,11 +111,8 @@ author:
   twitter:      https://twitter.com/rickymaicle
   wordpress:    http://rmaicle.wordpress.com/
 
-
 # Custom vars
 version:        0.1.0
-
-github: github.com/rmaicle
 
 # This is the list of pages to incldue in the header of the website.
 pages_list: {
