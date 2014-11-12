@@ -6,7 +6,7 @@ categories: [Blog]
 tags: [github pages, markdown, redcarpet]
 ---
 
-[Redcarpet] is a [Ruby] library for processing [markdown].
+[Redcarpet] is a [Ruby] library for processing [Markdown].
 It requires the Ruby binaries.
 If you are on a Windows machine like me you will need a [Windows binaries] installer.
 To see the steps on setting it up, take a look at [Local GitHub Pages on Windows](/blog/2014/11/05/github-pages.html).
@@ -47,5 +47,5 @@ I will discuss it in [Liquid](/blog/2014/11/12/liquid.html).
 [Ruby]: http://www.ruby-lang.org "Ruby Programming Language"
 [Windows binaries]: http://rubyinstaller.org/ "Ruby Installer for Windows"
 [Redcarpet]: https://github.com/vmg/redcarpet
-[markdown]: http://daringfireball.net/projects/markdown/ "Markdown"
+[Markdown]: http://daringfireball.net/projects/markdown/ "Markdown"
 [pygments]: http://pygments.org/
