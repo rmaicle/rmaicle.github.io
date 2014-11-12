@@ -9,7 +9,7 @@ The list is sorted chronologically.
 
 <div id="archive">
 <ol>
-{% for post in site.posts limit:3 %}
+{% for post in site.posts limit %}
     <li>
     <article class="summary">
     <a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
