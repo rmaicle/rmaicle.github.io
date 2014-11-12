@@ -1,4 +1,4 @@
 # Local directories for local testing
 _site
-stylesheets/*.map
-stylesheets/.sass-cache/**
+_sass/*.map
+.sass-cache/**
