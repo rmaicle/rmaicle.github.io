@@ -560,8 +560,9 @@ article.summary {
 	padding-right: 20px;
 	padding-bottom: 15px;
 	h1 {
-		font-size: $font_size_default + 1;
-		font-weight: bold;
+		font-size: $font_size_default + 3;
+		font-weight: normal;
+        color: $color_primary;
 		line-height: 1.5em;
 		//text-shadow: 1px 1px 1px #000;
 		padding: 0;
@@ -579,10 +580,11 @@ article.summary {
 	// Read more...
 	a {
 		font-size: $font_size_default;
-		color: $color_primary;
+        color: $color_text_highlight;
 		border-bottom: none;
 	}
 	a:hover {
+        color: $color_primary;
 		border-bottom: 1px dotted $color_primary;
 	}
 }
@@ -592,31 +594,6 @@ article.summary {
 	article.summary {
 		padding-left: 10px;
 		padding-right: 10px;
-	}
-	h1 {
-		font-size: $font_size_default + 1;
-		font-weight: bold;
-		line-height: 1.5em;
-		padding: 0;
-		margin: 0;
-	}
-	h1:hover {
-		color: $color_primary;
-	}
-	p {
-		font-size: $font_size_default;
-		line-height: 1.3em;
-		padding: 0;
-		margin: 0;
-	}
-	// Read more...
-	a {
-		font-size: $font_size_default;
-		color: $color_primary;
-		border-bottom: none;
-	}
-	a:hover {
-		border-bottom: 1px dotted $color_primary;
 	}
 }
 
