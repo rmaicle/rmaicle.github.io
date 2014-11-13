@@ -1,0 +1,18 @@
+---
+# From: thornelabs.net/2014/06/08/a-better-way-to-display-random-jekyll-posts-on-page-load-or-refresh-using-jquery-and-json.html
+---
+[
+{% for post in site.tidbits %}
+    {
+      "title"    : "{{ post.title }}",
+      "href"     : "{{ post.url }}",
+      "tidbit"   : "{{ post.tidbit }}",
+      "date"     : {
+         "day"   : "{{ post.date | date: "%d" }}",
+         "month" : "{{ post.date | date: "%B" }}",
+         "year"  : "{{ post.date | date: "%Y" }}"
+      },
+      "content"  : "{{ post.content | strip_newlines }}"
+    } {% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

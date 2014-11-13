@@ -21,6 +21,8 @@
     <!-- <link rel="stylesheet" href="{{ site.baseurl }}/stylesheets/code.css"> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- For search.json -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="{{ site.baseurl }}/javascripts/respond.js"></script>
     <!-- Load Google fonts asynchroneously -->
     <!-- Ref: http://haisum.github.io/2014/11/03/google-fonts-asynchroneous-loading/ -->
@@ -39,6 +41,51 @@
         })();
     </script>
     -->
+    <!-- Randomize tidbits -->
+    <!-- From http://thornelabs.net/2014/06/08/a-better-way-to-display-random-jekyll-posts-on-page-load-or-refresh-using-jquery-and-json.html -->
+    <script type="text/javascript">
+        function removeNL(s){
+            return s.replace(/[\n\r\t]/g, ""); //replaces NewLine or CarriageReturn or Tab with empty string.
+        }
+        function generateRandomPosts(maxPosts) {
+            $.getJSON("/tidbit.json", function(data) {
+                console.log("[tidbit.json loaded for random posts]");
+                var postsCount = data.length;
+                var posts = data;
+                var randomIndexUsed = [];
+                var counter = 0;
+                var numberOfPosts = maxPosts;
+                if (maxPosts == null || maxPosts == 0) {
+                    numberOfPosts = 5;
+                }
+                if (postsCount < numberOfPosts) {
+                    numberOfPosts = postsCount;
+                }
+                if (postsCount > 0) {
+                    var divRandomPosts = $("#random_tidbits");
+                    while (counter < numberOfPosts) {
+                        var randomIndex = Math.floor(Math.random() * postsCount);
+                        if (randomIndexUsed.indexOf(randomIndex) == "-1") {
+                            var postHREF = posts[randomIndex].href;
+                            var postTitle = posts[randomIndex].title;
+                            var postContent = posts[randomIndex].content;
+                            divRandomPosts.append('<p><a href="' + postHREF + '">' + postTitle + '</a></p>');
+                            divRandomPosts.append(postContent);
+                            if (counter < (numberOfPosts - 1)) {
+                                divRandomPosts.append('<hr class="thin">');
+                            }
+                            randomIndexUsed.push(randomIndex);
+                            counter++;
+                        }
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            generateRandomPosts();
+        });
+    </script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->

@@ -5,8 +5,8 @@ plugins:     ./_plugins
 layouts:     ./_layouts
 data_source: ./_data
 collections:
-  rmcollections:
-    output: true
+  tidbits:
+    output:   false
 
 # Handling Reading
 safe:         false
@@ -122,19 +122,26 @@ defaults:
       type:     "posts" # [posts|pages|drafts]
     values:
       layout:   "post"
+  -
+    scope:
+      path:     "tidbits" # "" means all files in the project
+      type:     "tidbits" # [posts|pages|drafts]
+    values:
+      layout:   "none"
+      tidbit:   "true"
 
 # Custom vars
 version:        0.1.0
 
 # This is the list of pages to incldue in the header of the website.
 pages_list: {
-  'Posts': '/archive.html',
-#  'Collection': '/rmcollections/collection.html',
-  'About': '/about.html',
+  'Posts':      '/archive.html',
+#  'Tidbits':    '/tidbits/index.html',
+  'About':      '/about.html',
 }
 pages_list:
-  Posts: '/archive.html'
-#  Collection: '/rmcollections/collection.html'
-  About: '/about.html'
+  Posts:        '/archive.html'
+#  Tidbits:      '/tidbits/index.html'
+  About:        '/about.html'
 
 
