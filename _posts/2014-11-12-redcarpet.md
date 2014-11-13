@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Redcarpet
 excerpt: Ruby library for Markdown processing
 categories: [Blog]

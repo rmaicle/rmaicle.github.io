@@ -111,6 +111,20 @@ author:
   twitter:      https://twitter.com/rickymaicle
   wordpress:    http://rmaicle.wordpress.com/
 
+defaults:
+  -
+    scope:
+      path:     "/*.md" # "" means all files in the project
+      type:     "pages" # [posts|pages|drafts]
+    values:
+      layout:   "page"
+  -
+    scope:
+      path:     "" # "" means all files in the project
+      type:     "posts" # [posts|pages|drafts]
+    values:
+      layout:   "post"
+
 # Custom vars
 version:        0.1.0
 

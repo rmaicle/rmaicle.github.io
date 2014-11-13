@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Page Navigation
 excerpt: Moving to next and previous pages
 categories: [Blog]

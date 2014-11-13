@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Local GitHub Pages on Windows
 excerpt: How I initially configured Jekyll to run GitHub Pages on my local Windows machine
 categories: [Blog]
