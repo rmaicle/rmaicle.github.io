@@ -43,3 +43,4 @@ http://scottndecker.com/blog/2014/06/29/How-to-Make-Custom-Share-Buttons-with-Je
 http://blog.florianbersier.com/implementation-social-sharing-jekyll/
 
 https://github.com/barryclark/jekyll-now/blob/master/_includes/svg-icons.html
+http://erjjones.github.io/blog/Part-two-how-I-built-my-blog/
