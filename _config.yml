@@ -127,7 +127,7 @@ defaults:
       path:     "tidbits" # "" means all files in the project
       type:     "tidbits" # [posts|pages|drafts]
     values:
-      layout:   "none"
+      layout:   nil
       tidbit:   "true"
 
 # Custom vars
