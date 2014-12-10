@@ -16,13 +16,8 @@ Tried blogging about software development since 2011 but all I have were a few p
 Accidentally came across GitHub Pages a few days ago and now I'm here.
 I hope it fares better this time.
 
-Aside from all these digital/electronic/techie stuff, I like poetry (used to write some), music, history, science fiction, good laughs and a cold, big mug of beer.
+Aside from all these digital/electronic/computer stuff, I like poetry (used to write some), music, history, science fiction, good laughs and a cold, big mug of beer.
 But a more is better! Just don't expect me to do programming when I wake up.
-
-Term
-
-  : Hello world!
-  : This one too!
 
 <section class="social">
 <p>&nbsp;</p>
