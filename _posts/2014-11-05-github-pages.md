@@ -75,6 +75,12 @@ Installing the DevKit means _extracting_ the contents into a directory like `C:\
     [INFO] Installing 'C:/Ruby21-x64/lib/ruby/site_ruby/devkit.rb'
     ~~~
 
+If you moved your Ruby directory, you need to edit `config.yml` in the Ruby Development Kit directory to point to the new Ruby root directory. Also, you need to 're-install' the Ruby Development Kit by executing the following command to override the previous settings.
+
+~~~
+C:\RubyDevKit>ruby dk.rb install --force
+~~~
+
 #### Download and Install Dependencies
 
 From the [GitHub Pages Basics] site, we need to download and install the [Bundler].
