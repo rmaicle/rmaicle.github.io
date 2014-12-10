@@ -127,7 +127,7 @@ defaults:
       path:     "tidbits" # "" means all files in the project
       type:     "tidbits" # [posts|pages|drafts]
     values:
-      layout:   nil
+      layout:   "none"
       tidbit:   "true"
 
 # Custom vars
@@ -136,12 +136,16 @@ version:        0.1.0
 # This is the list of pages to incldue in the header of the website.
 pages_list: {
   'Posts':      '/archive.html',
-#  'Tidbits':    '/tidbits/index.html',
+  'To Read':    '/toread.html',
+  'Blogroll':   '/blogroll.html',
+  'References': '/refs.html',
   'About':      '/about.html',
 }
 pages_list:
   Posts:        '/archive.html'
-#  Tidbits:      '/tidbits/index.html'
+  To Read:      '/toread.html'
+  Blogroll:     '/blogroll.html'
+  References:   '/refs.html'
   About:        '/about.html'
 
 
