@@ -1,4 +1,4 @@
 rmaicle.github.io
 =================
 
-personal c++ library
+View this blog [http://rmaicle.github.io](rmaicle.github.io)
