@@ -73,8 +73,12 @@
 /* -------------------------------------------------------------------------- */
 
 .highlight { background: transparent; }
-.highlight .c { color: #00cd00; font-style: italic } /* Comment */
+.highlight .c { color: #00cd00; font-style: normal } /* Comment */
 .highlight .cp { color: #00cd00; font-weight: bold } /* Comment.Preproc */
-.highlight .c1 { color: #00cd00; font-style: italic } /* Comment.Single */
+.highlight .c1 { color: #00cd00; font-style: normal } /* Comment.Single */
 .highlight .cs { color: #00cd00; font-weight: bold; font-style: italic } /* Comment.Special */
-.highlight .cm { color: #00cd00; font-style: italic } /* Comment.Multiline */
+.highlight .cm { color: #00cd00; font-style: normal } /* Comment.Multiline */
+
+.highlight .k { color: rgb(86,156,214); font-weight: normal } /* Keyword */
+.highlight .nc { color: #d0d0d0; text-decoration: none } /* Name.Class */
+.highlight .kt { color: rgb(194,132,225); font-weight: normal } /* Keyword.Type */
