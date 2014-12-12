@@ -5,6 +5,8 @@ categories: [Blog]
 tags: [github pages, markdown, redcarpet]
 ---
 
+{% assign openTag = '{%' %}
+
 [Redcarpet] is a [Ruby] library for processing [Markdown].
 It requires the Ruby binaries.
 If you are on a Windows machine like me you will need a [Windows binaries] installer.
@@ -21,12 +23,12 @@ redcarpet --version
 One thing I like about Redcarpet is that it allows me to use the original Markdown syntax for embedding code blocks using the tilde or backtick characters.
 
 <div class="highlight"><pre>
-~~~ cpp
+{% raw %}~~~ cpp{% endraw %}
 int main() {
     std::cout << "Hello world!" << std::endl;
     return 0;
 }
-~~~
+{% raw %}~~~{% endraw %}
 </pre></div>
 
 The code above will be displayed with syntax highlighting using [pygments].
