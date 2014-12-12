@@ -1,6 +1,6 @@
 ---
 title: Delimiter
-excerpt: It's time to use the standard delimiter
+excerpt: It's time to use standard delimiters
 author: Ricardo Maicle
 email: rmaicle@gmail.com
 date: December 12, 2014
