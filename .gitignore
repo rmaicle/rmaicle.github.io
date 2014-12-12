@@ -1,4 +1,5 @@
 # Local directories for local testing
+_dlang/**
 _drafts/**
 _site
 _sass/*.map
