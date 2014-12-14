@@ -1,7 +1,7 @@
 $font_default:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font_heading:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font_footer:           "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_code:             "TheSansMonoCondensed Plain", "RM Courier Regular", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+$font_code:             "TheSansMonoCondensed Plain", "RM Courier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
 $font_size_default:     12px;
 $font_size_code:        13px;
 
@@ -14,7 +14,7 @@ $font_size_footer:		10px;
 $font_size_license:     10px;
 
 @font-face {
-    font-family: 'RM Courier Regular';
+    font-family: 'RM Courier';
     src: url("../fonts/RMCourier-Regular.ttf");
     font-weight: normal;
     font-style: normal;
