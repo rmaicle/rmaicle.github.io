@@ -1,7 +1,7 @@
 ---
 layout: page
 title: To Read
-excerpt: Links to sites that I need or want to read
+excerpt: Links to sites that I need or want to read?
 group: Read
 ---
 

@@ -23,3 +23,9 @@ group: References
 <a href="http://www.scs.stanford.edu/~dm/home/papers/c++-new.html" target="_blank"><h1>My Rant on C++'s operator new</h1></a>
 <p>David Mazières</p>
 </article>
+
+#### Math
+
+<article class="summary">
+<a href="http://speleotrove.com/decimal/" target="_blank"><h1>General Decimal Arithmetic</h1></a>
+</article>
