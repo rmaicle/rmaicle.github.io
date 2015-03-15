@@ -1,8 +1,13 @@
-$font_default:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@import url("//fonts.googleapis.com/css?family=Rokkitt");
+
+//$font_default:          "Rokkitt", "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_default:          "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_sans:             "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font_heading:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font_footer:           "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font_code:             "TheSansMonoCondensed Plain", "RM Courier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-$font_size_default:     12px;
+$font_size_default:     13px;
+$font_size_sans:        12px;
 $font_size_code:        13px;
 
 $font_size_title:           28px;
