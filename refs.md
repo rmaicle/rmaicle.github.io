@@ -28,4 +28,25 @@ group: References
 
 <article class="summary">
 <a href="http://speleotrove.com/decimal/" target="_blank"><h1>General Decimal Arithmetic</h1></a>
+Mike Cowlishaw
 </article>
+
+Algorism for computers (and people) — an extensive collection of documents, links, and software for decimal arithmetic.
+
+<article class="summary">
+<a href="http://www.ttmath.org/" target="_blank"><h1>Bignum C++ library</h1></a>
+</article>
+
+TTMath is a small library which allows one to perform arithmetic operations with big unsigned integer, big signed integer and big floating point numbers. It provides standard mathematical operations like adding, subtracting, multiplying, dividing. With the library also goes a mathematical parser to help you solving mathematical expressions.
+
+TTMath is developed under the BSD licence which means that it is free for both personal and commercial use.
+
+The main goal of the library is to allow one to use big values in the same way as the standard types like int or float. It does not need to be compiled first because the whole library is written as the C++ templates. This means only C++ developers can use this library and one thing they have to do is to use 'include' directive of the preprocessor. How big the values can be is set at compile time.
+
+<article class="summary">
+<a href="http://pari.math.u-bordeaux.fr/" target="_blank"><h1>PARI/GP</h1></a>
+</article>
+
+PARI/GP is a widely used computer algebra system designed for fast computations in number theory (factorizations, algebraic number theory, elliptic curves...), but also contains a large number of other useful functions to compute with mathematical entities such as matrices, polynomials, power series, algebraic numbers etc., and a lot of transcendental functions. PARI is also available as a C library to allow for faster computations.
+
+Originally developed by Henri Cohen and his co-workers (Université Bordeaux I, France), PARI is now under the GPL and maintained by Karim Belabas with the help of many volunteer contributors
