@@ -151,7 +151,7 @@ img {
 }
 .threecol .column_left_sidebar {
     /* width:21%;          /* Width of left column content (column width minus padding on either side) */
-    width: 20%;
+    width: 18%;
     left:31%;           /* width of (right column) plus (center column left and right padding) plus (left column left padding) */
 }
 .threecol .column_right_sidebar {
