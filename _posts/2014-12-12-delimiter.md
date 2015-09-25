@@ -8,7 +8,8 @@ categories: [Blog]
 tags: [delimiter, ascii, unicode]
 ---
 
-Dump Comma-separated values (CSV) and Tab-delimited text. Although not commonly used, the [ASCII Delimited Text] was created for the specific purpose of delimiting ASCII text.
+Dump comma-separated values (CSV) and tab-delimited text.
+Although not commonly used, the [ASCII Delimited Text] was created for the specific purpose of delimiting ASCII text.
 
 Unicode adopted the ASCII Text Delimiters.
 
@@ -32,7 +33,8 @@ Unicode added two new terminator or [separator characters] \*.
 | U+2028 \*       |       |       |                      | Line Separator      |
 | U+2029 \*       |       |       |                      | Paragraph Separator |
 
-Unicode also defines graphic pictures for control characters ([PDF]) from the area U+2400 to U+2421 for printing or displaying. The following table shows the equivalent printable characters of the above code points.
+Unicode also defines graphic pictures for control characters ([PDF]) from the area U+2400 to U+2421 for printing or displaying.
+The following table shows the equivalent printable characters of the above code points.
 
 | Unicode | ASCII Name               | Symbol |
 | --------|--------------------------|-----------------------------|
