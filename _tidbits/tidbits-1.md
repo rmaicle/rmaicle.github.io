@@ -4,4 +4,5 @@ excerpt: Tidbit excerpt one
 ---
 
 UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity.
+
 Dennis Ritchie
