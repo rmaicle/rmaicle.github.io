@@ -254,7 +254,7 @@ The following links are additional references about GitHub Pages:
 [Markdown]: http://daringfireball.net/projects/markdown/ "Markdown"
 [CommonMark]: http://commonmark.org/
 [HTML]: http://www.w3.org/html/ "HyperText Markup Language"
-[Ruby]: http://www.ruby-lang.org "Ruby Programming Language"
+[Ruby]: http://www.ruby-lang.org/ "Ruby Programming Language"
 [Ruby Installer for Windows]: http://rubyinstaller.org/ "Ruby Installer for Windows"
 [Ruby Development Kit]: http://rubyinstaller.org/downloads/ "Ruby Development Kit"
 [Jekyll]: http://jekyllrb.com "Jekyll"
