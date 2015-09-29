@@ -1,7 +1,8 @@
 ---
-title: Rob Siltanen
+title:
 excerpt: Apple advertisement
-collection: Tidbits
+type: quote
+by: Rob Siltanen
 ---
 
 Here's to the crazy ones.

@@ -1,7 +1,8 @@
 ---
-title: Stephen Hawking
-excerpt: Quote
-collection: Tidbits
+title:
+excerpt:
+type: quote
+by: Stephen Hawking
 ---
 
 I think computer viruses should count as life ...

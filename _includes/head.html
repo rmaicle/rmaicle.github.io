@@ -66,14 +66,31 @@
                     while (counter < numberOfPosts) {
                         var randomIndex = Math.floor(Math.random() * postsCount);
                         if (randomIndexUsed.indexOf(randomIndex) == "-1") {
-                            var postHREF = posts[randomIndex].href;
                             var postTitle = posts[randomIndex].title;
+                            var postHREF = posts[randomIndex].href;
+                            var postType = posts[randomIndex].type;
+                            var postBy = posts[randomIndex].by;
                             var postContent = posts[randomIndex].content;
-                            divRandomPosts.append('<p><a href="' + postHREF + '">' + postTitle + '</a></p>');
-                            divRandomPosts.append(postContent);
-                            if (counter < (numberOfPosts - 1)) {
-                                divRandomPosts.append('<hr class="thin">');
+                            
+                            var line = $(document.createElement('div')).addClass('tidbit_entry');
+                            
+                            /* s = s + "<div class='tidbit_entry'>"; */
+                            if (postType != "quote") {
+                                line.append("<p><a href='" + postHREF + "'>" + postTitle + "</a></p>");
                             }
+                            /* divRandomPosts.append('<p>' + postType + '</p>') */
+                            if (postType == "quote") {
+                                line.append(postContent + "<p>&mdash; <em class='small_0'>" + postBy + "</em></p>");
+                            } else {
+                                line.append(postContent);
+                            }
+                            /*
+                            if (counter < (numberOfPosts - 1)) {
+                                divRandomPosts.append("<hr class='thin'>");
+                            }
+                            */
+                            
+                            divRandomPosts.append(line);
                             randomIndexUsed.push(randomIndex);
                             counter++;
                         }
