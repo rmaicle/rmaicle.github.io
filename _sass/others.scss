@@ -4,6 +4,11 @@ body {
     color: $color_text;
     padding-bottom: 0;
     margin-bottom: 0;
+    /* 'Hide' horizontal scrollbar when viewed in small media */
+    /* https://css-tricks.com/findingfixing-unintended-body-overflow/ */
+    overflow-x: hidden;
+    
+    padding-right: 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
