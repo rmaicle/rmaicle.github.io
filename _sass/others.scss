@@ -267,7 +267,7 @@ section.column_main {
     width: 47%;
 }
 section.column_right_sidebar {
-    width: 24%;
+    width: 23%;
 
     border-radius: 3px;
     background: #1a1a1a;
@@ -554,11 +554,34 @@ div.highlight {
     background: #202020;
 }
 
-//div.highlight_sim
-
 /* ------------------------------------------------------------------------- */
 /* Footer                                                                    */
 /* ------------------------------------------------------------------------- */
+
+#back_to_top {
+    color: black;
+    background: $color_primary;
+    border-top: 2px solid $color_primary;
+    border-bottom: 2px solid $color_primary;
+    border-left: 15px solid $color_primary;
+    border-right: 15px solid $color_primary;
+    border-radius: 2px;
+}
+
+#prefooter {
+    float: left;
+    width: 100%;
+    padding: 20px 0px 15px 0px;
+    margin-left: 5px;
+    #prefooter_column_one,
+    #prefooter_column_two,
+    #prefooter_column_three,
+    #prefooter_column_four {
+        float: left;
+        width: 282px;
+        padding-right: 30px;
+    }
+}
 
 footer {
     float: left;
@@ -570,13 +593,22 @@ footer {
     background: $color_footer_bg;
     border-top: 3px solid $color_lbg;
     padding: 20px 0px 15px 0px;
+    
+    #footer_bottom {
+        float: left;
+        padding: 10px 25px 0 25px;
+        p, p a {
+            font-size: $font_size_license;
+        }
+        p a {
+            color: $color_primary_darker;
+            border: none;
+        }
+    }
 }
 
-footer #content {
+footer #footer_content {
     padding: 0px 0 0 25px;
-}
-
-footer #content {
     #footer_column_one,
     #footer_column_two,
     #footer_column_three,
@@ -587,7 +619,7 @@ footer #content {
     }
 }
 
-footer #content #footer_column_one.license {
+footer #footer_content #footer_column_one.license {
     p, p a {
         font-size: $font_size_license;
     }
@@ -595,26 +627,10 @@ footer #content #footer_column_one.license {
 		color: $color_primary_darker;
 		border: none;
 	}
-}
-
-footer #footer_bottom {
-    p, p a {
-        font-size: $font_size_license;
+    p {
+        padding: 0px;
+        word-wrap: normal;
     }
-	p a {
-		color: $color_primary_darker;
-		border: none;
-	}
-}
-
-footer #footer_bottom {
-    float: left;
-    padding: 10px 25px 0 25px;
-}
-
-footer p {
-    padding: 0px;
-    word-wrap: normal;
 }
 
 #page_previous,
