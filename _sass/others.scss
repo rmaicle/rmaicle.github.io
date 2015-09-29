@@ -420,6 +420,7 @@ section.column_left_sidebar p {
 }
 
 #random_tidbits p {
+    color: $color_text_darker;
     margin-bottom: 0px;
 	a, a:hover {
 		border-bottom: none;
@@ -697,6 +698,10 @@ li.no_left_margin {
 
 .vspace {
     padding-bottom: 25px;
+}
+
+.highlight {
+    color: $color_text_highlight !important;
 }
 
 .normal_font {
