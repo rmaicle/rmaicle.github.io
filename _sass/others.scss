@@ -163,6 +163,9 @@ header h2 {
     margin: 0;
 	/* If the title changes, the top padding may need to be adjusted */
     padding: 7px 0 10px 15px;
+    /* When viewed in small media, the text is displayed too close to the */
+    /* vertical scrollbar so we add some padding on the right */
+    padding-right: 15px;
 }
 
 header div.nav_background {
@@ -268,8 +271,12 @@ section.column_right_sidebar {
     border-radius: 10px;
     background: #1a1a1a;
     padding: 12px 15px 15px 15px;
+    
+    box-shadow: 3px 3px 3px $color_bg - 20;
 }
 
+/* Media screen sizes */
+/* https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
 @media print, screen and (max-width: 1280px) {
     section[class="column_left_sidebar"] { width: 23%; }
     section[class="column_main"] { width: 40%; }
@@ -300,6 +307,19 @@ section.column_right_sidebar {
     section[class="column_left_sidebar"] { width: 93%; }
     section[class="column_main"] { width: 93%; }
     section[class="column_right_sidebar"] { width: 84%; }
+}
+
+/* generic */
+@media print, screen and (max-width: 360px) {
+    section[class="column_left_sidebar"] { width: 91%; }
+    section[class="column_main"] { width: 92%; }
+    section[class="column_right_sidebar"] { width: 83%; }
+}
+
+@media print, screen and (max-width: 320px) {
+    section[class="column_left_sidebar"] { width: 91%; }
+    section[class="column_main"] { width: 92%; }
+    section[class="column_right_sidebar"] { width: 82%; }
 }
 
 /* ------------------------------------------------------------------------- */
