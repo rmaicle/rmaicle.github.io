@@ -11,15 +11,13 @@ I hope I can brew some good things out of them.
 
 A lot of things get outdated so fast and I try to keep up.
 
-<div class="vspace">&nbsp;</div>
+<div class="vspace"></div>
 
 {% for post in site.posts limit:6 %}
 <article class="summary">
-    <a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
-    <p>
+    <a href="{{ post.url }}"><h1>{{ post.title }}</h1>
     {{ post.excerpt }}<br/>
-    {{ post.date | | date: "%b %-d, %Y" }}
-    </p>
-    <a href="{{ post.url }}">Read more...</a>
+    {{ post.date | | date: "%Y %b %-d" }}
+    </a>
 </article>
 {% endfor %}

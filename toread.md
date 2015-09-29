@@ -7,22 +7,22 @@ group: Read
 
 
 <article class="summary">
-<a href="http://www.italiancpp.org/2014/11/23/anti-if-idioms-in-cpp/" target="_blank"><h1>Anti-IF idioms in C++</h1></a>
+<a href="http://www.italiancpp.org/2014/11/23/anti-if-idioms-in-cpp/" target="_blank"><h4>Anti-IF idioms in C++</h4></a>
 <p></p>
 </article>
 
 <article class="summary">
-<a href="http://ericniebler.com/2014/11/23/container-algorithms/" target="_blank"><h1>Container Algorithms</h1></a>
+<a href="http://ericniebler.com/2014/11/23/container-algorithms/" target="_blank"><h4>Container Algorithms</h4></a>
 <p></p>
 </article>
 
 <article class="summary">
-<a href="http://bartoszmilewski.com/2014/11/24/types-and-functions/" target="_blank"><h1>Types and Functions</h1></a>
+<a href="http://bartoszmilewski.com/2014/11/24/types-and-functions/" target="_blank"><h4>Types and Functions</h4></a>
 <p></p>
 </article>
 
 <article class="summary">
-<a href="http://blogs.msdn.com/b/vcblog/archive/2014/11/12/resumable-functions-in-c.aspx" target="_blank"><h1>Resumable Functions in C++</h1></a>
+<a href="http://blogs.msdn.com/b/vcblog/archive/2014/11/12/resumable-functions-in-c.aspx" target="_blank"><h4>Resumable Functions in C++</h4></a>
 <p></p>
 </article>
 
