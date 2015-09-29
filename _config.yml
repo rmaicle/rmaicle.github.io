@@ -38,7 +38,8 @@ excerpt_separator: "\n\n"
 # Serving
 detach:  false
 port:    4000
-host:    0.0.0.0
+#host:    0.0.0.0
+host:    127.0.0.1
 # For projects, use the baseurl to set host/[baseurl]/
 # http://blog.parkermoore.de/2014/04/27/clearing-up-confusion-around-baseurl/
 # baseurl: "/project" # does not include hostname
