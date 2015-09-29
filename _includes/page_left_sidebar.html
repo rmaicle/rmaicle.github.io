@@ -1,4 +1,13 @@
 <section class="column_left_sidebar">
     <div id="random_tidbits">
     </div>
+    <div id="nav_left">
+        {% for p in site.pages_list %}
+            {% if page.group == p[0] %}
+            <li class='list_style_none'><a href="{{ site.baseurl }}{{ p[1]  }}" class="active">{{ p[0] }}</a></li>
+            {% else %}
+            <li class='list_style_none'><a href="{{ site.baseurl }}{{ p[1]  }}">{{ p[0] }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </div>
 </section>
