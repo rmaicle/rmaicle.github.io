@@ -1,22 +1,23 @@
 @import url("//fonts.googleapis.com/css?family=Rokkitt");
 
 //$font_default:          "Rokkitt", "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_default:          "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_sans:             "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_heading:          "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_footer:           "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_code:             "TheSansMonoCondensed Plain", "RM Courier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-$font_size_default:     13px;
-$font_size_sans:        12px;
-$font_size_code:        13px;
+$font_default:              "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_semi_bold:            "OpenSansSemiBold", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font_sans:                 $font_default;
+$font_heading:              $font_semi_bold;
+$font_footer:               $font_default;
+$font_code:                 "TheSansMonoCondensed Plain", "RM Courier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+$font_size_default:         13px;
+$font_size_sans:            12px;
+$font_size_code:            13px;
 
-$font_size_title:           28px;
-$font_size_title_tagline:   $font_size_default - 1;
+$font_size_title:           22px;
+$font_size_title_tagline:   $font_size_default;
 
-$font_size_page_nav:	14px;
+$font_size_page_nav:	    14px;
 
-$font_size_footer:		10px;
-$font_size_license:     10px;
+$font_size_footer:		    10px;
+$font_size_license:         10px;
 
 @font-face {
     font-family: 'RM Courier';

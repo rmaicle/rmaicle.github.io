@@ -17,7 +17,8 @@ li, a, p, dl {
 
 a {
     color: $color_text;
-    border-bottom: 1px dotted $color_lbg;
+    /* border-bottom: 1px dotted $color_lbg; */
+    border-bottom: 1px dotted $color_link_underline;
 }
 a:hover {
     color: $color_primary;
@@ -54,13 +55,13 @@ ul {
 b, strong {
     // Override the font-family used
     font-family: $font_default !important;
-    font-size: $font_size_default + 1;
+    font-size: $font_size_default;
     font-weight: bold;
     color: $color_text_highlight;
 }
 
 i, em {
-    font-size: $font_size_default + 1;
+    font-size: $font_size_default;
     font-weight: bold;
     color: $color_text_highlight;
 }
@@ -130,7 +131,7 @@ header {
 
 header h1 {
     margin: 0;
-    padding: 10px 0 0 15px;
+    padding: 5px 0 0 15px;
 }
 
 header h1 {
@@ -138,8 +139,8 @@ header h1 {
 		font-size: $font_size_title;
 		font-weight: normal;
 		text-align: left;
-		line-height: 28px;
-		color: $color_primary;
+		line-height: $font_size_title;
+		color: $color_primary_darker;
 		border: none;
 	}
 	a:hover {
@@ -148,6 +149,7 @@ header h1 {
 }
 
 header h2 {
+    font-family: $font_default;
     font-weight: normal;
     font-size: $font_size_title_tagline;
     text-align: left;
@@ -187,10 +189,10 @@ nav li {
 }
 
 nav li a {
-    font-family: $font_default;
-    font-size: $font_default - 1;
+    font-family: $font_semi_bold;
+    font-size: $font_size_default - 1;
     font-weight: normal;
-	color: $color_primary;
+	color: $color_primary_darker;
 
     text-transform: uppercase;
 
@@ -306,7 +308,7 @@ section.column_main h6 { font-size: 11px; }
 
 section.column_main {
     h3, h4, h5, h6 {
-        font-weight: bold;
+        font-weight: normal;
     }
     h3, h4 {
         text-shadow: 1px 1px 1px #000;
@@ -362,7 +364,7 @@ section.column_main ul ul {
 section.column_left_sidebar h3,
 section.column_left_sidebar h4,
 section.column_left_sidebar h5 {
-    font-weight: bold;
+    font-weight: normal;
     margin-top: 8px;
     margin-bottom: 8px;
 }
@@ -379,42 +381,53 @@ section.column_left_sidebar h4 { font-size: 14px; }
 section.column_left_sidebar h5 { font-size: 12px; }
 
 section.column_left_sidebar p {
-    font-size: $font_size_default;
+    font-size: $font_size_default - 1;
+    line-height: 16px;
+}
+
+#random_tidbits p {
+	a, a:hover {
+		border-bottom: none;
+	}
 }
 
 /* ------------------------------------------------------------------------- */
 /* Right sidebar column                                                       */
 /* ------------------------------------------------------------------------- */
 
-section.column_right_sidebar h3 { font-size: 12px; }
-section.column_right_sidebar h4 { font-size: 11px; }
-section.column_right_sidebar h5 { font-size: 10px; }
+section.column_right_sidebar h3 { font-size: $font_size_default - 1; /* 12px; */}
+section.column_right_sidebar h4 { font-size: $font_size_default;/* 11px; */}
+section.column_right_sidebar h5 { font-size: $font_size_default + 1;/* 10px; */}
 
 section.column_right_sidebar h3,
 section.column_right_sidebar h4,
 section.column_right_sidebar h5 {
-    font-weight: bold;
+    font-family: $font_semi_bold;
+    font-weight: normal;
     margin-top: 8px;
     margin-bottom: 8px;
 }
 
 section.column_right_sidebar h3 {
-    line-height: 18px;
-    color: $color_primary;
-    font-weight: normal;
+    color: $color_primary_darker;
     text-transform: uppercase;
     margin: 0;
 }
 
+/*
 section.column_right_sidebar p {
     font-size: $font_size_default;
     line-height: 15px;
     text-align: left;
 }
+*/
 
 section.column_right_sidebar ul li {
     padding: 0;
-    line-height: 16px;
+    line-height: 18px;
+    a {
+        font-size: $font_size_default - 1;
+    }
 	a, a:hover {
 		border-bottom: none;
 	}
@@ -498,7 +511,7 @@ footer #content #footer_column_one.license {
         font-size: $font_size_license;
     }
 	p a {
-		color: $color_primary;
+		color: $color_primary_darker;
 		border: none;
 	}
 }
@@ -508,7 +521,7 @@ footer #footer_bottom {
         font-size: $font_size_license;
     }
 	p a {
-		color: $color_primary;
+		color: $color_primary_darker;
 		border: none;
 	}
 }
@@ -529,7 +542,7 @@ footer p {
 
 	a {
 		font-size: $font_size_page_nav;
-		color: $color_primary;
+		color: $color_primary_darker;
 		border-bottom: none;
 	}
 	a:hover {
@@ -563,17 +576,17 @@ footer p {
 }
 
 // Index page listing post summaries instead of bullet list
-// like the Recept Posts on the right side column
+// like the Recent Posts on the right side column
 article.summary {
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 15px;
 	h1 {
-		font-size: $font_size_default + 3;
+		font-size: $font_size_default + 1;
 		font-weight: normal;
-        color: $color_primary;
+        color: $color_primary_darker;
 		line-height: 1.5em;
-		//text-shadow: 1px 1px 1px #000;
+		text-shadow: 1px 1px 1px #000;
 		padding: 0;
 		margin: 0;
 	}
@@ -600,10 +613,10 @@ article.summary {
 
 // Archive page
 #archive {
-	article.summary {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
 }
 
 section.social {
@@ -623,7 +636,6 @@ section.social {
 		background: black;
 		border: 1px solid $color_primary;
 		border-radius: 3px;
-
 	}
 }
 
@@ -639,8 +651,12 @@ section.social {
     padding-left: 0;
 }
 
+li.no_left_margin {
+    margin-left: 0px;
+}
+
 .link_color {
-    color: $color_primary;
+    color: $color_primary_darker;
 }
 
 .vspace {
