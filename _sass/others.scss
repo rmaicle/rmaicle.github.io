@@ -156,6 +156,7 @@ header h1 {
 header h2 {
     font-family: $font_default;
     font-weight: normal;
+    font-style: normal;
     font-size: $font_size_title_tagline;
     text-align: left;
     line-height: 14px;
@@ -268,7 +269,7 @@ section.column_main {
 section.column_right_sidebar {
     width: 24%;
 
-    border-radius: 10px;
+    border-radius: 3px;
     background: #1a1a1a;
     padding: 12px 15px 15px 15px;
     
@@ -294,7 +295,7 @@ section.column_right_sidebar {
 @media print, screen and (max-width: 850px) {
     section[class="column_left_sidebar"] { width: 23%; }
     section[class="column_main"] { width: 37%; }
-    section[class="column_right_sidebar"] { width: 23%; }
+    section[class="column_right_sidebar"] { width: 24%; }
 }
 
 @media print, screen and (max-width: 720px) {
@@ -306,7 +307,7 @@ section.column_right_sidebar {
 @media print, screen and (max-width: 480px) {
     section[class="column_left_sidebar"] { width: 93%; }
     section[class="column_main"] { width: 93%; }
-    section[class="column_right_sidebar"] { width: 84%; }
+    section[class="column_right_sidebar"] { width: 87%; }
 }
 
 /* generic */
@@ -410,7 +411,16 @@ section.column_left_sidebar p {
     line-height: 16px;
 }
 
+#random_tidbits div.tidbit_entry {
+    border-radius: 3px;
+    background: #1a1a1a;
+    padding: 12px 15px 12px 15px;
+    margin-bottom: 12px;
+    box-shadow: 3px 3px 3px $color_bg - 20;
+}
+
 #random_tidbits p {
+    margin-bottom: 0px;
 	a, a:hover {
 		border-bottom: none;
 	}
@@ -605,8 +615,8 @@ footer p {
 article.summary {
 	padding-left: 20px;
 	padding-right: 20px;
-	padding-bottom: 15px;
-	h1 {
+	padding-bottom: 5px;
+	h4 {
 		font-size: $font_size_default + 1;
 		font-weight: normal;
         color: $color_primary_darker;
@@ -615,7 +625,7 @@ article.summary {
 		padding: 0;
 		margin: 0;
 	}
-	h1:hover {
+	h4:hover {
 		color: $color_primary;
 	}
 	p {
@@ -623,11 +633,12 @@ article.summary {
 		line-height: 1.3em;
 		padding: 0;
 		margin: 0;
+        padding-bottom: 10px;
 	}
 	// Read more...
 	a {
 		font-size: $font_size_default;
-        color: $color_text_highlight;
+        /* color: $color_text_highlight; */
 		border-bottom: none;
 	}
 	a:hover {
@@ -686,6 +697,15 @@ li.no_left_margin {
 
 .vspace {
     padding-bottom: 25px;
+}
+
+.normal_font {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.small_0 {
+    font-size: 95%;
 }
 
 .small {
