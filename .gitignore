@@ -4,5 +4,6 @@ _drafts/**
 _site
 _sass/*.map
 .sass-cache/**
+_includes/.sass-cache/**
 # GitEye project
 .project
