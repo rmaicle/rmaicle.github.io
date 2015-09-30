@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Archive
-excerpt: Links to all posts sorted chronologically.
+excerpt: All posts sorted chronologically.
 group: Posts
 ---
 
