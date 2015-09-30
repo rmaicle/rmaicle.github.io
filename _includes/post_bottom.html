@@ -1,9 +1,9 @@
-<hr class="thin compact">
+<hr class="thin">
 <div>
-    <p>Tags:&nbsp;
-    {% for tag in page.tags %}
-        <span class="tag">{{ tag }}</span>
-    {% endfor %}
+    <p>
+        {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+        {% endfor %}
     </p>
     <br/>
 
@@ -19,7 +19,7 @@
         <a href="{{ page.previous.url }}">Previous</a>
         <h1>{{ page.previous.title }}</h1>
         <p>
-        {{ page.previous.excerpt }}<br/><br/>
+        {{ page.previous.excerpt }}<br/>
         {{ page.previous.date | | date: "%b %-d, %Y" }}
         </p>
         {% endif %}
@@ -30,7 +30,7 @@
             <a href="{{ page.next.url }}">Next</a>
             <h1>{{ page.next.title }}</h1>
             <p>
-            {{ page.next.excerpt }}<br/><br/>
+            {{ page.next.excerpt }}<br/>
             {{ page.next.date | | date: "%b %-d, %Y" }}
             </p>
         {% endif %}

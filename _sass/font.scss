@@ -1,12 +1,24 @@
-@import url("//fonts.googleapis.com/css?family=Rokkitt");
+// Liberation Sans is too narrow
+// Merriweather is good but seems a bit thick
+// Playfair looks nice in bigger sizes, like titles or headings
 
-//$font_default:          "Rokkitt", "Muli", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_default:              "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_semi_bold:            "OpenSansSemiBold", "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font_sans:                 $font_default;
-$font_heading:              $font_semi_bold;
-$font_footer:               $font_default;
+@import url("//fonts.googleapis.com/css?family=Cantarell");
+@import url("//fonts.googleapis.com/css?family=Merriweather Sans");
+//@import url("//fonts.googleapis.com/css?family=Playfair Display");
+@import url("//fonts.googleapis.com/css?family=Merriweather");
+
 $font_code:                 "TheSansMonoCondensed Plain", "RM Courier", "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+$font_serif:                "Merriweather", Helvetica, Arial, serif;
+$font_sans:                 "Merriweather Sans", Helvetica, Arial, sans-serif;
+$font_text:                 "Cantarell", Helvetica, Arial, sans-serif;
+
+$font_title:                $font_sans;
+$font_subtitle:             $font_serif;
+$font_default:              $font_text;
+$font_heading:              $font_serif;
+$font_label:                $font_sans;
+$font_footer:               $font_default;
+
 $font_size_default:         13px;
 $font_size_sans:            12px;
 $font_size_code:            13px;
@@ -16,8 +28,8 @@ $font_size_title_tagline:   $font_size_default;
 
 $font_size_page_nav:	    14px;
 
-$font_size_footer:		    10px;
-$font_size_license:         10px;
+$font_size_footer:		    11px;
+$font_size_license:         11px;
 
 @font-face {
     font-family: 'RM Courier';

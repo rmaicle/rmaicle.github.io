@@ -24,6 +24,7 @@ a {
     color: $color_text;
     /* border-bottom: 1px dotted $color_lbg; */
     border-bottom: 1px dotted $color_link_underline;
+    text-decoration: none;
 }
 a:hover {
     color: $color_primary;
@@ -67,8 +68,9 @@ b, strong {
 
 i, em {
     font-size: $font_size_default;
-    font-weight: bold;
-    color: $color_text_highlight;
+    font-weight: normal;
+    /* color: $color_text_highlight; */
+    border-bottom: 1px dotted $color_text_darker - 50;
 }
 
 pre {
@@ -141,6 +143,7 @@ header h1 {
 
 header h1 {
 	a {
+        font-family: $font_title;
 		font-size: $font_size_title;
 		font-weight: normal;
 		text-align: left;
@@ -154,10 +157,10 @@ header h1 {
 }
 
 header h2 {
-    font-family: $font_default;
+    font-family: $font_subtitle;
     font-weight: normal;
-    font-style: normal;
-    font-size: $font_size_title_tagline;
+    font-style: italic;
+    font-size: $font_size_title_tagline - 1;
     text-align: left;
     line-height: 14px;
 
@@ -198,7 +201,7 @@ nav li {
 }
 
 nav li a {
-    font-family: $font_semi_bold;
+    font-family: $font_label;
     font-size: $font_size_default - 1;
     font-weight: normal;
 	color: $color_primary_darker;
@@ -340,10 +343,15 @@ section.column_main h6 { font-size: 11px; }
 
 section.column_main {
     h3, h4, h5, h6 {
+        font-family: $font_heading;
         font-weight: normal;
     }
     h3, h4 {
         text-shadow: 1px 1px 1px #000;
+    }
+    h3.pagetitle {
+        padding-top: 5px;
+        margin-bottom: 14px;
     }
 }
 
@@ -364,7 +372,7 @@ section.column_main p,
 section.column_main li,
 section.column_main dl {
     font-family: $font_default;
-    font-size: $font_default;
+    font-size: $font_size_default;
     line-height: 18px;
     text-align: left;
 }
@@ -420,7 +428,8 @@ section.column_left_sidebar p {
 #random_tidbits div.tidbit_entry {
     border-radius: 3px;
     background: #1a1a1a;
-    padding: 12px 15px 12px 15px;
+    /* Use at least 1px padding on top otherwise it collapses */
+    padding: 10px 15px 12px 15px;
     margin-bottom: 12px;
     box-shadow: 3px 3px 3px $color_bg - 20;
 }
@@ -447,29 +456,34 @@ section.column_left_sidebar p {
 }
 
 #nav_left li a {
-    font-family: $font_semi_bold;
+    font-family: $font_label;
     font-size: $font_size_default - 1;
     font-weight: normal;
-	color: $color_primary_darker - 20;
+	color: $color_primary_darker;
 
     text-transform: uppercase;
     
-    border-left: 5px solid #1a1a1a;
+    /* border-left: 5px solid #1a1a1a; */
+    padding-left: 9px;
     border-bottom: none;
 }
 
 #nav_left li a:hover {
-    color: $color_primary_darker + 20;
+    color: $color_primary;
 }
 
 #nav_left li a.active {
     color: black;
-    background: $color_primary;
-    border-top: 1px solid $color_primary;
-    border-bottom: 1px solid $color_primary;
-    border-left: 5px solid $color_primary;
-    border-right: 5px solid $color_primary;
-    border-radius: 2px;
+    background: $color_primary_darker;
+    /*
+    border-top: 1px solid $color_primary_darker;
+    border-bottom: 1px solid $color_primary_darker;
+    border-left: 5px solid $color_primary_darker;
+    border-right: 5px solid $color_primary_darker;
+    */
+    border: 1px solid $color_primary_darker;
+    padding: 0px 8px 1px 7px;
+    border-radius: 3px;
 }
 
 /* ------------------------------------------------------------------------- */
@@ -483,7 +497,7 @@ section.column_right_sidebar h5 { font-size: $font_size_default + 1;/* 10px; */}
 section.column_right_sidebar h3,
 section.column_right_sidebar h4,
 section.column_right_sidebar h5 {
-    font-family: $font_semi_bold;
+    font-family: $font_label;
     font-weight: normal;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -493,21 +507,15 @@ section.column_right_sidebar h3 {
     color: $color_primary_darker;
     text-transform: uppercase;
     margin: 0;
+    /* h3 is used as label so we put some padding after it */
+    padding-bottom: 10px;
 }
-
-/*
-section.column_right_sidebar p {
-    font-size: $font_size_default;
-    line-height: 15px;
-    text-align: left;
-}
-*/
 
 section.column_right_sidebar ul li {
     padding: 0;
     line-height: 18px;
     a {
-        font-size: $font_size_default - 1;
+        font-size: $font_size_default;
     }
 	a, a:hover {
 		border-bottom: none;
@@ -643,13 +651,15 @@ footer #footer_content #footer_column_one.license {
 		border-bottom: none;
 	}
 	a:hover {
-		border-bottom: 1px dotted $color_primary;
+        color: $color_primary;
+		border-bottom: 1px dotted $color_primary_darker;
 	}
 	h1 {
-		font-size: $font_size_default + 1;
-		font-weight: bold;
+		font-size: $font_size_default;
+		font-weight: normal;
 		line-height: 1.5em;
 		text-shadow: 1px 1px 1px #000;
+        color: $color_primary;
 		padding: 0;
 		margin: 0;
 	}
@@ -679,6 +689,7 @@ article.summary {
 	padding-right: 20px;
 	padding-bottom: 5px;
 	h4 {
+        font-family: $font_heading;
 		font-size: $font_size_default + 1;
 		font-weight: normal;
         color: $color_primary_darker;
@@ -697,6 +708,9 @@ article.summary {
 		margin: 0;
         padding-bottom: 10px;
 	}
+    a:hover p.excerpt {
+        color: $color_text_highlight;
+    }
 	// Read more...
 	a {
 		font-size: $font_size_default;
@@ -722,8 +736,8 @@ section.social {
 		font-size: $font_size_default;
 		font-weight: normal;
 		color: black;
-		background: $color_primary;
-		border: 1px solid $color_primary;
+		background: $color_primary_darker;
+		border: 1px solid $color_primary_darker;
 		border-radius: 3px;
 		padding: 0px 8px 1px 8px;
 		margin-left: 5px;
@@ -765,6 +779,10 @@ li.no_left_margin {
     color: $color_text_highlight !important;
 }
 
+.text_shadow {
+    text-shadow: 1px 1px 1px #000;
+}
+
 .normal_font {
     font-size: 100%;
     font-weight: normal;
@@ -779,8 +797,9 @@ li.no_left_margin {
 }
 
 .tag {
+    font-size: $font_size_default - 1;
     background: $color_tag_bg;
-    padding: 0px 8px 2px 8px;
+    padding: 0px 8px 4px 8px;
     border-radius: 3px;
     margin-right: 5px;
 }
