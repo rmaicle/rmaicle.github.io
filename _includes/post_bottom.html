@@ -16,27 +16,28 @@
 
     <div id="page_previous">
         {% if page.previous != nil %}
-            <p>Previous</p>
+            <p class="vspace5">Previous</p>
             <a href="{{ page.previous.url }}">
-                <h1>{{ page.previous.title }}</h1>
-                <p>
-                {{ page.previous.excerpt }}<br/>
-                {{ page.previous.date | | date: "%b %-d, %Y" }}
-                </p>
+                <h3 class="vspace10">{{ page.previous.title }}</h3>
             </a>
+            <p>
+            {{ page.previous.excerpt }}<br/>
+            {{ page.previous.date | | date: "%b %-d, %Y" }}
+            </p>
+            
         {% endif %}
     </div>
 
     <div id="page_next">
         {% if page.next != nil %}
-            <p>Next</a></p>
+            <p class="vspace5">Next</a></p>
             <a href="{{ page.next.url }}">
-                <h1>{{ page.next.title }}</h1>
-                <p>
-                {{ page.next.excerpt }}<br/>
-                {{ page.next.date | | date: "%b %-d, %Y" }}
-                </p>
+                <h3 class="vspace10">{{ page.next.title }}</h3>
             </a>
+            <p>
+            {{ page.next.excerpt }}<br/>
+            {{ page.next.date | | date: "%b %-d, %Y" }}
+            </p>
         {% endif %}
     </div>
 

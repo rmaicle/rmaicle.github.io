@@ -643,8 +643,7 @@ footer #footer_content #footer_column_one.license {
 
 #page_previous,
 #page_next {
-	width: 48%;
-
+	width: 50%;
 	a {
 		font-size: $font_size_page_nav;
 		color: $color_primary_darker;
@@ -654,22 +653,18 @@ footer #footer_content #footer_column_one.license {
         color: $color_primary;
 		border-bottom: 1px dotted $color_primary_darker;
 	}
-	h1 {
-		font-size: $font_size_default;
+	h3 {
+        // Color: Do not set the color so that it inherits the a color.
+        // Padding: Do not set zero padding so it inherits the vspace class setting.
+		font-size: $font_size_default + 2;
 		font-weight: normal;
-		line-height: 1.5em;
+        line-height: 1.3em;
 		text-shadow: 1px 1px 1px #000;
-        color: $color_primary;
-		padding: 0;
 		margin: 0;
 	}
-	p {
-		font-size: $font_size_default;
-		line-height: 1.3em;
-		padding: 0;
-        padding-bottom: 10px;
-		margin: 0;
-	}
+    p {
+        color: $color_text;
+    }
 }
 
 #page_previous {
@@ -772,6 +767,14 @@ li.no_left_margin {
     color: $color_primary_darker;
 }
 
+.vspace5 {
+    padding-bottom: 5px;
+}
+
+.vspace10 {
+    padding-bottom: 10px;
+}
+
 .vspace {
     padding-bottom: 25px;
 }
@@ -800,7 +803,7 @@ li.no_left_margin {
 .tag {
     font-size: $font_size_default - 1;
     background: $color_tag_bg;
-    padding: 0px 8px 4px 8px;
+    padding: 1px 8px 4px 8px;
     border-radius: 3px;
     margin-right: 5px;
 }
