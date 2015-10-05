@@ -664,9 +664,10 @@ footer #footer_content #footer_column_one.license {
 		margin: 0;
 	}
 	p {
-		font-size: $font_size_default - 1;
+		font-size: $font_size_default;
 		line-height: 1.3em;
 		padding: 0;
+        padding-bottom: 10px;
 		margin: 0;
 	}
 }
