@@ -128,7 +128,7 @@ It is a package manager that makes versioning the Ruby software like Jekyll easi
 As mentioned, you can use `bundle show [gemname]` to see where a bundled gem is installed.
 If an error occurs, correct it and rerun `bundle install`.
 
-### Updating Ruby Gems
+#### Updating Ruby Gems
 
 I moved my project to a Linux development machine.
 I executed `bundle show` under my project root directory after almost a year and the following is a copy of the what happened:
