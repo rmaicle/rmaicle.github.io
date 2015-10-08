@@ -48,7 +48,10 @@
         </ul>
     {% endif %}
 
-    {% include recent_posts.html %}
+    {% if page.title != "Home" %}
+        <h3>Recent Posts</h3>
+        {% include recent_posts.html %}
+    {% endif %}
 
     {% include common_links.html %}
 
