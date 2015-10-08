@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+{% include page_left_sidebar.html %}
+
+<section class="column_main">
+    {% if page.title != "Home" %}
+        <!-- <p class="highlight">D Programmng Language Unofficial Reference</p> -->
+        <h3 class="pagetitle">
+            {% if page.title != "D Programming Language" %}
+                dlang : {{ page.title }}
+            {% else %}
+                {{ page.title }}
+            {% endif %}
+        </h3>
+        {% if page.title != "D Programming Language" %}
+            <p class="excerpt vspace">{{ page.excerpt }}</p>
+        {% endif %}
+    {% endif %}
+
+    {{ content }}
+    
+    <!-- Add vertical space before the 'hr' so it does not look cramped -->
+    <p>&nbsp;</p>
+    {% include reference_dlang_bottom.html %}
+
+</section>
+
+{% include reference_dlang_right_sidebar.html %}

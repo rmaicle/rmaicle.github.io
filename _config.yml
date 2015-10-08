@@ -139,6 +139,40 @@ pages_list: {
   'Archive':      '/archive.html',
 #  'To Read':    '/toread.html',
 #  'Blogroll':   '/blogroll.html',
+  'DLang':      '/dlang/index.html',
   'References': '/refs.html',
 #  'About':      '/about.html',
+}
+
+# This is the list of pages under the DLang directory.
+dlang_list: {
+    'Introduction':                '/dlang/intro.html',
+    'Types':                       '/dlang/types.html',
+    'Expressions':                 '/dlang/expressions.html',
+    'Statements':                  '/dlang/statements.html',
+    'Enumerations':                '/dlang/enumerations.html',
+    'Arrays':                      '/dlang/arrays.html',
+    'Functions':                   '/dlang/functions.html',
+    'Structs, Unions and Classes': '/dlang/structs_unions_classes.html',
+    'Templates':                   '/dlang/templates.html',
+
+    'Convenience':                 'divider',
+    'Modules':                     '/dlang/modules.html',
+    'Memory Management':           '/dlang/memory.html',
+    'Unit Testing':                '/dlang/testing.html',
+    'Embedded Documentation':      '/dlang/embedded_doc.html',
+
+    'Power':                       'divider',
+    'Contracts':                   '/dlang/contracts.html',
+    'Conditional Compilation':     '/dlang/conditional.html',
+    'Mixins':                      '/dlang/mixins.html',
+    'Traits':                      '/dlang/traits.html',
+    'Compiler Pragmas':            '/dlang/pragmas.html',
+
+    'Efficiency':                  'divider',
+    'Memory Alignment':            '/dlang/alignment.html',
+    'Concurrency':                 '/dlang/concurrency.html',
+    'Interfacing to C':            '/dlang/c_interface.html',
+    'Vector Extensions':           '/dlang/vector_ext.html',
+    'Inline Assembler':            '/dlang/assembler.html',
 }

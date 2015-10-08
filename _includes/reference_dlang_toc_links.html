@@ -1,0 +1,9 @@
+{% for p in site.dlang_list %}
+    {% if p[1] == 'divider' %}
+        <hr class="thin compact darker">
+    {% else %}
+        <li class="padding_left_5"><a href="{{ p[1]  }}">{{ p[0] }}</a></li>
+    {% endif %}
+{% endfor %}
+
+

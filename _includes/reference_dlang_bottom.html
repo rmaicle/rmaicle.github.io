@@ -1,0 +1,61 @@
+<hr class="thin">
+<div>
+    <p>
+        {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+        {% endfor %}
+    </p>
+    <br/>
+
+    <div class="vspace">
+        <!-- Twitter -->
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="rickymaicle"></a>
+        <!-- Google + -->
+        <p><g:plusone size="medium"></g:plusone></p>
+    </div>
+
+    <div id="page_previous">
+        {% assign previous_page = nil %}
+        {% assign previous_url = nil %}
+        {% for p in site.dlang_list %}
+            {% if p[1] != 'divider' %}
+                {% if p[0] == page.title %}
+                    {% if previous_page != nil %}
+                        <p class="vspace5">Previous</p>
+                        <a href="{{ previous_url }}">
+                            <h3 class="vspace10">{{ previous_page }}</h3>
+                        </a>
+                    {% endif %}
+                {% endif %}
+                {% assign previous_page = p[0] %}
+                {% assign previous_url = p[1] %}
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div id="page_next">
+        {% assign current_page_found = false %}
+        {% for p in site.dlang_list %}
+            {% if p[1] != 'divider'%}
+                <!-- NOTE: This check must be performed first -->
+                <!--       because the current page may have been found in the previous iteration. -->
+                {% if current_page_found == true %}
+                    <p class="vspace5">Next</p>
+                    <a href="{{ p[1] }}">
+                        <h3 class="vspace10">{{ p[0] }}</h3>
+                    </a>
+                    <!-- Reset so everything happens only once -->
+                    {% assign current_page_found = false %}
+                {% endif %}
+                
+                <!-- search for the current page -->
+                <!-- when found then the next page link is displayed at the next iteration -->
+                {% if p[0] == page.title and current_page_found == false %}
+                    {% assign current_page_found = true %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="vspace">&nbsp;</div>
+</div>
