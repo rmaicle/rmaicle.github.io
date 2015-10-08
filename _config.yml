@@ -136,7 +136,7 @@ version:        0.1.0
 
 # This is the list of pages to incldue in the header of the website.
 pages_list: {
-  'Posts':      '/archive.html',
+  'Archive':      '/archive.html',
 #  'To Read':    '/toread.html',
 #  'Blogroll':   '/blogroll.html',
   'References': '/refs.html',

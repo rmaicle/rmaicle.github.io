@@ -2,7 +2,7 @@
 layout: page
 title: Archive
 excerpt: All posts sorted chronologically.
-group: Posts
+group: Archive
 ---
 
 <div id="archive">
