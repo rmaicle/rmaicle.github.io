@@ -35,7 +35,7 @@ hr {
     border: 0;
     outline: none;
     height: 3px;
-    background: $color_lbg;
+    background: $color_hr_default;
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -44,12 +44,24 @@ hr.thin {
     height: 1px;
     margin-top: 20px;
     margin-bottom: 17px;
-    background: $color_lbg;
 }
 
 hr.compact {
-    margin-top: 3px;
+    margin-top: 4px;
     margin-bottom: 4px;
+}
+
+hr.medium {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+hr.dark {
+    background: $color_hr_dark;
+}
+
+hr.darker {
+    background: $color_hr_darker;
 }
 
 ul {
