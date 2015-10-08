@@ -2,6 +2,7 @@
 title: NGINX on Linux
 excerpt: Setting up NGINX on Linux
 categories: [Blog]
+published: false
 tags: [github pages, jekyll, ruby]
 ---
 
