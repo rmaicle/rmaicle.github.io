@@ -357,13 +357,13 @@ section.column_main {
         font-family: $font_heading;
         font-weight: normal;
         color: $color_text_highlight;
+        margin-bottom: 14px;
     }
     h3, h4 {
         text-shadow: 1px 1px 1px #000;
     }
     h3.pagetitle {
         padding-top: 5px;
-        margin-bottom: 14px;
     }
 }
 
@@ -390,7 +390,12 @@ section.column_main dl {
 }
 
 section.column_main p {
-    margin: 0 0 8px 0;
+    /* margin: 0 0 8px 0; */
+    /* All bottom margins must be the same */
+    /*   <p>   */
+    /*   <pre> */
+    /*   <ul> */
+    margin: 0 0 12px 0;
 }
 
 section.column_main p.excerpt,
@@ -402,7 +407,11 @@ section.column_main p.date {
 }
 
 section.column_main ul {
-    margin-bottom: 10px;
+    /* All bottom margins must be the same */
+    /*   <p>   */
+    /*   <pre> */
+    /*   <ul> */
+    margin-bottom: 12px;
 }
 
 /* Collapse bottom margin of inner 'ul' */
@@ -566,7 +575,12 @@ pre {
     padding: 7px 10px;
     background: none;
     border: none;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
+    /* All bottom margins must be the same */
+    /*   <p>   */
+    /*   <pre> */
+    /*   <ul> */
+    margin-bottom: 12px;
     overflow: auto;
     overflow-y: hidden;
 }
