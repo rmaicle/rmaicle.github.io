@@ -3,6 +3,7 @@ layout: page
 title: Archive
 excerpt: All posts sorted chronologically.
 group: Archive
+tags: [root]
 ---
 
 <div id="archive">

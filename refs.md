@@ -3,6 +3,7 @@ layout: page
 title: References
 excerpt: Interesting links.
 group: References
+tags: [root]
 ---
 
 #### C++
