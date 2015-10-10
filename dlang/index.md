@@ -6,20 +6,23 @@ group: DLang
 tags: [root]
 ---
 
-I decided to (re)learn the __D programming language__.
-What better way, I think, to do that than to start at the beginning.
-So, this is a journey to learning the language from scratch.
-This is an attempt on documenting the language as I learn it and will serve as a personal reference to the language.
+I have decided to relearn the D programming language.
+There are lots of new features to the language since 2006.
+What better way to do that than to start from scratch.
+This is an attempt to document my understanding of the language and become a personal reference to the language.
 
-I want this to be _small-device friendly_ as much as possible.
+I would like this reference to be in sync with the latest version of the D language specification.
+Hopefully, this could evolve as a good alternative reference to those who wish to learn this great language.
+
+This reference is _small-screen friendly_, viewable in a 4-inch phone.
 
 #### Unofficial Reference
 
-A word of warning.
-This is an __unofficial__ and __imperfect__ reference to the D programming language.
-This will be a continuous effort to describe and learn the language.
-The information here will contain errors and may sometimes conflict with the actual specification of the language.
-Please read with caution.
+This is an __unofficial__ reference to the D programming language.
+It is a _work in progress_.
+Information presented here possibly _contain errors_ and _may not be up-to-date_.
+
+For the official specification of the D programming language, follow the link below.
 
 <aside class="hide">
 Read with Caution<br/>
@@ -34,7 +37,7 @@ The following are links to the official D Programming Language:
 * [Official Site (dlang.org)] (http://dlang.org/)
 * [Official Specification] (http://dlang.org/dlangspec.pdf)
 
-Information presented here are based on [__version 2.068.2__] (http://dlang.org/changelog/2.068.2.html) of the reference compiler __Digital Mars D__.
+Information presented here is initially based on [__version 2.068.2__] (http://dlang.org/changelog/2.068.2.html) of the reference compiler __Digital Mars D__.
 
 #### Organization
 
