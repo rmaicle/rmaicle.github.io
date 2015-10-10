@@ -1,9 +1,19 @@
 <head>
     <title>
     {% if page.title == "Home" %}
-        {{ site.title }} - {{ site.tagline }}
+        {{ site.title }} - {{ page.title }}
     {% else %}
-        {{ page.title }} - {{ site.title }}
+        {% assign dlangref = false %}
+        {% for tag in page.tags %}
+            {% if tag == "dlangref" %}
+                {% assign dlangref = true %}
+            {% endif %}
+        {% endfor %}
+        {% if dlangref == true %}
+            D Programming Language - {{ page.title }}
+        {% else %}
+            {{ site.title }} - {{ page.title }}
+        {% endif %}
     {% endif %}
     </title>
     <meta charset="utf-8">
