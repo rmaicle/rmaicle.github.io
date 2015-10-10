@@ -140,7 +140,7 @@ pages_list: {
 #  'To Read':    '/toread.html',
 #  'Blogroll':   '/blogroll.html',
   'DLang':      '/dlang/index.html',
-  'References': '/refs.html',
+#  'References': '/refs.html',
 #  'About':      '/about.html',
 }
 
