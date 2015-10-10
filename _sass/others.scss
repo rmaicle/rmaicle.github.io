@@ -74,14 +74,17 @@ b, strong {
     // Override the font-family used
     font-family: $font_default !important;
     font-size: $font_size_default;
-    font-weight: bold;
+    font-weight: normal; 
     color: $color_text_highlight;
+    text-shadow: 1px 1px 1px #000;
 }
 
 i, em {
     font-size: $font_size_default;
     font-weight: normal;
-    border-bottom: 1px dotted $color_text_darker - 50;
+    /* border-bottom: 1px dotted $color_text_darker - 50; */
+    color: $color_text_highlight;
+    /* text-shadow: 1px 1px 1px #000; */
 }
 
 pre {
@@ -522,24 +525,22 @@ section.column_right_sidebar h3 {
     padding-bottom: 10px;
 }
 
-section.column_right_sidebar ul li {
-    padding: 0;
-    line-height: 18px;
-    a {
-        font-size: $font_size_default;
+section.column_right_sidebar ul,
+section.column_right_sidebar ol {
+    li {
+        font-family: $font_heading;
+        font-size: $font_size_default - 1;
+        color: $color_text_darker;
+        padding: 0;
+        line-height: 18px;
     }
-	a, a:hover {
-		border-bottom: none;
-	}
-}
-
-section.column_right_sidebar ul li {
     a {
         font-family: $font_heading;
         font-size: $font_size_default - 1;
         color: $color_text_darker;
+        border-bottom: none;
     }
-    a:hover {
+	a:hover {
 		color: $color_primary;
 	}
 }
@@ -769,16 +770,27 @@ section.social {
 	}
 }
 
+.hide {
+    display: none;
+}
+
 .justify {
     text-align: justify;
+}
+
+a.no_underline {
+    border-bottom: none;
+}
+
+a.no_underline:hover {
+    border-bottom: none;
 }
 
 .list_style_none {
     list-style-type: none;
 }
 
-.list_style_nopadding {
-    padding-left: 0;
+.list_no_dot {
 }
 
 li.no_left_margin {
@@ -787,6 +799,30 @@ li.no_left_margin {
 
 .link_color {
     color: $color_primary_darker;
+}
+
+.margintop15 {
+    margin-top: 15px !important;
+}
+
+.marginbottom5 {
+    margin-bottom: 5px !important;
+}
+
+.paddingtop0 {
+    padding-top: 0px !important;
+}
+
+.padding_left_none {
+    padding-left: 0px !important;
+}
+
+.padding_left_5 {
+    padding-left: 5px !important;
+}
+
+.padding_left_25 {
+    padding-left: 25px !important;
 }
 
 .vspace5 {
@@ -810,7 +846,7 @@ li.no_left_margin {
 }
 
 .normal_font {
-    font-size: 100%;
+    font-size: $font_size_default;
     font-weight: normal;
 }
 

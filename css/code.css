@@ -72,13 +72,17 @@
 /* Overrides                                                                  */
 /* -------------------------------------------------------------------------- */
 
-.highlight { background: transparent; }
-.highlight .c { color: #00cd00; font-style: normal } /* Comment */
+.highlight     { background: transparent; }
+
+.highlight .c  { color: #00cd00; font-style: normal } /* Comment */
 .highlight .cp { color: #00cd00; font-weight: bold } /* Comment.Preproc */
 .highlight .c1 { color: #00cd00; font-style: normal } /* Comment.Single */
 .highlight .cs { color: #00cd00; font-weight: bold; font-style: italic } /* Comment.Special */
 .highlight .cm { color: #00cd00; font-style: normal } /* Comment.Multiline */
 
-.highlight .k { color: rgb(86,156,214); font-weight: normal } /* Keyword */
+.highlight .kt { color: #4169E1; font-weight: normal } /* Keyword.Type */
+.highlight .k  { color: #E3CF57; font-weight: normal } /* Keyword (directive?) */
 .highlight .nc { color: #d0d0d0; text-decoration: none } /* Name.Class */
-.highlight .kt { color: rgb(194,132,225); font-weight: normal } /* Keyword.Type */
+
+.highlight .mi { color: #ED9121 } /* Literal.Number.Integer */
+.highlight .s  { color: #CDCD00 } /* Literal.String */
