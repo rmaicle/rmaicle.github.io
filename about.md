@@ -6,13 +6,12 @@ group: About
 ---
 
 I'm a programmer from the Philippines.
-Been exposed to different areas of software development as, i think, many of us do.
-Did programming using some major programming languages, back-end programming in some major databases and did some web front-ends too.
-Also keeping up with software engineering.
+Did programming using some major programming languages, back-end programming in some major databases and did a few web front-ends too.
+I like software engineering and I try to keep up with.
 
-Accidentally came across GitHub Pages a few days ago and I hope this one fares better than my previous attempts.
-
-Aside from all these, I like poetry (used to write some), music, history, science fiction, good laughs over a couple of cold, big mug of beer.
+Nowadays, I'm doing a C++ project and (re)learning the D programming language.
+I'm also trying to write a documentation for the D programming language.
+Nothing much but I'd like to make as good as possible.
 
 <section class="social">
 <p>&nbsp;</p>
