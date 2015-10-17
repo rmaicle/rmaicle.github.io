@@ -69,7 +69,7 @@ defaults: []
 #  extensions: []
 
 redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables"]
+  extensions: ["space_after_headers", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "highlight"]
 
 kramdown:
   auto_ids:      true
