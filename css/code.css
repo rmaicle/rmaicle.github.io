@@ -60,7 +60,12 @@
 /* .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
 
 .highlight .lineno {
+    text-align: right;
+    color: #444445;
 	background: transparent;
+    padding-right: 5px;
+    border-right: 1px dotted #333333;
+    display:inline-block;
 }
 
 /* Make line numbers unselectable: excludes line numbers from copy-paste user ops */
