@@ -84,8 +84,7 @@ ol {
     }
 }
 
-b, strong {
-    // Override the font-family used
+strong {
     font-family: $font_default !important;
     font-size: $font_size_default;
     font-weight: normal; 
@@ -93,12 +92,23 @@ b, strong {
     text-shadow: 1px 1px 1px #000;
 }
 
-i, em {
+b {
+    font-family: $font_default !important;
+    font-size: $font_size_default;
+    font-weight: normal; 
+    color: $color_text_highlight;
+}
+
+em {
     font-size: $font_size_default;
     font-weight: normal;
     /* border-bottom: 1px dotted $color_text_darker - 50; */
     color: $color_text_highlight;
-    /* text-shadow: 1px 1px 1px #000; */
+}
+
+i {
+    font-size: $font_size_default;
+    font-weight: normal;
 }
 
 mark {
@@ -116,6 +126,7 @@ p code {
 }
 
 table {
+    width: 100%;
     border: 1px solid $color_table_border;
     th, td {
         font-size: $font_size_default;
@@ -125,10 +136,14 @@ table {
         padding: 3px 10px;
     }
     td {
-        padding: 1px 10px 2px 10px;
+        vertical-align: top;
+        /* padding: 1px 5px 3px 5px; */
+        padding: 3px 10px 5px 10px;
     }
     th:first-child,
-t   d:first-child {
+    td:first-child {
+        /* Make the width of the first item small so the right side cells will span the width of the table */
+        /* width: 10px; */
         border-left: none;
     }
 }
@@ -370,7 +385,7 @@ section.column_main h2 { font-size: 19px; }
 section.column_main h3 { font-size: 18px; }
 section.column_main h4 { font-size: 17px; }
 section.column_main h5 { font-size: 15px; }
-section.column_main h6 { font-size: 13px; }
+section.column_main h6 { font-size: 14px; }
 
 section.column_main {
     h1, h2, h3, h4, h5, h6 {
@@ -386,8 +401,16 @@ section.column_main {
         padding-top: 5px;
     }
     
-    h2, h3, h4, h5, h6 {
+    h2, h3, h4, h5 {
         padding-top: 20px;
+    }
+    h6 {
+        font-weight: bold;
+        font-style: italic;
+
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-bottom: 12px;
     }
     
     p, li, dl {
@@ -425,6 +448,25 @@ section.column_main {
         /* Collapse bottom margin of inner 'ul' */
         ul, ol {
             margin-bottom: 0px;
+        }
+    }
+    
+    table th,
+    table td {
+        p {
+            margin: 5px 0 0 0;
+            &.label {
+                line-height: 19px;
+                margin: 0;
+                white-space: nowrap !important;
+            }
+        }
+        ul, ol {
+            list-style-type: square;
+            margin-bottom: 0px;
+            li {
+            
+            }
         }
     }
 }
@@ -599,6 +641,7 @@ section.column_right_sidebar {
 code {
     font-family: $font_code;
     font-size: $font_size_code;
+    font-style: normal;
     color: $color_code_highlight;
     margin: 0 0px;
 }
@@ -837,6 +880,10 @@ section.social {
     text-align: justify;
 }
 
+.align_right {
+    text-align: right;
+}
+
 .scroll_horizontal {
     overflow: scroll;
     overflow-x: scroll;
@@ -928,6 +975,10 @@ li.no_left_margin {
     padding: 2px 8px 4px 8px;
     border-radius: 3px;
     margin-right: 3px;
+}
+
+.font_style_normal {
+    font-style: normal;
 }
 
 /* Markdown fix on unsorted list */
