@@ -14,7 +14,7 @@ Although not commonly used, the [ASCII Delimited Text] was created for the speci
 Unicode adopted the ASCII Text Delimiters.
 
 | Unicode | ASCII | Seq  | ASCII Name            | Unicode Name                |
-| --------|-------|------|-----------------------|-----------------------------|
+|:-------:|:-----:|:----:|-----------------------|-----------------------------|
 | U+001F  | 31 1F | `^_` | Unit Separator (US)   | Information Separator One   |
 | U+001E  | 30 1E | `^^` | Record Separator (RS) | Information Separator Two   |
 | U+001D  | 29 1D | `^]` | Group Separator (GS)  | Information Separator Three |
@@ -23,7 +23,7 @@ Unicode adopted the ASCII Text Delimiters.
 Unicode added two new terminator or [separator characters] \*.
 
 | Unicode         | ASCII | Seq   | ASCII Name           | Unicode Name        |
-| ----------------|-------|-------|----------------------|---------------------|
+|-----------------|:-----:|:-----:|----------------------|---------------------|
 | U+000A          | 10 0A | `^J`  | Line Feed (LF)       |                     |
 | U+000B          | 11 0B | `^K`  | Vertical Tab (VT)    |                     |
 | U+000C          | 12 0C | `^L`  | Form Feed (FF)       |                     |
@@ -36,14 +36,14 @@ Unicode added two new terminator or [separator characters] \*.
 Unicode also defines graphic pictures for control characters ([PDF]) from the area U+2400 to U+2421 for printing or displaying.
 The following table shows the equivalent printable characters of the above code points.
 
-| Unicode | ASCII Name               | Symbol |
-| --------|--------------------------|-----------------------------|
-| U+241F  | Unit Separator (US)      | &#x241F;   |
-| U+241E  | Record Separator (RS)    | &#x241E;   |
+| Unicode | ASCII Name               | Symbol   |
+| --------|--------------------------|:--------:|
+| U+241F  | Unit Separator (US)      | &#x241F; |
+| U+241E  | Record Separator (RS)    | &#x241E; |
 | U+241D  | Group Separator (GS)     | &#x241D; |
-| U+241C  | File Separator (FS)      | &#x241C;  |
-| U+2028  | Line Separator (LS)      |   |
-| U+2029  | Paragraph Separator (PS) |   |
+| U+241C  | File Separator (FS)      | &#x241C; |
+| U+2028  | Line Separator (LS)      |          |
+| U+2029  | Paragraph Separator (PS) |          |
 
 
 

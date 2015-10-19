@@ -13,14 +13,14 @@ If you are on a Windows machine like me you will need a [Windows binaries] insta
 To see the steps on setting it up, take a look at [Local GitHub Pages on Windows](/blog/2014/11/05/github-pages.html).
 
 After installing the required software and if Redcarpet is not yet installed then execute the following commands.
-Redcarpet 3.1.2 is the current version of this writing.
+(Redcarpet 3.1.2 is the current version of this writing).
 
 ~~~
 gem install redcarpet
 redcarpet --version
 ~~~
 
-One thing I like about Redcarpet is that it allows me to use the original Markdown syntax for embedding code blocks using the tilde or backtick characters.
+One thing I like about _Redcarpet_ is that it allows me to use the original Markdown syntax for embedding code blocks using the _tilde_ or _backtick_ character.
 
 <div class="highlight"><pre>
 {% raw %}~~~ cpp{% endraw %}
@@ -31,7 +31,7 @@ int main() {
 {% raw %}~~~{% endraw %}
 </pre></div>
 
-The code above will be displayed with syntax highlighting using [pygments].
+The code above is displayed with syntax highlighting using [pygments].
 
 ~~~ cpp
 int main() {

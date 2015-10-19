@@ -12,7 +12,7 @@ NGINX version on my Linux distro is 1.8.0 as you can see below.
 Further info on NGINX on Linux in [ArchLinux Wiki] (https://wiki.archlinux.org/index.php/Nginx).
 
 
-#### NGINX command line
+## NGINX command line
 
     $ nginx -h
     nginx version: nginx/1.8.0
@@ -31,28 +31,28 @@ Further info on NGINX on Linux in [ArchLinux Wiki] (https://wiki.archlinux.org/i
 
 For more command line information, go to the [NGINX Wiki] (https://www.nginx.com/resources/wiki/start/topics/tutorials/commandline/).
 
-##### Start
+### Start
 Execute the command as _root_.
 
     nginx
     
-##### Graceful Shutdown
+### Graceful Shutdown
 
     nginx -s quit
     
-##### Fast Shutdown
+### Fast Shutdown
 
     nginx -s stop
     
-##### Reload or Restart the Engine
+### Reload or Restart the Engine
 
     nginx -s reload
 
-##### Re-open Log Files
+### Re-open Log Files
 
     nginx -s reopen
     
-#### Configuration
+## Configuration
 
 Configuration file for NGINX can be found under `/etc/nginx` directory.
 

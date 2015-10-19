@@ -24,7 +24,7 @@ Installing Jekyll on my machine allows testing of how posts or pages will look b
 This post documents the installation of Jekyll on my Windows machine.
 Here is a reference on how to [Run Jekyll on Windows] which slightly differs from what I have done.
 
-#### Download and Install Ruby
+## Download and Install Ruby
 
 I downloaded [Ruby] 2.1.4 64-bit from the [Ruby Installer for Windows] site (17MB).
 The installation takes 48MB of disk space.
@@ -35,9 +35,9 @@ Verify that the installation has set the User Executable PATH to point to the Ru
 * Go to a directory other than the Ruby installation directory
 * Execute the command `ruby --version`
 
-    ~~~
-    ruby 2.1.4p265 (2014-10-27 revision 48166) [x64-mingw32]
-    ~~~
+~~~
+ruby 2.1.4p265 (2014-10-27 revision 48166) [x64-mingw32]
+~~~
 
 If, in any case, the command above failed that means the Ruby directory was not set in the User Executable PATH.
 We will set it manually. Since the Ruby installer sets it in front of all the other User Executable PATHs then we will do the same.
@@ -51,7 +51,7 @@ set path=C:\Ruby21-x64\bin;%PATH%;
 Note that executing this on the command line is temporary.
 To make it permanent, you need to set it in the Computer Properties | Advance System Settings | Environment Variables.
 
-#### Download and Install the Ruby Development Kit
+## Download and Install the Ruby Development Kit
 
 I downloaded the [Ruby Development Kit] (DevKit) which is a 43MB self-extracting archive file.
 Installing the DevKit means _extracting_ the contents into a directory like `C:\RubyDevKit` and will take about 411MB.
@@ -82,7 +82,7 @@ If you moved your Ruby directory, you need to edit `config.yml` in the Ruby Deve
 C:\RubyDevKit>ruby dk.rb install --force
 ~~~
 
-#### Download and Install Dependencies
+## Download and Install Dependencies
 
 From the [GitHub Pages Basics] site, we need to download and install the [Bundler].
 It is a package manager that makes versioning the Ruby software like Jekyll easier when building GitHub Pages sites locally.
@@ -128,7 +128,7 @@ It is a package manager that makes versioning the Ruby software like Jekyll easi
 As mentioned, you can use `bundle show [gemname]` to see where a bundled gem is installed.
 If an error occurs, correct it and rerun `bundle install`.
 
-#### Updating Ruby Gems
+## Updating Ruby Gems
 
 I moved my project to a Linux development machine.
 I executed `bundle show` under my project root directory after almost a year and the following is a copy of the what happened:
@@ -221,15 +221,41 @@ Using bundler 1.10.6
 Bundle updated!
 ~~~
 
-#### Now, Try It!
+To list dependency versions, execute the following command:
+
+~~~
+$ github-pages versions
++-----------------------+---------+
+| Gem                   | Version |
++-----------------------+---------+
+| jekyll                | 2.4.0   |
+| jekyll-coffeescript   | 1.0.1   |
+| jekyll-sass-converter | 1.3.0   |
+| kramdown              | 1.5.0   |
+| maruku                | 0.7.0   |
+| rdiscount             | 2.1.7   |
+| redcarpet             | 3.3.2   |
+| RedCloth              | 4.2.9   |
+| liquid                | 2.6.2   |
+| pygments.rb           | 0.6.3   |
+| jemoji                | 0.5.0   |
+| jekyll-mentions       | 0.2.1   |
+| jekyll-redirect-from  | 0.8.0   |
+| jekyll-sitemap        | 0.8.1   |
+| jekyll-feed           | 0.3.1   |
++-----------------------+---------+
+~~~
+
+## Now, Try It!
 
 Start Jekyll in your local site repository; `bundle exec jekyll serve`.
 Open the URL `http://localhost:4000/` in your browser.
 
-#### Links
+## Links
 
 * [GitHub Pages Features](https://help.github.com/categories/github-pages-features/)
 * [GitHub Pages Troubleshooting](https://help.github.com/categories/github-pages-troubleshooting/)
+* [GitHub Pages Ruby Gem](https://github.com/github/pages-gem)
 * [Repository metadata on GitHub Pages](https://help.github.com/articles/repository-metadata-on-github-pages/)
 * [Jekyll Documentation](http://jekyllrb.com/docs/home/)
 * [Sass](http://sass-lang.com/)
@@ -237,7 +263,7 @@ Open the URL `http://localhost:4000/` in your browser.
 * [RedCarpet Fenced Code Block Languages](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
 * [Google+ Platform](https://developers.google.com/+/web/+1button/)
 
-#### References
+## References
 
 The following links are additional references about GitHub Pages:
 
