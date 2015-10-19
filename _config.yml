@@ -139,7 +139,7 @@ pages_list: {
   'Archive':      '/archive.html',
 #  'To Read':    '/toread.html',
 #  'Blogroll':   '/blogroll.html',
-  'DLang':      '/dlang/index.html',
+  'DLang':      '/dlang/index.html'
 #  'References': '/refs.html',
 #  'About':      '/about.html',
 }
@@ -178,5 +178,5 @@ dlang_list: {
     'Inline Assembler':            '/dlang/assembler.html',
     
     'Annex':                       'divider',
-    'Compiler':                    '/dlang/compiler.html',
+    'Compiler':                    '/dlang/compiler.html'
 }
