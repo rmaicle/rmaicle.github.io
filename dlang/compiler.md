@@ -184,7 +184,7 @@ Why is there no option where to put the map file? Like the options for generatin
 | Map | -__map__ &nbsp; Generate linker .map file. |
 | Coverage | -__cov__[=&lt;__nnn__&gt;] &nbsp; Code coverage analysis tool. <p>Compiling with [-_cov_] will embed code coverage analysis tool. Optionally, a minimum code coverage percentage _nnn_% can be specified [-_cov_=&lt;_nnn_&gt;]. Running the application will generate a `.lst` text file or an error if code coverage result did not reach the minimum code coverage.</p> |
 | Profile | -__profile__[=__gc__] &nbsp; Profile runtime performance of generated code [-_profile_] and optionally profile runtime allocations [-_profile_=_gc_]. |
-| Garbage Collector Allocations | -__vgc__ &nbsp; List all Garbage Collector allocations including hidden ones. |
+| Garbage Collector Allocations | -__vgc__ &nbsp; List all Garbage Collector allocation points including hidden ones. Analysis will follow the semantics of the @nogc attribute. |
 | Thread Local Storage | -__vtls__ &nbsp; List all variables going into thread local storage. |
 | Transition | -__transition__=[__?__&nbsp;&#124;&nbsp;__identifier__] &nbsp; Show addditional information about all language changes [-_transition_=_?_] or changes identified by _identifier_ [-_transition_=&lt;_identifier_&gt;]. |
 
