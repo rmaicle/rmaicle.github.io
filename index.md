@@ -15,7 +15,7 @@ A lot of things get outdated so fast and I try to keep up.
 
 {% for post in site.posts limit:6 %}
 <article class="summary">
-    <a href="{{ post.url }}"><h4>{{ post.title }}</h4>
+    <a href="{{ post.url }}"><h2>{{ post.title }}</h2>
         <p class='excerpt'>
             {{ post.excerpt }}<br/>
             {{ post.date | | date: "%Y %b %-d" }}

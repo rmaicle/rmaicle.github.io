@@ -9,7 +9,7 @@ tags: [root]
 <div id="archive">
 {% for post in site.posts limit %}
     <article class="summary">
-        <a href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
+        <a href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
         <a href="{{ post.url }}">
         <p class='excerpt'>
             {{ post.excerpt }}<br/>
