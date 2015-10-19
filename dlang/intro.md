@@ -6,5 +6,8 @@ group: DLang
 tags: [dlang, dlangref]
 ---
 
+## Intro test page
+{% comment %}
 {% include_relative intro/intro.md %}
 {% include_relative intro/history.md %}
+{% endcomment %}
