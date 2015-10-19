@@ -202,11 +202,11 @@ Why is there no option where to put the map file? Like the options for generatin
 
 | Category | Options |
 |----------|:--------|
-| Warnings | -__w__[__i__] &nbsp; Treat warnings as errors (compilation will halt) [-_w_] or treat warnings as ordinary message (compilation will continue) [-_wi_]. |
-| Output | -__color__[=__on__&nbsp;&#124;&nbsp;__off__] &nbsp; Force colored console output [-_color_=_on_] or _off_ [-_color_=_off_]. |
-|        | -__quiet__ &nbsp; Suppress non-essential compiler messages.
-|        | -__v__ &nbsp; Verbose compiler output. |
-|        | -__vcolumns__ &nbsp; Print character (_column_) numbers in diagnostic messages. |
+| Warnings | -__w__[__i__] &nbsp; Options on how warnings are reported. <p>Treat warnings as errors [-_w_] and compilation halts on error. Or treat warnings as ordinary message [-_wi_] and compilation proceeds when a warning is encountered.</p> |
+| Console | -__color__[=__on__&nbsp;&#124;&nbsp;__off__] &nbsp; Force a colored or uncolored console output. <p>If the console supports it, force colored console output [-_color_=_on_] or -_color_. If the output already uses colors and a non-colored output is desired then the compiler can be forced to do normal color console output [-_color_=_off_].</p> |
+|         | -__quiet__&nbsp;&#124;&nbsp;-__v__ \(lowercase v\) &nbsp; Amount or quality of compiler output messages. <p>Suppress non-essential compiler output [-__quiet__] or verbose output [-__v__].
+|         | -__vcolumns__ &nbsp; Column number display in diagnostic messages. <p>Display the column number in diagnostic messages. If this option is not used (default) the diagnostic messages display only the line number after the filename.</p> |
+
 
 
 {% comment %}
