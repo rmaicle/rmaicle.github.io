@@ -176,4 +176,7 @@ dlang_list: {
     'Interfacing to C':            '/dlang/c_interface.html',
     'Vector Extensions':           '/dlang/vector_ext.html',
     'Inline Assembler':            '/dlang/assembler.html',
+    
+    'Annex':                       'divider',
+    'Compiler':                    '/dlang/compiler.html',
 }
