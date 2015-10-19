@@ -147,6 +147,7 @@ pages_list: {
 # This is the list of pages under the DLang directory.
 dlang_list: {
     'Introduction':                '/dlang/intro.html',
+    'Lexical':                     '/dlang/lexical.html',
     'Types':                       '/dlang/types.html',
     'Expressions':                 '/dlang/expressions.html',
     'Statements':                  '/dlang/statements.html',
