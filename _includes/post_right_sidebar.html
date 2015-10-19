@@ -16,7 +16,7 @@
             {% for thisTag in page.tags %}
                 {% if postHasSimilar == false and hasSimilar.size < 6 and post != page and tag == thisTag %}
                     {% if hasSimilar.size == 0 %}
-                        <h3>Related Posts</h3>
+                        <h1>Related Posts</h1>
                         <ul class="list_style_none padding_left_none vspace">
                     {% endif %}
                     <li>
@@ -48,10 +48,7 @@
         </ul>
     {% endif %}
 
-    {% if page.title != "Home" %}
-        <h3>Recent Posts</h3>
-        {% include recent_posts.html %}
-    {% endif %}
+    {% include recent_posts.html %}
 
     {% include common_links.html %}
 
