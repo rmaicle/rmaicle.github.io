@@ -162,8 +162,8 @@ This is the actual text output of the compiler `--help` option formatted as a ta
 | Libraries | -__debuglib__=&lt;__name__&gt; &nbsp; Set symbolic debug library to _name_. |
 |           | -__defaultlib__=&lt;__name__&gt; &nbsp; Set default library to _name_.|
 | Library Type | -__shared__ [-__fPIC__] &nbsp; Build as shared library and optionally generate Position Independent Code [-_fPIC_]. Note that PIC is available on Linux only. |
-| Build | -__debug__[=&lt;__level__&nbsp;&#124;&nbsp;__identifier__&gt;] &nbsp; Compile in all debug code or debug code that is <= _level_ and/or == _identifier_. |
-|       | -__g__[__c__] \(lowercase c\) &nbsp; Symbolic debug information may be added for D [-_g_] and non-D [-_gc_] debuggers. |
+| Debug Info | -__g__[__c__] \(lowercase c\) &nbsp; Symbolic debug information. <p>Added symbolic debug information for D debuggers [-_g_]. Optionally, for non-D debuggers, use [-_gc_].</p> |
+| Build | -__debug__[=&lt;__level__&nbsp;&#124;&nbsp;__identifier__&gt;]&nbsp;... &nbsp; Include `debug` code blocks. <p>Compile in `debug` code blocks that satisfy one or both conditions: <= _level_ and/or == _identifier_. Specifying [-__debug__] is equivalent to [-__debug__=1].</p><p>Note that multiple __level__s and __identifier__s may be set as in  [-__debug__=1 -__debug__=2 -__debug__=beta]\).</p> |
 |       | -__release__ [-__O__] \(uppercase o\) &nbsp; Compile release version and optionally optimize [-_O_] generated code. Release versions do not include internal run-time checks for contracts and assertions; array bounds checking is not done for system and trusted functions. Assertion failures will result to undefined behaviour. |
 | Architecture | -__m__[__32__&nbsp;&#124;&nbsp;__64__] &nbsp; Generate 32-bit [-_m32_] or 64-bit [-_m64_] code. 32-bit compiler defaults to -m32 and 64-bit compiler defaults to -m64. |
 | Version | -__version__=&lt;__level__&nbsp;&#124;&nbsp;__identifier__&gt;&nbsp;... &nbsp; Compile in version code that is >= _level_ and/or == _identifier_. |
