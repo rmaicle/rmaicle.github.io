@@ -149,7 +149,7 @@ This is the actual text output of the compiler `--help` option formatted as a ta
 | Configuration | -__conf__=&lt;__path__&gt; &nbsp; Use configuration file at specified path. |
 | General | -__allinst__ &nbsp; Generate code for all template instantiations. |
 |         | -__boundscheck__=<__on__&nbsp;&#124;&nbsp;__safeonly__&nbsp;&#124;&nbsp;__off__> &nbsp; Bounds checking. <ul><li>_on_ enables bounds checking. This is the default for debug builds.</li><li>_safeonly_ enables bounds checking in `@safe` code only. This is the default for release builds.</li><li>_off_ disables bounds checking in all code.</li> |
-|         | -__c__ \(small c\) &nbsp; Compile only. Do not link. |
+|         | -__c__ \(lowercase c\) &nbsp; Compile only. Do not link. |
 |         | -__dip25__ &nbsp; Implement http://wiki.dlang.org/DIP25 (experimental). |
 |         | -__gs__ &nbsp; Always emit stack frame. |
 |         | -__gx__ &nbsp; Add stack stomp code. |
@@ -157,14 +157,14 @@ This is the actual text output of the compiler `--help` option formatted as a ta
 |         | -__inline__ &nbsp; Do function inlining. |
 |         | -__main__ &nbsp; Add default main() (e.g. for unittesting). |
 |         | -__property__ &nbsp; Enforce property syntax. |
-| Imports | -__I__&lt;__path__&gt; \(capital i\) &nbsp; Specify path where compiler will look for imports. |
+| Imports | -__I__&lt;__path__&gt; \(uppercase i\) &nbsp; Specify path where compiler will look for imports. |
 |         | -__J__&lt;__path__&gt;&nbsp;... &nbsp; Specify path where compiler will look for string imports. |
 | Libraries | -__debuglib__=&lt;__name__&gt; &nbsp; Set symbolic debug library to _name_. |
 |           | -__defaultlib__=&lt;__name__&gt; &nbsp; Set default library to _name_.|
 | Library Type | -__shared__ [-__fPIC__] &nbsp; Build as shared library and optionally generate Position Independent Code [-_fPIC_]. Note that PIC is available on Linux only. |
 | Build | -__debug__[=&lt;__level__&nbsp;&#124;&nbsp;__identifier__&gt;] &nbsp; Compile in all debug code or debug code that is <= _level_ and/or == _identifier_. |
-|       | -__g__[__c__] \(small c\) &nbsp; Symbolic debug information may be added for D [-_g_] and non-D [-_gc_] debuggers. |
-|       | -__release__ [-__O__] \(capital o\) &nbsp; Compile release version and optionally optimize [-_O_] generated code. Release versions do not include internal run-time checks for contracts and assertions; array bounds checking is not done for system and trusted functions. Assertion failures will result to undefined behaviour. |
+|       | -__g__[__c__] \(lowercase c\) &nbsp; Symbolic debug information may be added for D [-_g_] and non-D [-_gc_] debuggers. |
+|       | -__release__ [-__O__] \(uppercase o\) &nbsp; Compile release version and optionally optimize [-_O_] generated code. Release versions do not include internal run-time checks for contracts and assertions; array bounds checking is not done for system and trusted functions. Assertion failures will result to undefined behaviour. |
 | Architecture | -__m__[__32__&nbsp;&#124;&nbsp;__64__] &nbsp; Generate 32-bit [-_m32_] or 64-bit [-_m64_] code. 32-bit compiler defaults to -m32 and 64-bit compiler defaults to -m64. |
 | Version | -__version__=&lt;__level__&nbsp;&#124;&nbsp;__identifier__&gt;&nbsp;... &nbsp; Compile in version code that is >= _level_ and/or == _identifier_. |
 | Deprecation | -__d__[__w__&nbsp;&#124;&nbsp;__e__] &nbsp; Either silently allow deprecated features [-_d_], show them as warnings [-_dw_] or report as errors [-_de_]. Deprecated features include symbols with the `deprecated` attribute. See Output group about warnings and errors. |
