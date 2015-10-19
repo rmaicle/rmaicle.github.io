@@ -3,7 +3,7 @@
 <!-- Add vertical space before the 'hr' so it does not look cramped -->
 <p class="vspace5" />
 <hr class="thin">
-<div>
+<div class="vspace">
     {% assign previous_page = nil %}
     {% assign previous_url = nil %}
     {% assign current_page_found = false %}
@@ -15,12 +15,9 @@
             {% if p[0] == page.title and previous_page != nil %}
                 <div id="page_previous">
                     <p class="vspace5">Previous</p>
-                    <a href="{{ previous_url }}">
-                        <h3 class="vspace10">{{ previous_page }}</h3>
-                    </a>
+                    <p class="vspace5"><a href="{{ previous_url }}">{{ previous_page }}</a></p>
                     
-                    <div class="vspace">&nbsp;</div>
-                    <a href="#">Back to Top</a>
+                    <p class="back_to_top vspace5"><a href="#">Back to Top</a></p>
                 </div>
                 
             {% endif %}
@@ -33,12 +30,9 @@
             {% if current_page_found == true %}
                 <div id="page_next">
                     <p class="vspace5">Next</p>
-                    <a href="{{ p[1] }}">
-                        <h3 class="vspace10">{{ p[0] }}</h3>
-                    </a>
+                    <p class="vspace5"><a href="{{ p[1] }}">{{ p[0] }}</a></p>
                     
-                    <div class="vspace">&nbsp;</div>
-                    <a href="#">Back to Top</a>
+                    <p class="back_to_top vspace5"><a href="#">Back to Top</a></p>
                 </div>
                 
                 <!-- Reset so everything happens only once -->
@@ -53,8 +47,6 @@
             
         {% endif %}
     {% endfor %}
-    
-    <div class="vspace">&nbsp;</div>
 </div>
 
 {% endif %}
