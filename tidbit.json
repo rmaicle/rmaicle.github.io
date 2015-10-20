@@ -1,8 +1,9 @@
 ---
 # From: thornelabs.net/2014/06/08/a-better-way-to-display-random-jekyll-posts-on-page-load-or-refresh-using-jquery-and-json.html
+# {% for post in site.tidbits limit:10 %}
 ---
 [
-{% for post in site.tidbits limit:3 %}
+{% for post in site.tidbits %}
     {
       "title"      : "{{ post.title }}",
       "href"       : "{{ post.url }}",
