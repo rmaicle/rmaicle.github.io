@@ -3,7 +3,7 @@ layout: reference_dlang
 title: D Programming Language
 excerpt:
 group: DLang
-tags: [root]
+tags: [dlang, dlangref]
 ---
 
 This is my personal Guide to the [D Programming Language](http://dlang.org/).

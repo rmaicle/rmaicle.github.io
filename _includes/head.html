@@ -59,6 +59,53 @@
         function removeNL(s){
             return s.replace(/[\n\r\t]/g, ""); //replaces NewLine or CarriageReturn or Tab with empty string.
         }
+        
+        {% if dlangref == true %}
+        
+        function generateDlangCompilerReleases() {
+            $.getJSON("/dlang_compiler_releases.json", function(data) {
+                console.log("[dlang_compiler_releases.json loaded]");
+                var postsCount = data.length;
+                var posts = data;
+                var counter = 0;
+                
+                var divContents = $("#compiler_releases");
+                divContents.append('<h1>Compiler Releases</h1>');
+                while (counter < postsCount) {
+                    divContents.append("<p><b>" + posts[counter].release + "</b> &nbsp; " + posts[counter].title + "</p>");
+                    divContents.append("&nbsp;&nbsp;&bull; <a href='" + posts[counter].download + "'>Download</a><br/>");
+                    divContents.append("&nbsp;&nbsp;&bull; <a href='" + posts[counter].changelog + "'>Change Log</a><br/>");
+                    divContents.append("<hr class='thin medium margintop15 darker'></hr>");
+                    counter++;
+                }
+                divContents.append("<p>Query and report bugs <a href='https://issues.dlang.org'>here</a>.</p>")
+            });
+        }
+        
+        function generateDlangNews(maxPosts) {
+            $.getJSON("/dlangnews.json", function(data) {
+                console.log("[dlangnews.json loaded]");
+                var postsCount = data.length;
+                var posts = data;
+                var counter = 0;
+                var divDlangNews = $("#dlang_news");
+                divDlangNews.append('<h1>Latest News</h1>');
+                while (counter < postsCount) {
+                    var content = posts[counter].content;
+                    divDlangNews.append(content);
+                    if (posts[counter].link != "") {
+                        divDlangNews.append("<i><a href='" + posts[counter].link + "'>Link to details</a></i>");
+                    }
+                    counter++;
+                    if (counter < postsCount) {
+                        divDlangNews.append("<hr class='thin medium margintop15 darker'></hr>");
+                    }
+                }
+            });
+        }
+        
+        {% else %}
+        
         function generateRandomPosts(maxPosts) {
             $.getJSON("/tidbit.json", function(data) {
                 console.log("[tidbit.json loaded for random posts]");
@@ -68,7 +115,7 @@
                 var counter = 0;
                 var numberOfPosts = maxPosts;
                 if (maxPosts == null || maxPosts == 0) {
-                    numberOfPosts = 5;
+                    numberOfPosts = 3;
                 }
                 if (postsCount < numberOfPosts) {
                     numberOfPosts = postsCount;
@@ -110,9 +157,21 @@
                 }
             });
         }
-
+        
+       
+        {% endif %}
+        
+        
+        
+        
+        
         $(document).ready(function() {
-            generateRandomPosts();
+            {% if dlangref == true %}
+                generateDlangCompilerReleases();
+                generateDlangNews();
+            {% else %}
+                generateRandomPosts();
+            {% endif %}
         });
     </script>
     <!--[if lt IE 9]>

@@ -501,8 +501,8 @@ section.column_left_sidebar p {
 
 #random_tidbits div.tidbit_entry,
 #dlang_foundation,
-#latest_release,
-#latest_news {
+#compiler_releases,
+#dlang_news {
     border-radius: 3px;
     background: #1a1a1a;
     /* Use at least 1px padding on top otherwise it collapses */
@@ -531,10 +531,14 @@ section.column_left_sidebar p {
         font-size: $font_size_default - 1;
         color: $color_text_darker;
         margin-bottom: 0px;
+        /* For the news we use */
+        b, strong {
+            font-size: $font_size_default - 1;
+            /* color: $color_primary_darker - 30; */
+            text-shadow: none;
+        }
         i, em {
             font-size: $font_size_default - 1;
-            color: $color_primary_darker - 30;
-            text-shadow: none;
         }
         &.qauthor {
             font-family: $font_heading;

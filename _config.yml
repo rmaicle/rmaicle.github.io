@@ -6,7 +6,8 @@ layouts:     ./_layouts
 data_source: ./_data
 collections:
   tidbits:
-    output:   false
+  dlangnews:
+  dlang_compiler_releases:
 
 # Handling Reading
 safe:         false
@@ -131,6 +132,18 @@ defaults:
     values:
       layout:   "none"
       tidbit:   "true"
+  -
+    scope:
+      path:     "dlangnews"
+      type:     "dlangnews"
+    values:
+      layout:     "none"
+  -
+    scope:
+      path:     "dlang_compiler_releases"
+      type:     "dlang_compiler_releases"
+    values:
+      layout:     "none"
 
 # Custom vars
 version:        0.1.0
