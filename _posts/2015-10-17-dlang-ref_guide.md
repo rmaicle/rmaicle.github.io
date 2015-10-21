@@ -1,6 +1,6 @@
 ---
 title: A Guide to the D Programming Language
-excerpt: Another way (re)learning the D programming language.
+excerpt: Another way of (re)learning the D programming language.
 categories: [Blog]
 tags: [dlang, programming]
 ---
@@ -13,7 +13,7 @@ D has come a long way.
 
 To start relearning D, I think it would also be a good idea to write a [_Guide to the D Programming Language_](/dlang/index.html).
 Writing this guide would definitely contribute to understanding the language better and I intend to share it.
-I'm not sure how well I would do with this but I sure like the challenge.
+I'm not sure how well I would do but I sure like the challenge.
 
 Hopefully, the guide will evolve to become a good comprehensive reference learning the D programming language.
 Who knows someone else might find it useful.
