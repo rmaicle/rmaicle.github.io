@@ -1,8 +1,10 @@
 # Local directories for local testing
+.sass-cache/**
 _drafts/**
 _site
 _sass/*.map
-.sass-cache/**
 _includes/.sass-cache/**
+test
+test/**
 # GitEye project
 .project
