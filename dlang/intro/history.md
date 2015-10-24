@@ -1,4 +1,4 @@
-#### A Very Short History
+## A Very Short History
 
 [Walter Bright] started working on a new programming language back in the 1990s.
 For Walter, this is nothing new.
