@@ -380,15 +380,15 @@ section.column_right_sidebar {
 /* Main content column                                                       */
 /* ------------------------------------------------------------------------- */
 
-section.column_main h1 { font-size: 20px; }
-section.column_main h2 { font-size: 19px; }
+section.column_main h1 { font-size: 22px; }
+section.column_main h2 { font-size: 20px; }
 section.column_main h3 { font-size: 18px; }
-section.column_main h4 { font-size: 17px; }
-section.column_main h5 { font-size: 15px; }
-section.column_main h6 { font-size: 14px; }
+section.column_main h4 { font-size: 16px; }
+section.column_main h5 { font-size: 14px; }
+section.column_main h6 { font-size: 13px; }
 
 section.column_main {
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4 {
         font-family: $font_heading;
         font-weight: normal;
         color: $color_text_highlight;
@@ -401,16 +401,24 @@ section.column_main {
         padding-top: 5px;
     }
     
-    h2, h3, h4, h5 {
+    h2, h3, h4 {
         padding-top: 20px;
     }
-    h6 {
-        font-weight: bold;
-        font-style: italic;
+    h5, h6 {
+        font-family: $font_heading_small;
+        font-weight: normal;
+        color: $color_text_highlight;
+        text-shadow: none;
 
         padding-top: 10px;
-        margin-top: 10px;
-        margin-bottom: 12px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+    h5 {
+        font-style: italic;
+    }
+    h6 {
+        font-style: italic;
     }
     
     p, li, dl {
@@ -520,7 +528,7 @@ section.column_left_sidebar p {
     }
     a {
         font-family: $font_default_thin;
-        font-size: $font_size_default - 1;
+        font-size: $font_size_default_thin;
         color: $color_text_darker;
         &:hover {
             color: $color_primary;
@@ -528,22 +536,22 @@ section.column_left_sidebar p {
     }
     p {
         font-family: $font_default_thin;
-        font-size: $font_size_default - 1;
+        font-size: $font_size_default_thin;
         color: $color_text_darker;
         margin-bottom: 0px;
         /* For the news we use */
         b, strong {
-            font-size: $font_size_default - 1;
+            font-size: $font_size_default_thin;
             /* color: $color_primary_darker - 30; */
             text-shadow: none;
         }
         i, em {
-            font-size: $font_size_default - 1;
+            font-size: $font_size_default_thin;
         }
         &.qauthor {
             font-family: $font_heading;
             font-style: italic;
-            font-size: $font_size_default - 1;
+            font-size: $font_size_default_thin;
             color: $color_text_highlight;
             padding-top: 8px;
         }
@@ -554,7 +562,7 @@ section.column_left_sidebar p {
         padding-left: 20px;
         margin-bottom: 0;
         li {
-            font-size: $font_size_default - 1;
+            font-size: $font_size_default_thin;
             color: $color_text_darker;
             padding-left: 5px;
         }
@@ -617,12 +625,15 @@ section.column_right_sidebar {
     
     ul, ol {
         li {
+            font-family: $font_default_thin;
+            font-size: $font_size_default_thin;
+            
             padding: 0;
             line-height: 18px;
             
             a {
                 font-family: $font_default_thin;
-                font-size: $font_size_default - 1;
+                font-size: $font_size_default_thin;
                 color: $color_text_darker;
                 border-bottom: none;
                 

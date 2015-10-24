@@ -3,13 +3,14 @@
 // Playfair looks nice in bigger sizes, like titles or headings
 
 //@import url("//fonts.googleapis.com/css?family=Merriweather Sans");
-//@import url("//fonts.googleapis.com/css?family=Merriweather");
+@import url("//fonts.googleapis.com/css?family=Merriweather");
 @import url("//fonts.googleapis.com/css?family=PT Serif");
 @import url("//fonts.googleapis.com/css?family=Droid Sans");
 @import url("//fonts.googleapis.com/css?family=Cantarell");
 
 $font_code:                 "RM Courier", Monaco, Menlo, Consolas, Bitstream Vera Sans Mono, Lucida Console, Terminal;
 $font_serif:                "PT Serif", Helvetica, Arial, serif;
+$font_serif_small:          "Merriweather", Helvetica, Arial, serif;
 $font_sans:                 "Cantarell", Helvetica, Arial, sans-serif;
 $font_sans_thin:            "Droid Sans", Helvetica, Arial, sans-serif;
 
@@ -18,23 +19,24 @@ $font_title_tagline:        $font_serif;
 $font_default:              $font_sans;
 $font_default_thin:         $font_sans_thin;
 $font_heading:              $font_serif;
+$font_heading_small:        $font_serif_small;
 $font_label:                $font_sans;
 $font_footer:               $font_default;
 
 $font_size_title:           22px;
 $font_size_title_tagline:   14px;
 
-//$font_size_default:       14px; using Cantarell
 $font_size_default:         14px;
+$font_size_default_thin:    13px;
 $font_size_code:            13px;
 $font_size_label:           12px;
 
 $font_size_nav:	            $font_size_label;
-$font_size_page_nav:	    $font_size_nav + 2;
+$font_size_page_nav:        $font_size_nav + 2;
 
 $font_size_right_links:     $font_size_nav;
 
-$font_size_footer:		    11px;
+$font_size_footer:          11px;
 $font_size_license:         11px;
 
 @font-face {
