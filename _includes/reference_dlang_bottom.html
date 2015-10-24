@@ -1,4 +1,4 @@
-{% if page.title != "D Programming Language" %}
+{% if page.title == 'Guide to the D Programming Language' and    page.chapter != 'Index' %}
 
 <!-- Add vertical space before the 'hr' so it does not look cramped -->
 <p class="vspace5" />
@@ -12,7 +12,7 @@
         {% if p[1] != 'divider' %}
         
         
-            {% if p[0] == page.title and previous_page != nil %}
+            {% if p[0] == page.chapter and previous_page != nil %}
                 <div id="page_previous">
                     <p class="vspace5">Previous</p>
                     <p class="vspace5"><a href="{{ previous_url }}">{{ previous_page }}</a></p>
@@ -41,7 +41,7 @@
             
             <!-- search for the current page -->
             <!-- when found then the next page link is displayed at the next iteration -->
-            {% if p[0] == page.title and current_page_found == false %}
+            {% if p[0] == page.chapter and current_page_found == false %}
                 {% assign current_page_found = true %}
             {% endif %}
             

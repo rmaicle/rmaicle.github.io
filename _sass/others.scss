@@ -399,6 +399,7 @@ section.column_main {
     h1, h1.pagetitle {
         margin-top: 0px;
         padding-top: 5px;
+        padding-bottom: 20px;
     }
     
     h2, h3, h4 {
@@ -899,6 +900,10 @@ section.social {
     text-align: right;
 }
 
+.color_primary_darker {
+    color: $color_primary_darker !important;
+}
+
 .scroll_horizontal {
     overflow: scroll;
     overflow-x: scroll;
@@ -935,6 +940,18 @@ li.no_left_margin {
     margin-bottom: 5px !important;
 }
 
+.margin_bottom_none {
+    margin-bottom: 0px !important;
+}
+
+.padding_top_none {
+    padding-top: 0px !important;
+}
+
+.padding_bottom_none {
+    padding-bottom: 0px !important;
+}
+
 .paddingtop0 {
     padding-top: 0px !important;
 }
@@ -949,6 +966,10 @@ li.no_left_margin {
 
 .padding_left_25 {
     padding-left: 25px !important;
+}
+
+.padding_bottom_25 {
+    padding-bottom: 25px !important;
 }
 
 .vspace5 {

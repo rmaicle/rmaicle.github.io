@@ -150,47 +150,43 @@ version:        0.1.0
 
 # This is the list of pages to incldue in the header of the website.
 pages_list: {
-  'Archive':      '/archive.html',
-#  'To Read':    '/toread.html',
-#  'Blogroll':   '/blogroll.html',
-  'DLang':      '/dlang/index.html'
-#  'References': '/refs.html',
-#  'About':      '/about.html',
+  'Archive':     '/archive.html',
+  'DLang':       '/dlang-guide/index.html',
 }
 
 # This is the list of pages under the DLang directory.
 dlang_list: {
-    'Introduction':                '/dlang/intro.html',
-    'Lexical':                     '/dlang/lexical.html',
-    'Types':                       '/dlang/types.html',
-    'Expressions':                 '/dlang/expressions.html',
-    'Statements':                  '/dlang/statements.html',
-    'Enumerations':                '/dlang/enumerations.html',
-    'Arrays':                      '/dlang/arrays.html',
-    'Functions':                   '/dlang/functions.html',
-    'Structs, Unions and Classes': '/dlang/structs_unions_classes.html',
-    'Templates':                   '/dlang/templates.html',
+    'Introduction':                '/dlang-guide/intro.html',
+    'Lexical':                     '/dlang-guide/lexical.html',
+    'Types':                       '/dlang-guide/types.html',
+    'Expressions':                 '/dlang-guide/expressions.html',
+    'Statements':                  '/dlang-guide/statements.html',
+    'Enumerations':                '/dlang-guide/enumerations.html',
+    'Arrays':                      '/dlang-guide/arrays.html',
+    'Functions':                   '/dlang-guide/functions.html',
+    'Structs, Unions and Classes': '/dlang-guide/structs_unions_classes.html',
+    'Templates':                   '/dlang-guide/templates.html',
 
     'Convenience':                 'divider',
-    'Modules':                     '/dlang/modules.html',
-    'Memory Management':           '/dlang/memory.html',
-    'Unit Testing':                '/dlang/testing.html',
-    'Embedded Documentation':      '/dlang/embedded_doc.html',
+    'Modules':                     '/dlang-guide/modules.html',
+    'Memory Management':           '/dlang-guide/memory.html',
+    'Unit Testing':                '/dlang-guide/unit_testing.html',
+    'Embedded Documentation':      '/dlang-guide/embedded_doc.html',
 
     'Power':                       'divider',
-    'Contracts':                   '/dlang/contracts.html',
-    'Conditional Compilation':     '/dlang/conditional.html',
-    'Mixins':                      '/dlang/mixins.html',
-    'Traits':                      '/dlang/traits.html',
-    'Compiler Pragmas':            '/dlang/pragmas.html',
+    'Contracts':                   '/dlang-guide/contracts.html',
+    'Conditional Compilation':     '/dlang-guide/conditional_compilation.html',
+    'Mixins':                      '/dlang-guide/mixins.html',
+    'Traits':                      '/dlang-guide/traits.html',
+    'Compiler Pragmas':            '/dlang-guide/pragmas.html',
 
     'Efficiency':                  'divider',
-    'Memory Alignment':            '/dlang/alignment.html',
-    'Concurrency':                 '/dlang/concurrency.html',
-    'Interfacing to C':            '/dlang/c_interface.html',
-    'Vector Extensions':           '/dlang/vector_ext.html',
-    'Inline Assembler':            '/dlang/assembler.html',
+    'Memory Alignment':            '/dlang-guide/memory_alignment.html',
+    'Concurrency':                 '/dlang-guide/concurrency.html',
+    'Interfacing to C':            '/dlang-guide/interface_to_c.html',
+    'Vector Extensions':           '/dlang-guide/vector_extensions.html',
+    'Inline Assembler':            '/dlang-guide/assembler.html',
     
     'Annex':                       'divider',
-    'Compiler':                    '/dlang/compiler.html'
+    'Compiler':                    '/dlang-guide/compiler.html'
 }
