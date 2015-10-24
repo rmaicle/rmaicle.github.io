@@ -1,1 +1,0 @@
-Incorporated on October 16, 2015 with the state of Washington, USA.

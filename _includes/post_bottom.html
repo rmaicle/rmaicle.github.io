@@ -1,7 +1,7 @@
 <!-- Add vertical space before the 'hr' so it does not look cramped -->
-<p class="vspace5" />
+<p class="padding_bottom_5" />
 <hr class="thin">
-<div class="vspace">
+<div class="padding_bottom_25">
     <p>
         {% for tag in page.tags %}
             <span class="tag">{{ tag }}</span>
@@ -9,7 +9,7 @@
     </p>
     <br/>
 
-    <div class="vspace">
+    <div class="padding_bottom_25">
         <!-- Twitter -->
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="rickymaicle"></a>
         <!-- Google + -->
@@ -18,29 +18,29 @@
 
     <div id="page_previous">
         {% if page.previous != nil %}
-            <p class="vspace5">Previous</p>
-            <p class="vspace5"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a><br/>
+            <p class="padding_bottom_5">Previous</p>
+            <p class="padding_bottom_5"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a><br/>
                 <i>
                 {{ page.previous.excerpt }}<br/>
                 {{ page.previous.date | | date: "%b %-d, %Y" }}
                 </i>
             </p>
             
-            <p class="back_to_top vspace5"><a href="#">Back to Top</a></p>
+            <p class="back_to_top padding_bottom_5"><a href="#">Back to Top</a></p>
         {% endif %}
     </div>
 
     <div id="page_next">
         {% if page.next != nil %}
-            <p class="vspace5">Next</a></p>
-            <p class="vspace5"><a href="{{ page.next.url }}">{{ page.next.title }}</a><br/>
+            <p class="padding_bottom_5">Next</a></p>
+            <p class="padding_bottom_5"><a href="{{ page.next.url }}">{{ page.next.title }}</a><br/>
                 <i>
                 {{ page.next.excerpt }}<br/>
                 {{ page.next.date | | date: "%b %-d, %Y" }}
                 </i>
             </p>
             
-            <p class="back_to_top vspace5"><a href="#">Back to Top</a></p>
+            <p class="back_to_top padding_bottom_5"><a href="#">Back to Top</a></p>
         {% endif %}
     </div>
 </div>
