@@ -8,7 +8,18 @@ group: DLang
 <section class="column_main">
     
     <h6 class="color_primary_darker padding_top_none margin_bottom_none">{{ page.title }}</h6>
-    <h1>{{ page.chapter }}</h1>
+    <h1>{{ page.chapter }}
+    {% assign draft = false %}
+    {% for tag in page.tags %}
+        {% if tag == "draft" %}
+            {% assign draft = true %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+    {% if draft == true %}
+        &nbsp;&nbsp;&nbsp;[draft]
+    {% endif %}
+    </h1>
 
     {{ content }}
     
