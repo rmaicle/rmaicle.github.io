@@ -82,23 +82,30 @@
             });
         }
         
+        // Files are suffixed with dates so they are read from oldest to newest.
+        // It should be displayed starting with the newest to oldest.
         function generateDlangNews(maxPosts) {
             $.getJSON("/dlangnews.json", function(data) {
                 console.log("[dlangnews.json loaded]");
-                var postsCount = data.length;
                 var posts = data;
-                var counter = 0;
+                var postsCount = data.length;
+                var counter = postsCount;
                 var divDlangNews = $("#dlang_news");
                 divDlangNews.append('<h1>Latest News</h1>');
-                while (counter < postsCount) {
-                    var content = posts[counter].content;
-                    divDlangNews.append(content);
-                    if (posts[counter].link != "") {
-                        divDlangNews.append("<i><a href='" + posts[counter].link + "'>Link to details</a></i>");
-                    }
-                    counter++;
-                    if (counter < postsCount) {
-                        divDlangNews.append("<hr class='thin medium margin_top_15 darker'></hr>");
+                if (postsCount == 0) {
+                    divDlangNews.append('<p>No news available</p>');
+                } else {
+                    while (counter > 0) {
+                        var i = counter - 1;
+                        var content = posts[i].content;
+                        divDlangNews.append(content);
+                        if (posts[i].link != "") {
+                            divDlangNews.append("<i><a href='" + posts[i].link + "'>Link to details</a></i>");
+                        }
+                        counter--;
+                        if (counter > 0) {
+                            divDlangNews.append("<hr class='thin medium margin_top_15 darker'></hr>");
+                        }
                     }
                 }
             });
