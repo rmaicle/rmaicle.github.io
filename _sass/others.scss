@@ -171,8 +171,41 @@ aside {
 }
 
 sup {
-    font-size: 80%;
-    color: $color_text_highlight;
+    a {
+        font-family: $font_default;
+        font-size: $font_size_default - 3;
+        color: $color_text_highlight;
+        border-bottom: none;
+    }
+    a::before {
+        content: " [note ";
+    }
+    a::after {
+        content: "] ";
+    }
+}
+
+div.footnotes {
+    hr {
+        height: 1px;
+        width: 30%;
+        margin-bottom: 10px;
+    }
+    ol {
+        padding-left: 20px;
+        li {
+            font-family: $font_default;
+            font-size: $font_size_default - 1;
+            p {
+                margin-bottom: 0px;
+                a {
+                font-family: $font_default;
+                font-size: $font_size_default - 1;
+                border-bottom: none;
+            }
+            }
+        }
+    }
 }
 
 /* ------------------------------------------------------------------------- */
