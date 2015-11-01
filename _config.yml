@@ -10,6 +10,7 @@ collections:
   dlang_compiler_releases:
 
 # Handling Reading
+redirects:    yes
 safe:         false
 include:      [".htaccess"]
 exclude:      []
