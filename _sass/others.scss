@@ -448,6 +448,13 @@ section.column_main {
         padding-top: 10px;
         margin-top: 0px;
         margin-bottom: 10px;
+        a {
+            font-family: $font_heading_small;
+            font-size: 13px;
+            font-weight: normal;
+            color: $color_primary_darker;
+            border-bottom: none;
+        }
     }
     h5 {
         font-style: italic;
@@ -947,6 +954,10 @@ section.social {
 
 .color_primary_darker {
     color: $color_primary_darker !important;
+}
+
+.color_highlight {
+    color: $color_text_highlight !important;
 }
 
 .scroll_horizontal {
