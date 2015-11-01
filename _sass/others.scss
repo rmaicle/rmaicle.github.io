@@ -126,10 +126,11 @@ p code {
 }
 
 table {
-    width: 100%;
+    //width: 100%;
     border: 1px solid $color_table_border;
     th, td {
-        font-size: $font_size_default;
+        font-family: $font_default_thin;
+        font-size: $font_size_default - 1;
         border: 1px solid $color_table_border;
     }
 	th {
