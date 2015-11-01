@@ -11,7 +11,7 @@
             {% endif %}
         {% endfor %}
         {% if dlangref == true %}
-            Guide to the D Programming Language - {{ page.chapter }}
+            Guide to the D Programming Language - {{ page.chapter }}{% if page.section != nil %} - {{ page.section }}{% endif %}
         {% else %}
             {{ site.title }} - {{ page.title }}
         {% endif %}

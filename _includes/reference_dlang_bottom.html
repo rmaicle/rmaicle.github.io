@@ -15,44 +15,42 @@
     {% assign previous_url = nil %}
     {% assign current_page_found = false %}
     
-    {% for p in site.dlang_list %}
-        {% if p[1] != 'divider' %}
+    {% for p in site.data.dguide %}
         
-        
-            {% if p[0] == page.chapter and previous_page != nil %}
-                <div id="page_previous">
-                    <p class="padding_bottom_5">Previous</p>
-                    <p class="padding_bottom_5"><a href="{{ previous_url }}">{{ previous_page }}</a></p>
-                    
-                    <p class="back_to_top padding_bottom_5"><a href="#">Back to Top</a></p>
-                </div>
+        {% if p.chapter == page.chapter and previous_page != nil %}
+            <div id="page_previous">
+                <p class="padding_bottom_5">Previous</p>
+                <p class="padding_bottom_5"><a href="{{ previous_url }}">{{ previous_page }}</a></p>
                 
-            {% endif %}
-            {% assign previous_page = p[0] %}
-            {% assign previous_url = p[1] %}
-            
-            
-            <!-- NOTE: This check must be performed first -->
-            <!--       because the current page may have been found in the previous iteration. -->
-            {% if current_page_found == true %}
-                <div id="page_next">
-                    <p class="padding_bottom_5">Next</p>
-                    <p class="padding_bottom_5"><a href="{{ p[1] }}">{{ p[0] }}</a></p>
-                    
-                    <p class="back_to_top padding_bottom_5"><a href="#">Back to Top</a></p>
-                </div>
-                
-                <!-- Reset so everything happens only once -->
-                {% assign current_page_found = false %}
-            {% endif %}
-            
-            <!-- search for the current page -->
-            <!-- when found then the next page link is displayed at the next iteration -->
-            {% if p[0] == page.chapter and current_page_found == false %}
-                {% assign current_page_found = true %}
-            {% endif %}
+                <p class="back_to_top padding_bottom_5"><a href="#">Back to Top</a></p>
+            </div>
             
         {% endif %}
+        
+        {% assign previous_page = p.chapter %}
+        {% assign previous_url = p.href %}
+        
+        
+        <!-- NOTE: This check must be performed first -->
+        <!--       because the current page may have been found in the previous iteration. -->
+        {% if current_page_found == true %}
+            <div id="page_next">
+                <p class="padding_bottom_5">Next</p>
+                <p class="padding_bottom_5"><a href="{{ p.href }}">{{ p.chapter }}</a></p>
+                
+                <p class="back_to_top padding_bottom_5"><a href="#">Back to Top</a></p>
+            </div>
+            
+            <!-- Reset so everything happens only once -->
+            {% assign current_page_found = false %}
+        {% endif %}
+        
+        <!-- search for the current page -->
+        <!-- when found then the next page link is displayed at the next iteration -->
+        {% if p.chapter == page.chapter and current_page_found == false %}
+            {% assign current_page_found = true %}
+        {% endif %}
+            
     {% endfor %}
 </div>
 

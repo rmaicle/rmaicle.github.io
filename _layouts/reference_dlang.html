@@ -6,9 +6,22 @@ group: DLang
 {% include reference_dlang_left_sidebar.html %}
 
 <section class="column_main">
-    
-    <h6 class="color_primary_darker padding_top_none margin_bottom_none">{{ page.title }}</h6>
+    {% if page.section == nil %}
+    <h6 class="color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ page.title }}</a></h6>
     <h1>{{ page.chapter }}
+    {% else %}
+    <h6 class="color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ page.title }}</a>
+    <span class="color_highlight">&bull;</span>
+    {% assign page_title = page.chapter %}
+    {% for item in site.data.dguide %}
+        {% if item.chapter == page_title %}
+            <a class="no_underline" href="{{ item.href }}">{{ page.chapter }}</a></h6>
+            {% break %}
+        {% endif %}
+    {% endfor %}
+    <h1>{{ page.section }}
+    {% endif %}
+    
     {% assign draft = false %}
     {% for tag in page.tags %}
         {% if tag == "draft" %}

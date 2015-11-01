@@ -1,0 +1,120 @@
+- chapter: 'Background'
+  href:    '/dlang-guide/background.html'
+  sections:
+    - section: 'Notable Features'
+      href:    '/dlang-guide/background/features.html'
+    - section: 'History'
+      href:    '/dlang-guide/background/history.html'
+  
+#- chapter: 'Preliminary'
+#  href:    '/dlang-guide/preliminary.html'
+#  sections:
+#    - section: 'Phases of Compilation'
+#      href:    '/dlang-guide/preliminary/compilation.html'
+#    - section: 'Program Execution'
+#      href:    '/dlang-guide/preliminary/execution.html'
+
+- chapter: 'Lexical'
+  href:    '/dlang-guide/lexical.html'
+  sections:
+#    - section: 'Source Text'
+#      href:    '/dlang-guide/lexical/source_text.html'
+#    - section: 'Whitespace, EOL, EOF'
+#      href:    '/dlang-guide/lexical/whitespace_eol_eof.html'
+    - section: 'Script Line'
+      href:    '/dlang-guide/lexical/script_line.html'
+    - section: 'Comments'
+      href:    '/dlang-guide/lexical/comments.html'
+    - section: 'Identifiers'
+      href:    '/dlang-guide/lexical/identifiers.html'
+    - section: 'Reserved Identifiers'
+      href:    '/dlang-guide/lexical/reserved_identifiers.html'
+    - section: 'Special Identifiers'
+      href:    '/dlang-guide/lexical/special_identifiers.html'
+    - section: 'Special Tokens'
+      href:    '/dlang-guide/lexical/special_tokens.html'
+
+- chapter: 'Types'
+  href:    '/dlang-guide/types.html'
+  
+- chapter: 'Expressions'
+  href:    '/dlang-guide/expressions.html'
+  
+- chapter: 'Statements'
+  href:    '/dlang-guide/statements.html'
+  
+- chapter: 'Enumerations'
+  href:    '/dlang-guide/enumerations.html'
+  
+- chapter: 'Arrays'
+  href:    '/dlang-guide/arrays.html'
+  
+- chapter: 'Functions'
+  href:    '/dlang-guide/functions.html'
+  
+- chapter: 'Structs, Unions and Classes'
+  href:    '/dlang-guide/structs_unions_classes.html'
+  
+- chapter: 'Templates'
+  href:    '/dlang-guide/templates.html'
+
+- chapter: 'Convenience'
+  href:    'divider'
+
+- chapter: 'Modules'
+  href:    '/dlang-guide/modules.html'
+  
+- chapter: 'Memory Management'
+  href:    '/dlang-guide/memory.html'
+  
+- chapter: 'Unit Testing'
+  href:    '/dlang-guide/unit_testing.html'
+  
+- chapter: 'Embedded Documentation'
+  href:    '/dlang-guide/embedded_doc.html'
+
+- chapter: 'Power'
+  href:    'divider'
+
+- chapter: 'Contracts'
+  href:    '/dlang-guide/contracts.html'
+  
+- chapter: 'Conditional Compilation'
+  href:    '/dlang-guide/conditional_compilation.html'
+  
+- chapter: 'Mixins'
+  href:    '/dlang-guide/mixins.html'
+  
+- chapter: 'Traits'
+  href:    '/dlang-guide/traits.html'
+  
+- chapter: 'Compiler Pragmas'
+  href:    '/dlang-guide/pragmas.html'
+
+- chapter: 'Efficiency'
+  href:    'divider'
+  
+- chapter: 'Memory Alignment'
+  href:    '/dlang-guide/memory_alignment.html'
+  
+- chapter: 'Concurrency'
+  href:    '/dlang-guide/concurrency.html'
+  
+- chapter: 'Interfacing to C'
+  href:    '/dlang-guide/interface_to_c.html'
+  
+- chapter: 'Vector Extensions'
+  href:    '/dlang-guide/vector_extensions.html'
+  
+- chapter: 'Inline Assembler'
+  href:    '/dlang-guide/assembler.html'
+  
+- chapter: 'Annex'
+  href:    'divider'
+  
+- chapter: 'Compiler'
+  href:    '/dlang-guide/compiler.html'
+  
+- chapter: 'ASCII Table'
+  href:    '/dlang-guide/ascii.html'
+  
