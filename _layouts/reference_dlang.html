@@ -1,7 +1,29 @@
 ---
 layout: default
-group: DLang
 ---
+
+{% assign dguide = false %}
+{% assign dref = false %}
+{% for tag in page.tags %}
+    {% if tag == "dguide" %}
+        {% assign dlangref = true %}
+        {% assign dguide = true %}
+        {% break %}
+    {% endif %}
+    {% if tag == "dref" %}
+        {% assign dlangref = true %}
+        {% assign dref = true %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
+{% assign draft = false %}
+{% for tag in page.tags %}
+    {% if tag == "draft" %}
+        {% assign draft = true %}
+        {% break %}
+    {% endif %}
+{% endfor %}
 
 {% include reference_dlang_left_sidebar.html %}
 
@@ -22,13 +44,6 @@ group: DLang
     <h1>{{ page.section }}
     {% endif %}
     
-    {% assign draft = false %}
-    {% for tag in page.tags %}
-        {% if tag == "draft" %}
-            {% assign draft = true %}
-            {% break %}
-        {% endif %}
-    {% endfor %}
     {% if draft == true %}
         &nbsp;&nbsp;&nbsp;[draft]
     {% endif %}

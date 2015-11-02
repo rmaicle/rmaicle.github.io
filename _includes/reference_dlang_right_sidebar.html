@@ -1,15 +1,26 @@
 <section class="column_right_sidebar">
 
+    {% if dguide == true %}
     <h1>D Programming Language</h1>
+    {% else %}
+    <h1>D Runtime Library Reference</h1>
+    {% endif %}
     
     <a class="no_underline" href="http://dlang.org">Official Site (dlang.org)</a></br>
-    <a class="no_underline" href="http://dlang.org/dlangspec.pdf">Specification</a></br>
+    <a class="no_underline" href="http://dlang.org/dlangspec.pdf">Language Specification (pdf)</a></br>
+    <a class="no_underline" href="http://dlang.org/phobos/index.html">Runtime Library Reference</a></br>
     <a class="no_underline" href="https://issues.dlang.org/">Issue Tracker</a></br>
-    <a class="no_underline" href="http://wiki.dlang.org/">D Wiki</a></br>
+    <a class="no_underline" href="http://wiki.dlang.org/">Wiki</a></br>
     <hr class="thin dark">
+    
+    {% if dguide == true %}
     
     <ol class="padding_left_25">
         {% include reference_dlang_toc_links.html %}
     </ol>
+    
+    {% else %}
+    
+    {% endif %}
     
 </section>

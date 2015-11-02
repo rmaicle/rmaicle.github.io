@@ -1,20 +1,17 @@
+{% assign dlangref = false %}
+{% for tag in page.tags %}
+    {% if tag == "dguide" or tag == "dref"%}
+        {% assign dlangref = true %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+
 <head>
     <title>
-    {% if page.title == "Home" %}
-        {{ site.title }} - {{ page.title }}
-    {% else %}
-        {% assign dlangref = false %}
-        {% for tag in page.tags %}
-            {% if tag == "dlangref" %}
-                {% assign dlangref = true %}
-                {% break %}
-            {% endif %}
-        {% endfor %}
-        {% if dlangref == true %}
-            Guide to the D Programming Language - {{ page.chapter }}{% if page.section != nil %} - {{ page.section }}{% endif %}
-        {% else %}
-            {{ site.title }} - {{ page.title }}
-        {% endif %}
+    {{ site.title }} - {{ page.title }}
+    {% if page.chapter != nil %}
+        - {{ page.chapter }}
+        {% if page.section != nil %} - {{ page.section }}{% endif %}
     {% endif %}
     </title>
     <meta charset="utf-8">
@@ -165,14 +162,12 @@
                 }
             });
         }
-        
-       
+
+
         {% endif %}
-        
-        
-        
-        
-        
+
+
+
         $(document).ready(function() {
             {% if dlangref == true %}
                 generateDlangCompilerReleases();
