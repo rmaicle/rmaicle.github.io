@@ -1,3 +1,6 @@
 [submodule "dlang-guide"]
 	path = dlang-guide
 	url = https://github.com/rmaicle/dlang-guide.git
+[submodule "dlang-ref"]
+	path = dlang-ref
+	url = https://github.com/rmaicle/dlang-ref.git
