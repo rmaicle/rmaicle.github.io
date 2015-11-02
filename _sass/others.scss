@@ -190,7 +190,8 @@ div.footnotes {
     hr {
         height: 1px;
         width: 30%;
-        margin-bottom: 10px;
+        // Must be the same as paragraph separator vertical space
+        margin-bottom: 12px;
     }
     ol {
         padding-left: 20px;
