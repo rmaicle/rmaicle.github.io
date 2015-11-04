@@ -131,6 +131,10 @@ table {
         font-family: $font_default_thin;
         font-size: $font_size_default - 1;
         border: 1px solid $color_table_border;
+        i, em {
+            font-family: $font_default_thin;
+            font-size: $font_size_default - 1;
+        }
     }
 	th {
         padding: 3px 10px;
@@ -160,7 +164,7 @@ blockquote {
 
 aside {
     font-size: $font_size_default;
-    line-height: 18px;
+    line-height: $font_size_default + 4;
     text-align: right;
     color: $color_aside_text;
     float: right;
@@ -195,12 +199,15 @@ div.footnotes {
     ol {
         padding-left: 20px;
         li {
-            font-family: $font_default;
+            font-family: $font_default_thin;
             font-size: $font_size_default - 1;
             p {
+                font-family: $font_default_thin;
+                font-size: $font_size_default - 1;
+                line-height: $font_size_default + 2;
                 margin-bottom: 0px;
                 a {
-                font-family: $font_default;
+                font-family: $font_default_thin;
                 font-size: $font_size_default - 1;
                 border-bottom: none;
             }
@@ -242,9 +249,9 @@ header {
         font-family: $font_title_tagline;
         font-weight: normal;
         font-style: italic;
-        font-size: $font_size_title_tagline - 1;
+        font-size: $font_size_title_tagline;
         text-align: left;
-        line-height: 14px;
+        line-height: $font_size_title_tagline + 1;
 
         margin: 0;
         /* If the title changes, the top padding may need to be adjusted */
@@ -466,7 +473,7 @@ section.column_main {
     p, li, dl {
         font-family: $font_default;
         font-size: $font_size_default;
-        line-height: $font_size_default + 4;
+        line-height: $font_size_default + 5;
         text-align: left;
     }
     
@@ -544,13 +551,6 @@ section.column_left_sidebar h3 {
 section.column_left_sidebar h4 { font-size: 14px; }
 section.column_left_sidebar h5 { font-size: 12px; }
 
-/*
-section.column_left_sidebar p {
-    font-size: $font_size_default - 1;
-    line-height: $font_size_default - 1 + 2;
-}
-*/
-
 #random_tidbits div.tidbit_entry,
 #dlang_foundation,
 #compiler_releases,
@@ -581,7 +581,7 @@ section.column_left_sidebar p {
     p {
         font-family: $font_default_thin;
         font-size: $font_size_default_thin;
-        line-height: $font_size_default_thin + 2;
+        line-height: $font_size_default_thin + 3;
         color: $color_text_darker;
         margin-bottom: 0px;
         /* For the news we use */
@@ -674,7 +674,7 @@ section.column_right_sidebar {
             font-size: $font_size_default_thin;
             
             padding: 0;
-            line-height: 18px;
+            line-height: $font_size_default_thin + 4;
             
             a {
                 font-family: $font_default_thin;
@@ -690,6 +690,22 @@ section.column_right_sidebar {
                     /* content: "\00BB  "; */
                 }
             }
+        }
+    }
+    
+    a {
+        font-family: $font_default_thin;
+        font-size: $font_size_default_thin;
+        line-height: $font_size_default_thin + 4;
+        color: $color_text_darker;
+        border-bottom: none;
+        
+        &:hover {
+            color: $color_primary;
+        }
+        
+        &:before {
+            /* content: "\00BB  "; */
         }
     }
 }
