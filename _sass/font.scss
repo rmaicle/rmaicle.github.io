@@ -17,6 +17,9 @@ $font_sans_thin:            "Droid Sans", Helvetica, Arial, sans-serif;
 $font_title:                $font_sans;
 $font_title_tagline:        $font_serif_small;
 $font_default:              $font_sans;
+@media print, screen and (max-width: 480px) {
+    $font_default:          $font_sans_thin;
+}
 $font_default_thin:         $font_sans_thin;
 $font_heading:              $font_serif;
 $font_heading_small:        $font_serif_small;
