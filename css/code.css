@@ -79,6 +79,7 @@
 
 .highlight     { background: transparent; }
 
+.highlight .n  { color: #b3b3b3; }
 .highlight .c  { color: #00cd00; font-style: normal } /* Comment */
 .highlight .cp { color: #00cd00; font-weight: bold } /* Comment.Preproc */
 .highlight .c1 { color: #00cd00; font-style: normal } /* Comment.Single */
