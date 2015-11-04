@@ -10,7 +10,7 @@ group: Posts
     <h1 class="pagetitle">{{ page.title }}</h1>
     <p class="excerpt">{{ page.excerpt }}</p>
     <p class="date">{{ page.date | date_to_string }}</p>
-    <p class="category vspace">Filed under:&nbsp;
+    <p class="category padding_bottom_25">Filed under:&nbsp;
         {% for category in page.categories %}
             <span>{{ category }}</span>&nbsp;
         {% endfor %}
