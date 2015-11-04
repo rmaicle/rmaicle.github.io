@@ -467,7 +467,7 @@ section.column_main {
     p, li, dl {
         font-family: $font_default;
         font-size: $font_size_default;
-        line-height: 18px;
+        line-height: $font_size_default + 4;
         text-align: left;
     }
     
@@ -545,10 +545,12 @@ section.column_left_sidebar h3 {
 section.column_left_sidebar h4 { font-size: 14px; }
 section.column_left_sidebar h5 { font-size: 12px; }
 
+/*
 section.column_left_sidebar p {
     font-size: $font_size_default - 1;
-    line-height: 16px;
+    line-height: $font_size_default - 1 + 2;
 }
+*/
 
 #random_tidbits div.tidbit_entry,
 #dlang_foundation,
@@ -580,6 +582,7 @@ section.column_left_sidebar p {
     p {
         font-family: $font_default_thin;
         font-size: $font_size_default_thin;
+        line-height: $font_size_default_thin + 2;
         color: $color_text_darker;
         margin-bottom: 0px;
         /* For the news we use */
