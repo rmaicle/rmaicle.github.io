@@ -528,6 +528,21 @@ section.column_main {
     }
 }
 
+@media print, screen and (max-width: 480px) {
+    section[class="column_main"] {
+        p, li, dl, a, i, em, b, strong {
+            font-family: $font_default_thin;
+            font-size: $font_size_default_thin;
+        }
+        sup a {
+            font-family: $font_default;
+            font-size: $font_size_default - 3;
+            color: $color_text_highlight;
+            border-bottom: none;
+        }
+    }
+}
+
 /* ------------------------------------------------------------------------- */
 /* Left sidebar column                                                       */
 /* ------------------------------------------------------------------------- */
