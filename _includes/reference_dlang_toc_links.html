@@ -2,7 +2,40 @@
     {% if item.href == 'divider' %}
         <hr class="thin compact darker">
     {% else %}
-        <li class="padding_left_5"><a href="{{ item.href }}">{{ item.chapter }}</a></li>
+        {% if page.chapter == item.chapter %}
+            <li class="current"><a href="{{ item.href }}" class="current">{{ item.chapter }}</a></li>
+        {% else %}
+            <li><a href="{{ item.href }}">{{ item.chapter }}</a></li>
+        {% endif %}
+        
+        {% if page.chapter == item.chapter %}
+            {% if item.sections != nil %}
+                <ol>
+                {% for section in item.sections %}
+                    
+                    {% if section.section == page.section %}
+                        <li class="current"><a href="{{ section.shref }}" class="current">{{ section.section }}</a></li>
+                    {% else %}
+                        <li><a href="{{ section.shref }}">{{ section.section }}</a></li>
+                    {% endif %}
+                    
+                    {% if section.subsections != nil and page.section == section.section %}
+                        <ol>
+                        {% for subsection in section.subsections %}
+                            {% if subsection.subsection == page.subsection %}
+                                <li class="current"><a href="{{ subsection.sshref }}" class="current">{{ subsection.subsection }}</a></li>
+                            {% else %}
+                                <li><a href="{{ subsection.sshref }}">{{ subsection.subsection }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        </ol>
+                    {% endif %}
+                    
+                {% endfor %}
+                </ol>
+            {% endif %}
+        {% endif %}
+        
     {% endif %}
 {% endfor %}
 

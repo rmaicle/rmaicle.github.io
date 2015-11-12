@@ -1,10 +1,10 @@
 <ol>
-{% assign page_title = page.chapter %}
+{% assign page_chapter = page.chapter %}
 {% for item in site.data.dguide %}
-    {% if item.chapter == page_title %}
+    {% if item.chapter == page_chapter %}
         {% if item.sections != nil %}
-            {% for sec in item.sections %}
-                <li class="padding_left_5"><a class="no_underline" href="{{ sec.href  }}">{{ sec.section }}</a></li>
+            {% for section in item.sections %}
+                <li class="padding_left_5"><a class="no_underline" href="{{ section.shref  }}">{{ section.section }}</a></li>
             {% endfor %}
         {% endif %}
     {% endif %}

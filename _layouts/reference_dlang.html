@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% assign info_title = 'Guide to the D Programming Language' %}
+
 {% assign dguide = false %}
 {% assign dref = false %}
 {% for tag in page.tags %}
@@ -27,9 +29,19 @@ layout: default
 
 {% assign page_chapter = page.chapter %}
 {% assign chapter_url = '' %}
+{% assign page_section = page.section %}
+{% assign section_url = chapter_url %}
 {% for item in site.data.dguide %}
     {% if item.chapter == page_chapter %}
-        {% assign chapter_url = {{item.href }} %}
+        {% assign chapter_url = item.href %}
+        {% if item.sections != nil %}
+            {% for section in item.sections %}
+                {% if section.section == page.section %}
+                    {% assign section_url = section.shref %}
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
         {% break %}
     {% endif %}
 {% endfor %}
@@ -37,21 +49,32 @@ layout: default
 {% include reference_dlang_left_sidebar.html %}
 
 <section class="column_main">
-    {% if page.section == nil %}
-        {% if page.chapter == 'Index' %}
-            <h1>{{ page.title }}</h1>
+    {% if page.subsection == nil %}
+        {% if page.section == nil %}
+            {% if page.chapter == 'Index' %}
+                <h1>{{ info_title }}</h1>
+            {% else %}
+                <h6 class="color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ info_title }}</a></h6>
+                <h1>{{ page.chapter }}{% if draft == true %}&nbsp;&nbsp;&nbsp;[draft]{% endif %}</h1>
+            {% endif %}
         {% else %}
-            <h6 class="color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ page.title }}</a></h6>
-            <h1>{{ page.chapter }}{% if draft == true %}&nbsp;&nbsp;&nbsp;[draft]{% endif %}</h1>
+            <h6 class="color_primary_darker padding_top_none margin_bottom_none">
+                <a href="/dlang-guide/index.html">{{ page.title }}</a>
+                <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
+                <a class="no_underline" href="{{ chapter_url }}"> {{ page.chapter }}</a>
+            </h6>
+            
+            <h1>{{ page.section }}{% if draft == true %}&nbsp;&nbsp;&nbsp;[draft]{% endif %}</h1>
         {% endif %}
     {% else %}
-        <h6 class="color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ page.title }}</a>
-        <span class="color_highlight">&bull;</span><a class="no_underline" href="{{ chapter_url }}"> {{ page.chapter }}</a></h6>
-        
-        <h1>
-        {% if page.section != nil %}{{ page.section }}{% endif %}
-        {% if draft == true %}&nbsp;&nbsp;&nbsp;[draft]{% endif %}
-        </h1>
+        <h6 class="color_primary_darker padding_top_none margin_bottom_none">
+            <a href="/dlang-guide/index.html">{{ info_title }}</a>
+            <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
+            <a class="no_underline" href="{{ chapter_url }}"> {{ page.chapter }}</a>
+            <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
+            <a class="no_underline" href="{{ section_url }}"> {{ page.section }}</a>
+        </h6>
+        <h1>{{ page.subsection }}{% if draft == true %}&nbsp;&nbsp;&nbsp;[draft]{% endif %}</h1>
     {% endif %}
 
     {{ content }}
