@@ -61,11 +61,12 @@
 
 .highlight .lineno {
     text-align: right;
-    color: #444445;
+    color: #555556;
 	background: transparent;
-    padding-right: 5px;
-    border-right: 1px dotted #333333;
+    padding-right: 8px;
+    border-right: 1px dotted #444445;
     display:inline-block;
+    text-shadow: none;
 }
 
 /* Make line numbers unselectable: excludes line numbers from copy-paste user ops */
