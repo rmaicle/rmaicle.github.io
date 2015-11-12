@@ -198,19 +198,26 @@ div.footnotes {
     }
     ol {
         padding-left: 20px;
+        
         li {
             font-family: $font_default_thin;
             font-size: $font_size_default - 1;
+            
             p {
                 font-family: $font_default_thin;
                 font-size: $font_size_default - 1;
                 line-height: $font_size_default + 2;
                 margin-bottom: 0px;
+                
                 a {
-                font-family: $font_default_thin;
-                font-size: $font_size_default - 1;
-                border-bottom: none;
+                    font-family: $font_default_thin;
+                    font-size: $font_size_default - 1;
+                    border-bottom: none;
+                }
             }
+            
+            em {
+                font-size: $font_size_default - 1;
             }
         }
     }
@@ -425,8 +432,8 @@ section.column_main h1 { font-size: 22px; }
 section.column_main h2 { font-size: 20px; }
 section.column_main h3 { font-size: 18px; }
 section.column_main h4 { font-size: 16px; }
-section.column_main h5 { font-size: 14px; }
-section.column_main h6 { font-size: 13px; }
+section.column_main h5 { font-size: 13px; }
+section.column_main h6 { font-size: 12px; }
 
 section.column_main {
     h1, h2, h3, h4 {
@@ -442,13 +449,11 @@ section.column_main {
         padding-top: 5px;
         padding-bottom: 20px;
     }
-    
     h2, h3, h4 {
         padding-top: 20px;
     }
     h5, h6 {
         font-family: $font_heading_small;
-        font-weight: normal;
         color: $color_text_highlight;
         text-shadow: none;
 
@@ -465,9 +470,17 @@ section.column_main {
     }
     h5 {
         font-style: italic;
+        font-weight: bold;
+        code {
+            font-size: 14px;
+        }
     }
     h6 {
-        font-style: italic;
+        font-style: normal;
+        font-weight: bold;
+        code {
+            font-size: 13px;
+        }
     }
     
     p, li, dl {
@@ -684,11 +697,19 @@ section.column_right_sidebar {
     }
     
     ul, ol {
+    
+        ol {
+            padding-left: 25px;
+            ol {
+                padding-left: 25px;
+            }
+        }
+        
         li {
             font-family: $font_default_thin;
             font-size: $font_size_default_thin;
             
-            padding: 0;
+            padding: 0 0 0 5px;
             line-height: $font_size_default_thin + 4;
             
             a {
@@ -705,6 +726,11 @@ section.column_right_sidebar {
                     /* content: "\00BB  "; */
                 }
             }
+        }
+        
+        li.current,
+        a.current {
+            color: $color_primary_darker;
         }
     }
     
@@ -1090,6 +1116,10 @@ li.no_left_margin {
 
 .font_style_normal {
     font-style: normal;
+}
+
+.font_weight_bold {
+    font-weight: bold;
 }
 
 /* Markdown fix on unsorted list */
