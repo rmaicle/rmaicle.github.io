@@ -539,6 +539,38 @@ section.column_main {
             }
         }
     }
+    
+    code {
+        font-family: $font_code;
+        font-size: $font_size_code;
+        font-style: normal;
+        color: $color_code_highlight;
+        margin: 0 0px;
+    }
+
+    pre {
+        font-family: $font_code;
+        line-height: 16px;
+        padding: 7px 10px 8px 10px;
+        background: none;
+        border: none;
+        /* margin-bottom: 5px; */
+        /* All bottom margins must be the same */
+        /*   <p>   */
+        /*   <pre> */
+        /*   <ul> */
+        margin-bottom: 12px;
+        overflow: auto;
+        overflow-y: hidden;
+    }
+
+    pre code {
+        font-family: $font_code;
+        color: $color_code;
+        text-shadow: none;
+        border: none;
+        border-radius: 0px;
+    }
 }
 
 @media print, screen and (max-width: 480px) {
@@ -755,37 +787,7 @@ section.column_right_sidebar {
 //       This must be consistent. Currently they are set in 3 different
 //       locations.
 
-code {
-    font-family: $font_code;
-    font-size: $font_size_code;
-    font-style: normal;
-    color: $color_code_highlight;
-    margin: 0 0px;
-}
 
-pre {
-	font-family: $font_code;
-    line-height: 16px;
-    padding: 7px 10px 8px 10px;
-    background: none;
-    border: none;
-    /* margin-bottom: 5px; */
-    /* All bottom margins must be the same */
-    /*   <p>   */
-    /*   <pre> */
-    /*   <ul> */
-    margin-bottom: 12px;
-    overflow: auto;
-    overflow-y: hidden;
-}
-
-pre code {
-	font-family: $font_code;
-    color: $color_text_darker;
-    text-shadow: none;
-    border: none;
-    border-radius: 0px;
-}
 
 /* Redcarpet markdown fenced code blocks */
 /* Fenced code blocks are converted to div.highlight pre code.language-text */
