@@ -562,15 +562,17 @@ section.column_main {
         margin-bottom: 12px;
         overflow: auto;
         overflow-y: hidden;
+        
+        code {
+            font-family: $font_code;
+            color: $color_code;
+            text-shadow: none;
+            border: none;
+            border-radius: 0px;
+        }        
     }
 
-    pre code {
-        font-family: $font_code;
-        color: $color_code;
-        text-shadow: none;
-        border: none;
-        border-radius: 0px;
-    }
+
 }
 
 @media print, screen and (max-width: 480px) {
