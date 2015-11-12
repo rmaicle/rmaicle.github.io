@@ -52,7 +52,10 @@
   
 - chapter: 'Structs, Unions and Classes'
   href:    '/dlang-guide/structs_unions_classes.html'
-  
+
+- chapter: 'Attributes'
+  href:    '/dlang-guide/attributes.html'
+
 - chapter: 'Templates'
   href:    '/dlang-guide/templates.html'
 
