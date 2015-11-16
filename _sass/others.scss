@@ -363,10 +363,12 @@ section.column_left_sidebar {
     width: 20%
 }
 section.column_main {
-    width: 47%;
+    //width: 47%;
+    width: 51%;
 }
 section.column_right_sidebar {
-    width: 23%;
+    //width: 23%;
+    width: 20%;
 
     border-radius: 3px;
     background: #1a1a1a;
@@ -377,8 +379,8 @@ section.column_right_sidebar {
 /* https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
 @media print, screen and (max-width: 1280px) {
     section[class="column_left_sidebar"] { width: 23%; }
-    section[class="column_main"] { width: 40%; }
-    section[class="column_right_sidebar"] { width: 24%; }
+    section[class="column_main"] { width: 44%; }
+    section[class="column_right_sidebar"] { width: 23%; }
 }
 
 @media print, screen and (max-width: 1024px) {
