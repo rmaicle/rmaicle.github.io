@@ -81,11 +81,11 @@
 .highlight      { background: transparent; }
  
 .highlight .n   { color: #b3b3b3; text-shadow: none; }
-.highlight .c   { color: #00cd00; text-shadow: none; font-style: normal } /* Comment */
-.highlight .cp  { color: #00cd00; text-shadow: none; font-weight: bold } /* Comment.Preproc */
-.highlight .c1  { color: #00cd00; text-shadow: none; font-style: normal } /* Comment.Single */
-.highlight .cs  { color: #00cd00; text-shadow: none; font-weight: bold; font-style: italic } /* Comment.Special */
-.highlight .cm  { color: #00cd00; text-shadow: none; font-style: normal } /* Comment.Multiline */
+.highlight .c   { color: #00ac00; text-shadow: none; font-style: normal } /* Comment */
+.highlight .cp  { color: #00ac00; text-shadow: none; font-weight: bold } /* Comment.Preproc */
+.highlight .c1  { color: #00ac00; text-shadow: none; font-style: normal } /* Comment.Single */
+.highlight .cs  { color: #00ac00; text-shadow: none; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .cm  { color: #00ac00; text-shadow: none; font-style: normal } /* Comment.Multiline */
  
 .highlight .kt  { color: #4169E1; text-shadow: none; font-weight: normal } /* Keyword.Type */
 .highlight .k   { color: #E3CF57; text-shadow: none; font-weight: normal } /* Keyword (directive?) */
@@ -97,3 +97,9 @@
 .highlight .o   {                 text-shadow: none; } /* Operator */
 .highlight .p   {                 text-shadow: none; } /* Operator */
 .highlight .err { color: #b3b3b3; text-shadow: none; background-color: #202020 } /* Error */
+
+
+
+.highlight .go { color: #b3b3b3; } /* Generic.Output */
+.highlight .gp { color: #555555; } /* Generic.Prompt */
+.highlight .nv { color: #40ffff; } /* Name.Variable -- $ in shell */
