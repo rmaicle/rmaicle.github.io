@@ -1,3 +1,6 @@
+- chapter: 'Conventions'
+  href:   '/dlang-guide/conventions.html'
+      
 - chapter: 'Background'
   href:    '/dlang-guide/background.html'
   sections:
@@ -6,13 +9,15 @@
     - section: 'History'
       shref:   '/dlang-guide/background/history.html'
   
-#- chapter: 'Preliminary'
-#  href:    '/dlang-guide/preliminary.html'
-#  sections:
-#    - section: 'Phases of Compilation'
-#      shref:   '/dlang-guide/preliminary/compilation.html'
-#    - section: 'Program Execution'
-#      shref:   '/dlang-guide/preliminary/execution.html'
+- chapter: 'Preliminaries'
+  href:    '/dlang-guide/preliminaries.html'
+  sections:
+    - section: 'Compilers'
+      shref:   '/dlang-guide/preliminaries/compilers.html'
+    - section: 'Program Entry Point'
+      shref:   '/dlang-guide/preliminaries/entry_point.html'
+    - section: 'Output Functions'
+      shref:   '/dlang-guide/preliminaries/output_functions.html'
 
 - chapter: 'Basics'
   href:    '/dlang-guide/basics.html'
@@ -157,8 +162,8 @@
 - chapter: 'Annex'
   href:    'divider'
   
-- chapter: 'Compiler'
-  href:    '/dlang-guide/compiler.html'
+- chapter: 'DMD Compiler Reference'
+  href:    '/dlang-guide/dmd_compiler_ref.html'
   
 - chapter: 'ASCII Table'
   href:    '/dlang-guide/ascii.html'
