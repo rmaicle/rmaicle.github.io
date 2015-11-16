@@ -154,7 +154,9 @@ table {
 
 blockquote {
     font-size: $font_size_default;
-    border-left: 6px solid $color_bg + 20;
+    font-style: normal;
+    color: $color_text_highlight;
+    border-left: 6px solid $color_text_highlight - 20;
     margin-left: 17px;
     margin-top: 12px;
     margin-bottom: 12px;
