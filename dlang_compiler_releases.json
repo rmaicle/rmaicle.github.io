@@ -5,6 +5,7 @@
 {% for post in site.dlang_compiler_releases %}
     {
       "title"      : "{{ post.title }}",
+      "excerpt"    : "{{ post.excerpt }}",
       "href"       : "{{ post.url }}",
       "type"       : "{{ post.type }}",
       "date"       : {
