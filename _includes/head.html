@@ -82,13 +82,13 @@
                     divContents.append("&nbsp;&nbsp;&bull; <a href='" + posts[counter].changelog + "'>Change Log</a><br/>");
                     */
                     divContents.append("<ul>" +
-                        "<li><a href='" + posts[counter].download + "'>Download</a></li>" +
-                        "<li><a href='" + posts[counter].changelog + "'>Change Log</a></li>" +
+                        "<li><a href='" + posts[counter].download + "' target=_blank>Download</a></li>" +
+                        "<li><a href='" + posts[counter].changelog + "' target=_blank>Change Log</a></li>" +
                         "</ul>");
                     divContents.append("<hr class='thin medium margin_top_15 darker'></hr>");
                     counter++;
                 }
-                divContents.append("<p>Query and report bugs <a href='https://issues.dlang.org'>here</a>.</p>")
+                divContents.append("<p>Query and report bugs <a href='https://issues.dlang.org' target=_blank>here</a>.</p>")
             });
         }
         
@@ -110,7 +110,7 @@
                         var content = posts[i].content;
                         divDlangNews.append(content);
                         if (posts[i].link != "") {
-                            divDlangNews.append("<i><a href='" + posts[i].link + "'>Link to details</a></i>");
+                            divDlangNews.append("<i><a href='" + posts[i].link + "' target=_blank>Link to details</a></i>");
                         }
                         counter--;
                         if (counter > 0) {
