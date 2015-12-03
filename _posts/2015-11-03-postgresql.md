@@ -120,8 +120,8 @@ FileUsage = 1
 
 {% highlight console linenos %}
 $ cat /etc/odbc.ini
-[SPHERE PostgreSQL]
-Description         = Test to Postgres
+[Test PostgreSQL]
+Description         = Test Postgres ODBC
 Driver              = PostgreSQL
 Trace               = Yes
 TraceFile           = sql.log
