@@ -45,7 +45,7 @@ make_shared_from_private_constructor<T>
 
 Resistance is futile; just a quick and dirty try.
 
-##### The Attempt
+## The Attempt
 
 {% highlight cpp linenos %}
 #include <iostream>
