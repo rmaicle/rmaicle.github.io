@@ -82,7 +82,7 @@
  
 .highlight .n   { color: #b3b3b3; text-shadow: none; }
 .highlight .c   { color: #00ac00; text-shadow: none; font-style: normal } /* Comment */
-.highlight .cp  { color: #00ac00; text-shadow: none; font-weight: normal } /* Comment.Preproc */
+.highlight .cp  { color: #E066FF; text-shadow: none; font-weight: normal } /* Comment.Preproc */
 .highlight .c1  { color: #00ac00; text-shadow: none; font-style: normal } /* Comment.Single */
 .highlight .cs  { color: #00ac00; text-shadow: none; font-weight: bold; font-style: italic } /* Comment.Special */
 .highlight .cm  { color: #00ac00; text-shadow: none; font-style: normal } /* Comment.Multiline */
