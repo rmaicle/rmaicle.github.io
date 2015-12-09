@@ -39,8 +39,8 @@ It was just a passing thought; didn't really spend a minute or two.
 But the syntax in my head _recurringly_ bugged me.
 
 {% highlight cpp linenos %}
-std::make_unique_from_private_constructor<T>
-std::make_shared_from_private_constructor<T>
+make_unique_from_private_constructor<T>
+make_shared_from_private_constructor<T>
 {% endhighlight %}
 
 Resistance is futile; just a quick and dirty try.
