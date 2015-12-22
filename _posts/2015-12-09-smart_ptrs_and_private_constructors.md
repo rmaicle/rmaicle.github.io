@@ -5,19 +5,16 @@ categories: [Blog]
 tags: [cplusplus, unique_ptr, shared_ptr, smart_pointer, programming]
 ---
 
-## Problem
-
-I encountered a problem in the API of a couple of my classes whose constructors I was trying to hide from client code.
-Actually, I wish I could clean up the code and expose only the client-facing API of the class.
+Enforcing the use of smart pointers when creating instances of a class requires that the class public interface be explicit with the intention.
+Plainly making constructors public encourages wrong usage.
+Making constructors private does not work well with `std::make_unique` and `std::make_shared`.
 
 Here is a minimal example.
-The interesting part is at line 6; GCC 5.2 says the error is the private constructor.
+The error is at line 6; GCC 5.2 says the error is the private constructor.
 The function `std::make_unique` must be able to _see_ the constructor to _call_ it.
 
-##### Code
-
 {% highlight cpp linenos %}
-#include <memory>
+{%raw%}#{%endraw%}include <memory>
 
 class A {
 private:
@@ -30,26 +27,43 @@ public:
 int main()
 {
     auto x = std::make_unique<A>(3);
+    std::cout << x->get() << std::endl;
 }
 {% endhighlight %}
 
-##### A Passing Thought
+The solution that follows is an attempt to provide a mechanism to enforce the use of smart pointers when creating instances of the class.
 
-It was just a passing thought; didn't really spend a minute or two.
-But the syntax in my head _recurringly_ bugged me.
+Here the creation of a `std::unique_ptr` is a simulated version of `std::make_unique`.
 
 {% highlight cpp linenos %}
-make_unique_from_private_constructor<T>
-make_shared_from_private_constructor<T>
+{%raw%}#{%endraw%}include <memory>
+
+class A {
+private:
+    int number;
+    A(int n) : number(n) { }
+public:
+    template <typename... T>
+    static std::unique_ptr<A> create(T&&... args) {
+        return std::unique_ptr<A>(new A(std::forward<T>(args)...));
+    }
+    int get() const { return number; }
+};
+
+int main()
+{
+    auto x = A::create(3);
+    std::cout << x->get() << std::endl;
+}
 {% endhighlight %}
 
-Resistance is futile; just a quick and dirty try.
+The above solution is alright for some but it does not scale.
+Changing how things are done inside that static function, which could be copy-pasted across multiple class definitions, requires editing all source files that uses such mechanism.
 
-## The Attempt
+The following solution uses the approach introduced above and extends it a little bit more.
 
 {% highlight cpp linenos %}
-#include <iostream>
-#include <memory>
+{%raw%}#{%endraw%}include <memory>
 
 template <typename T>
 class make_unique_ptr_from_private_constructor
@@ -71,6 +85,14 @@ public:
         return std::move(sp);
     }
 };
+{% endhighlight %}
+
+Now, this can be used across many classes and the mechanism is localized in one place.
+The following example shows how to use the template classes above.
+
+{% highlight cpp linenos %}
+{%raw%}#{%endraw%}include <iostream>
+{%raw%}#{%endraw%}include <memory>
 
 class A : 
     public make_unique_ptr_from_private_constructor<A>,
@@ -94,10 +116,33 @@ int main()
 }
 {% endhighlight %}
 
-###### TODO
+Here is an example showing how to create a `std::shared_ptr` from a `friend` class.
 
-Explain the code above for the unfamiliar.
+{% highlight cpp linenos %}
+class B;
 
+class A : protected make_shared_ptr_from_private_constructor<A>
+{
+    friend class make_shared_ptr_from_private_constructor;
+    friend class B;
+    // rest of code same as above
+};
+
+class B
+{
+private:
+    std::shared_ptr<A> a;
+public:
+    B(int n) { a = A::create_shared(n); }
+    int get() const { return a->get(); }
+};
+
+int main()
+{
+    B b(10);
+    std::cout << b.get() << std::endl;
+}
+{% endhighlight %}
 
 {% comment %}
 ##### Output
