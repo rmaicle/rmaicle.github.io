@@ -432,12 +432,12 @@ section.column_right_sidebar {
 /* Main content column                                                       */
 /* ------------------------------------------------------------------------- */
 
-section.column_main h1 { font-size: 22px; }
-section.column_main h2 { font-size: 20px; }
-section.column_main h3 { font-size: 18px; }
-section.column_main h4 { font-size: 16px; }
-section.column_main h5 { font-size: 13px; }
-section.column_main h6 { font-size: 12px; }
+section.column_main h1 { font-size: $header_font_size; }
+section.column_main h2 { font-size: $header_font_size - 2; }
+section.column_main h3 { font-size: $header_font_size - 4; }
+section.column_main h4 { font-size: $header_font_size - 6; }
+section.column_main h5 { font-size: $header_font_size - 8; }
+section.column_main h6 { font-size: $header_font_size - 10; }
 
 section.column_main {
     h1, h2, h3, h4 {
@@ -476,14 +476,14 @@ section.column_main {
         font-style: italic;
         font-weight: bold;
         code {
-            font-size: 14px;
+            font-size: $header_font_size - 8;        // 14px;
         }
     }
     h6 {
         font-style: normal;
         font-weight: bold;
         code {
-            font-size: 13px;
+            font-size: $header_font_size - 8 - 1;    // 13px;
         }
     }
     
