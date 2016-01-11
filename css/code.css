@@ -88,10 +88,14 @@
 .highlight .cm  { color: #00ac00; text-shadow: none; font-style: normal } /* Comment.Multiline */
  
 .highlight .kt  { color: #4169E1; text-shadow: none; font-weight: normal } /* Keyword.Type */
-.highlight .k   { color: #E3CF57; text-shadow: none; font-weight: normal } /* Keyword (directive?) */
+/*.highlight .k   { color: #E3CF57; text-shadow: none; font-weight: normal } /* Keyword (directive?) */
+.highlight .k   { color: #6189E1; text-shadow: none; font-weight: normal } /* Keyword (directive?) */
 .highlight .nc  { color: #d0d0d0; text-shadow: none; text-decoration: none } /* Name.Class */
  
-.highlight .mi  { color: #ED9121; text-shadow: none; } /* Literal.Number.Integer */
+.highlight .mi  { color: #CD7121; text-shadow: none; } /* Literal.Number.Integer */
+.highlight .mf  { color: #CD7121; text-shadow: none; } /* Literal.Number.Float */
+.highlight .mb  { color: #CD7121; text-shadow: none; } /* Literal.Number.Binary */
+.highlight .mh  { color: #CD7121; text-shadow: none; } /* Literal.Number.Binary */
 .highlight .s   { color: #CDCD00; text-shadow: none; } /* Literal.String */
 
 .highlight .o   {                 text-shadow: none; } /* Operator */
