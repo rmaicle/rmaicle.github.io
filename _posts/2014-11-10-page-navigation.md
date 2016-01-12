@@ -20,7 +20,7 @@ These descriptions are taken directly from the site.
 
 Here is an example of the `next` and `previous` page variables as initially implemented on this site.
 
-~~~ html
+{% highlight html linenos %}
 <div id="page_previous">
     {% raw %}{% if page.previous != nil %} {% endraw %}
         <a href="{% raw %}{{ page.previous.url }}{% endraw %}">Previous</a>
@@ -42,6 +42,6 @@ Here is an example of the `next` and `previous` page variables as initially impl
         </p>
     {% raw %}{% endif %}{% endraw %}
 </div>
-~~~
+{% endhighlight %}
 
 [page variables]: http://jekyllrb.com/docs/variables/

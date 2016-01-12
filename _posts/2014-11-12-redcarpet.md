@@ -15,10 +15,10 @@ To see the steps on setting it up, take a look at [Local GitHub Pages on Windows
 After installing the required software and if Redcarpet is not yet installed then execute the following commands.
 (Redcarpet 3.1.2 is the current version of this writing).
 
-~~~
+{% highlight bash session linenos %}
 gem install redcarpet
 redcarpet --version
-~~~
+{% endhighlight %}
 
 One thing I like about _Redcarpet_ is that it allows me to use the original Markdown syntax for embedding code blocks using the _tilde_ or _backtick_ character.
 
