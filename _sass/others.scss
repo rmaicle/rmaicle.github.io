@@ -101,7 +101,6 @@ b {
 em {
     font-size: $font_size_default;
     font-weight: normal;
-    /* border-bottom: 1px dotted $color_text_darker - 50; */
     color: $color_text_highlight;
 }
 
@@ -125,7 +124,6 @@ p code {
 }
 
 table {
-    //width: 100%;
     border: 1px solid $color_table_border;
     th, td {
         font-family: $font_default_thin;
@@ -137,17 +135,16 @@ table {
         }
     }
 	th {
-        padding: 3px 6px;
+        font-weight: normal; 
+        padding: 5px 6px;
+        background: $color_table_th_bg;
     }
     td {
         vertical-align: top;
-        /* padding: 1px 5px 3px 5px; */
         padding: 2px 6px 4px 6px;
     }
     th:first-child,
     td:first-child {
-        /* Make the width of the first item small so the right side cells will span the width of the table */
-        /* width: 10px; */
         border-left: none;
     }
 }
@@ -479,14 +476,14 @@ section.column_main {
         font-style: italic;
         font-weight: bold;
         code {
-            font-size: $header_font_size - 8;        // 14px;
+            font-size: $header_font_size - 8;
         }
     }
     h6 {
         font-style: normal;
         font-weight: bold;
         code {
-            font-size: $header_font_size - 8 - 1;    // 13px;
+            font-size: $header_font_size - 8 - 1;
         }
     }
     
@@ -510,7 +507,7 @@ section.column_main {
         &.date {
             font-size: $font_size_default - 1;
             font-style: italic;
-            color: $color_text_dark;
+            color: $color_text_darker;
             margin: 0;
         }
     }
@@ -547,6 +544,63 @@ section.column_main {
         }
     }
     
+    dl {
+        margin: 0;
+        margin-left: 36px;
+        margin-right: 36px;
+        dt {
+            
+            color: $color_text_highlight;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        dd {
+            margin: 0 0 0 24px;
+            padding: 0 0 0.5em 0;
+        }
+    }
+    
+    // Specialization for definition lists
+    div.syntax {
+        margin: 0 0 12px 0;
+        padding: 10px 12px 4px 12px;
+        background: $color_code_bg;
+        
+        h6 {
+            padding-top: 1px;
+        }
+        
+        pre {
+            background: $color_code_bg - 3;
+        }
+        
+        dl {
+            margin: 0;
+            margin-left: 36px;
+            margin-right: 36px;
+            dt {
+                color: $color_text_highlight;
+                text-align: left;
+                font-weight: normal;
+            }
+            
+            dd {
+                margin: 0 0 0 24px;
+                padding: 0 0 4px 0;
+                
+                pre {
+                    margin: 12px 0px 12px 0px;
+                }
+                
+                table {
+                    margin-top: 8px;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+    }
+    
     code {
         font-family: $font_code;
         font-size: $font_size_code;
@@ -555,11 +609,15 @@ section.column_main {
         margin: 0 0px;
     }
 
+    /* Fenced code blocks are converted to div.highlight pre code.language-text */
+    div.highlight { }
+    
     pre {
         font-family: $font_code;
         line-height: 18px;
         padding: 7px 10px 8px 10px;
         background: none;
+        background: $color_code_bg;
         border: none;
         /* margin-bottom: 5px; */
         /* All bottom margins must be the same */
@@ -578,7 +636,6 @@ section.column_main {
             border-radius: 0px;
         }        
     }
-
 
 }
 
@@ -642,7 +699,7 @@ section.column_left_sidebar h5 { font-size: 12px; }
     a {
         font-family: $font_default_thin;
         font-size: $font_size_default_thin;
-        color: $color_text_darker;
+        color: $color_text_dark;
         &:hover {
             color: $color_primary;
         }
@@ -651,12 +708,11 @@ section.column_left_sidebar h5 { font-size: 12px; }
         font-family: $font_default_thin;
         font-size: $font_size_default_thin;
         line-height: $font_size_default_thin + 3;
-        color: $color_text_darker;
+        color: $color_text_dark;
         margin-bottom: 0px;
         /* For the news we use */
         b, strong {
             font-size: $font_size_default_thin;
-            /* color: $color_primary_darker - 30; */
             text-shadow: none;
         }
         i, em {
@@ -678,7 +734,7 @@ section.column_left_sidebar h5 { font-size: 12px; }
         margin-bottom: 0;
         li {
             font-size: $font_size_default_thin;
-            color: $color_text_darker;
+            color: $color_text_dark;
             padding-left: 5px;
         }
     }
@@ -757,7 +813,7 @@ section.column_right_sidebar {
             a {
                 font-family: $font_default_thin;
                 font-size: $font_size_default_thin;
-                color: $color_text_darker;
+                color: $color_text_dark;
                 border-bottom: none;
                 
                 &:hover {
@@ -780,7 +836,7 @@ section.column_right_sidebar {
         font-family: $font_default_thin;
         font-size: $font_size_default_thin;
         line-height: $font_size_default_thin + 4;
-        color: $color_text_darker;
+        color: $color_text_dark;
         border-bottom: none;
         
         &:hover {
@@ -793,20 +849,6 @@ section.column_right_sidebar {
     }
 }
 
-// TODO: Where should we define code and pre?
-//       This must be consistent. Currently they are set in 3 different
-//       locations.
-
-
-
-/* Redcarpet markdown fenced code blocks */
-/* Fenced code blocks are converted to div.highlight pre code.language-text */
-div.highlight {
-	color: $color_text_darker;
-    background: #202020;
-}
-
-
 /* ------------------------------------------------------------------------- */
 /* Bottom                                                                    */
 /* ------------------------------------------------------------------------- */
@@ -816,11 +858,6 @@ div.highlight {
 	width: 50%;
     
 	a {
-        /*
-		font-size: $font_size_page_nav;
-		color: $color_primary_darker;
-		border-bottom: none;
-        */
         font-family: $font_heading;
         font-size: $font_size_default + 4;
 		font-weight: normal;
