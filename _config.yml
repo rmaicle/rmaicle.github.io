@@ -30,8 +30,7 @@ whitelist: []
 gems:      []
 
 # Conversion
-#markdown:    kramdown
-markdown:    redcarpet
+markdown:    kramdown
 #highlighter: rouge
 highlighter: pygments
 lsi:         false
