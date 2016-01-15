@@ -1,10 +1,11 @@
 $color_primary:         #FFB90F;
 $color_primary_darker:  $color_primary - 30;
 
-//$color_text:          #b3b3b3;
 $color_text:            #a3a3a3;
 $color_text_dark:       $color_text - 20;
 $color_text_darker:     $color_text - 50;
+$color_text_light:      $color_text + 20;
+$color_text_lighter:    $color_text + 50;
 $color_text_highlight:  #dddddd;
 
 $color_aside_text:      #e8e8e8;
@@ -17,7 +18,7 @@ $color_footer_bg:       #333333;
 $color_code:            #a3a3a3;
 $color_code_highlight:  #eeeeee;
 
-$color_table_border:    #434343;
+$color_table_border:    #404040;
 
 // Background colors
 
@@ -30,6 +31,7 @@ $color_tag_bg:          #404040;
 $color_nav_bg:          #333333;
 
 $color_code_bg:         #202020;
+$color_syntax_bg:       #2a2a2a;
 
 // Others
 
