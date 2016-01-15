@@ -5,7 +5,7 @@
         {% for section in item.sections %}
             {% if section.subsections != nil and section.section == page.section %}
                 {% for subsec in section.subsections %}
-                    <li class="padding_left_5"><a class="no_underline" href="{{ subsec.sshref  }}">{{ subsec.subsection }}</a></li>
+                    <li class="padding_left_5"><a class="no_underline" href="{{ subsec.sshref }}">{{ subsec.subsection }}</a></li>
                 {% endfor %}
             {% endif %}
         {% endfor %}

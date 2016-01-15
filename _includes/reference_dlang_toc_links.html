@@ -11,22 +11,37 @@
         {% if page.chapter == item.chapter %}
             {% if item.sections != nil %}
                 <ol>
-                {% for section in item.sections %}
+                {% for itemsection in item.sections %}
                     
-                    {% if section.section == page.section %}
-                        <li class="current"><a href="{{ section.shref }}" class="current">{{ section.section }}</a></li>
+                    {% if itemsection.section == page.section %}
+                        <li class="current"><a href="{{ itemsection.shref }}" class="current">{{ itemsection.section }}</a></li>
                     {% else %}
-                        <li><a href="{{ section.shref }}">{{ section.section }}</a></li>
+                        <li><a href="{{ itemsection.shref }}">{{ itemsection.section }}</a></li>
                     {% endif %}
                     
-                    {% if section.subsections != nil and page.section == section.section %}
+                    {% if itemsection.subsections != nil and itemsection.section == page.section %}
                         <ol>
-                        {% for subsection in section.subsections %}
-                            {% if subsection.subsection == page.subsection %}
-                                <li class="current"><a href="{{ subsection.sshref }}" class="current">{{ subsection.subsection }}</a></li>
+                        {% for itemsubsection in itemsection.subsections %}
+                        
+                            {% if itemsubsection.subsection == page.subsection %}
+                                <li class="current"><a href="{{ itemsubsection.sshref }}" class="current">{{ itemsubsection.subsection }}</a></li>
                             {% else %}
-                                <li><a href="{{ subsection.sshref }}">{{ subsection.subsection }}</a></li>
+                                <li><a href="{{ itemsubsection.sshref }}">{{ itemsubsection.subsection }}</a></li>
                             {% endif %}
+                            
+                            {% if itemsubsection.subsubsections != nil and itemsubsection.subsection == page.subsection %}
+                                <ol>
+                                {% for itemsubsubsection in itemsubsection.subsubsections %}
+                                
+                                    {% if itemsubsubsection.subsubsection == page.subsubsection %}
+                                        <li class="current"><a href="{{ itemsubsubsection.ssshref }}" class="current">{{ itemsubsubsection.subsubsection }}</a></li>
+                                    {% else %}
+                                        <li><a href="{{ itemsubsubsection.ssshref }}">{{ itemsubsubsection.subsubsection }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                </ol>
+                            {% endif %}
+                            
                         {% endfor %}
                         </ol>
                     {% endif %}
