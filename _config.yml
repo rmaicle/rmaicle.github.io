@@ -102,7 +102,7 @@ sass:
 # Setup
 title:          rmaicle
 #tagline:       'What is computable must be immediate so we can spend more time with the incomputable'
-tagline:        'Programming is an endless loop'
+tagline:        "Programming is an endless loop; it's either you break or exit."
 description:    'Personal GitHub Page'
 
 author:
