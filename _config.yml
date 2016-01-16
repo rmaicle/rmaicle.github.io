@@ -150,7 +150,7 @@ version:        0.1.0
 
 # This is the list of pages to incldue in the header of the website.
 pages_list: {
-  'Archive':     '/archive.html',
+  'Posts':       '/archive.html',
   'DLang':       '/dlang-guide/index.html',
   'DReference':  '/dlang-ref/index.html'
 }
