@@ -1,5 +1,5 @@
 ---
-title: Copy Assignment and Move Constructor
+title: Safe Copy Assignment
 excerpt: Implementing a safe copy assignment operator overload
 categories: [Blog]
 tags: [cplusplus, assignment, copy, programming]
@@ -75,7 +75,16 @@ T::T (T &&other) : T() {
 }
 {% endhighlight %}
 
-## A Somewhat Related Article
+## Related Articles
+
+###### ADL and `swap` Articles
+
+Articles related to _Argument Dependent Lookup_ (ADL) for user-defined type `swap` function:
+
+* [StackOverflow](http://stackoverflow.com/a/14403772)
+* [Eric Niebler](http://ericniebler.com/2014/10/21/customization-point-design-in-c11-and-beyond/)
+
+###### Move Assignment and `swap`
 
 Here is a short article by Scott Meyers related to move assignment using `swap` function.
 
