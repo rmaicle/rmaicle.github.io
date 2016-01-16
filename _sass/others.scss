@@ -336,6 +336,10 @@ nav {
         border-bottom: 1px solid $color_lbg;
         height: 25px;
         
+        // Hide the horizontal bar for now
+        border-bottom: 0px;
+        height: 0px;
+        
         p {
             margin-bottom: 0;
         }
