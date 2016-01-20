@@ -203,11 +203,11 @@ bool add() {
 The function above can be rewritten using an if function.
 But, first, let's simplify the use of the if function by using the preprocessor.
 
-~~~{cpp}
+{% highlight cpp %}
 {%raw%}#{%endraw%}define IFF(C, R1, R2)   [&] { auto ifs = create_ifs(!!(C), R1, R2); if (ifs.condition)
 {%raw%}#{%endraw%}define ELSE             else
 {%raw%}#{%endraw%}define ENDIFF           return ifs.get(); }();
-~~~
+{% endhighlight %}
 
 Now, the `add` function can be rewritten as follows:
 
