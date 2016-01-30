@@ -1,13 +1,12 @@
 ---
-title: Smart Pointers and Private Constructors
+title: Enforcing Smart Pointer Use for your Classes
 excerpt: Creating unique_ptr and shared_ptr of a class instance with private constructors.
 categories: [Blog]
 tags: [cplusplus, unique_ptr, shared_ptr, smart_pointer, programming]
 ---
 
 Enforcing the use of smart pointers when creating instances of a class requires that the class public interface be explicit with the intention.
-Plainly making constructors public encourages wrong usage.
-Making constructors private does not work well with `std::make_unique` and `std::make_shared`.
+Making constructors private does not work with `std::make_unique` and `std::make_shared`.
 
 Here is a minimal example.
 The error is at line 6; GCC 5.2 says the error is the private constructor.
@@ -31,9 +30,9 @@ int main()
 }
 {% endhighlight %}
 
-The solution that follows is an attempt to provide a mechanism to enforce the use of smart pointers when creating instances of the class.
+The solution that follows is an attempt to provide a mechanism to _enforce_ the use of smart pointers when creating instances of the class.
 
-Here the creation of a `std::unique_ptr` is a simulated version of `std::make_unique`.
+Here, the creation of a `std::unique_ptr<T>` is a simulated version of `std::make_unique`.
 
 {% highlight cpp linenos %}
 {%raw%}#{%endraw%}include <memory>
@@ -60,7 +59,7 @@ int main()
 The above solution is alright for some but it does not scale.
 Changing how things are done inside that static function, which could be copy-pasted across multiple class definitions, requires editing all source files that uses such mechanism.
 
-The following solution uses the approach introduced above and extends it a little bit more.
+The following uses the approach introduced above and extends the original idea.
 
 {% highlight cpp linenos %}
 {%raw%}#{%endraw%}include <memory>
@@ -144,21 +143,12 @@ int main()
 }
 {% endhighlight %}
 
+##### Source at GitHub
+
+The source code is available in my [GitHub repo](https://github.com/rmaicle/smart-ptr-interface).
+
+
 {% comment %}
-##### Output
-{% highlight console linenos %}
-/usr/include/c++/5/bits/unique_ptr.h: In instantiation of 'typename std::_MakeUniq<_Tp>::__single_object std::make_unique(_Args&& ...) [with _Tp = A; _Args = {int}; typename std::_MakeUniq<_Tp>::__single_object = std::unique_ptr<A, std::default_delete<A> >]':
-prog.cpp:14:35:   required from here
-prog.cpp:6:5: error: 'A::A(int)' is private
-     A(int n) : number(n) { }
-     ^
-In file included from /usr/include/c++/5/memory:81:0,
-                 from prog.cpp:2:
-/usr/include/c++/5/bits/unique_ptr.h:765:69: error: within this context
-     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
-{% endhighlight %}
-
-
 http://talesofcpp.fusionfenix.com/post-5/true-story-when-friendship-smothers
 http://stackoverflow.com/questions/8147027/how-do-i-call-stdmake-shared-on-a-class-with-only-protected-or-private-const
 http://stackoverflow.com/questions/3378520/how-to-make-boostmake-shared-a-friend-of-my-class
