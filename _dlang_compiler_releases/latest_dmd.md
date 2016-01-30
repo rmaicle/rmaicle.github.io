@@ -1,8 +1,8 @@
 ---
-title: Digital Mars D 2.069.2
-excerpt: Point release fixing 2.069.1 issues. 
+title: Digital Mars D 2.070.0
+excerpt: 
 type: dlangcompilerreleases
 release: Release
 download: http://dlang.org/download.html
-changelog: http://dlang.org/changelog/2.069.2.html
+changelog: http://dlang.org/changelog/2.070.0.html
 ---
