@@ -686,7 +686,12 @@ section.column_main {
             text-shadow: none;
             border: none;
             border-radius: 0px;
-        }        
+        }
+        
+        table {
+            border: 0 0 0 0;
+            //border: 0px solid $color_table_border;
+        }
     }
 
 }
