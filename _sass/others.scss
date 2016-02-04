@@ -1250,3 +1250,30 @@ li.no_left_margin {
 section .column_main ul li p {
     margin-bottom: 0;
 }
+div.todo {
+    background: $color_bg - 5;
+    border: 1px solid $color_primary - 110;
+    border-left: 4px solid $color_primary - 20;
+    //margin: 12px 17px 12px 17px;
+    margin: 12px 0px 12px 0px;
+    padding: 0 12px 0 12px;
+    
+    p {
+        font-family: $font_serif_small;
+        font-size: $font_size_default - 2;
+        font-weight: normal;
+        font-style: italic;
+        color: $color_text_highlight;
+        padding: 10px 10px 10px 0;
+    }
+    
+    p::before {
+        content: "TODO:";
+        display: block;
+        font-family: $font_serif_small;
+        font-size: $font_size_default - 2;
+        font-weight: normal;
+        font-style: normal;
+        color: $color_primary - 20;
+    }
+}
