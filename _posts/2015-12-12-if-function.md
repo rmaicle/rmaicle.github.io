@@ -107,13 +107,14 @@ if (a == 0) {
 Here is the if function equivalent.
 
 {% highlight cpp linenos %}
-x = [&] { if (auto ifs = create_ifs(a == 0, 2, 4)) {
-    // ...
+x = [&] { 
+    if (auto ifs = create_ifs(a == 0, 2, 4)) {
+        // ...
+    } else {
+        // ...
+    }
     return ifs.get();
-} else {
-    // ...
-    return ifs.get();
-}}();
+}();
 {% endhighlight %}
 
 ##### Variation Two
@@ -122,17 +123,18 @@ In this variation, the values to be returned are computed inside the if/else blo
 The values may be a result of a computation and set as the return value of the lambda using `set_value_for_true` and `set_value_for_false` functions.
 
 {% highlight cpp linenos %}
-x = [&] { if (auto ifs = create_ifs<int>(a == 0)) {
-    // ...
-    ifs.set_value_for_true(2);
-    // ...
+x = [&] {
+    if (auto ifs = create_ifs<int>(a == 0)) {
+        // ...
+        ifs.set_value_for_true(2);
+        // ...
+    } else {
+        // ...
+        ifs.set_value_for_true(4);
+        // ...
+    }
     return ifs.get();
-} else {
-    // ...
-    ifs.set_value_for_true(4);
-    // ...
-    return ifs.get();
-}}();
+}();
 {% endhighlight %}
 
 ##### Variation Three
@@ -141,11 +143,14 @@ Another variation is where values to be returned are computed outside the if/els
 The `ifs` variable is declared outside the if/else block so it can be used outside that block.
 
 {% highlight cpp linenos %}
-x = [&] { auto ifs = create_ifs<int>(a == 0); if (ifs) {
-    // ...
-} else {
-    // ...
-} return ifs.get(2, 4); }();
+x = [&] {
+    auto ifs = create_ifs<int>(a == 0);
+    if (ifs) {
+        // ...
+    } else {
+        // ...
+    } return ifs.get(2, 4);
+}();
 {% endhighlight %}
 
 ##### Variation Four
@@ -156,11 +161,15 @@ An overload `get` function is defined to fulfill this scenario.
 {% highlight cpp linenos %}
 T get(bool cond, T r1, T r2) const { return cond ? r1 : r2; }
 ...
-x = [&] { auto ifs = create_ifs<int>(a == 0); if (ifs) {
-    // ...
-} else {
-    // ...
-} return ifs.get(a == 1, 2, 4); }();
+x = [&] {
+    auto ifs = create_ifs<int>(a == 0);
+    if (ifs) {
+        // ...
+    } else {
+        // ...
+    }
+    return ifs.get(a == 1, 2, 4);
+}();
 {% endhighlight %}
 
 ##### Variation Five
@@ -170,15 +179,19 @@ Another slight variation of the above is where the return values are those set u
 {% highlight cpp linenos %}
 T get(bool cond) const { return cond ? rtrue : rfalse; }
 ...
-x = [&] { auto ifs = create_ifs<int>(a == 0); if (ifs) {
-    // ...
-    ifs.set_value_for_true(2);
-    // ...
-} else {
-    // ...
-    ifs.set_value_for_true(4);
-    // ...
-} return ifs.get(a == 1); }();
+x = [&] {
+    auto ifs = create_ifs<int>(a == 0);
+    if (ifs) {
+        // ...
+        ifs.set_value_for_true(2);
+        // ...
+    } else {
+        // ...
+        ifs.set_value_for_true(4);
+        // ...
+    }
+    return ifs.get(a == 1);
+}();
 {% endhighlight %}
 
 ## Using the Preprocessor
@@ -196,7 +209,7 @@ bool add() {
         return false;
     }
     process();
-    return status;
+    return true;
 }
 {% endhighlight %}
 
