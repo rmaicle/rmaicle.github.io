@@ -59,39 +59,7 @@
         }
         
         {% if dlangref == true %}
-        
-        function generateDlangCompilerReleases() {
-            $.getJSON("/dlang_compiler_releases.json", function(data) {
-                console.log("[dlang_compiler_releases.json loaded]");
-                var postsCount = data.length;
-                var posts = data;
-                var counter = 0;
-                
-                var divContents = $("#compiler_releases");
-                divContents.append('<h1>Compiler Releases</h1>');
-                while (counter < postsCount) {
-                    if (posts[counter].release == "Release") {
-                        divContents.append("<p><b>" + posts[counter].title + "</b></p>");
-                    } else {
-                        divContents.append("<p><b>" + posts[counter].release + "</b> &nbsp; " + posts[counter].title + "</p>");
-                    }
-                    
-                    divContents.append("<p>" + posts[counter].excerpt + "</p>");
-                    /*
-                    divContents.append("&nbsp;&nbsp;&bull; <a href='" + posts[counter].download + "'>Download</a><br/>");
-                    divContents.append("&nbsp;&nbsp;&bull; <a href='" + posts[counter].changelog + "'>Change Log</a><br/>");
-                    */
-                    divContents.append("<ul>" +
-                        "<li><a href='" + posts[counter].download + "' target=_blank>Download</a></li>" +
-                        "<li><a href='" + posts[counter].changelog + "' target=_blank>Change Log</a></li>" +
-                        "</ul>");
-                    divContents.append("<hr class='thin medium margin_top_15 darker'></hr>");
-                    counter++;
-                }
-                divContents.append("<p>Query and report bugs <a href='https://issues.dlang.org' target=_blank>here</a>.</p>")
-            });
-        }
-        
+
         // Files are suffixed with dates so they are read from oldest to newest.
         // It should be displayed starting with the newest to oldest.
         function generateDlangNews(maxPosts) {
@@ -182,7 +150,6 @@
 
         $(document).ready(function() {
             {% if dlangref == true %}
-                generateDlangCompilerReleases();
                 generateDlangNews();
             {% else %}
                 generateRandomPosts();
