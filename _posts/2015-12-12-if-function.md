@@ -31,7 +31,7 @@ Yes, a ternary operator can do this but the difference is that the body of the `
 With C++11, the same could be achieved using a `lambda`.
 
 {% highlight cpp linenos %}
-int a = [] {
+int a = [=] {
     if (some_condition) {
         return 1;
     } else {
@@ -49,7 +49,7 @@ And everyone knows the problems associated with preprocessor macros.
 If we dare to, we can take the previous code and apply the use of preprocessor macro.
 
 {% highlight cpp linenos %}
-int a = [] { if (some_condition) {          int a = IFF (some_condition) {
+int a = [=] { if (some_condition) {         int a = IFF (some_condition) {
         return 1;                               return 1;
     } else {                                } else {
         return 2;                               return 2;
