@@ -143,9 +143,9 @@ int main()
 }
 {% endhighlight %}
 
-##### Source at GitHub
+##### Source Code
 
-The source code is available in my [GitHub repo](https://github.com/rmaicle/smart-ptr-interface).
+The source code is in [GitHub](https://github.com/rmaicle/smart-ptr-interface).
 
 
 {% comment %}
