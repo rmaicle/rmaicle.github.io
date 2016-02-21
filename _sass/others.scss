@@ -667,7 +667,7 @@ section.column_main {
     pre {
         font-family: $font_code;
         line-height: 18px;
-        padding: 4px 5px 5px 5px;
+        padding: 4px 5px 5px 8px;
         background: none;
         background: $color_code_bg;
         border: none;
@@ -707,7 +707,6 @@ section.column_main {
                         
                         pre {
                             margin-bottom: 0px;
-                            padding: 4px 5px 5px 8px;
                         }
                     }
                 }
@@ -1271,6 +1270,16 @@ li.no_left_margin {
 section .column_main ul li p {
     margin-bottom: 0;
 }
+
+.github-icon-svg,
+.twitter-icon-svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 2px;
+}
+
 div.todo {
     background: $color_bg - 5;
     border: 1px solid $color_primary - 110;
