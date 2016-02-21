@@ -9,6 +9,8 @@ This post was originally added to the Local [GitHub Pages] on Windows but I deci
 This is not a how-to on setting up GitHub Pages on Linux.
 I moved my project to a Linux development machine and I wanted to check if my local github-pages is working and up-to-date.
 
+##### Show
+
 I executed `bundle show` under my project root directory after almost a year and the following is a copy of the what happened:
 
 {% highlight bash session %}
@@ -27,9 +29,11 @@ Running `bundle update` will rebuild your snapshot from scratch, using only
 the gems in your Gemfile, which may resolve the conflict.
 {% endhighlight %}
 
+##### Update
+
 I ran `bundle update` to update everything.
 
-{% highlight bash session %}
+{% highlight text session %}
 $ bundle update
 Fetching gem metadata from https://rubygems.org/............
 Fetching version metadata from https://rubygems.org/...
@@ -103,6 +107,8 @@ Installing github-pages 39 (was 28)
 Using bundler 1.10.6
 Bundle updated!
 {% endhighlight %}
+
+##### Dependency Version
 
 To list dependency versions, execute the following command:
 
