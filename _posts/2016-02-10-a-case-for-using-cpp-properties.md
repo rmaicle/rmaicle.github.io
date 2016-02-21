@@ -2,7 +2,7 @@
 title: A Case for Using C++ Properties
 excerpt: Possible use cases of a simple class template emulating class properties.
 categories: [Blog]
-tags: [cplusplus, properties, class, programming]
+tags: [cplusplus, class, properties, programming]
 ---
 
 Properties are available in other programming languages.
