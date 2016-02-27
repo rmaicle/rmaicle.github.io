@@ -32,6 +32,8 @@ gems:
 
 # Conversion
 markdown:    kramdown
+# Rouge 1.10.1 doesn't have the D programming language code highlighter'
+# https://github.com/jneen/rouge
 highlighter: rouge
 lsi:         false
 excerpt_separator: "\n\n"
@@ -69,16 +71,16 @@ defaults: []
 #rdiscount:
 #  extensions: []
 
-redcarpet:
-  extensions: ["space_after_headers", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "highlight"]
+#redcarpet:
+#  extensions: ["space_after_headers", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes", "highlight"]
 
-kramdown:
-  auto_ids:      true
-  footnote_nr:   1
-  entity_output: as_char
-  toc_levels:    1..6
-  smart_quotes:  lsquo,rsquo,ldquo,rdquo
-#  use_coderay:   false
+#kramdown:
+#  auto_ids:           true
+#  footnote_nr:        1
+#  entity_output:      as_char
+#  toc_levels:         1..6
+#  smart_quotes:       lsquo,rsquo,ldquo,rdquo
+#  syntax_highlighter: rouge
 
 #  coderay:
 #    coderay_wrap:              div
@@ -90,9 +92,8 @@ kramdown:
 
 #redcloth:
 #  hard_breaks: true
-
-#pygments:       true
-#rouge:          true
+#  pygments:       true
+#  rouge:          true
 
 sass:
   sass_dir:      _sass
