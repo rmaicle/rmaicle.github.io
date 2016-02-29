@@ -63,12 +63,14 @@ layout: default
                 {% if page.chapter == 'Index' %}
                     <h1>{{ info_title }}</h1>
                 {% else %}
-                    <h6 class="color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ info_title }}</a></h6>
+                    <h5 class="bread_crumb color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ info_title }}</a></h5>
+                    <h6 class="bread_crumb color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">Home</a></h6>
                     <h1>{{ page.chapter }}{% if draft == true %}&nbsp;&nbsp;&nbsp;[draft]{% endif %}</h1>
                 {% endif %}
             {% else %}
-                <h6 class="color_primary_darker padding_top_none margin_bottom_none">
-                    <a href="/dlang-guide/index.html">{{ page.title }}</a>
+                <h5 class="bread_crumb color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ info_title }}</a></h5>
+                <h6 class="bread_crumb color_primary_darker padding_top_none margin_bottom_none">
+                    <a href="/dlang-guide/index.html">Home</a>
                     <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
                     <a class="no_underline" href="{{ chapter_url }}"> {{ page.chapter }}</a>
                 </h6>
@@ -76,8 +78,9 @@ layout: default
                 <h1>{{ page.section }}{% if draft == true %}&nbsp;&nbsp;&nbsp;[draft]{% endif %}</h1>
             {% endif %}
         {% else %}
-            <h6 class="color_primary_darker padding_top_none margin_bottom_none">
-                <a href="/dlang-guide/index.html">{{ info_title }}</a>
+            <h5 class="bread_crumb color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ info_title }}</a></h5>
+            <h6 class="bread_crumb color_primary_darker padding_top_none margin_bottom_none">
+                <a href="/dlang-guide/index.html">Home</a>
                 <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
                 <a class="no_underline" href="{{ chapter_url }}"> {{ page.chapter }}</a>
                 <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
@@ -86,8 +89,9 @@ layout: default
             <h1>{{ page.subsection }}{% if draft == true %}&nbsp;&nbsp;&nbsp;[draft]{% endif %}</h1>
         {% endif %}
     {% else %}
-        <h6 class="color_primary_darker padding_top_none margin_bottom_none">
-            <a href="/dlang-guide/index.html">{{ info_title }}</a>
+        <h5 class="bread_crumb color_primary_darker padding_top_none margin_bottom_none"><a href="/dlang-guide/index.html">{{ info_title }}</a></h5>
+        <h6 class="bread_crumb color_primary_darker padding_top_none margin_bottom_none">
+            <a href="/dlang-guide/index.html">Home</a>
             <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
             <a class="no_underline" href="{{ chapter_url }}"> {{ page.chapter }}</a>
             <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
