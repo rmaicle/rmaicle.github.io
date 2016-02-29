@@ -2,36 +2,37 @@
 // Merriweather is good but seems a bit thick
 // Playfair looks nice in bigger sizes, like titles or headings
 
-//@import url("//fonts.googleapis.com/css?family=Merriweather Sans");
-@import url("//fonts.googleapis.com/css?family=Merriweather");
 @import url("//fonts.googleapis.com/css?family=PT Serif");
+//@import url("//fonts.googleapis.com/css?family=Droid Serif");
 @import url("//fonts.googleapis.com/css?family=Droid Sans");
-@import url("//fonts.googleapis.com/css?family=Cantarell");
+@import url("//fonts.googleapis.com/css?family=Open Sans");
+@import url("//fonts.googleapis.com/css?family=Roboto Slab");
 
-$font_code:                 "RM Courier", Monaco, Menlo, Consolas, Bitstream Vera Sans Mono, Lucida Console, Terminal;
-$font_serif:                "PT Serif", Helvetica, Arial, serif;
-$font_serif_small:          "Merriweather", Helvetica, Arial, serif;
-$font_sans:                 "Cantarell", Helvetica, Arial, sans-serif;
+$font_code:                 "RM Courier", Monaco, Menlo, Consolas, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace;
+$font_serif:                "Roboto Slab", Garamond, Palatino, "Palatino Linotype", Times, "Times New Roman", Georgia, serif;
+$font_sans:                 "Open Sans", Helvetica, Arial, sans-serif;
 $font_sans_thin:            "Droid Sans", Helvetica, Arial, sans-serif;
 
 $font_title:                $font_sans;
-$font_title_tagline:        $font_serif_small;
-$font_default:              $font_sans;
+$font_title_tagline:        $font_serif;
+$font_default:              $font_serif;
 $font_default_thin:         $font_sans_thin;
 $font_heading:              $font_serif;
-$font_heading_small:        $font_serif_small;
 $font_label:                $font_sans;
 $font_footer:               $font_default;
 
 $font_size_title:           22px;
 $font_size_title_tagline:   12px;
 
-$header_font_size:          22px;
+$font_size_heading:         22px;
 
-$font_size_default:         14px;
+$font_size_default:         13px;
 $font_size_default_thin:    13px;
 $font_size_code:            13px;
-$font_size_label:           12px;
+$font_size_code_in_text:    13px;
+$font_size_label:           13px;
+$font_size_table_heading:   $font_size_default;
+$font_size_table_data:      $font_size_default;
 
 $font_size_nav:	            $font_size_label;
 $font_size_page_nav:        $font_size_nav + 2;
@@ -40,6 +41,8 @@ $font_size_right_links:     $font_size_nav;
 
 $font_size_footer:          11px;
 $font_size_license:         11px;
+
+$word_spacing:              0.155em;     // normal 0.25em;
 
 @font-face {
     font-family: 'RM Courier';

@@ -1,6 +1,8 @@
 body {
     background: $color_bg;
-    font: $font_size_default/1.5 $font_default;
+    font-family: $font_default;
+    font-size: $font_size_default;
+    line-height: $font_size_default;
     color: $color_text;
     padding-bottom: 0;
     margin-bottom: 0;
@@ -15,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $font_heading;
 }
 
-li, a, p, dl {
+p, a, li, dl {
     font-family: $font_default;
     font-size: $font_size_default;
 }
@@ -85,8 +87,8 @@ ol {
 }
 
 strong {
-    font-family: $font_default !important;
-    font-size: $font_size_default;
+    //font-family: $font_default !important;
+    //font-size: $font_size_default;
     font-weight: normal; 
     color: $color_text_highlight;
 }
@@ -191,6 +193,7 @@ sup {
 }
 
 div.footnotes {
+    padding-top: 30px;
     hr {
         height: 1px;
         width: 30%;
@@ -257,6 +260,7 @@ header {
         font-weight: normal;
         font-style: italic;
         font-size: $font_size_title_tagline;
+        letter-spacing: 0px;
         text-align: left;
         line-height: $font_size_title_tagline + 1;
 
@@ -434,15 +438,15 @@ section.column_right_sidebar {
 /* Main content column                                                       */
 /* ------------------------------------------------------------------------- */
 
-section.column_main h1 { font-size: $header_font_size; }
-section.column_main h2 { font-size: $header_font_size - 2; }
-section.column_main h3 { font-size: $header_font_size - 4; }
-section.column_main h4 { font-size: $header_font_size - 6; }
-section.column_main h5 { font-size: $header_font_size - 8; }
-section.column_main h6 { font-size: $header_font_size - 10; }
+section.column_main h1 { font-size: $font_size_heading; }
+section.column_main h2 { font-size: $font_size_heading - 2; }
+section.column_main h3 { font-size: $font_size_heading - 4; }
+section.column_main h4 { font-size: $font_size_heading - 6; }
+section.column_main h5 { font-size: $font_size_heading - 7; }
+section.column_main h6 { font-size: $font_size_heading - 9; }
 
 section.column_main {
-    h1, h2, h3, h4 {
+    h1, h2, h3, h4, h5, h6 {
         font-family: $font_heading;
         font-weight: normal;
         color: $color_text_highlight;
@@ -459,8 +463,6 @@ section.column_main {
         padding-top: 20px;
     }
     h5, h6 {
-        font-family: $font_heading_small;
-        color: $color_text_highlight;
         text-shadow: none;
 
         padding-top: 10px;
@@ -469,9 +471,8 @@ section.column_main {
         
         // This is used as the dlang-guide bread crumbs
         a {
-            font-family: $font_heading_small; 
-            font-size: 13px;
-            
+            font-family: $font_heading;
+            font-size: $font_size_default;
             font-weight: normal;
             color: $color_primary_darker;
             border-bottom: none;
@@ -479,17 +480,19 @@ section.column_main {
     }
     h5 {
         font-style: italic;
-        font-weight: bold;
         code {
-            font-size: $header_font_size - 8;
+            font-size: $font_size_heading - 8;
         }
     }
     h6 {
         font-style: normal;
-        font-weight: bold;
         code {
-            font-size: $header_font_size - 8 - 1;
+            font-size: $font_size_heading - 8 - 1;
         }
+    }
+    h5.bread_crumb, h6.bread_crumb {
+        font-style: normal;
+        line-height: 22px;
     }
     
     p, li, dl {
@@ -500,6 +503,9 @@ section.column_main {
     }
     
     p {
+        //letter-spacing: 0.25px;
+        word-spacing: $word_spacing;
+        text-align: justify;
         /* margin: 0 0 8px 0; */
         /* All bottom margins must be the same */
         /*   <p>   */
@@ -531,10 +537,10 @@ section.column_main {
     }
     
     table {
+        letter-spacing: 0px;
         border: 1px solid $color_table_border;
         th, td {
             font-family: $font_default_thin;
-            font-size: $font_size_default - 1;
             line-height: $font_size_default;
             border: 1px solid $color_table_border;
             i, em {
@@ -545,14 +551,17 @@ section.column_main {
         }
         
         th {
+            font-size: $font_size_table_heading;
             font-weight: normal; 
             padding: 5px 6px;
             background: $color_table_th_bg;
         }
         
         td {
+            font-size: $font_size_table_data;
+            line-height: 18px;
             vertical-align: top;
-            padding: 2px 6px 4px 6px;
+            padding: 4px 6px 4px 6px;
             
             p {
                 margin: 5px 0 0 0;
@@ -578,7 +587,6 @@ section.column_main {
     dl {
         margin: 0 36px 12px 36px;
         dt {
-            
             color: $color_text_highlight;
             text-align: left;
             font-weight: normal;
@@ -606,13 +614,14 @@ section.column_main {
         
         pre {
             color: $color_text_lighter;
-            background: $color_code_bg + 7;
+            background: $color_code_bg + 3;
             border: 1px dotted $color_syntax_bg + 15;
             border-left: 6px solid $color_syntax_bg + 18;
         }
         
         dl {
-            margin: 0 36px 0px 36px;
+            // Bottom margin takes into account that a paragraph may follow a definition list
+            margin: 0 15px 10px 15px;
             dt {
                 color: $color_text_highlight;
                 text-align: left;
@@ -620,8 +629,15 @@ section.column_main {
             }
             
             dd {
+                
                 margin: 0 0 0 24px;
                 padding: 0 0 4px 0;
+                
+                // A term definition may have a subsequent paragraph.
+                p {
+                    text-align: left;
+                    margin-bottom: 0px;
+                }
                 
                 pre {
                     margin: 12px 0px 12px 0px;
@@ -655,10 +671,16 @@ section.column_main {
     
     code {
         font-family: $font_code;
-        font-size: $font_size_code;
+        font-size: $font_size_code_in_text;
         font-style: normal;
         color: $color_code_highlight;
         margin: 0 0px;
+    }
+    
+    em {
+        code {
+            font-style: italic;
+        }
     }
 
     /* Fenced code blocks are converted to div.highlight pre code.language-text */
@@ -682,6 +704,7 @@ section.column_main {
         
         code {
             font-family: $font_code;
+            font-size: $font_size_code;
             color: $color_code;
             text-shadow: none;
             border: none;
@@ -751,8 +774,10 @@ section.column_left_sidebar h3 {
     font-size: 15px;
     line-height: 18px;
 }
-section.column_left_sidebar h4 { font-size: 14px; }
-section.column_left_sidebar h5 { font-size: 12px; }
+/*
+section.column_left_sidebar h4 { font-size: $font_size_heading - 2; }
+section.column_left_sidebar h5 { font-size: $font_size_heading - 4; }
+*/
 
 #random_tidbits div.tidbit_entry,
 #dlang_foundation,
@@ -765,7 +790,7 @@ section.column_left_sidebar h5 { font-size: 12px; }
     margin-bottom: 12px;
     h1 {
         font-family: $font_label;
-        font-size: $font_size_default - 2;
+        font-size: $font_size_label;
         font-weight: normal;
         color: $color_primary_darker;
         text-transform: uppercase;
@@ -796,7 +821,7 @@ section.column_left_sidebar h5 { font-size: 12px; }
             font-size: $font_size_default_thin;
         }
         &.qauthor {
-            font-family: $font_heading_small;
+            font-family: $font_heading;
             font-style: italic;
             font-size: $font_size_default_thin - 1;
             color: $color_text_highlight;
@@ -863,7 +888,7 @@ section.column_right_sidebar {
     h1 {
         font-family: $font_label;
         font-weight: normal;
-        font-size: $font_size_default - 2;
+        font-size: $font_size_label;
         color: $color_primary_darker;
         text-shadow: 1px 1px 1px #000;
         text-transform: uppercase;
@@ -1289,7 +1314,7 @@ div.todo {
     padding: 0 12px 0 12px;
     
     p {
-        font-family: $font_serif_small;
+        font-family: $font_serif;
         font-size: $font_size_default - 2;
         font-weight: normal;
         font-style: italic;
@@ -1300,7 +1325,7 @@ div.todo {
     p::before {
         content: "TODO:";
         display: block;
-        font-family: $font_serif_small;
+        font-family: $font_serif;
         font-size: $font_size_default - 2;
         font-weight: normal;
         font-style: normal;
