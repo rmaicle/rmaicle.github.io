@@ -259,5 +259,7 @@
   sections:
     - section: 'Control Codes'
       shref:   '/dlang-guide/ascii/control_codes.html'
+    - section: 'Control Codes with Description'
+      shref:   '/dlang-guide/ascii/control_codes_description.html'
     - section: 'Printable Codes'
       shref:   '/dlang-guide/ascii/printable_codes.html'
