@@ -1,7 +1,7 @@
 ---
 title: A Guide to the D Programming Language
 excerpt: Another way of (re)learning the D programming language.
-categories: [Blog]
+group: Posts
 tags: [dlang, programming]
 ---
 

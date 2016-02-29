@@ -1,7 +1,7 @@
 ---
 title: Creating Archive Page
 excerpt: Creating a page listing all post pages
-categories: [Blog]
+group: Posts
 published: false
 tags: [github pages, jekyll, ruby]
 ---

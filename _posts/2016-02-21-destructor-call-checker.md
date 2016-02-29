@@ -1,7 +1,7 @@
 ---
 title: Destructor Call State Checker
 excerpt: A simple state reporter whether a destructor has been called or not.
-categories: [Blog]
+group: Posts
 tags: [cplusplus, class, programming]
 ---
 

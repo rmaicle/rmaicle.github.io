@@ -1,7 +1,7 @@
 ---
 title: Conditional Assert
 excerpt: What is conditional assertion?
-categories: [Blog]
+group: Posts
 tags: [cplusplus, assertion, debug, programming]
 ---
 

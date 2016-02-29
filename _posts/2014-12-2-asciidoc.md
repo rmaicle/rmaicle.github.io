@@ -1,7 +1,7 @@
 ---
 title: AsciiDoc
 excerpt: AsciiDoc Introduction
-categories: [Blog]
+group: Posts
 published: false
 tags: [asciidoc, markdown]
 ---

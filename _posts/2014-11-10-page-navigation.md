@@ -1,7 +1,7 @@
 ---
 title: Page Navigation
 excerpt: Moving to next and previous pages
-categories: [Blog]
+group: Posts
 tags: [github pages]
 ---
 

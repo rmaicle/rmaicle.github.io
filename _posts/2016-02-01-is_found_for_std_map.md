@@ -1,7 +1,7 @@
 ---
 title: is_found() for std::map
 excerpt: A simple function for checking if a std::map search has found something or not.
-categories: [Blog]
+group: Posts
 tags: [cplusplus, containers, map, programming]
 ---
 

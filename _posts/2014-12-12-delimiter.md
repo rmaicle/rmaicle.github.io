@@ -4,7 +4,7 @@ excerpt: It's time to use standard delimiters
 author: Ricardo Maicle
 email: rmaicle@gmail.com
 date: December 12, 2014
-categories: [Blog]
+group: Posts
 tags: [delimiter, ascii, unicode]
 ---
 

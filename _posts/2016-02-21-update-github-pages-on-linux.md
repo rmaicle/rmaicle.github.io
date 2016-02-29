@@ -1,7 +1,7 @@
 ---
 title: Updating Local GitHub Pages on Linux
 excerpt: Update Local GitHub Pages
-categories: [Blog]
+group: Posts
 tags: [github pages, jekyll, ruby]
 ---
 
