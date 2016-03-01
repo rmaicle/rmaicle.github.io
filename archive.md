@@ -13,7 +13,7 @@ tags: [root]
         <a href="{{ post.url }}">
         <p class='excerpt'>
             {{ post.excerpt }}<br/>
-            {{ post.date | | date: "%Y %b %-d" }}
+            {{ post.date || date: "%Y %b %-d" }}
         </p>
         </a>
     </article>
