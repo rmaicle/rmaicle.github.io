@@ -1,7 +1,9 @@
 ---
 title: PostgreSQL in Manjaro Linux
 excerpt: Setting up a development PostgreSQL database
+date: November 03, 2015
 group: Posts
+categories: [Blog]
 tags: [dlang, programming]
 ---
 

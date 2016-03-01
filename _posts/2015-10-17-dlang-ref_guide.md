@@ -1,7 +1,9 @@
 ---
 title: A Guide to the D Programming Language
 excerpt: Another way of (re)learning the D programming language.
+date: October 17, 2015
 group: Posts
+categories: [Blog]
 tags: [dlang, programming]
 ---
 

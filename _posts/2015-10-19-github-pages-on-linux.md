@@ -1,7 +1,9 @@
 ---
 title: From Windows Local GitHub Pages to Linux
 excerpt: How I initially configured Jekyll to run GitHub Pages on my local Windows machine
+date: October 19, 2015
 group: Posts
+categories: [Blog]
 tags: [github pages, jekyll, ruby]
 ---
 

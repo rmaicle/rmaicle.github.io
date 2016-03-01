@@ -1,7 +1,9 @@
 ---
 title: A Case for Using C++ Properties
 excerpt: Possible use cases of a simple class template emulating class properties.
+date: February 10, 2016
 group: Posts
+categories: [Blog]
 tags: [cplusplus, class, properties, programming]
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: An IF Function
 excerpt: Creating an IF function
+date: December 12, 2015
 group: Posts
+categories: [Blog]
 tags: [cplusplus, if, programming, thoughts]
 ---
 

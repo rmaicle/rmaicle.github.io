@@ -1,7 +1,9 @@
 ---
 title: Redcarpet
 excerpt: Ruby library for Markdown processing
+date: November 12, 2014
 group: Posts
+categories: [Blog]
 tags: [github pages, markdown, redcarpet]
 ---
 

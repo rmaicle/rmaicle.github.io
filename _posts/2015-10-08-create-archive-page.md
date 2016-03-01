@@ -1,7 +1,9 @@
 ---
 title: Creating Archive Page
 excerpt: Creating a page listing all post pages
+date: October 08, 2015
 group: Posts
+categories: [Blog]
 published: false
 tags: [github pages, jekyll, ruby]
 ---

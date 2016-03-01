@@ -1,7 +1,9 @@
 ---
 title: Safe Copy Assignment
 excerpt: Implementing a safe copy assignment operator overload
+date: December 20, 2015
 group: Posts
+categories: [Blog]
 tags: [cplusplus, assignment, copy, programming]
 ---
 

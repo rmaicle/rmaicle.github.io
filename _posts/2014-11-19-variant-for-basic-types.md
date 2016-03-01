@@ -1,7 +1,9 @@
 ---
 title: Thoughts on a Variant Class for Basic Types
 excerpt: Exploring how to implement a variant class
+date: November 19, 2014
 group: Posts
+categories: [Blog]
 published: false
 tags: [c++, variant, tagged union, type erasure]
 ---

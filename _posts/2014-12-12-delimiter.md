@@ -5,6 +5,7 @@ author: Ricardo Maicle
 email: rmaicle@gmail.com
 date: December 12, 2014
 group: Posts
+categories: [Blog]
 tags: [delimiter, ascii, unicode]
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: NGINX on Linux
 excerpt: Setting up NGINX on Linux
+date: August 25, 2015
 group: Posts
+categories: [Blog]
 published: false
 tags: [github pages, jekyll, ruby]
 ---

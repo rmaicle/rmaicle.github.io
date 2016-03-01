@@ -1,7 +1,9 @@
 ---
 title: Enforcing Smart Pointer Use for your Classes
 excerpt: Creating unique_ptr and shared_ptr of a class instance with private constructors.
+date: December 09, 2015
 group: Posts
+categories: [Blog]
 tags: [cplusplus, unique_ptr, shared_ptr, smart_pointer, programming]
 ---
 

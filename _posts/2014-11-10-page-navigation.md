@@ -1,7 +1,9 @@
 ---
 title: Page Navigation
 excerpt: Moving to next and previous pages
+date: November 05, 2014
 group: Posts
+categories: [Blog]
 tags: [github pages]
 ---
 
