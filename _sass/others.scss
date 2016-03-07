@@ -543,7 +543,7 @@ section.column_main {
         border: 1px solid $color_table_border;
         th, td {
             font-family: $font_default_thin;
-            line-height: $font_size_default;
+            line-height: $font_size_default + 3;
             border: 1px solid $color_table_border;
             i, em {
                 font-family: $font_default_thin;
@@ -561,9 +561,8 @@ section.column_main {
         
         td {
             font-size: $font_size_table_data;
-            line-height: 18px;
             vertical-align: top;
-            padding: 4px 6px 4px 6px;
+            padding: 2px 6px 3px 6px;
             
             p {
                 margin: 5px 0 0 0;
