@@ -178,6 +178,8 @@ aside {
 }
 
 sup {
+    font-size: $font_size_default - 2;
+       
     a {
         font-family: $font_default;
         font-size: $font_size_default - 3;
