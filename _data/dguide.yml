@@ -91,7 +91,10 @@
   href:    '/dlang-guide/basic_types/index.html'
   sections:
     - section: 'Void Type'
-      shref:   '/dlang-guide/basic_types/void.html'
+      shref:   '/dlang-guide/basic_types/void/index.html'
+      subsections:
+        - subsection: 'Properties'
+          sshref:     '/dlang-guide/basic_types/void/properties.html'
     - section: 'Boolean Type'
       shref:   '/dlang-guide/basic_types/boolean/index.html'
       subsections:
@@ -107,7 +110,7 @@
       shref:   '/dlang-guide/basic_types/integral/index.html'
       subsections:
         - subsection: 'Literals'
-          sshref:     '/dlang-guide/basic_types/integral/literals/index.html'
+          sshref:     '/dlang-guide/basic_types/integral/literals.html'
 #          subsubsections:
 #          - subsubsection: 'Prefixes'
 #            ssshref:       '/dlang-guide/basic_types/integral/literals/prefixes.html'
@@ -121,7 +124,7 @@
       shref:   '/dlang-guide/basic_types/floating_point/index.html'
       subsections:
         - subsection: 'Literals'
-          sshref:     '/dlang-guide/basic_types/floating_point/literals/index.html'
+          sshref:     '/dlang-guide/basic_types/floating_point/literals.html'
 #          subsubsections:
 #          - subsubsection: 'Prefixes'
 #            ssshref:       '/dlang-guide/basic_types/floating_point/literals/prefixes.html'
