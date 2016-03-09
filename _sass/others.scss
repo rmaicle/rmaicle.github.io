@@ -757,12 +757,16 @@ section.column_main {
         p, li, dl, a, i, em, b, strong {
             font-family: $font_default_thin;
             font-size: $font_size_default_thin;
+            line-height: $font_size_default + 6;
         }
-        sup a {
-            font-family: $font_default;
-            font-size: $font_size_default - 3;
-            color: $color_text_highlight;
-            border-bottom: none;
+        sup {
+        
+            a {
+                //font-family: $font_default;
+                font-size: $font_size_default - 2;
+                //color: $color_text_highlight;
+                //border-bottom: none;
+            }
         }
     }
 }
