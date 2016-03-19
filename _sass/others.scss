@@ -586,7 +586,7 @@ section.column_main {
     }
     
     dl {
-        margin: 0 36px 12px 36px;
+        margin: 0 20px 12px 20px;
         dt {
             color: $color_text_highlight;
             text-align: left;
@@ -594,7 +594,7 @@ section.column_main {
         }
         
         dd {
-            margin: 0 0 0 24px;
+            margin: 0 0 0 20px;
             padding: 0 0 0.5em 0;
             
             // Usually blocks have bottom margins but since the first dd line
@@ -642,7 +642,7 @@ section.column_main {
             
             dd {
                 
-                margin: 0 0 0 24px;
+                margin: 0 0 0 20px;
                 padding: 0 0 4px 0;
                 
                 // A term definition may have a subsequent paragraph.
