@@ -6,7 +6,9 @@
       shref:   '/dlang-guide/background/features.html'
     - section: 'History'
       shref:   '/dlang-guide/background/history.html'
-  
+    - section: 'Compilation'
+      shref:   '/dlang-guide/background/compilation.html'
+      
 - chapter: 'Preliminaries'
   href:    '/dlang-guide/preliminaries/index.html'
   sections:
@@ -23,6 +25,7 @@
           sshref:     '/dlang-guide/preliminaries/conventions/console_output_block.html'
         - subsection: 'Quote and Quotation'
           sshref:     '/dlang-guide/preliminaries/conventions/quote_quotation.html'
+          
     - section: 'Compilers'
       shref:   '/dlang-guide/preliminaries/compilers/index.html'
       subsections:
@@ -50,58 +53,64 @@
     - section: 'Output Functions'
       shref:   '/dlang-guide/preliminaries/output_functions.html'
 
-- chapter: 'Basics'
-  href:    '/dlang-guide/basics/index.html'
+- chapter: 'Lexical'
+  href:    '/dlang-guide/lexical/index.html'
   sections:
-    - section: 'Compilation'
-      shref:   '/dlang-guide/basics/compilation.html'
-    - section: 'Source File'
-      shref:   '/dlang-guide/basics/source_file.html'
-    - section: 'Whitespace Characters'
-      shref:   '/dlang-guide/basics/whitespace.html'
-    - section: 'End-of-Line Characters'
-      shref:   '/dlang-guide/basics/eol.html'
-    - section: 'End-of-File Characters'
-      shref:   '/dlang-guide/basics/eof.html'
-    - section: 'Line Splicing'
-      shref:   '/dlang-guide/basics/line_splicing.html'
-    - section: 'Digraphs and Trigraphs'
-      shref:   '/dlang-guide/basics/ditri_graphs.html'
-    - section: 'Script Line'
-      shref:   '/dlang-guide/basics/script_line.html'
-    
-- chapter: 'Comments'
-  href:   '/dlang-guide/comments/index.html'
-  sections:
-    - section: 'Line Comment'
-      shref:   '/dlang-guide/comments/line_comment.html'
-    - section: 'Block Comment'
-      shref:   '/dlang-guide/comments/block_comment.html'
-    - section: 'Nesting Comment'
-      shref:   '/dlang-guide/comments/nesting_comment.html'
-  
-- chapter: 'Identifiers and Tokens'
-  href:   '/dlang-guide/identifiers/index.html'
-  sections:
-    - section: 'Reserved Identifiers'
-      shref:   '/dlang-guide/identifiers/reserved/index.html'
-      subsections:
-        - subsection: 'Deprecated'
-          sshref:     '/dlang-guide/identifiers/reserved/deprecated.html'
-        - subsection: 'Alphabetical List'
-          sshref:     '/dlang-guide/identifiers/reserved/alphabetical.html'
-        - subsection: 'Categorized'
-          sshref:     '/dlang-guide/identifiers/reserved/categorized.html'
-    - section: 'Special Identifiers'
-      shref:   '/dlang-guide/identifiers/special_identifiers.html'
-    - section: 'Special Tokens'
-      shref:   '/dlang-guide/identifiers/special_tokens.html'
 
+    - section: 'Source File'
+      shref:   '/dlang-guide/lexical/source_file/index.html'
+      subsections:
+        - subsection: 'Script Line'
+          sshref:   '/dlang-guide/lexical/source_file/script_line.html'      
+          
+    - section: 'Separators'
+      shref:   '/dlang-guide/lexical/separators/index.html'
+      subsections:
+        - subsection: 'Whitespace Characters'
+          sshref:   '/dlang-guide/lexical/separators/whitespace.html'
+        - subsection: 'End-of-Line Characters'
+          sshref:   '/dlang-guide/lexical/separators/eol.html'
+        - subsection: 'End-of-File Characters'
+          sshref:   '/dlang-guide/lexical/separators/eof.html'
+        - subsection: 'Line Splicing'
+          sshref:   '/dlang-guide/lexical/separators/line_splicing.html'
+
+    - section: 'Comments'
+      shref:   '/dlang-guide/lexical/comments/index.html'
+      subsections:
+        - subsection: 'Line Comment'
+          sshref:   '/dlang-guide/lexical/comments/line_comment.html'
+        - subsection: 'Block Comment'
+          sshref:   '/dlang-guide/lexical/comments/block_comment.html'
+        - subsection: 'Nesting Comment'
+          sshref:   '/dlang-guide/lexical/comments/nesting_comment.html'
+
+    - section: 'Identifiers'
+      shref:   '/dlang-guide/lexical/identifiers/index.html'
+      subsections:
+        - subsection: 'Reserved Identifiers'
+          sshref:   '/dlang-guide/lexical/identifiers/reserved/index.html'
+          subsubsections:
+            - subsubsection: 'Deprecated'
+              ssshref:     '/dlang-guide/lexical/identifiers/reserved/deprecated.html'
+            - subsubsection: 'Alphabetical List'
+              ssshref:     '/dlang-guide/lexical/identifiers/reserved/alphabetical.html'
+            - subsubsection: 'Categorized'
+              ssshref:     '/dlang-guide/lexical/identifiers/reserved/categorized.html'
+              
+        - subsection: 'Special Identifiers'
+          sshref:   '/dlang-guide/lexical/identifiers/special_identifiers.html'
+          
+    - section: 'Special Tokens'
+      shref:   '/dlang-guide/lexical/special_tokens.html'
+      
+    - section: 'Digraphs and Trigraphs'
+      shref:   '/dlang-guide/lexical/ditri_graphs.html'
+    
 - chapter: 'Type Properties'
   href:   '/dlang-guide/properties/index.html'
   sections:
-    - section: 'Alphabetical List'
-      shref:   '/dlang-guide/properties/alphabetical.html'
+
     - section: 'init Property'
       shref:   '/dlang-guide/properties/init.html'
     - section: 'stringof Property'
@@ -112,6 +121,10 @@
       shref:   '/dlang-guide/properties/sizeof.html'
     - section: 'alignof Property'
       shref:   '/dlang-guide/properties/alignof.html'
+    - section: 'User-Defined Properties'
+      shref:   '/dlang-guide/properties/user_defined.html'
+    - section: 'Built-In Properties'
+      shref:   '/dlang-guide/properties/built_in.html'
 
 #- chapter: 'Type Attributes'
 #  href:    '/dlang-guide/attributes/index.html'
@@ -121,39 +134,83 @@
   sections:
     - section: 'Void Type'
       shref:   '/dlang-guide/basic_types/void/index.html'
+      
       subsections:
         - subsection: 'Properties'
-          sshref:     '/dlang-guide/basic_types/void/properties.html'
+          sshref:     '/dlang-guide/basic_types/void/properties/index.html'
+          
+          subsubsections:
+          - subsubsection: 'alignof Property'
+            ssshref:       '/dlang-guide/basic_types/void/properties/alignof.html'
+          - subsubsection: 'sizeof Property'
+            ssshref:       '/dlang-guide/basic_types/void/properties/sizeof.html'
+            
     - section: 'Boolean Type'
       shref:   '/dlang-guide/basic_types/boolean/index.html'
+      
       subsections:
         - subsection: 'Literals'
           sshref:     '/dlang-guide/basic_types/boolean/literals.html'
         - subsection: 'Properties'
-          sshref:     '/dlang-guide/basic_types/boolean/properties.html'
-        - subsection: 'Conversions'
-          sshref:     '/dlang-guide/basic_types/boolean/conversions.html'
+          sshref:     '/dlang-guide/basic_types/boolean/properties/index.html'
+          
+          subsubsections:
+          - subsubsection: 'alignof Property'
+            ssshref:       '/dlang-guide/basic_types/boolean/properties/alignof.html'
+          - subsubsection: 'init Property'
+            ssshref:       '/dlang-guide/basic_types/boolean/properties/init.html'
+          - subsubsection: 'min Property'
+            ssshref:       '/dlang-guide/basic_types/boolean/properties/min.html'
+          - subsubsection: 'max Property'
+            ssshref:       '/dlang-guide/basic_types/boolean/properties/max.html'
+          - subsubsection: 'sizeof Property'
+            ssshref:       '/dlang-guide/basic_types/boolean/properties/sizeof.html'
+            
+#        - subsection: 'Conversions'
+#          sshref:     '/dlang-guide/basic_types/boolean/conversions.html'
         - subsection: 'Operations'
           sshref:     '/dlang-guide/basic_types/boolean/operations.html'
+          
     - section: 'Integral Types'
       shref:   '/dlang-guide/basic_types/integral/index.html'
+      
       subsections:
         - subsection: 'Literals'
           sshref:     '/dlang-guide/basic_types/integral/literals.html'
-#          subsubsections:
+          
+#         subsubsections:
 #          - subsubsection: 'Prefixes'
 #            ssshref:       '/dlang-guide/basic_types/integral/literals/prefixes.html'
 #          - subsubsection: 'Suffixes'
 #            ssshref:       '/dlang-guide/basic_types/integral/literals/suffixes.html'
 #          - subsubsection: 'Digit Separator'
 #            ssshref:       '/dlang-guide/basic_types/integral/literals/separator.html'
+
         - subsection: 'Properties'
-          sshref:     '/dlang-guide/basic_types/integral/properties.html'
+          sshref:     '/dlang-guide/basic_types/integral/properties/index.html'
+          
+          subsubsections:
+          - subsubsection: 'alignof Property'
+            ssshref:       '/dlang-guide/basic_types/integral/properties/alignof.html'
+          - subsubsection: 'init Property'
+            ssshref:       '/dlang-guide/basic_types/integral/properties/init.html'
+          - subsubsection: 'min Property'
+            ssshref:       '/dlang-guide/basic_types/integral/properties/min.html'
+          - subsubsection: 'max Property'
+            ssshref:       '/dlang-guide/basic_types/integral/properties/max.html'
+          - subsubsection: 'sizeof Property'
+            ssshref:       '/dlang-guide/basic_types/integral/properties/sizeof.html'
+            
+        - subsection: 'Aliased Types'
+          sshref:     '/dlang-guide/basic_types/integral/aliased_types.html'
+            
     - section: 'Floating Point Types'
       shref:   '/dlang-guide/basic_types/floating_point/index.html'
+      
       subsections:
         - subsection: 'Literals'
           sshref:     '/dlang-guide/basic_types/floating_point/literals.html'
+          
 #          subsubsections:
 #          - subsubsection: 'Prefixes'
 #            ssshref:       '/dlang-guide/basic_types/floating_point/literals/prefixes.html'
@@ -161,15 +218,31 @@
 #            ssshref:       '/dlang-guide/basic_types/floating_point/literals/suffixes.html'
 #          - subsubsection: 'Digit Separator'
 #            ssshref:       '/dlang-guide/basic_types/floating_point/literals/separator.html'            
+
         - subsection: 'Properties'
-          sshref:     '/dlang-guide/basic_types/floating_point/properties.html'
+          sshref:     '/dlang-guide/basic_types/floating_point/properties/index.html'
+          
+          subsubsections:
+          - subsubsection: 'init Property'
+            ssshref:       '/dlang-guide/basic_types/floating_point/properties/init.html'
+          - subsubsection: 'nan Property'
+            ssshref:       '/dlang-guide/basic_types/floating_point/properties/nan.html'
+          - subsubsection: 'dig Property'
+            ssshref:       '/dlang-guide/basic_types/floating_point/properties/dig.html'
+          - subsubsection: 'epsilon Property'
+            ssshref:       '/dlang-guide/basic_types/floating_point/properties/epsilon.html'
+            
         - subsection: 'Comparison Operators'
           sshref:     '/dlang-guide/basic_types/floating_point/operators.html'
+          
     - section: 'Character Types'
       shref:   '/dlang-guide/basic_types/character.html'
     - section: 'Conversions'
       shref:   '/dlang-guide/basic_types/conversions/index.html'
+      
       subsections:
+        - subsection: 'Boolean Conversions'
+          sshref:     '/dlang-guide/basic_types/conversions/boolean.html'
         - subsection: 'Integral Promotion'
           sshref:     '/dlang-guide/basic_types/conversions/promotion.html'
         - subsection: 'Pointer Conversions'
@@ -193,8 +266,24 @@
 #- chapter: 'Associative Arrays'
 #  href:    '/dlang-guide/associative_arrays.html'
   
-#- chapter: 'Enumerations'
-#  href:    '/dlang-guide/enumerations.html'
+- chapter: 'Enumerations'
+  href:    '/dlang-guide/enumerations/index.html'
+  sections:
+    - section: 'Properties'
+      shref:   '/dlang-guide/enumerations/properties/index.html'
+      subsections:
+        - subsection: 'init Property'
+          sshref:     '/dlang-guide/enumerations/properties/init.html'
+        - subsection: 'min Property'
+          sshref:     '/dlang-guide/enumerations/properties/min.html'
+        - subsection: 'max Property'
+          sshref:     '/dlang-guide/enumerations/properties/max.html'
+          
+    - section: 'Conversions'
+      shref:   '/dlang-guide/enumerations/conversions/index.html'
+      subsections:
+        - subsection: 'Implicit Conversion'
+          sshref:     '/dlang-guide/enumerations/conversions/implicit.html'
   
 #- chapter: 'Expressions'
 #  href:    '/dlang-guide/expressions.html'
@@ -205,8 +294,20 @@
 #- chapter: 'Functions'
 #  href:    '/dlang-guide/functions.html'
   
-#- chapter: 'Structs, Unions and Classes'
-#  href:    '/dlang-guide/structs_unions_classes.html'
+- chapter: 'Structures'
+  href:    '/dlang-guide/structs/index.html'
+  sections:
+    - section: 'Properties'
+      shref:   '/dlang-guide/structs/properties/index.html'
+      subsections:
+        - subsection: 'init Property'
+          sshref:     '/dlang-guide/structs/properties/init.html'
+  
+- chapter: 'Unions'
+  href:    '/dlang-guide/unions/index.html'
+  
+- chapter: 'Classes'
+  href:    '/dlang-guide/classes/index.html'
 
 #- chapter: 'Templates'
 #  href:    '/dlang-guide/templates.html'
