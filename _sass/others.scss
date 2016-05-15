@@ -482,15 +482,29 @@ section.column_main {
     }
     h5 {
         font-style: italic;
-        code {
-            font-size: $font_size_heading - 8;
-        }
+        
     }
     h6 {
         font-style: normal;
-        code {
-            font-size: $font_size_heading - 8 - 1;
-        }
+
+    }
+    h1 code {
+        font-size: $font_size_heading;
+    }
+    h2 code {
+        font-size: $font_size_heading - 2;
+    }
+    h3 code {
+        font-size: $font_size_heading - 4;
+    }
+    h4 code {
+        font-size: $font_size_heading - 6;
+    }
+    h5 code {
+        font-size: $font_size_heading - 8;
+    }
+    h6 code {
+        font-size: $font_size_heading - 8 - 1;
     }
     h5.bread_crumb, h6.bread_crumb {
         font-style: normal;
