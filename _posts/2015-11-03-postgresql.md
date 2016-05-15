@@ -31,7 +31,7 @@ The last command brought me to `/var/lib/postgres`.
 
 I need now to initialize the database storage area on disk, also called _database cluster_ in PostgreSQL and _catalog cluster_ in the SQL standard ([PostgreSQL 9.4.5 Documentation §17.2](http://www.postgresql.org/docs/9.4/interactive/creating-cluster.html)).
 
-{% highlight bash session linenos %}
+{% highlight bash session %}
 $ initdb --locale en_PH.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
 {% endhighlight %}
     
@@ -71,17 +71,89 @@ $ postgres -D /var/lib/postgres/data/ >logfile 2>&1 &
 $ -bash: logfile: Permission denied
 {% endhighlight %}
 
-I prefer starting and stopping the database server with the `systemctl` command.
-The command to start the database server runs it in the background so I do not need to keep an open console as when using the `postgres` command.
+I prefer starting the database server with the `systemctl` command.
+The command runs the database server in the background so there is no need to keep an open console as when using the `postgres` command.
 
-{% highlight bash session linenos %}
-sudo systemctl start postgresql
-sudo systemctl stop postgresql
+{% highlight bash session %}
+$ sudo systemctl start postgresql
+{% endhighlight %}
+
+##### Stopping the Database Server
+
+The corresponding command to stop a running database server is
+
+{% highlight bash session %}
+$ sudo systemctl stop postgresql
+{% endhighlight %}
+
+## PostgreSQL Version
+
+There are a number of ways to check the PostgreSQL version information; through the commandline and inside the PostgreSQL client application.
+
+### Commandline Interface
+One can check the PostgreSQL version from the operating system commandline interface.
+
+###### Server version
+
+{% highlight bash session %}
+$ pg_config --version
+PostgreSQL 9.5.1
+$ postgres -V
+postgres (PostgreSQL) 9.5.1
+{% endhighlight %}
+
+###### Client version
+
+{% highlight bash session %}
+$ psql --version
+psql (PostgreSQL) 9.5.1
+{% endhighlight %}
+
+### `psql` Interface
+
+One can also query the database version from the PostgreSQL commandline client application.
+The database server must be running and one must be connected to it.
+
+{% highlight bash session %}
+$ psql -d postgres -U postgres -h localhost
+psql (9.5.1)
+Type "help" for help.
+{% endhighlight %}
+
+###### SELECT version()
+
+{% highlight bash session %}
+postgres=# SELECT version();
+                                   version                                    
+------------------------------------------------------------------------------
+ PostgreSQL 9.5.1 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 5.3.0, 64-bit
+(1 row)
+{% endhighlight %}
+
+###### `server_version`
+
+{% highlight bash session %}
+postgres=# SHOW server_version;
+ server_version 
+----------------
+ 9.5.1
+(1 row)
+{% endhighlight %}
+
+###### `server_version_num`
+
+{% highlight bash session %}
+postgres=# SHOW server_version_num;
+ server_version_num 
+--------------------
+ 90501
+(1 row)
+
 {% endhighlight %}
 
 ## Connecting to the Database
 
-##### pgAdmin
+##### `pgAdmin` Application
 
 pgAdmin 1.20..0.
 Using pgAdmin3 to create a database requires that the database server is running.
@@ -108,7 +180,7 @@ I can connect to the database server using the following command:
 Create new user roles to connect to the database.
 Must be superuser otherwise the following error will result:
 
-{% highlight bash session linenos %}
+{% highlight bash session %}
 $ psql -d sphere -U role_test -h localhost
 psql: FATAL:  remaining connection slots are reserved for non-replication superuser connections
 {% endhighlight %}
