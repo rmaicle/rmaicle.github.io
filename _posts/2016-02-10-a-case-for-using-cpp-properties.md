@@ -11,11 +11,11 @@ Properties are available in other programming languages.
 Properties are simple class member variables with corresponding getter and setter functions in a simplified declaration.
 
 Getter/setter class member functions that set/get internal values only without other internal operations being performed is accomplished simply by making the corresponding class member variable _public_.
-This may a reason why `properties` are not that favorable with some C++ programmers.
+This is one of the reasons why `properties` are not that favorable with some C++ programmers.
 
 Let me help you see my point in another light.
 During development, some things just need to be simpler and compact.
-But until that time, the use of a `property` allows someone to go ahead with a working concept.
+During that time, the use of a `property` helps someone to go ahead, write code fast and finish a working concept.
 The thought is, the shorter the code, the easier it is to write, read, modify and comprehend without cluttering the screen too much and avoiding moving here and there.
 Properties could be considered to be an _interim_ code.
 
@@ -54,10 +54,10 @@ int main() {
 
 ##### Calling an External Function
 
-As the code base matures, time will come that the simple get/set functions will require some other functionality.
-To accommodate a simple requirement, the `Property` class template can be extended to allow client code to specify user-defined functions to call when the get or set function is called.
+As the code base matures, some get/set functions will require additional functionality.
+To accommodate such scenario, the `Property` class template can be extended to allow client code to specify user-defined functions that will be called inside the get or set functions.
 For simplicity, a user-defined function will be called before the actual property value is modified.
-Here is how we might define the `Property` class template.
+Here is how the `Property` class template may be written for that purpose.
 
 {% highlight cpp linenos %}
 {%raw%}#{%endraw%}include <iostream>
