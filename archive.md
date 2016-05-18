@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Archive
+title: Post Archive
 excerpt: All posts sorted chronologically.
-group: Archive
+group: Posts
 tags: [root]
 ---
 
