@@ -7,9 +7,7 @@ categories: [Blog]
 tags: [github pages, jekyll, ruby]
 ---
 
-I came across [Atom (RSS) feeds for GitHub Pages](https://help.github.com/articles/atom-rss-feeds-for-github-pages/) and tried it.
-I tried it but it doesn't work because I don't have the `jekyll-feed` gem installed.
-Looking at the latest [GitHub Pages Version and Dependencies](https://pages.github.com/versions/) it seems I need an upgrade.
+Check the latest software versions in [GitHub Pages Version and Dependencies](https://pages.github.com/versions/).
 
 ##### Update
 
