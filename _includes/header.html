@@ -5,20 +5,21 @@
 	<h2>{{ site.tagline }}</h2>
     
     <div class="nav_background">
+    
     <nav class="left">
         <!-- NOTE: -->
         <!-- For two-line items, wrap the second line between <span></span> -->
         <!-- Adjust the width padding in #header nav li a -->
         <!-- Class 'active' highlights the entire box -->
-        {% for p in site.pages_list %}
-            {% if page.group == p[0] %}
-            <li><a href="{{ site.baseurl }}{{ p[1]  }}" class="active">{{ p[0] }}</a></li>
-            {% else %}
-            <li><a href="{{ site.baseurl }}{{ p[1]  }}">{{ p[0] }}</a></li>
-            {% endif %}
-        {% endfor %}
-        <!-- <li><a href="https://github.com/rmaicle" class="active" title="GitHub" target="_blank">GitHub</a></li> -->
+        <!-- {% for p in site.pages_list %} -->
+            <!-- {% if page.group == p[0] %} --> 
+            <!-- <li><a href="{{ site.baseurl }}{{ p[1]  }}" class="active">{{ p[0] }}</a></li> -->
+            <!-- {% else %} -->
+            <!-- <li><a href="{{ site.baseurl }}{{ p[1]  }}">{{ p[0] }}</a></li> -->
+            <!-- {% endif %} -->
+        <!-- {% endfor %} -->
 	</nav>
+    
     <!-- Hide -->
     <!-- <nav class="right"> -->
     <!--     <li><a href="https://github.com/rmaicle/rmaicle.github.io" title="GitHub" target="_blank">GitHub</a></li> -->
