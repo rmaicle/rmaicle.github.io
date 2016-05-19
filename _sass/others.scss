@@ -297,6 +297,7 @@ nav {
         margin-right: 15px;
     }
     
+    /*
     li {
         display: inline-block;
         margin-right: 1px;
@@ -318,7 +319,7 @@ nav {
             border-bottom: 0px;
             
             &:hover {
-                /* Remove the bottom dotted line in common link styles */
+                // Remove the bottom dotted line in common link styles
                 border-bottom: 0px;
                 border-top: 3px solid $color_primary;
             }
@@ -332,7 +333,8 @@ nav {
             }
         }
     }
-    
+    */
+
     &.navbar {
         background: $color_nav_bg;
         padding: 0;
@@ -886,32 +888,59 @@ section.column_left_sidebar h5 { font-size: $font_size_heading - 4; }
 
 #nav_left {
     border-radius: 3px;
-    background: #1a1a1a;
-    padding: 17px 15px 12px 15px;
+    background: $color_sidebar_bg;
+    padding: 12px 15px 15px 15px;
     margin-bottom: 12px;
+    
+    h1 {
+        // The same with section.column_right_sidebar
+        font-family: $font_label;
+        font-weight: normal;
+        font-size: $font_size_label;
+        color: $color_primary_darker;
+        text-shadow: 1px 1px 1px #000;
+        text-transform: uppercase;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+    
     li {
+        width: 100px;
         margin-right: 1px;
+        padding-top: 5px;
         padding-bottom: 5px;
+        
         a {
             font-family: $font_label;
-            font-size: $font_size_default - 2;
+            font-size: $font_size_default;
             font-weight: normal;
             color: $color_primary_darker;
 
             text-transform: uppercase;
             
-            padding-left: 9px;
+            padding-left: 0px;
             border-bottom: none;
-        }
-        a:hover {
-            color: $color_primary;
-        }
-        a.active {
-            color: black;
-            background: $color_primary_darker;
-            border: 1px solid $color_primary_darker;
-            padding: 1px 8px 1px 8px;
-            border-radius: 3px;
+            
+            span.arrow {
+                color: $color_sidebar_bg;
+                padding-right: 10px;
+                padding-bottom: 2px;
+            }
+            
+            &.active {
+                color: $color_primary;
+                span.arrow {
+                    color: $color_primary;
+                }
+            }
+            
+            &:hover {
+                color: $color_text;
+                // Make arrow of different color
+                span.arrow {
+                    color: $color_text;
+                }
+            }
         }
     }
 }
@@ -922,6 +951,7 @@ section.column_left_sidebar h5 { font-size: $font_size_heading - 4; }
 
 section.column_right_sidebar {
     h1 {
+        // The same with nav_left
         font-family: $font_label;
         font-weight: normal;
         font-size: $font_size_label;
