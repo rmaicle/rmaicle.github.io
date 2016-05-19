@@ -764,6 +764,10 @@ section.column_main {
         }
 
     }
+    
+    span.tagsymbol {
+        font-size: $font_size_default + 4;
+    }
 }
 
 @media print, screen and (max-width: 480px) {
