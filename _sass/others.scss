@@ -379,7 +379,7 @@ section.column_right_sidebar {
     width: 20%;
 
     border-radius: 3px;
-    background: #1a1a1a;
+    background: $color_sidebar_bg;
     padding: 12px 15px 15px 15px;
 }
 
@@ -815,7 +815,7 @@ section.column_left_sidebar h5 { font-size: $font_size_heading - 4; }
 #compiler_releases,
 #dlang_news {
     border-radius: 3px;
-    background: #1a1a1a;
+    background: $color_sidebar_bg;
     /* Use at least 1px padding on top otherwise it collapses */
     padding: 10px 15px 12px 15px;
     margin-bottom: 12px;
