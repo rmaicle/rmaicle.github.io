@@ -20,6 +20,18 @@
         
     </div>
     <div id="dlang_news">
+        <h1>Latest News</h1>
+        {% for news in site.data.dnews %}
+            <p>
+                {{ news.title }}<br/>
+                {% if news.href != nil %}
+                    <i><a href='{{ news.href }}' target=_blank>Link to details</a></i>
+                {% endif %}
+            </p>
+            <hr class='thin medium margin_top_15 darker'></hr>
+        {% endfor %}
+    
+        <p>For more news and announcements, you can subscribe to the D newsgroup ...</p>
     </div>
     
     
