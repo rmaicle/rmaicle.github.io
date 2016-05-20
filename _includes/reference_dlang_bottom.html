@@ -26,9 +26,11 @@
             </div>
             
         {% endif %}
-        
-        {% assign previous_page = p.chapter %}
-        {% assign previous_url = p.href %}
+
+        {% if p.href != "divider" %}
+            {% assign previous_page = p.chapter %}
+            {% assign previous_url = p.href %}
+        {% endif %}
         
         
         <!-- NOTE: This check must be performed first -->
