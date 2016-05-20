@@ -159,4 +159,5 @@ pages_list: {
   'Home':        '/',
   'Posts':       '/archive.html',
   'DLang':       '/dlang/index.html',
+  'References':  '/refs/index.html',
 }
