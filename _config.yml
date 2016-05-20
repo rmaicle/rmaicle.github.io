@@ -158,6 +158,5 @@ version:        0.1.0
 pages_list: {
   'Home':        '/',
   'Posts':       '/archive.html',
-  'DLang':       '/dlang-guide/index.html',
-  'DReference':  '/dlang-ref/index.html'
+  'DLang':       '/dlang/index.html',
 }

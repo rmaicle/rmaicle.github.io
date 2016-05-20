@@ -1,6 +1,6 @@
 {% assign dlangref = false %}
 {% for tag in page.tags %}
-    {% if tag == "dguide" or tag == "dref"%}
+    {% if tag == "dguide" or tag == "dref" or tag == "dindex" %}
         {% assign dlangref = true %}
         {% break %}
     {% endif %}
