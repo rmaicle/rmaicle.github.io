@@ -19,7 +19,7 @@
 
     <div id="page_previous">
         {% if page.previous != nil %}
-            <p class="padding_bottom_5">&#x25C0; Previous</p>
+            <p class="padding_bottom_5">&#x25C0;&nbsp;&nbsp;Previous</p>
             <p class="padding_bottom_5"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a><br/>
                 <i>
                 {{ page.previous.excerpt }}<br/>
@@ -33,7 +33,7 @@
 
     <div id="page_next">
         {% if page.next != nil %}
-            <p class="padding_bottom_5">Next &#25B6;</a></p>
+            <p class="padding_bottom_5">Next&nbsp;&nbsp;&#x25B6;</a></p>
             <p class="padding_bottom_5"><a href="{{ page.next.url }}">{{ page.next.title }}</a><br/>
                 <i>
                 {{ page.next.excerpt }}<br/>
