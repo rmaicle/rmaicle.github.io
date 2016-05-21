@@ -20,7 +20,7 @@
         
         {% if p.chapter == page.chapter and previous_page != nil %}
             <div id="page_previous">
-                <p class="padding_bottom_5">Previous</p>
+                <p class="padding_bottom_5">&#x25C0;&nbsp;&nbsp;Previous</p>
                 <p class="padding_bottom_5"><a href="{{ previous_url }}">{{ previous_page }}</a></p>
                 
                 <p class="back_to_top padding_bottom_5"><a href="#">Back to Top</a></p>
@@ -38,7 +38,7 @@
         <!--       because the current page may have been found in the previous iteration. -->
         {% if current_page_found == true %}
             <div id="page_next">
-                <p class="padding_bottom_5">Next</p>
+                <p class="padding_bottom_5">Next&nbsp;&nbsp;&#x25B6;</p>
                 <p class="padding_bottom_5"><a href="{{ p.href }}">{{ p.chapter }}</a></p>
                 
                 <p class="back_to_top padding_bottom_5"><a href="#">Back to Top</a></p>
