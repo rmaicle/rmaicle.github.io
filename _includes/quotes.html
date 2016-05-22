@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    var quote_from = [{% for quote in site.data.quotes %}"{{ quote.from }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
+    var quote_text = [{% for quote in site.data.quotes %}"{{ quote.text }}"{% unless forloop.last %},{% endunless %}{% endfor %}];
+    
+    var quote_total = quote_from.length;
+    var quote_count = 3;
+    
+    // Keep used random number here so we could check which
+    // numbers where already used and not use them again.
+    var randomUsed = [];
+    var counter = 0;
+
+    if (quote_total > 0) {
+        while (counter < quote_count) {
+            var randomIndex = Math.floor(Math.random() * quote_total);
+            if (randomUsed.indexOf(randomIndex) == "-1") {
+            
+                document.write("<div class='tidbit_entry'>");
+                document.write("<p>" + quote_text[randomIndex] + "</p>");
+                document.write("<p class='qauthor'>&mdash; " + quote_from[randomIndex] + "</p>");
+                document.write("</div>");
+                
+                // Store the new random number
+                randomUsed.push(randomIndex);
+                counter++;
+            }
+        }
+    }
+</script>

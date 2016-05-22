@@ -55,112 +55,13 @@
         })();
     </script>
     -->
-    <!-- Randomize tidbits -->
-    <!-- From http://thornelabs.net/2014/06/08/a-better-way-to-display-random-jekyll-posts-on-page-load-or-refresh-using-jquery-and-json.html -->
+ 
     <script type="text/javascript">
         function removeNL(s){
             return s.replace(/[\n\r\t]/g, ""); //replaces NewLine or CarriageReturn or Tab with empty string.
         }
-        
-        {% if dlangref == true %}
-        /*
-        // Files are suffixed with dates so they are read from oldest to newest.
-        // It should be displayed starting with the newest to oldest.
-        function generateDlangNews(maxPosts) {
-            $.getJSON("/dlangnews.json", function(data) {
-                console.log("[dlangnews.json loaded]");
-                var posts = data;
-                var postsCount = data.length;
-                var counter = postsCount;
-                var divDlangNews = $("#dlang_news");
-                divDlangNews.append('<h1>Latest News</h1>');
-                if (postsCount == 0) {
-                    divDlangNews.append('<p>No news available</p>');
-                } else {
-                    while (counter > 0) {
-                        var i = counter - 1;
-                        var content = posts[i].content;
-                        divDlangNews.append(content);
-                        if (posts[i].link != "") {
-                            divDlangNews.append("<i><a href='" + posts[i].link + "' target=_blank>Link to details</a></i>");
-                        }
-                        counter--;
-                        if (counter > 0) {
-                            divDlangNews.append("<hr class='thin medium margin_top_15 darker'></hr>");
-                        }
-                    }
-                }
-            });
-        }
-        */
-        
-        {% else %}
-        
-        function generateRandomPosts(maxPosts) {
-            $.getJSON("/tidbit.json", function(data) {
-                console.log("[tidbit.json loaded for random posts]");
-                var postsCount = data.length;
-                var posts = data;
-                var randomIndexUsed = [];
-                var counter = 0;
-                var numberOfPosts = maxPosts;
-                if (maxPosts == null || maxPosts == 0) {
-                    numberOfPosts = 3;
-                }
-                if (postsCount < numberOfPosts) {
-                    numberOfPosts = postsCount;
-                }
-                if (postsCount > 0) {
-                    var divRandomPosts = $("#random_tidbits");
-                    while (counter < numberOfPosts) {
-                        var randomIndex = Math.floor(Math.random() * postsCount);
-                        if (randomIndexUsed.indexOf(randomIndex) == "-1") {
-                            var postTitle = posts[randomIndex].title;
-                            var postHREF = posts[randomIndex].href;
-                            var postType = posts[randomIndex].type;
-                            var postBy = posts[randomIndex].by;
-                            var postContent = posts[randomIndex].content;
-                            
-                            var line = $(document.createElement('div')).addClass('tidbit_entry');
-                            
-                            /* s = s + "<div class='tidbit_entry'>"; */
-                            if (postType != "quote") {
-                                line.append("<p><a href='" + postHREF + "'>" + postTitle + "</a></p>");
-                            }
-                            /* divRandomPosts.append('<p>' + postType + '</p>') */
-                            if (postType == "quote") {
-                                line.append(postContent + "<p class='qauthor'>&mdash; " + postBy + "</p>");
-                            } else {
-                                line.append(postContent);
-                            }
-                            /*
-                            if (counter < (numberOfPosts - 1)) {
-                                divRandomPosts.append("<hr class='thin'>");
-                            }
-                            */
-                            
-                            divRandomPosts.append(line);
-                            randomIndexUsed.push(randomIndex);
-                            counter++;
-                        }
-                    }
-                }
-            });
-        }
-
-
-        {% endif %}
-
-
-
-        $(document).ready(function() {
-            {% if dlangref == true %}
-                generateDlangNews();
-            {% else %}
-                generateRandomPosts();
-            {% endif %}
-        });
     </script>
+    
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
