@@ -659,14 +659,18 @@ section.column_main {
             dd {
                 
                 margin: 0 0 0 30px;
-                padding: 0 0 4px 0;
+                padding: 0 0 12px 0;
                 
                 // A term definition may have a subsequent paragraph.
                 p {
                     text-align: left;
                     margin-bottom: 0px;
                 }
-                
+                p + dl {
+                    margin-top: 12px;
+                    margin-bottom: 0px;
+                }
+
                 pre {
                     margin: 12px 0px 12px 0px;
                 }
