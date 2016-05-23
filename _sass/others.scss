@@ -539,6 +539,14 @@ section.column_main {
             color: $color_text_darker;
             margin: 0;
         }
+        
+        &.excerpt + h2,
+        &.category + h2,
+        &.date + h2 {
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+        
     }
     
     ul, ol {
