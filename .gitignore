@@ -1,4 +1,5 @@
 # Local directories for local testing
+Gemfile.lock
 .sass-cache/**
 _drafts/**
 _site
