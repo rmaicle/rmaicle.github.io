@@ -17,6 +17,7 @@ There are a few things to do to be able to use different SSH keys for different 
 
 1. Create or edit the `config` file in `~/.ssh` directory.
 2. Edit the `.git/config` files of each involved `git` repository.
+3. Add public SSH keys to GitHub accounts.
 
 ## SSH Directory
 
@@ -47,9 +48,13 @@ You will be using the `host` entry label specified in the `~/.ssh/config` file.
         url = git@github.com-one:<account>/<repository>.git
         fetch = +refs/heads/*:refs/remotes/origin/*
 
-        https://gist.github.com/jexchan/2351996
-        
-Of course, do not forget to add your public SSH keys to your GitHub accounts.
+## `gist` Repository configuration file
+
+The only difference here is that the `<account>` is not specified in the URL.
+
+    [remote "origin"]
+        url = git@github.com-one:<repository>.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
 
 ## Reference
 
