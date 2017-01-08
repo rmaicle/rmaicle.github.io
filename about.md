@@ -17,8 +17,8 @@ Nothing much but I'd like to make as good as possible.
 <p>&nbsp;</p>
 <p>
 You can find me on
-<a href="{{ site.author.github }}">GitHub</a>
 <a href="{{ site.author.twitter }}">Twitter</a>
+<a href="{{ site.author.youtube }}">Youtube</a>
 <a href="{{ site.author.wordpress }}">WordPress</a>
 </p>
 </section>
