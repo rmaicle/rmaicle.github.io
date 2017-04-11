@@ -442,12 +442,12 @@ section.column_right_sidebar {
 /* Main content column                                                       */
 /* ------------------------------------------------------------------------- */
 
-section.column_main h1 { font-size: $font_size_heading; }
-section.column_main h2 { font-size: $font_size_heading - 2; }
-section.column_main h3 { font-size: $font_size_heading - 4; }
-section.column_main h4 { font-size: $font_size_heading - 6; }
-section.column_main h5 { font-size: $font_size_heading - 7; }
-section.column_main h6 { font-size: $font_size_heading - 9; }
+section.column_main h1 { font-size: $font_size_heading;     line-height: $font_size_heading; }
+section.column_main h2 { font-size: $font_size_heading - 2; line-height: $font_size_heading - 2; }
+section.column_main h3 { font-size: $font_size_heading - 4; line-height: $font_size_heading - 2; }
+section.column_main h4 { font-size: $font_size_heading - 6; line-height: $font_size_heading - 2; }
+section.column_main h5 { font-size: $font_size_heading - 7; line-height: $font_size_heading - 2; }
+section.column_main h6 { font-size: $font_size_heading - 9; line-height: $font_size_heading - 2; }
 
 section.column_main {
     h1, h2, h3, h4, h5, h6 {
@@ -484,11 +484,9 @@ section.column_main {
     }
     h5 {
         font-style: italic;
-        
     }
     h6 {
         font-style: normal;
-
     }
     h1 code {
         font-size: $font_size_heading;
@@ -504,6 +502,7 @@ section.column_main {
     }
     h5 code {
         font-size: $font_size_heading - 8;
+        line-height: $font_size_heading - 8;
     }
     h6 code {
         font-size: $font_size_heading - 8 - 1;
@@ -512,6 +511,7 @@ section.column_main {
         font-style: normal;
         line-height: 22px;
     }
+    
     
     p, li, dl {
         font-family: $font_default;
@@ -1376,12 +1376,19 @@ section .column_main ul li p {
 }
 
 .github-icon-svg,
+.mail-icon-svg,
 .twitter-icon-svg {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  position: relative;
-  top: 2px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 2px;
+}
+
+.mail-icon-svg {
+    top: 5px;
+    width: 21px;
+    height: 21px;
 }
 
 div.todo {
