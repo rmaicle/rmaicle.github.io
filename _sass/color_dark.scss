@@ -104,7 +104,7 @@ $color_page_syntax_text:        lighten($color_text, 10%);
 // Post tag
 $color_tag_text:                darken($color_text, 20%);
 $color_tag_bg:                  $color_bg;
-$color_tag_border:              lighten($color_tag_bg, 20%);
+$color_tag_border:              $color_tag_text;
 
 // Footnote
 $color_footnote_link:           $color_secondary;
