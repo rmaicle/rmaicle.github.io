@@ -1,3 +1,4 @@
 [submodule "_posts"]
 	path = _posts
-	url = git@github.com:rmaicle/ghp_posts.git
+	url = https://github.com/rmaicle/ghp_posts.git
+    
