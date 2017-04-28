@@ -18,7 +18,7 @@ A lot of things get outdated so fast and I try to keep up.
     <a href="{{ post.url }}"><h2>{{ post.title }}</h2>
         <p class='excerpt'>
             {{ post.excerpt }}<br/>
-            {{ post.date | date: "%Y %b %-d" }}
+            {{ post.date || date: "%Y %b %-d" }}
         </p>
     </a>
 </article>
