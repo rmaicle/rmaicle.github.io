@@ -1,0 +1,25 @@
+// Information sources and links
+
+section.post_column_main {
+    div.info_sources {
+        p,
+        p span,
+        p span a {
+            @include compact;
+            @include set_font($font_size_page_meta, $font_size_page_meta, $color_page_text);
+            line-height: $font_line_height_page_meta;
+            @include max-screen(720px) {
+                line-height: $font_line_height_page_meta + 2;
+            }
+        }
+
+        p span {
+            a {
+                border-bottom: none;
+                &:hover {
+                    color: $color_link;
+                }
+            }
+        }
+    }
+}

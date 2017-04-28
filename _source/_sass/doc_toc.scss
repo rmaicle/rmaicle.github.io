@@ -1,0 +1,20 @@
+div#doc_toc_block > div.entries > div.entry {
+    ol > li > a.current {
+        color: $color_primary;
+    }
+    ol > li > a {
+        border-bottom: none;
+        
+        @include use_font($font_index_title, $font_size_index_title - 1);
+        line-height: $font_line_height_index_title;
+        @include use_color($color_text);
+        
+        &:hover {
+            color: $color_primary;
+        }
+        
+        &:before {
+            // content: "\00BB  ";
+        }
+    }
+}

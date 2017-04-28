@@ -1,0 +1,254 @@
+section.hub_column_main {
+    @media print {
+        margin-left: 0;
+    }
+    @include max-screen(720px) {
+        //margin-top: 10px;
+    }
+}
+
+// A wrapper to a group of sections
+div.section_container_wrapper {
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+
+    & > h1 {
+        font-family: $font_container_text;
+        font-size: $font_size_container_text;
+        @include max-screen(720px) {
+            font-size: $font_size_container_text + 1;
+        }
+        line-height: $font_line_height_container_text;
+        font-weight: $font_weight_container_text;
+        letter-spacing: $font_letter_spacing_container_text;
+        word-spacing: $font_word_spacing_container_text;
+        
+        color: $color_container_text;
+        background: $color_container_bg;
+        text-align: left;
+        text-transform: uppercase;
+        margin: 0;
+        float: left;
+        display: inline-block;
+
+        // Title background
+        $padding_top: 6px;
+        $padding_bottom: 6px;
+        padding: $padding_top 11px $padding_bottom 10px;
+        @include max-screen(720px) {
+            padding-top: $padding_top - 1;
+            padding-bottom: $padding_bottom + 1;
+        }
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+}
+
+div.section_container_wrapper_border {
+    border-top: 2px solid $color_container_line;
+}
+
+// A group of sections
+div.section_container {
+    float: left;
+
+    width: 100%;
+    margin-bottom: 0;
+    
+    // Specify padding to enclose the contents within a 'box'.
+    @mixin container($padding_var: 0px) {
+        float: left;
+        padding: $padding_var;
+        background: if($padding_var > 0, $color_section_bg, none);
+        border-radius: if($padding_var > 0, 3px, 0);
+        margin-bottom: 15px;
+
+        @include min-screen(720px + 1px) {
+            // With image thumbnail or video thumbnail
+            // height: 340px;
+            // min-height: 340px;
+            height: 195px;
+            min-height: 195px;
+        }
+
+        @include max-screen(800px) {
+            margin-right: 15px;
+            &:nth-of-type(even) {
+                margin-right: 0;
+            }
+            // one-half of parent width less 2 x margin right widths divided by 2
+            $padding_total: $padding_var * 2;
+            $container_width: calc(50% - 8px - #{$padding_total});
+            width: $container_width;
+            max-width: $container_width;
+            min-width: $container_width;
+        }
+
+        @include max-screen(480px) {
+            margin-right: 0;
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+        }
+
+        @include min-screen(800px + 1px) {
+            margin-right: 15px;
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+            // one-third of parent width less 2 x margin right widths divided by 3
+            $padding_total: $padding_var * 2;
+            $container_width: calc(33.33% - 10px - #{$padding_total});
+            width: $container_width;
+            min-width: $container_width;
+            max-width: $container_width;
+        }
+    }
+    
+    & > div.container_boxed {
+        @include container(15px);
+    }
+    & > div.container {
+        @include container;
+    }
+
+    // Class(es) used with div.container
+    
+    & > div.list_container {
+        height: auto;
+        & div.block {
+            margin-bottom: 0 !important;
+        }
+        hr {
+            background: none;
+        }
+    }
+
+    & > div.top_border_thin,
+    & > div.top_border_thin_mobile {
+        border-top: none;
+        padding-top: 10px;
+        border-top: 1px solid $color_section_line;
+
+        // The following puts a top border on the second row
+        // @include min-screen(480px + 1) {
+        //     border-top: 1px solid $color_section_line;
+        //     &:nth-child(-n+2) {
+        //         border-top: none;
+        //     }
+        // }
+        // @include min-screen(800px + 1px) {
+        //     border-top: 1px solid $color_section_line;
+        //     &:nth-child(-n+3) {
+        //         border-top: none;
+        //     }
+        // }
+    }
+    
+    & > div.top_border_thin_mobile {
+        //padding-top: 10px;
+        @include max-screen(800px) {
+            padding-top: 0;
+        }
+    }
+
+    & > div.no_right_margin {
+        margin-right: 0;
+    }
+
+    // NOTE: Contents are displayed in div.block
+}
+
+// For 2 left posts with image and 1 right list posts no image
+div.section_container > div.container_2n {
+    float: left;
+    
+    padding-top: 0;
+
+    @include max-screen(1024px) {
+        height: auto;
+        margin-right: 15px;
+        &:nth-of-type(3n) {
+            margin-right: 0;
+        }
+        // two-thirds of parent width less 2 x margin right widths divided by 3
+        //$container_width: calc(66.66% - 10px);
+        $container_width: 100%;
+        width: $container_width;
+        min-width: $container_width;
+        max-width: $container_width;
+    }
+
+    @include min-screen(1024px + 1px) {
+        height: auto;
+        margin-right: 15px;
+        &:nth-of-type(3n) {
+            margin-right: 0;
+        }
+        // two-thirds of parent width less 2 x margin right widths divided by 3
+        $container_width: calc(66.66% - 10px);
+        width: $container_width;
+        min-width: $container_width;
+        max-width: $container_width;
+    }
+}
+
+div.section_container > div.container_2n_list {
+    float: left;
+
+    @include max-screen(720px) {
+        margin-right: 0;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+    @include min-screen(720px + 1px) {
+        margin-right: 15px;
+        margin-right: 0;
+        &:nth-of-type(3n) {
+            margin-right: 0;
+        }
+        // one-third of parent width less 2 x margin right widths divided by 3
+        $container_width: calc(33.33% - 5px);
+        width: $container_width;
+        min-width: $container_width;
+        max-width: $container_width;
+    }
+}
+
+div.section_container > div.container_2n {
+    & > div.block > div.entries > div.entry {
+
+        @include max-screen(480px) {
+            margin-bottom: 5px;
+        }
+
+        & > img {
+            border-radius: 3px;
+            height: auto;
+            @include max-screen(480px) {
+                float: right !important;
+                margin-bottom: 3px;
+                margin-left: 10px;
+                width: 35% !important;
+            }
+            @include min-screen(480px + 1px) {
+                float: left !important;
+                margin-bottom: 10px;
+                margin-right: 10px;
+                // The offset was added to "align" or not make the bottom end of
+                // the image higher than the bottom of a 4-liner text
+                width: calc(30% - 10px + 5px) !important;
+            }
+            @include min-screen(720px + 1px) {
+                // The offset was added to "align" or not make the bottom end of
+                // the image higher than the bottom of a 4-liner text
+                width: calc(33.33% - 10px  + 10px) !important;
+            }
+            @include min-screen(768px) {
+                width: 200px !important;
+            }
+        }
+    }
+}

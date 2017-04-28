@@ -1,0 +1,45 @@
+#weather_section_container {
+    float: clear;
+
+    & > div.container {
+        @include max-screen(480px)  {
+            width: 100%;
+            max-width: 100%;
+        }
+        @include min-screen(480px + 1px)  {
+            width: 250px;
+            max-width: 250px;
+        }
+        height: auto;
+        min-height: auto;
+    }
+}
+
+#weather_block {
+    @media print {
+        display: none;
+    }
+
+    @include max-screen(720px) {
+        margin-top: 20px;
+    }
+
+    & > div.entries > div.entry > div.image {
+        @include compact;
+        background: black;
+        // Add vertical space for attribution
+        padding-bottom: 10px;
+
+        & > img {
+            width: calc(100% - 10px);
+            // @A: Center image
+            margin: 5px 5px 4px 5px;
+        }
+
+        & > p.attribution {
+            @include attribution;
+            color: lighten($color_image_attribution, 30%);
+            padding-top: 2px;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+<head>
+    {% if page.title == "Home" %}
+        <title>{{ site.title }}</title>
+    {% else %}
+        <title>{{ page.title }} - {{ site.title }}</title>
+    {% endif %}
+    
+    {% feed_meta %}
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="description" content="Programming." />
+	<meta name="keywords" content="cpp dlang programming" />
+	<meta name="robots" content="index, follow" />
+    
+    <link rel="icon" type="image/png" href="{{ site.data.links.favicon }}">
+    
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/normalize.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/code.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/overridestyles.css">
+    
+    <script src="{{ site.baseurl }}/javascripts/jquery-3.2.1.min.js"></script>
+    <script src="{{ site.baseurl }}/javascripts/respond.js"></script>
+    <script src="{{ site.baseurl }}/javascripts/moment.js"></script>
+    <script src="{{ site.baseurl }}/javascripts/tooltip.js"></script>
+    <script src="{{ site.baseurl }}/javascripts/dtsearch.js"></script>
+    
+    <!-- Load Google fonts asynchroneously -->
+    <!-- Ref: http://haisum.github.io/2014/11/03/google-fonts-asynchroneous-loading/ -->
+    <!--
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Muli:400,300,700,400italic:latin', 'Muli:400:latin' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    -->
+ 
+    <script type="text/javascript">
+        function removeNL(s){
+            return s.replace(/[\n\r\t]/g, ""); //replaces NewLine or CarriageReturn or Tab with empty string.
+        }
+    </script>
+    
+    {% comment %}
+    {% if site.development != true %}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-79666925-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    {% endif %}
+    {% endcomment %}
+    
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="{{ site.baseurl }}/stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>

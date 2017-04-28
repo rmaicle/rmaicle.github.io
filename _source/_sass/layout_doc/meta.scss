@@ -1,0 +1,65 @@
+div.meta {
+    p {
+        &.excerpt,
+        &.date,
+        &.category,
+        &.tag {
+            @include set_font($font_size_page_meta, $font_size_page_meta, $color_page_text);
+            line-height: $font_line_height_page_meta;
+            @include max-screen(720px) {
+                line-height: $font_line_height_page_meta + 2;
+            }
+            margin: 0;
+        }
+
+        &.excerpt + h2,
+        &.date + h2,
+        &.category + h2,
+        &.tag {
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+
+        @media print {
+            &.excerpt,
+            &.category,
+            &.tag {
+                    display: none;
+            }
+
+            &.date {
+                font-size: $font_size_page_meta + 2;
+            }
+        }
+    }
+    
+    img {
+        width: 55px;
+        height: auto;
+        float: left;
+        margin-top: 3px;
+        margin-right: 10px;
+    }
+    
+    div.info_sources {
+        p,
+        p span,
+        p span a {
+            @include compact;
+            @include set_font($font_size_page_meta, $font_size_page_meta, $color_page_text);
+            line-height: $font_line_height_page_meta;
+            @include max-screen(720px) {
+                line-height: $font_line_height_page_meta + 2;
+            }
+        }
+
+        p span {
+            a {
+                border-bottom: none;
+                &:hover {
+                    color: $color_link;
+                }
+            }
+        }
+    }
+}

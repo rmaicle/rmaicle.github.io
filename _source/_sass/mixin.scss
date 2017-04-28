@@ -1,0 +1,400 @@
+
+@mixin use_font($font, $size: $font_size_default, $weight: normal, $style: normal) {
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+    font-style: $style;
+    -webkit-font-smoothing: antialiased;
+    @include max-screen(720px) {
+        font-size: $size - 1;
+    }
+    @media print {
+        font-size: $size + 3;
+    }
+}
+
+@mixin use_default_font($size: $font_size_default, $weight: normal, $style: normal) {
+    @include use_font($font_default, $size, $weight, $style);
+    word-spacing: $font_word_spacing_default;
+}
+
+@mixin use_code_font($size: $font_size_default, $weight: normal, $style: normal) {
+    // Inline source codes are wrapped within code.highlighter-rouge class.
+    // Also, there is an instance that a source code text is wrapped within
+    // a link.
+    & > code,
+    & > code.highlighter-rouge,
+    & > a > code,
+    & > a > code.highlighter-rouge {
+        font-family: $font_code;
+        font-size: $size - 1;
+        font-weight: $weight;
+        font-style: $style;
+        background: none;
+        -webkit-font-smoothing: antialiased;
+        padding: 0 0 0 0;
+        @include max-screen(720px) {
+            font-size: $size - 1;
+        }
+        @media print {
+            font-size: $size + 3;
+        }
+    }
+}
+
+@mixin use_color($color, $hover_color: $color_primary) {
+    color: $color;
+    & code,
+    & code.highlighter-rouge {
+        color: $color;
+    }
+}
+
+@mixin compact {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin set_margin_v($top: 0px, $bottom: 0px) {
+    margin-top: $top;
+    margin-bottom: $bottom;
+}
+
+@mixin set_padding_v($top: 0px, $bottom: 0px) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+
+@mixin set_margin_h($left: 0px, $right: 0px) {
+    margin-left: $left;
+    margin-right: $right;
+}
+
+@mixin set_padding_h($left: 0px, $right: 0px) {
+    padding-left: $left;
+    padding-right: $right;
+}
+
+@mixin set_font($font, $size, $color, $weight: normal, $style: normal) {
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+    font-style: $style;
+    color: $color;
+    @media print {
+        color: black;
+    }
+}
+
+@mixin common_heading {
+    // NOTE: Conversion to markdown wraps the heading text inside a <p></p>.
+    
+    h1 > p,
+    h1 { font-size: $font_size_page_title - 0; line-height: $font_line_height_page_title - 0; }
+    h2 { font-size: $font_size_page_title - 4; line-height: $font_line_height_page_title - 4; }
+    h3 { font-size: $font_size_page_title - 5; line-height: $font_line_height_page_title - 5; }
+    h4 { font-size: $font_size_page_title - 6; line-height: $font_line_height_page_title - 6; font-style: italic; }
+    h5 { font-size: $font_size_page_title - 7; line-height: $font_line_height_page_title - 7; }
+    h6 { font-size: $font_size_page_title - 8; line-height: $font_line_height_page_title - 8; }
+
+    h1 > p code.highlighter-rouge,
+    h1 code.highlighter-rouge,
+    h2 code.highlighter-rouge,
+    h3 code.highlighter-rouge,
+    h4 code.highlighter-rouge,
+    h5 code.highlighter-rouge,
+    h6 code.highlighter-rouge {
+        font-family: $font_code;
+    }
+    
+    h1 > p code.highlighter-rouge,
+    h1 code.highlighter-rouge { font-size: $font_size_page_title + 1; }
+    h2 code.highlighter-rouge { font-size: $font_size_page_title - 4; }
+    h3 code.highlighter-rouge { font-size: $font_size_page_title - 5; }
+    h4 code.highlighter-rouge { font-size: $font_size_page_title - 6; }
+    h5 code.highlighter-rouge { font-size: $font_size_page_title - 7; }
+    h6 code.highlighter-rouge { font-size: $font_size_page_title - 8; }
+
+    @include max-screen(720px) {
+        $page_title_size: $font_size_page_title - 6;
+        $page_title_line_height: $font_line_height_page_title - 2;
+        h1 > p,
+        h1 { font-size: $page_title_size - 0; line-height: $page_title_line_height - 0; }
+        h2 { font-size: $page_title_size - 2; line-height: $page_title_line_height - 2; }
+        h3 { font-size: $page_title_size - 3; line-height: $page_title_line_height - 3; }
+        h4 { font-size: $page_title_size - 4; line-height: $page_title_line_height - 4; font-style: italic; }
+        h5 { font-size: $page_title_size - 5; line-height: $page_title_line_height - 5; }
+        h6 { font-size: $page_title_size - 6; line-height: $page_title_line_height - 6; }
+
+        h1 > p code.highlighter-rouge,
+        h1 code.highlighter-rouge { font-size: $page_title_size - 0; }
+        h2 code.highlighter-rouge { font-size: $page_title_size - 2; }
+        h3 code.highlighter-rouge { font-size: $page_title_size - 4; }
+        h4 code.highlighter-rouge { font-size: $page_title_size - 5; }
+        h5 code.highlighter-rouge { font-size: $page_title_size - 6; }
+        h6 code.highlighter-rouge { font-size: $page_title_size - 7; }
+    }
+
+    @media print {
+        $page_title_size: 20px;
+        $page_title_line_height: $font_size_page_title;
+        h1 > p,
+        h1 { font-size: $page_title_size - 0; line-height: $page_title_line_height - 0; }
+        h2 { font-size: $page_title_size - 2; line-height: $page_title_line_height - 2; }
+        h3 { font-size: $page_title_size - 4; line-height: $page_title_line_height - 4; }
+        h4 { font-size: $page_title_size - 6; line-height: $page_title_line_height - 6; }
+        h5 { font-size: $page_title_size - 8; line-height: $page_title_line_height - 8; }
+        h6 { font-size: $page_title_size - 10; line-height: $page_title_line_height - 10; }
+
+        h1 > p code.highlighter-rouge,
+        h1 code.highlighter-rouge { font-size: $font_size_page_title - 0; }
+        h2 code.highlighter-rouge { font-size: $font_size_page_title - 2; }
+        h3 code.highlighter-rouge { font-size: $font_size_page_title - 4; }
+        h4 code.highlighter-rouge { font-size: $font_size_page_title - 6; }
+        h5 code.highlighter-rouge { font-size: $font_size_page_title - 8; }
+        h6 code.highlighter-rouge { font-size: $font_size_page_title - 10; }
+    }
+
+    
+    h1 > p,
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $font_heading;
+        font-weight: bold;
+        color: $color_page_title;
+        margin-bottom: 13px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+          border-top-right-radius: $radius;
+   -webkit-border-top-left-radius: $radius;
+           border-top-left-radius: $radius;
+                  background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+     -webkit-border-top-right-radius: $radius;
+             border-top-right-radius: $radius;
+                     background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+           border-bottom-left-radius: $radius;
+                     background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+     -webkit-border-top-left-radius: $radius;
+             border-top-left-radius: $radius;
+                    background-clip: padding-box;
+}
+
+// Block
+@mixin block {
+    @include compact;
+    @include set_padding_v(10px, 12px);
+    float: left;
+}
+
+// Block with borders
+@mixin block_boxed($shadow: 0) {
+    @include sidebar_block;
+    @include set_padding_h(13px, 13px);
+    border: 1px solid $color_box;
+    border-radius: 3px;
+    @include min-screen(721px) {
+        @if $shadow > 0 {
+            box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.19), 0 2px 10px 0 rgba(0, 0, 0, 0.18);
+        }
+    }
+}
+
+// Scrollable Block
+// Used with scrollable internal block
+@mixin block_scroll($shadow: 0) {
+    @include sidebar_block_boxed($shadow);
+    // Padding between scrollbar and outer box
+    padding-right: 2px;
+}
+
+// Internal of block
+// Holds the contents of a block
+@mixin block_internal {
+    @include set_margin_v;
+    margin-right: 0px;
+    @include max-screen(720px) {
+        padding-right: 10px;
+    }
+    float: left;
+    display: inline-block;
+    width: 100%;
+}
+
+// Scrollable internal block
+// Holds the contents of a block
+@mixin block_internal_scroll($height) {
+    @include block_internal;
+    margin-top: 10px;
+    @include min-screen(721px) {
+        height: $height;
+        overflow-y: scroll;
+    }
+    overflow-x: hidden;
+}
+
+// Common item heading in the contents of a block
+@mixin block_entry_heading_base($font, $size, $color) {
+    @include set_font($font, $size, $color, bold);
+    line-height: $size;
+    @include compact;
+}
+
+// Text item heading in the contents of a block
+@mixin block_entry_heading($font, $size, $color) {
+    @include block_entry_heading_base($font, $size, $color);
+    margin-bottom: 0;
+}
+
+// Link item heading in the contents of a block
+@mixin block_entry_heading_link($font, $size, $color) {
+    @include block_entry_heading_base($font, $size, $color);
+    border-bottom: none;
+}
+
+@mixin image_frame {
+    background: $color_image_bg;
+    margin: 5px 0px 0 0;
+    padding: 5px 5px 0 5px;
+}
+
+@mixin video_frame {
+    @include image_frame;
+}
+
+@mixin attribution {
+    @include set_font($font_attribution, $font_size_attribution, $color_image_attribution, normal, italic);
+    @include max-screen(720px) {
+        font-size: $font_size_attribution - 1;
+    }
+    text-align: right;
+    @include min-screen(720px + 1px) {
+        @include compact;
+    }
+    @include max-screen(720px) {
+        margin: 2px 0 0 0;
+        padding: 2px 0px 3px 0px;
+    }
+}
+
+@mixin button {
+    @include set_font($font_button, $font_size_button, $color_button_text);
+    @include max-screen(720px) {
+        font-size: $font_size_button - 1;
+    }
+    text-align: center;
+    white-space: nowrap;
+    background-color: $color_button_bg;
+
+    padding: 5px 8px 6px 10px;
+    @include max-screen(720px) {
+        padding-top: 6px;
+    }
+    border-radius: 3px;
+    border: 1px solid $color_button_border;
+
+    cursor: pointer;
+    background-image: none;
+
+    &:hover {
+        font-weight: normal;
+        color: $color_button_hover_text;
+        background-color: $color_button_hover_bg;
+        border: 1px solid $color_button_hover_border;
+    }
+}
+
+@mixin left_button {
+    font-weight: normal;
+    color: $color_text;
+    padding: 4px 10px 6px 10px;
+    border-radius: 0px;
+    border: 0;
+    &:hover {
+        color: $color_button_text;
+    }
+}
+
+@mixin wrap {
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+@mixin print_copyright {
+    p, a {
+        font-size: 10px;
+        line-height: 12px;
+        a {
+            border: none;
+        }
+        img {
+            display: none;
+        }
+    }
+}
+
+@mixin dl_as_table($div_class, $term_width: 120px) {
+    div.dl_as_table.#{$div_class} {
+        dl {
+            width: 100%;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+        dt {
+            clear: left;
+            float: left;
+            min-width: $term_width;
+            /* adjust the width; make sure the total of both is 100% */
+            padding: 0;
+            margin: 0;
+        }
+        dd {
+            float: left;
+            width: calc(100% - #{$term_width});
+            /* adjust the width; make sure the total of both is 100% */
+            padding: 0;
+            margin: 0;
+            //hyphens: none;
+            //word-wrap: normal;
+            overflow-wrap: normal;
+        }
+        
+        dt {
+            @include use_code_font($font_size_page_text - 1);
+        }
+        dt > a,
+        dd > a {
+            border-bottom: none;
+            &:hover {
+                border-bottom: none;
+            }
+        }
+    }
+}

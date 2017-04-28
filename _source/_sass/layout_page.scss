@@ -1,0 +1,35 @@
+
+section.page_column_main {
+    @media print {
+        padding-left: 0;
+    }
+    @include set_margin_h(50px, 40px);
+    @include max-screen(768px) {
+        @include set_margin_h(15px, 15px);
+    }
+
+    @include common_heading;
+
+    p, a, li, dl {
+        @include set_font($font_page_text, $font_size_page_text, $color_page_text);
+        line-height: $font_line_height_page_text;
+    }
+
+    div.social_media_links {
+        ul {
+            padding: 0;
+
+            li {
+                text-align: center;
+                // Display list items horizontally
+                display: inline;
+                list-style-type: none;
+                padding: 0;
+                margin-right: 5px;
+                a {
+                    @include button;
+                }
+            }
+        }
+    }
+}

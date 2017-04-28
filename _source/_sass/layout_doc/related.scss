@@ -1,0 +1,43 @@
+div.related_posts {
+    // Must be greater than paragraph margin
+    margin-bottom: 20px;
+
+    & > p {
+        margin: 0 0 6px 0;
+        @include max-screen(480px) {
+            margin-bottom: 10px;
+        }
+        padding: 0 0 2px 10px;
+        border-left: 2px solid $color_link;
+        
+        display: block;
+        
+        &,
+        & > a {
+            @include set_font($font_page_text, $font_size_page_text - 3, $color_page_text);
+            line-height: $font_line_height_page_text - 8;
+            @include max-screen(720px) {
+                line-height: $font_line_height_page_text - 10;
+            }
+            @media print {
+                @include set_font($font_page_text, $font_size_page_text + 3, $color_page_text);
+                line-height: $font_size_page_text + 6;
+            }
+        }
+        
+        & > a {
+            border-bottom: none;
+            &:hover {
+                border-bottom: 1px dotted $color_link;
+            }
+        }
+
+        & > span.date {
+            @include set_font($font_size_page_meta, $font_size_page_meta, $color_page_text);
+            line-height: $font_line_height_page_meta;
+            @include max-screen(720px) {
+                line-height: $font_line_height_page_meta + 2;
+            }
+        }
+    }
+}

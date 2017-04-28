@@ -1,0 +1,38 @@
+#post_tags {
+    @media print {
+        display: none;
+    }
+    border-top: 1px dotted $color_tag_border;
+    padding-top: 18px;
+    ul {
+        @include compact;
+        list-style-type: none;
+        color: $color_tag_text;
+        li {
+            $use_border: 0;
+            @if $use_border == 1 {
+                padding: 4px 10px 5px 8px;
+                background: $color_tag_bg;
+                border-radius: 3px;
+                border: 1px solid $color_tag_border;
+            }
+            
+            margin-right: 5px;
+            margin-bottom: 8px;
+            
+            @include set_font($font_tag, $font_size_tag, $color_tag_text);
+            @include max-screen(720px) {
+                font-size: $font_size_tag;
+            }
+            line-height: $font_line_height_tag;
+            display: inline-block;
+            
+            i.fa {
+                padding-right: 2px;
+                vertical-align: middle;
+                //color: darken($color_hr_default, 10%);
+                color: darken($color_tag_text, 5%);
+            }
+        }
+    }
+}

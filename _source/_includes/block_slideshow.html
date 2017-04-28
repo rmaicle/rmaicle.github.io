@@ -1,0 +1,59 @@
+{% comment %}
+Arguments:
+    - category - used in javascript; every word is capitalized
+    - posts
+    - max_post_count
+
+Example:
+    {% assign section_posts = site.categories['opinion'] %}
+    {% include section_slideshow.html category="opinion" post_count=section_posts.size posts=section_posts %}
+{% endcomment %}
+
+{% capture empty %}
+{% assign words = include.category | replace: '_', ' ' | split: ' ' %}
+{% capture titlecase_category %}{% for word in words %}{{ word | capitalize }} {% endfor %}{% endcapture %}
+{% assign js_category = titlecase_category | remove: ' ' | replace: '+', 'p' %}
+
+{% assign show_items = "" | split: "" %}
+{% assign show_items = show_items | push: "date" %}
+{% assign show_items = show_items | push: "excerpt" %}
+{% assign show_items = show_items | push: "thumbnail" %}
+{% if site.debug %}
+{% assign show_items = show_items | push: "categories" %}
+{% endif %}
+
+{% assign category_posts = "" | split: "" %}
+{% assign post_count = 0 %}
+
+{% for post in include.posts %}
+    {% if post.categories[1] != include.category %}
+        {% continue %}
+    {% endif %}
+
+    {% assign category_posts = category_posts | push: post %}
+
+    {% assign post_count = post_count | plus: 1 %}
+    {% if post_count == include.max_post_count %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+{% endcapture %}{% assign empty = nil %}
+
+<div class="block block_default_fonts">
+    <h1>{{ include.category | replace: '_', ' ' | upcase }}</h1>
+
+    <div class="links">
+        {% for counter in (1..post_count) %}
+        <span class="{{ js_category | downcase }}_dot slideshow_dot" onclick="current{{ js_category }}Slide( {{ counter | minus: 1 }} )"></span>
+        {% endfor %}
+    </div>
+    <div class="entries top_border_thin">
+        {% for post in category_posts %}
+        <div class="entry {{ js_category | downcase }}_news_entry">
+            {% include block_entry.html post=post show=show_items %}
+        </div>
+        {% else %}
+            {% include no_posts.html %}
+        {% endfor %}
+    </div>
+</div>

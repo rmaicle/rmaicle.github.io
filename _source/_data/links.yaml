@@ -1,0 +1,78 @@
+favicon: /images/favicon/phe04.png
+jekyll: http://jekyllrb.com"
+github: http://github.com
+
+cc:
+  local_image: /images/cc-by-sa.png
+  site_image: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
+  license: http://creativecommons.org/licenses/by-sa/4.0/
+  site_url: https://creativecommons.org/
+  attribution: https://wiki.creativecommons.org/wiki/Best_practices_for_attribution
+
+reference:
+  - name: C++ Language
+    url:  http://isocpp.org/
+    main: yes
+  - name: D Language
+    url:  http://dlang.org/
+    main: yes
+  - name: PostgreSQL
+    url:  https://www.postgresql.org/
+    main: yes
+  - name: Git Documentation
+    url:  https://www.kernel.org/pub/software/scm/git/docs/
+    main: yes
+  - name: CMake
+    url:  https://cmake.org/
+    main: yes
+  - name: ---
+    main: yes
+  - name: wxWidgets
+    url:  http://wxwidgets.org/
+  - name: ---
+    main: yes
+  - name: CERT
+    url:  https://www.securecoding.cert.org
+  - name: ---
+  - name: Epoch Converter
+    url:  https://www.epochconverter.com/
+    
+navigation:
+  - name: Search
+    url:  /search
+  - name: ---    
+  - name: All Posts
+    url:  /posts/
+  - name: ---    
+  - name: C++
+    url:  /posts/cpp/
+  - name: D Language
+    url:  /posts/d_language/
+  - name: Database
+    url:  /posts/database/
+  - name: Linux
+    url:  /posts/linux/
+  - name: Jekyll
+    url:  /posts/jekyll/
+  - name: Uncategorized
+    url:  /posts/others/
+
+footer_one:
+  - name: Home
+    url:  /
+  - name: All Posts
+    url:  /posts/
+  - name: ---    
+  - name: C++
+    url:  /posts/cpp/
+  - name: D Language
+    url:  /posts/d_language/
+  - name: Database
+    url:  /posts/database/
+  - name: Linux
+    url:  /posts/linux/
+  - name: Jekyll
+    url:  /posts/jekyll/
+  - name: Uncategorized
+    url:  /posts/others/
+    

@@ -1,0 +1,21 @@
+/* The dots/bullets/indicators */
+span.slideshow_dot {
+
+    height: 15px;
+    width: 15px;
+    // Our links are right aligned we pad on the left
+    margin: 0 0 0 4px;
+    @include max-screen(720px) {
+        margin: 0 0 0 8px;
+    }
+    background-color: $color_section_button_links;
+    border-radius: 2px;
+    display: inline-block;
+    transition: background-color 0.1s ease;
+}
+
+span.slideshow_active,
+span.slideshow_dot:hover {
+    background-color: $color_link;
+    cursor: pointer;
+}

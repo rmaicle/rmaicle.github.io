@@ -1,0 +1,235 @@
+---
+layout: default
+---
+
+{% include post_left_sidebar.html %}
+
+<section class="doc_column_main">
+
+    <h1>{{ page.title | markdownify }}</h1>
+    
+    <!-- Meta information -->
+    <!---------------------->
+    
+    <div class="meta">
+        {% if site.debug %}
+            {% if page.image.source %}
+        <img src="{{ site.image_source }}/post/{{ page.image.source }}" />
+            {% else %}
+        <img src="{{ site.url }}/images/offline/twitter_summary_card_01.png" />
+            {% endif %}
+        {% endif %}
+
+        <p class="date">Date: {% if page.date %} {{ page.date | date: site.data.format.date_only }} {% else %} Undated {% endif %}</p>
+
+        {% if site.debug %}
+        {% if page.excerpt %}<p class="excerpt">{{ page.excerpt }}</p>{% endif %}
+        <p class="category">Categories:&nbsp;{{ page.categories | join: ", "}}</p>
+        <p class="tag">Tags:&nbsp;{{ page.tags | join: ", " }}</p>
+        {% endif %}
+
+        {% if page.sources.size and page.sources.size > 0 and page.sources[0].link %}
+        <div class="info_sources">
+            <p>Sources:
+                {% for source in page.sources %}
+                    {% if source.link %}
+                <span><a href="{{ source.link }}" target="_blank">{{ source.label }}</a></span>{% unless forloop.last %},{% endunless %}
+                    {% else %}
+                <span>{{ source.label }}</span>{% unless forloop.last %},{% endunless %}
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+    
+    <!-- End of Meta information -->
+    <!----------------------------->
+
+    {% if page.related and page.related.size > 0 %}
+    <div class="related_posts">
+        {% for link in page.related %}
+            {% for post in site.posts %}
+                {% if post.permalink == link %}
+                    {% if post.categories[0] == "info" %}
+                    <p><a href="{{ link }}">{{ post.title }}</a></p>
+                    {% else if post.categories[0] == "news" %}
+                    <p><a href="{{ link }}">{{ post.title }}</a>&nbsp;&ndash;&nbsp;<span class="date">{{ post.date | date: site.data.format.short_date }}</p>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Post Operations -->
+    <!--------------------->
+    
+    {% comment %}
+    <div class="post_operations">
+        <ul>
+            <li>
+                <a href="https://twitter.com/share" data-via="{{ twitter }}"
+                    data-url="{{ site.baseurl }}{{ page.url }}"
+                    data-text="{{ page.title }}"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Tweet this page">
+                    <i class="fa fa-twitter fa-lg" aria-hidden="true"></i><span class="label">&nbsp;Tweet</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://facebook.com/sharer.php?u={{ site.baseurl }}{{ page.url }}"
+                    onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"
+                    rel="nofollow"
+                    target="_blank"
+                    title="Share on Facebook">
+                    <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i><span class="label">&nbsp;Share&nbsp;</span>
+                </a>
+            </li>
+            <li>
+                {% assign page_title = page.title | markdownify | strip_html | normalize_whitespace %}
+                {% assign page_excerpt = page.excerpt | markdownify | strip_html | normalize_whitespace %}
+                <a href="mailto:?subject={{ page_title }}&body=<a href='{{ site.baseurl }}{{ page.url }}'>{{ page_title }}</a></br></br>{{ page_excerpt }}</br></br>Link: {{ site.baseurl }}{{ page.url }}"
+                    alt="E-mail"
+                    title="Send the post link as E-mail to...">
+                    <i class="fa fa-envelope" aria-hidden="true"></i><span class="label">&nbsp;E-mail&nbsp;</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:window.print()"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Print the page or save as PDF file">
+                    <i class="fa fa-print fa-lg" aria-hidden="true"></i><span class="label">&nbsp;Print&nbsp;</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    {% endcomment %}
+    
+    <!-- End of Post Operations -->
+    <!---------------------------->
+
+    {% if page.image.source != nil %}
+        {% assign has_video = false %}
+        {% assign video_source="" %}
+        {% assign video_attribution="" %}
+        {% if page.video.source != nil and page.video.layout == "top" %}
+            {% assign has_video = true %}
+            {% assign video_source=page.video.source %}
+            {% assign video_attribution=page.video.attribution %}
+            {% include youtube_video.html video_id=video_source attribution=video_attribution %}
+        {% else %}
+            {% if page.videos[0].source != nil and page.videos[0].layout == "top" %}
+                {% assign has_video = true %}
+                {% assign video_source=page.videos[0].source %}
+                {% assign video_attribution=page.videos[0].attribution %}
+            {% endif %}
+        {% endif %}
+        
+        {% if has_video == false %}
+            {% unless page.image.layout == "none" %}
+            <div class="image_container">
+                {% if page.image.layout == "auto_width" %}
+                <div class="image_auto_width">
+                {% else %}
+                <div>
+                {% endif %}
+                    <img width="100%" height="auto" src="{{ site.image_source }}/post/{{ page.image.source }}" />
+                    <p class="attribution">Image by {{ page.image.attribution }}&nbsp;</p>
+                </div>
+            </div>
+            {% endunless %}
+        {% endif %}
+    {% else %}
+        {% assign video_source="" %}
+        {% assign video_attribution="" %}
+        {% if page.video.source != nil and page.video.layout == "top" %}
+            {% assign video_source=page.video.source %}
+            {% assign video_attribution=page.video.attribution %}
+            {% include youtube_video.html video_id=video_source attribution=video_attribution %}
+        {% else %}
+            {% if page.videos[0].source != nil and page.videos[0].layout == "top" %}
+                {% assign video_source=page.videos[0].source %}
+                {% assign video_attribution=page.videos[0].attribution %}
+                {% include youtube_video.html video_id=video_source attribution=video_attribution %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {{ content }}
+
+    {% assign video_source="" %}
+    {% assign video_attribution="" %}
+    {% if page.videos[1].source != nil and page.videos[1].layout == "bottom" %}
+        {% assign video_source=page.videos[1].source %}
+        {% assign video_attribution=page.videos[1].attribution %}
+        {% include youtube_video.html video_id=video_source attribution=video_attribution %}
+    {% endif %}
+
+    <div id="post_bottom">
+        <div id="post_tags">
+            <ul>
+            {% if page.tags.size == 0 %}
+                <li>no tags</li>
+            {% else %}
+                {% for tag in page.tags %}
+                    <li><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ tag }}</li>
+                {% endfor %}
+            {% endif %}
+            </ul>
+        </div>
+        
+        <!-- Post Operations -->
+        <!--------------------->
+
+        <div class="post_operations">
+            <ul>
+                <li>
+                    <a href="https://twitter.com/share" data-via="{{ twitter }}"
+                        data-url="{{ site.baseurl }}{{ page.url }}"
+                        data-text="{{ page.title }}"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Tweet this page">
+                        <i class="fa fa-twitter fa-lg" aria-hidden="true"></i><span class="label">&nbsp;Tweet</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/sharer.php?u={{ site.baseurl }}{{ page.url }}"
+                        onclick="window.open(this.href, 'mywin','left=50,top=50,width=600,height=350,toolbar=0'); return false;"
+                        rel="nofollow"
+                        target="_blank"
+                        title="Share on Facebook">
+                        <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i><span class="label">&nbsp;Share&nbsp;</span>
+                    </a>
+                </li>
+                <li>
+                    {% assign page_title = page.title | markdownify | strip_html | normalize_whitespace %}
+                    {% assign page_excerpt = page.excerpt | markdownify | strip_html | normalize_whitespace %}
+                    <a href="mailto:your@email.com?subject={{ page_title }}&body=<a href='{{ site.baseurl }}{{ page.url }}'>{{ page_title }}</a></br></br>{{ page_excerpt }}</br></br>Link: {{ site.baseurl }}{{ page.url }}"
+                        alt="E-mail"
+                        title="Send the post link as E-mail to...">
+                        <i class="fa fa-envelope" aria-hidden="true"></i><span class="label">&nbsp;E-mail&nbsp;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:window.print()"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Print the page or save as PDF file">
+                        <i class="fa fa-print fa-lg" aria-hidden="true"></i><span class="label">&nbsp;Print&nbsp;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- End of Post Operations -->
+        <!---------------------------->
+        
+    </div>
+
+</section>
+
+{% include post_right_sidebar.html %}

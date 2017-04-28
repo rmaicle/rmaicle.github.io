@@ -1,0 +1,10 @@
+{% for item in site.data.socmed %}
+    <li class="icons right">
+        <a href="{{ item.link }}" target="{{ item.target }}" alt="{{ item.name }}"
+            data-toggle="tooltip"
+            data-placement="top"
+            title="{{ item.message }}">
+            <i class="{{ item.fa_icon }}" aria-hidden="true"></i>
+        </a>
+    </li>
+{% endfor %}

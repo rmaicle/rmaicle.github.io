@@ -1,0 +1,45 @@
+div.video_container {
+
+    @include video_frame;
+    width: calc(100% - 10px);
+
+    // div.video is styled at the bottom
+
+    p.attribution {
+        @include attribution;
+    }
+
+    @media screen {
+        p.video_link {
+            display: none;
+        }
+    }
+
+    @media print {
+        padding: 0;
+        iframe,
+        p.attribution {
+            display: none;
+        }
+    }
+}
+
+div.video_container ~ p {
+    padding-top: 0px;
+}
+div.video_container + p {
+    padding-top: 15px;
+}
+
+div.video {
+    width: 100%;
+    height: 0;
+    position: relative;
+    padding-bottom: 56.25%;
+
+    iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}

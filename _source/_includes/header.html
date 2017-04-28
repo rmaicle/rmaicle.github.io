@@ -1,0 +1,70 @@
+<header>
+    <h1>{{ site.title }}</h1>
+    {% comment %}
+    The following texts are for printing only.
+    {% endcomment %}
+    {% if site.description %}
+        <p>{{ site.description }}</p>
+    {% else %}
+        <p>{{ site.tagline }}</p>
+    {% endif %}
+    <p class="license">
+        Licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA).<br/>
+        You are free to copy, reproduce, distribute, display, and make adaptations but you must provide proper attribution.
+        Visit https://creativecommons.org/ or send an email to info@creativecommons.org for more information about the License.
+    </p>
+</header>
+    
+<div id="nav_top">
+    <ul>
+        <li class="navicon dropdown">
+            <a href="#"><span>≡</span><img src="{{ site.data.links.favicon }}"></a>
+            <div class="dropdown_content_wrapper">
+                <div class="dropdown_content">
+                    {% for entry in site.data.links.navigation %}
+                        {% if entry.name == "---" %}
+                    <hr>
+                        {% else %}
+                    <a href="{{ entry.url }}">{{ entry.name }}</a>
+                        {% endif %}
+                    {% endfor %}
+                
+                    {% for item in site.data.socmed %}
+                    <a href="{{ item.link }}" target="{{ item.target }}" alt="{{ item.name }}"
+                       data-toggle="tooltip"
+                       data-placement="top"
+                       title="{{ item.message }}">
+                        <i class="{{ item.fa_icon }}" aria-hidden="true"></i>&nbsp;{{ item.name }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </li>
+
+        <li class="title">
+            <a accesskey="h" href="/">{{ site.title | upcase }}</a>
+        </li>
+
+        {% if site.debug %}
+        <li class="dropdown right">
+            <a href="/info/" class="dropdown_link">Info&nbsp;&nbsp;<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i></a>
+            <div class="dropdown_content dropdown_content_right">
+            </div>
+        </li>
+        {% endif %}
+    </ul>
+
+    {% unless page.title == "Search" %}
+    <div id="search">
+        <form role="search" method="get" action="{{ site.baseurl }}/search/">
+            <input accesskey="s" type="text" name="q" id="search_input" autocomplete="off" title="Search string containing space must be enclosed in single or double quotes." required>
+        </form>
+    </div>
+    {% endunless %}
+
+    {% comment %}
+    <ul>
+        {% include links_social_media.html %}
+    </ul>
+    {% endcomment %}
+</div>

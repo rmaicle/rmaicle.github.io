@@ -1,0 +1,87 @@
+// Rouge encloses source code blocks with line numbers
+// using {% highlight cpp %} within figure.highlight.
+figure.highlight {
+    margin: 0 0 0 0;
+}
+
+.highlight .lineno {
+    text-align: right;
+    color: $color_lineno;
+	background: transparent;
+    padding-right: 8px;
+    border-right: 1px dotted $color_lineno_divider;
+    display: inline-block;
+    text-shadow: none;
+}
+
+/* Make line numbers unselectable: excludes line numbers from copy-paste user ops */
+.highlight .lineno {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+}
+.lineno::-moz-selection {
+    background-color: transparent;
+} /* Mozilla specific */
+.lineno::selection {
+    background-color: transparent;
+} /* Other major browsers */
+
+pre {
+    font-family: $font_code;
+    line-height: $font_line_height_code;
+    @include bottom_margin;
+    padding: 6px 10px 5px 10px;
+    background: none;
+    background: $color_code_bg;
+    border: none;
+    overflow: auto;
+    overflow-y: hidden;
+
+    code {
+        @include set_font($font_code, $font_size_code, $color_code);
+        line-height: $font_line_height_code;
+        text-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+
+        table {
+            border: none;
+            margin-bottom: 0;
+            tbody tr {
+                border: none;
+                td {
+                    padding: 0;
+                    border: none;
+                }
+                td.gutter {
+                    padding-top: 4px;       // Align line number with source code text
+                    pre.lineno {
+                        padding: 0 5px 0 0;
+                    }
+                }
+                td.code {
+                    padding: 0;
+                    pre {
+                        padding: 0 0 0 10px;
+                    }
+                }
+                // No bottom margin for line number gutter and code
+                pre {
+                    margin-bottom: 0px;
+                }                        
+            }
+        }
+    }
+}
+
+// Rouge encloses plain source code blocks using ~~~
+// within div.highlighter-rouge.
+// Match the surrounding spaces of figure.highlight
+// because figure.highlight is wrapped inside a table
+// while div.highlighter-rouge is not.
+div.highlighter-rouge > pre {
+    //padding: 6px 10px 5px 10px;
+    padding: 10px 12px 11px 12px;
+}

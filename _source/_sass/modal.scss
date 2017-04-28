@@ -1,0 +1,64 @@
+// Modal "pop-up"
+// ref: http://www.w3schools.com/howto/howto_css_modal_images.asp
+
+.modal_source {
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+// Modal background - usually the entire 'screen'
+.modal {
+    display: none;                          // Hidden by default
+    position: fixed;                        // Stay in place
+    z-index: 1;                             // Sit on top
+    padding-top: 100px;                     // Location of the box
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;                         // Enable scroll if needed
+    background-color: rgb(0,0,0);           // Fallback color
+    background-color: rgba(0,0,0,0.9);      // Black w/ opacity
+}
+
+.modal_content,
+.modal_caption {
+    display: block;
+    background: white;
+}
+
+.modal_content {
+    float: left;        // wrap div around image
+    padding: 5px 5px 10px 5px;
+    min-width: 25%;
+    min-height: 25%;
+
+    width: 588px;
+    @include max-screen(720px) {
+        width: 100%;
+        max-width: 100%;
+    }
+    // Half the width of card 588 / 2
+    margin-left: calc(50% - 294px + 5px);
+    vertical-align: middle;
+    border-radius: 4px;
+
+    img.modal_image {
+        border-radius: 3px;
+    }
+
+    p.modal_caption {
+        font-family: $font_caption;
+        font-size: $font_size_caption;
+        line-height: $font_line_height_caption;
+        text-align: left;
+        word-wrap: break-word;
+        margin: auto;
+        padding: 10px 10px 0 10px;
+    }
+}
+

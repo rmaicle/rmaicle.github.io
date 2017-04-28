@@ -1,0 +1,62 @@
+{% comment %}
+Arguments:
+    - post
+    - show
+    - link_target_new_window - ["yes" | "no"]
+
+Example:
+    {% assign show_items = "" | split: "" %}
+    {% assign show_items = show_items | push: "date" %}
+    {% assign show_items = show_items | push: "excerpt" %}
+    {% assign show_items = show_items | push: "description" %}
+    {% assign posts = site.posts %}
+    {% include block_entry.html post=post show=show_items %}
+{% endcomment %}
+
+
+
+{% assign category = include.post.categories[1] %}
+
+{% if include.post.url != nil %}
+{% assign title = include.post.title | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
+<h2><a href="{{ include.post.url }}" class="no_underline" {% if include.link_target_new_window == "yes" %}target="_blank"{% endif %}>{{ title }}{% if include.post.abbr %}&nbsp;({{ include.post.abbr }}){% endif %}</a></h2>
+{% else %}
+<h2>{{ include.post.title }}{% if include.post.abbr %}&nbsp;({{ include.post.abbr }}){% endif %}</h2>
+{% endif %}
+
+{% if include.show contains "head" %}
+{% if include.post.head %}<p class="excerpt">{{ include.post.head }}</p>{% endif %}
+{% endif %}
+
+{% if include.show contains "description" %}
+{% if include.post.description %}<p class="excerpt">{{ include.post.description }}</p>{% endif %}
+{% endif %}
+
+{% if include.show contains "date" %}
+{% if include.post.date  %}<p class="date">{{ include.post.date | date: site.data.format.date_only }}</p>{% endif %}
+{% endif %}
+
+{% if include.show contains "image" %}
+    {% if include.show contains "excerpt" %}
+    {% if include.post.excerpt %}<p class="excerpt">{{ site.data.images[include.category] }}{{ include.post.excerpt }}{% if post.video.source %}&nbsp;<i class="fa fa-video-camera" aria-hidden="true"></i>{% endif %}</p>{% endif %}
+    {% endif %}
+{% else %}
+    {% if include.show contains "excerpt" %}
+    {% if include.post.excerpt %}
+        {% assign excerpt = include.post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
+        {% if include.post.excerpt %}<p class="excerpt">{{ excerpt }}{% if post.video.source %}&nbsp;<i class="fa fa-video-camera" aria-hidden="true"></i>{% endif %}</p>{% endif %}
+    {% endif %}
+    {% endif %}
+{% endif %}
+
+{% if include.show contains "categories" %}
+{% if include.post.categories %}<p class="category">Categories:&nbsp;{{ include.post.categories | join: ", "}}</p>{% endif %}
+{% endif %}
+
+{% if include.show contains "tags" %}
+{% if include.post.tags %}<p class="tag">Tags:&nbsp;{{ include.post.tags | join: ", " }}</p>{% endif %}
+{% endif %}
+
+{% if include.show contains "url" %}
+{% if include.post.url %}<p class="excerpt"><a href="{{ include.post.url }}" {% if include.link_target_new_window == "yes" %}target="_blank"{% endif %}>{{ include.post.url }}</a></p>{% endif %}
+{% endif %}

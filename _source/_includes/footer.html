@@ -1,0 +1,58 @@
+<footer>
+<div id="footer_content">
+
+    <div id="footer_column_leftmost" class="license">
+        <p><a rel="license" href="{{ site.data.links.cc.license }}" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="{{ site.data.links.cc.local_image }}" /></a><br />Except where otherwise noted, the <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" rel="dct:type">content</span> on this site (<span class='plain_color highlight_cc'><a xmlns:cc="http://creativecommons.org/ns#" href="{{ site.github_username | append: '.github.io' }}" property="cc:attributionName" rel="cc:attributionURL">{{ site.github_username }}</a></span>) is licensed under a <a rel="license" href="{{ site.data.links.cc.license }}" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a> (<span class='highlight_cc'>CC BY-SA</span>). You are free to copy, reproduce, distribute, display, and make adaptations but you must provide proper attribution.</p>
+        <p>
+            <br>
+            Visit the <a href="{{ site.data.links.cc.web_url }}" target="_blank">Creative Commons</a> website.<br/>
+            Read about <a href="{{ site.data.links.cc.attribution }}" target="_blank">proper attribution</a>.
+        </p>
+    </div>
+
+    <div id="footer_column_one">
+        <ul>
+            {% for entry in site.data.links.footer_one %}
+                {% if entry.name == "---" %}
+            <hr class="thin compact darker">
+                {% else %}
+            <li><h2 class="font_normal_weight margin_none"><a href="{{ entry.url }}" class="no_underline">{{ entry.name }}</a></h2></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="footer_column_two">
+        <ul>
+            {% for info in site.data.info_sections %}
+                {% if info.title == "" %}
+                    <hr>
+                {% else %}
+                    {% if site.development and info.development == "yes" %}
+                    <li><a href="{{ info.url }}">{{ info.title }}</a></li>
+                    {% else %}
+                    <li><a href="{{ info.url }}">{{ info.title }}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="footer_column_three">
+        <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </div>
+
+    <div id="footer_column_rightmost" class="license">
+        <p>
+            Powered by <a href="{{ site.data.links.jekyll }}" title="Jekyll" target="_blank">Jekyll</a> <br/>
+            Hosted by <a href="{{ site.data.links.github }}" title="GitHub" target="_blank">Github</a> <br/>
+            Theme created 2014114, updated 20170411<br/>
+            Last updated on {{ site.time }}
+        </p>
+    </div>
+
+</div>
+</footer>

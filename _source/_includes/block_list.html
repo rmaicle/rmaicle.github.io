@@ -1,0 +1,40 @@
+{% comment %}
+Arguments:
+    - posts
+    - show
+    - counter - ["yes" | "no"]
+    - list_style - ["list_style_none" | ... ]
+    - link_target_new_window - ["yes" | "no"]
+    - entry_class
+    - note_when_empty - ["yes" | "no"]
+
+Example:
+    {% assign show_items = "" | split: "" %}
+    {% assign show_items = show_items | push: "date" %}
+    {% assign show_items = show_items | push: "excerpt" %}
+    {% assign show_items = show_items | push: "description" %}
+
+    {% assign posts = site.data.government.branch %}
+    {% include block_list.html post=posts show=show_items counter="no" link_target_new_window="yes" %}
+{% endcomment %}
+
+<div class="block block_default_fonts">
+    <div class="entries">
+
+        {% if include.counter and include.counter == "yes" %}
+        <ol class="{{ include.list_style }}">
+        {% else %}
+        <ul class="{{ include.list_style }}">
+        {% endif %}
+
+        {% for post in include.posts %}
+        <li class="entry {% if include.entry_class %}{{ include.entry_class }}{% endif %}">
+            {% include block_entry.html post=post show=include.show %}
+        </li>
+        {% else %}
+            {% include no_posts.html %}
+        {% endfor %}
+
+        {% if include.counter and include.counter == "yes" %}</ol>{% else %}</ul>{% endif %}
+    </div>
+</div>

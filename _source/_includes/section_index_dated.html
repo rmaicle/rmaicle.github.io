@@ -1,0 +1,89 @@
+{% comment %}
+Arguments:
+    - todo_data - TODO items from /data directory
+    - category
+
+Example:
+    {% assign todo = site.data.news_peace_process %}
+    {% include section_index_dated.html todo_data=todo category="peace_process" %}
+{% endcomment %}
+
+{% include todo_list.html todo_data=include.todo_data %}
+
+{% assign show_items = "" | split: "" %}
+{% assign show_items = show_items | push: "date" %}
+{% assign show_items = show_items | push: "excerpt" %}
+{% assign show_items = show_items | push: "thumbnail" %}
+
+<div class="section_container_wrapper section_container_wrapper_border bottom_margin_10">
+<h1>{{ page.title }}</h1>
+<div class="section_container top_margin_10">
+    {% for post in site.categories[include.category] limit:3 %}
+        {% if forloop.index < 3 %}<div class="container">{% else %}<div class="container no_right_margin">{% endif %}
+        <div class="block block_margin_bottom block_default_fonts">
+            <div class="entries">
+                <div class="entry entry_highlight">
+                    {% include block_entry.html post=post show=show_items %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+{% assign count = site.categories[include.category].size %}
+{% if count and count > 0 %}
+    {% assign section_posts = site.categories[include.category] %}
+    {% assign new_group = true %}
+
+    {% for post in section_posts %}
+
+        {% if new_group %}
+<div class="section_container_wrapper section_container_wrapper_border">
+    <h1>{{ section_posts[forloop.index0].date | date: '%Y %b' }}</h1>
+    <div class="section_container top_margin_10 bottom_margin_10">
+        <div class="block block_default_fonts">
+            <div class="entries">
+            {% assign new_group = false %}
+        {% endif %}
+
+{% if site.debug %}
+                <div class="entry">
+{% else %}
+                <div class="index_entry">
+{% endif %}
+                    {% assign title = post.title | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
+                    <a href="{{ post.url }}" class="no_underline">
+                        <span class="date">{{ post.date | date: site.data.format.short_date }}</span>&nbsp;&nbsp;-&nbsp;
+                        {{ title }}
+                        {% if post.video.source != nil %}&nbsp;&nbsp;<i class="fa fa-video-camera" aria-hidden="true"></i>{% endif %}
+                    </a>
+                    {% comment %}
+                    <h2><span class="date">{{ post.date | date: site.data.format.short_date }}</span>&nbsp;-&nbsp;<a href="{{ post.url }}" class="no_underline">{{ post.title | markdownify | strip_html }}</a>{% if post.video.source != nil %}&nbsp;&nbsp;<i class="fa fa-video-camera" aria-hidden="true"></i>{% endif %}</h2>
+                    {% endcomment %}
+                    
+                    {% if site.debug %}
+                        {% assign excerpt = post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
+                    <p class="excerpt">{{ excerpt }}{% if post.video.source != nil %} <i class="fa fa-video-camera" aria-hidden="true"></i>{% endif %}</p>
+                    <p class="category">Categories:&nbsp;{{ post.categories | join: ", "}}</p>
+                    <p class="tag">Tags:&nbsp;{{ post.tags | join: ", " }}</p>
+                    {% endif %}
+                    
+                </div>
+
+        {% unless forloop.last %}
+            {% capture year %}{{ post.date | date: '%Y %b' }}{% endcapture %}
+            {% capture nyear %}{{ section_posts[forloop.index].date | date: '%Y %b' }}{% endcapture %}
+            {% if year != nyear %}
+            </div> <!-- end of entries -->
+        </div>
+    </div>
+</div> <!-- end of section_container_wrapper -->
+                {% assign new_group = true %}
+            {% endif %}
+        {% endunless %}
+
+    {% endfor %}
+
+{% endif %}

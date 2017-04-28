@@ -1,0 +1,99 @@
+- qtext: "Walking on water and developing software from a specification are easy if both are frozen."
+  qauthor: "Edward V. Berard"
+  qcontext:
+  qdate:
+
+- qtext: "The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time."
+  qauthor: "Tom Cargill"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "The use of COBOL cripples the mind; its teaching should therefore be regarded as a criminal offense."
+  qauthor: "Edsger W. Dijkstra"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "I think computer viruses should count as life ... I think it says something about human nature that the only form of life we have created so far is purely destructive. We've created life in our own image."
+  qauthor: "Stephen Hawking"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "Don't explain computers to laymen. Simpler to explain sex to a virgin."
+  qauthor: "Robert A. Heinlein"
+  qcontext: "The Moon is a Harsh Mistress"
+  qdate: ""
+
+- qtext: "There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies."
+  qauthor: "Sir Charles Antony Richard Hoare"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "I invented the term 'Object-Oriented', and I can tell you I did not have C++ in mind."
+  qauthor: "Alan Kay"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "Most software today is very much like an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves."
+  qauthor: "Alan Kay"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."
+  qauthor: "Brian W. Kernighan"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?"
+  qauthor: "Brian W. Kernighan"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "It's hard enough to find an error in your code when you're looking for it; it's even harder when you've assumed your code is error-free."
+  qauthor: "Steve McConnell"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "Computing is not about computers anymore. It is about living."
+  qauthor: "Nicholas Negroponte"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "When someone says, 'I want a programming language in which I need only say what I wish done', give him a lollipop."
+  qauthor: "Alan J. Perlis"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity."
+  qauthor: "Dennis Ritchie"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away."
+  qauthor: "Antoine de Saint-Exupéry"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in the square holes. The ones who see things differently. They're not fond of rules. And they have no respect for the status quo. You can quote them, disagree with them, glorify or vilify them. About the only thing you can't do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius. Because the people who are crazy enough to think they can change the world, are the ones who do."
+  qauthor: "Rob Siltanen"
+  qcontext: "Apple TV commercial, 1997"
+  qdate: ""
+
+- qtext: "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program."
+  qauthor: "Linus Torvalds"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "In the practical world of computing, it is rather uncommon that a program, once it performs correctly and satisfactorily, remains unchanged forever."
+  qauthor: "Niklaus Wirth"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "Our first computers were born not out of greed or ego, but in the revolutionary spirit of helping common people rise above the most powerful institutions."
+  qauthor: "Steve Wozniak"
+  qcontext: ""
+  qdate: ""
+
+- qtext: "By far the greatest danger of Artificial Intelligence is that people conclude too early that they understand it."
+  qauthor: "Eliezer Yudkowsky"
+  qcontext: ""
+  qdate: ""

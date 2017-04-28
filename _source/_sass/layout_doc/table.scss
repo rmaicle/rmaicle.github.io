@@ -1,0 +1,33 @@
+table ~ p {
+    margin-top: 12px;
+}
+
+table {
+    width: auto;
+    overflow: scroll;
+    thead tr {
+        white-space: nowrap;
+        word-wrap: nowrap;
+    }
+    tbody tr td {
+        @include wrap;
+        a {
+            $use_default: true;
+            @if $use_default == false {
+                border-bottom: none;
+                text-decoration: none;
+                &::after {
+                    content: "\00a0\21d2";
+                    font-weight: normal;
+                }
+            }
+            &:hover {
+                color: $color_link;
+            }
+        }
+    }
+    td:first-child {
+        white-space: nowrap;
+        word-wrap: nowrap;
+    }
+}

@@ -1,0 +1,15 @@
+
+#newsbits_block {
+    @media print {
+        display: none;
+    }
+    div.entries {
+        @include block_internal_scroll(calc(100vh - 125px));
+        div.entry {
+            width: calc(100% - 5px);
+            &:first-child {
+                margin-top: 0px;
+            }
+        }
+    }
+}

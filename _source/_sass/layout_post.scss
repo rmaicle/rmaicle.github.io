@@ -1,0 +1,758 @@
+/*
+section.post_column_main {
+    @media print {
+        @include compact;
+        margin-top: 20px;
+    }
+    // Applied to p, pre, ul, ol
+    @mixin bottom_margin {
+        margin: 0 0 12px 0;
+    }
+    
+    div.meta {
+        margin-bottom: 15px;
+    }
+
+    div.image_container {
+        div {
+            @include image_frame;
+            p.attribution {
+                @include attribution;
+            }
+            &.image_auto_width {
+                float: right;
+                margin-left: 10px;
+                width: 300px;
+                @include max-screen(500px) {
+                    float: left;
+                    width: 270px;
+                    margin-left: 0px;
+                }
+            }
+        }
+        margin-bottom: 10px;
+    }
+
+    div.video_container {
+
+        @include video_frame;
+        width: calc(100% - 10px);
+
+        // div.video is styled at the bottom
+
+        p.attribution {
+            @include attribution;
+        }
+
+        @media screen {
+            p.video_link {
+                display: none;
+            }
+        }
+
+        @media print {
+            padding: 0;
+            iframe,
+            p.attribution {
+                display: none;
+            }
+        }
+    }
+
+    @include common_heading;
+    h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+    h2, h3, h4 {
+        padding-top: 12px;
+    }
+    h5, h6 {
+        text-align: left;
+    }
+    h2 + h2,
+    h3 + h3,
+    h4 + h4 {
+        padding-top: 0;
+    }
+    h5 + h2,
+    h6 + h2,
+    h2 + p,
+    h3 + p,
+    h4 + p,
+    h5 + p,
+    h6 + p {
+        margin-top: 12px;
+    }
+    h5 + h5,
+    h6 + h6,
+    h2 + p,
+    h3 + p,
+    h4 + p,
+    h5 + p,
+    h6 + p {
+        padding-top: 12px;
+    }
+    p + h5,
+    p + h6,
+    h5 + h6,
+    h6 + h5 {
+        padding-top: 12px;
+    }
+
+    p, a, li, dl {
+        text-align: left;
+
+        @include set_font($font_page_text, $font_size_page_text, $color_page_text);
+        line-height: $font_line_height_page_text;
+
+        @include max-screen(720px) {
+            @include set_font($font_page_text, $font_size_page_text, $color_page_text);
+            line-height: $font_line_height_page_text;
+        }
+        @media print {
+            @include set_font($font_page_text, $font_size_page_text + 4, $color_page_text);
+            line-height: $font_size_page_text + 6 + 4;
+        }
+        word-spacing: 0.1em;
+
+        @include code_in_x($font_code, $font_size_page_text, $color_page_text);
+    }
+
+    p {
+        @include bottom_margin;
+    }
+    
+    // Override the color of the page text setting above
+    h1 > p {
+        & code,
+        & code.highlighter-rouge {
+            color: $color_page_title;
+        }
+    }
+    
+    li > table,
+    li > div.highlighter-rouge,
+    dd > div.highlighter-rouge {
+        margin-top: 12px;
+    }
+    li > table {
+        margin-bottom: 12px;
+    }
+
+    p sup a.footnote {
+        @include compact;
+        font-family: $font_footnote_link;
+        font-size: $font_size_footnote_link;
+        @include min-screen(720px + 1px) { font-size: $font_size_default_thin; }
+        @include max-screen(720px) { font-size: $font_size_default_thin - 1; }
+        line-height: $font_size_footnote_link;
+        color: $color_footnote_link;
+    }
+    
+    a:hover {
+        color: $color_link;
+    }
+    
+    div.related_posts {
+        // Must be greater than paragraph margin
+        margin-bottom: 20px;
+
+        & > p {
+            margin: 0 0 6px 0;
+            @include max-screen(480px) {
+                margin-bottom: 10px;
+            }
+            padding: 0 0 2px 10px;
+            border-left: 2px solid $color_link;
+            
+            display: block;
+            
+            &,
+            & > a {
+                @include set_font($font_page_text, $font_size_page_text - 3, $color_page_text);
+                line-height: $font_line_height_page_text - 8;
+                @include max-screen(720px) {
+                    line-height: $font_line_height_page_text - 10;
+                }
+                @media print {
+                    @include set_font($font_page_text, $font_size_page_text + 3, $color_page_text);
+                    line-height: $font_size_page_text + 6;
+                }
+            }
+            
+            & > a {
+                border-bottom: none;
+                &:hover {
+                    border-bottom: 1px dotted $color_link;
+                }
+            }
+
+            & > span.date {
+                @include set_font($font_size_page_meta, $font_size_page_meta, $color_page_text);
+                line-height: $font_line_height_page_meta;
+                @include max-screen(720px) {
+                    line-height: $font_line_height_page_meta + 2;
+                }
+            }
+        }
+    }
+
+    div.footnotes {
+        padding-top: 30px;
+        hr {
+            height: 1px;
+            width: 30%;
+            // Must be the same as paragraph separator vertical space
+            margin-bottom: 12px;
+        }
+        ol {
+            padding-left: 20px;
+
+            li,
+            li p,
+            li p a {
+                font-family: $font_footnote;
+                font-size: $font_size_footnote + 2;
+                line-height: $font_size_footnote + 6;
+            }
+
+            li {
+                p {
+                    //line-height: $font_size_default + 6;
+                    margin-bottom: 0px;
+                    a {
+                        border-bottom: 1px dotted $color_link_underline;
+                        &:hover {
+                            color: $color_primary;
+                        }
+                    }
+                }
+                em {
+                    font-size: $font_size_default - 1;
+                }
+            }
+        }
+    }
+
+    div.video_container ~ p {
+        padding-top: 0px;
+    }
+    div.video_container + p {
+        padding-top: 15px;
+    }
+    table ~ p {
+        margin-top: 12px;
+    }
+
+    div.meta {
+        p {
+            &.excerpt,
+            &.date,
+            &.category,
+            &.tag {
+                @include set_font($font_size_page_meta, $font_size_page_meta, $color_page_text);
+                line-height: $font_line_height_page_meta;
+                @include max-screen(720px) {
+                    line-height: $font_line_height_page_meta + 2;
+                }
+                margin: 0;
+            }
+
+            &.excerpt + h2,
+            &.date + h2,
+            &.category + h2,
+            &.tag {
+                margin-top: 0px;
+                padding-top: 0px;
+            }
+
+            @media print {
+                &.excerpt,
+                &.category,
+                &.tag {
+                        display: none;
+                }
+
+                &.date {
+                    font-size: $font_size_page_meta + 2;
+                }
+            }
+        }
+        img {
+            width: 55px;
+            height: auto;
+            float: left;
+            margin-top: 3px;
+            margin-right: 10px;
+        }
+    }
+
+
+
+    ul, ol {
+        @include bottom_margin;
+        @include min-screen(720px + 1px) {
+            margin-right: 30px;
+        }
+
+        ul, ol {
+            padding-left: 18px;
+        }
+    }
+
+    // Markdown fix on unsorted list
+    // It is translated as ul li p wherein p should no be present.
+    // We just remove the extra spaces between p
+    ul li p {
+        margin-bottom: 0;
+    }
+
+    div.aside,
+    div.aside_right,
+    div.aside_left {
+        width: 35%;
+        padding: 5px 10px 5px 10px;
+
+        h1, h2, h3, h4, h5, h6 {
+            @include compact;
+        }
+
+        @include max-screen(720px) {
+            $font_size_page_title: $font_size_page_title - 10;
+            $font_line_height_page_title: $font_line_height_page_title - 6;
+            h1 { font-size: $font_size_page_title - 0; line-height: $font_line_height_page_title;     }
+            h2 { font-size: $font_size_page_title - 0; line-height: $font_line_height_page_title - 2; }
+            h3 { font-size: $font_size_page_title - 1; line-height: $font_line_height_page_title - 2; }
+            h4 { font-size: $font_size_page_title - 1; line-height: $font_line_height_page_title - 2; }
+            h5 { font-size: $font_size_page_title - 2; line-height: $font_line_height_page_title - 2; }
+            h6 { font-size: $font_size_page_title - 2; line-height: $font_line_height_page_title - 2; }
+        }
+
+        & > p,
+        & > p a {
+            margin: 0;
+            padding: 0;
+            font-family: $font_page_text;
+            font-size: $font_size_page_text;
+            color: $color_aside_text;
+            line-height: $font_line_height_page_text;
+        }
+
+        & > p.excerpt,
+        & > p.excerpt a {
+            margin-top: 0;
+            font-size: $font_size_page_text;
+            line-height: $font_line_height_page_text;
+            font-weight: bold;
+        }
+
+        & p:first-of-type,
+        & > a + p {
+            margin-top: 0;
+        }
+
+        h1.font_italic + p,
+        h2.font_italic + p,
+        h3.font_italic + p,
+        h4.font_italic + p,
+        h5.font_italic + p,
+        h6.font_italic + p,
+        p + p,
+        & div.video + p {
+            margin-top: 12px;
+        }
+
+        & > img,
+        & a > img {
+            width: 100%;
+        }
+        // no image link bottom border
+        & a {
+            border-bottom: none;
+        }
+
+        & > a {
+            border-bottom: none;
+        }
+
+        .font_bold {
+            font-weight: bold;
+        }
+        .font_italic {
+            font-style: italic;
+        }
+        
+        p.aside_italic {
+            font-style: italic;
+        }
+        p.aside_highlight {
+            //font-size: $font_size_page_text;
+            font-style: italic;
+            font-weight: bold;
+        }
+        p.aside_caption,
+        p.aside_caption > a {
+            font-size: $font_size_page_text - 4;
+            line-height: $font_size_page_text - 2;
+        }
+    }
+
+    div.aside,
+    div.aside_right {
+        float: right;
+        margin-left: 10px;
+        border-right: 3px solid $color_aside_border;
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: right;
+        }
+
+        & > p,
+        & > p a {
+            text-align: right;
+        }
+    }
+
+    div.aside_left {
+        float: left;
+        margin-right: 10px;
+        border-left: 3px solid $color_aside_border;
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left;
+        }
+
+        & > p,
+        & > p a {
+            text-align: left;
+        }
+    }
+
+    div.aside_right_left_align {
+        h1, h2, h3, h4, h5, h6,
+        & > p,
+        & > p a {
+            text-align: left;
+        }
+    }
+
+    div.aside_width_45 {
+        width: 45%;
+    }
+
+    table {
+        width: auto;
+        overflow: scroll;
+        thead tr {
+            white-space: nowrap;
+            word-wrap: nowrap;
+        }
+        tbody tr {
+            td,
+            td p,
+            td a,
+            td li {
+                @include set_font($font_table_data, $font_size_table_data, $color_text);
+                line-height: $font_line_height_table_data;
+
+                @include max-screen(720px) {
+                    font-size: $font_size_table_data;
+                    line-height: $font_line_height_table_data;
+                }
+            }
+        }
+        tbody tr td {
+            @include wrap;
+            a {
+                border-bottom: none;
+                text-decoration: none;
+                &::after {
+                    content: "\00a0\21d2";
+                    font-weight: normal;
+                }
+                &:hover {
+                    color: $color_link;
+                }
+            }
+        }
+        td:first-child {
+            white-space: nowrap;
+            word-wrap: nowrap;
+        }
+    }
+
+    dl {
+        margin: 0 20px 12px 20px;
+        dt {
+            color: $color_text;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        dd {
+            margin: 0 0 0 30px;
+            padding: 0 0 0.5em 0;
+            // Usually blocks have bottom margins but since the first dd line
+            // is not interpreted as a paragraph, we add vertical spacing to the
+            // 'next' block to achieve the effect.
+            p {
+                margin-top: 12px;
+            }
+            ul {
+                @include set_margin_v(2px, 2px);
+            }
+        }
+    }
+
+    figure.highlight {
+        margin: 0 0 0 0;
+    }
+   
+    pre {
+        font-family: $font_code;
+        line-height: $font_line_height_code;
+        @include bottom_margin;
+        padding: 6px 5px 5px 10px;
+        background: none;
+        background: $color_code_bg;
+        border: none;
+        overflow: auto;
+        overflow-y: hidden;
+
+        code {
+            @include set_font($font_code, $font_size_code, $color_code);
+            line-height: $font_line_height_code;
+            text-shadow: none;
+            border: none;
+            border-radius: 0;
+            margin: 0;
+
+            table {
+                border: none;
+                margin-bottom: 0;
+                tbody tr {
+                    border: none;
+                    td {
+                        padding: 0;
+                        border: none;
+                    }
+                    td.gutter {
+                        pre.lineno {
+                            padding: 0 5px 0 0;
+                        }
+                    }
+                    td.code {
+                        padding: 0;
+                        pre {
+                            padding: 0 0 0 10px;
+                        }
+                    }
+                    // No bottom margin for line number gutter and code
+                    pre {
+                        margin-bottom: 0px;
+                    }                        
+                }
+            }
+        }
+    }
+    
+    // Since 'div.syntax' may have a 'pre' within
+    // This will override the configuration above
+    div.syntax {
+        @include bottom_margin;
+        padding: 10px 12px 4px 12px;
+        background: $color_syntax_bg;
+        border: 1px dotted $color_syntax_bg + 15;
+        border-left: 3px solid $color_syntax_bg + 15;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        h6 {
+            padding-top: 1px;
+            text-align: left;
+        }
+        
+        pre.highlight {
+            color: $color_text;
+            background: $color_code_bg + 3;
+            border: 1px dotted $color_syntax_bg + 15;
+            border-left: 6px solid $color_syntax_bg + 18;
+            padding-left: 10px;
+        }
+        
+        p, a, li, dl, dt, dd {
+            text-align: left;
+
+            @include set_font($font_page_text, $font_size_page_text_in_syntax, $color_page_syntax_text);
+            line-height: $font_line_height_page_text_in_syntax;
+
+            @include max-screen(720px) {
+                @include set_font($font_page_text, $font_size_page_text_in_syntax, $color_page_syntax_text);
+                line-height: $font_line_height_page_text_in_syntax;
+            }
+            @media print {
+                @include set_font($font_page_text, $font_size_page_text_in_syntax, $color_page_syntax_text);
+                line-height: $font_line_height_page_text_in_syntax;
+            }
+            word-spacing: 0.1em;
+
+            @include code_in_x($font_code, $font_size_code_in_syntax, $color_page_syntax_text);
+            & code,
+            & code.highlighter-rouge {
+                border: none;
+            }
+        }
+
+        dl {
+            // Bottom margin takes into account that a paragraph may follow a definition list
+            margin: 0 15px 10px 15px;
+            dt {
+                color: $color_text;
+                text-align: left;
+                font-weight: normal;
+            }
+
+            dd {
+                margin: 0 0 0 30px;
+                padding: 0 0 12px 0;
+                // A term definition may have a subsequent paragraph.
+                p {
+                    text-align: left;
+                    margin-bottom: 0px;
+                }
+                p + dl {
+                    @include set_margin_v(12px, 0px);
+                }
+                pre {
+                    margin: 12px 0px 12px 0px;
+                }
+                table {
+                    @include set_margin_v(8px, 4px);
+                    border: 1px solid $color_table_border + 5;
+                    th {
+                        @include set_font($font_table_heading, $font_size_table_heading, $color_text);
+                        line-height: $font_size_table_heading + 3;
+                        border: 1px solid $color_table_border + 5;
+                        padding: 5px 6px;
+                        background: $color_table_th_bg + 5;
+                    }
+                    td {
+                        @include set_font($font_table_data, $font_size_table_data, $color_text);
+                        line-height: $font_size_table_data + 3;
+                        border: 1px solid $color_table_border + 5;
+                        padding: 2px 6px 3px 6px;
+                    }
+
+                }
+            }
+        }
+    }
+
+
+    blockquote {
+        border-left: 6px solid $color_blockquote_bar;
+        margin: 12px 0 12px 30px;
+        @include max-screen(720px) {
+            margin-left: 15px;
+        }
+        padding: 14px 12px 1px 12px;
+        border-radius: 0 4px 4px 0;
+        width: 80%;
+        background: $color_blockquote_bg;
+
+        p, a, li {
+            @include set_font($font_blockquote, $font_size_blockquote + 4, $color_blockquote);
+            line-height: $font_size_blockquote + 8;
+
+            @include max-screen(720px) {
+                @include set_font($font_blockquote, $font_size_blockquote + 2, $color_blockquote);
+                line-height: $font_line_height_blockquote + 2;
+            }
+            @media print {
+                @include set_font($font_blockquote, $font_size_blockquote + 4, $color_blockquote);
+                line-height: $font_size_blockquote + 12;
+            }
+
+            word-spacing: $word_spacing_blockquote;
+            margin-bottom: 12px;
+
+            e {
+                font-style: normal;
+            }
+            a {
+                margin-bottom: 0px;
+                &:hover {
+                    color: $color_link;
+                    border-bottom: 1px dotted $color_link_underline;
+                }
+            }
+        }
+    }
+
+    blockquote > blockquote {
+        padding: 0 12px 0 12px;
+    }
+
+    div.video {
+        width: 100%;
+        height: 0;
+        position: relative;
+        padding-bottom: 56.25%;
+
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    p.center {
+        text-align: center;
+    }
+}
+
+#post_bottom {
+}
+
+#post_tags {
+}
+
+div.post_operations {
+    @media print {
+        display: none;
+    }
+    margin-top: 20px;
+    ul {
+        padding: 0;
+        list-style-type: none;
+        li {
+            text-align: center;
+            // Display list items horizontally
+            display: inline;
+
+            padding: 0;
+            margin-right: 5px;
+            a {
+                @include button;
+                @include max-screen(480px) {
+                    & > span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#related_posts_section,
+#recent_posts_section {
+    @media print {
+        display: none;
+    }
+
+    @include max-screen(720px) {
+        margin-top: 20px;
+    }
+}
+*/

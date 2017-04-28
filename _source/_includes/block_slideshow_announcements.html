@@ -1,0 +1,60 @@
+<div id="announcement_section_container" class="section_container_wrapper">
+    <div class="container">
+        <div id="announcements_block" class="block block_margin_top block_default_fonts">
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#announcements_block').load('/resource/announcements.html',
+        function() {
+            currentAnnouncementSlide(1);
+        }
+    );
+
+    // Using data attribute to store/fetch timer id.
+    // http://clarkeulmer.com/handling-multiple-timers-with-javascripts-setinterval-and-jquery/
+
+    const announcementElement = "#announcements_block";
+    const announcementAttr = "announcement-timer-id";
+    // Slide index starts at one.
+    // This assignment is for offsetting the initial value.
+    var slideIndex = 0;
+
+    // Argument must be greater than zero.
+    function currentAnnouncementSlide(n) {
+        if (n == 0) {
+            n = 1;
+        }
+        slideIndex = n - 1;
+        let timerId = $(announcementElement).attr(announcementAttr);
+        if (timerId != undefined) {
+            $(announcementElement).removeAttr(announcementAttr);
+            clearTimeout(timerId);
+        }
+        showAnnouncementSlides();
+    }
+
+    function showAnnouncementSlides() {
+        let i;
+        let slides = document.getElementsByClassName("announcement_entry");
+        let dots = document.getElementsByClassName("announcement_dot");
+        for (i = 0; i < slides.length; i++) {
+           slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex> slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" slideshow_active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " slideshow_active";
+
+        {% if site.debug %}
+            let timerId = setTimeout(showAnnouncementSlides, 3000);
+        {% else %}
+            let timerId = setTimeout(showAnnouncementSlides, 15000);
+        {% endif %}
+        $(announcementElement).attr(announcementAttr, timerId);
+    }
+</script>

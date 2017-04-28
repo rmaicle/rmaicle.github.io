@@ -1,0 +1,15 @@
+#info_block {
+    @media print {
+        display: none;
+    }
+
+    @include max-screen(720px) {
+        margin-bottom: 15px;
+    }
+
+    div.image_small {
+        float: right;
+        width: 40%;
+        margin: 5px 0px 0px 5px;
+    }
+}

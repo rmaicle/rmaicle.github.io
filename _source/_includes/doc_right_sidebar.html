@@ -1,0 +1,30 @@
+{% capture empty %}
+{% assign group_index = 0 %}
+{% assign counter = 0 %}
+{% for item in site.data.documentation.groups %}
+    {% if item.group == page.group %}
+        {% assign group_index = counter %}
+        {% break %}
+    {% endif%}
+    {% assign counter = counter | plus: 1 %}
+{% endfor %}
+
+{% assign doc_title = site.data.documentation.groups[group_index].title %}
+{% endcapture %}{% assign empty = nil %}
+
+<section class="column_right_sidebar">
+    <div class="section_container_wrapper">
+        <div class="container">
+            <div id="doc_toc_block" class="block">
+                <h1>{{ doc_title }}</h1>
+                <div class="entries">
+                    <div class="entry">
+                        <ol>
+                        {% include doc_toc_links.html doc_index = group_index %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,66 @@
+#quotes_section_container {
+    & > div.container {
+        @include min-screen(480px + 1px)  {
+            width: 50%;
+            max-width: 50%;
+        }
+        @include min-screen(768px + 1px)  {
+            width: 100%;
+            max-width: 100%;
+        }
+        @include max-screen(480px)  {
+            width: 100%;
+            max-width: 100%;
+        }
+        height: auto;
+        min-height: auto;
+    }
+}
+
+#random_quotes_block {
+    @media print {
+        display: none;
+    }
+
+    @include min-screen(720px + 1px) {
+        padding-top: 0px;
+    }
+}
+
+#random_quotes {
+    margin-top: 10px;
+
+    div.quote > p {
+        @include compact;
+
+        &.qtext {
+            font-family: $font_quotes;
+            font-size: $font_size_quotes;
+            font-weight: normal;
+            line-height: $font_line_height_quotes;
+            color: $color_quotes_text;
+            i.fa-quote-left {
+                color: $color_quote_character;
+            }
+        }
+
+        &.qauthor {
+            font-family: $font_quotes_author;
+            font-size: $font_size_quotes_author;
+            font-weight: bold;
+            color: $color_quotes_author;
+            text-transform: uppercase;
+            padding-top: 10px;
+        }
+
+        &.context {
+            font-family: $font_quotes_context;
+            font-size: $font_size_quotes_context;
+            //line-height: $font_size_quotes_context + 4;
+            font-weight: normal;
+            font-style: normal;
+            color: $color_quotes_context;
+            //padding-top: 2px;
+        }
+    }
+}

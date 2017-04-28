@@ -1,0 +1,553 @@
+@page {
+    size: A4;
+    margin: 1in;
+    margin-left: 1.5in
+}
+
+@page:right {
+    @bottom-left {
+        margin: 10pt 0 30pt 0;
+        border-top: .25pt solid #666;
+        content: "rmaicle";
+        font-size: 9pt;
+        color: #333;
+    }
+}
+
+@page:left{
+    @bottom-left {
+        content: "Page " counter(page) " of " counter(pages);
+    }
+}
+
+body {
+    background: $color_bg;
+    font-family: $font_default;
+    font-size: $font_size_default;
+    line-height: $font_line_height_default;
+    color: $color_text;
+    margin: 0;
+    padding: 0;
+
+    // 'Hide' horizontal scrollbar when viewed in small media
+    // https://css-tricks.com/findingfixing-unintended-body-overflow/
+    overflow-x: hidden;
+    
+    //text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font_heading;
+}
+
+p, a, li, dl {
+    font-family: $font_default;
+    font-size: $font_size_default;
+}
+
+a {
+    color: $color_text;
+    border-bottom: 1px dotted $color_link_underline;
+    text-decoration: none;
+    &.no_underline {
+        border-bottom: none;
+    }
+    &:hover {
+        color: $color_primary;
+        border-bottom: 1px dotted $color_link_underline;
+    }
+}
+
+hr {
+    border: 0;
+    outline: none;
+    height: 1px;
+    background: $color_hr_default;
+    &.thin_line {
+        height: 1px;
+    }
+
+    &.compact {
+        margin-top: 4px;
+        margin-bottom: 0px;
+    }
+
+    &.medium {
+        margin-top: 10px;
+        margin-bottom: 6px;
+    }
+}
+
+ol, ul {
+    padding-left: 40px;
+    @include max-screen(720px) {
+        padding-left: 25px;
+    }
+    margin-bottom: 0;
+    li {
+        padding-left: 5px;
+        @include max-screen(720px) {
+            padding-left: 2px;
+        }
+    }
+}
+
+ul {
+    list-style-type: disc;
+    list-style-image: none;
+}
+
+strong {
+    font-weight: bold;
+    color: $color_text;
+}
+
+b {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+i {
+    font-style: italic;
+}
+
+u {
+    text-decoration: none;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+mark {
+    color: black;
+}
+
+pre {
+    font-family: $font_code;
+    font-size: $font_size_code;
+    line-height: $font_line_height_code;
+}
+
+p code {
+    @extend pre;
+}
+
+aside {
+    font-size: $font_size_aside_text;
+    line-height: $font_size_default + 6;
+    text-align: right;
+    color: $color_aside_text;
+    float: right;
+    width: 34%;
+    padding: 6px 8px 6px 8px;
+    margin-left: 10px;
+    border-right: 3px solid $color_aside_border;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow: scroll;
+    thead, tbody, tfoot, tr, th, td {
+        @include compact;
+    }
+
+    tr:first-of-type {
+        border-top: 1px solid $color_table_border;
+    }
+    tr {
+        border-bottom: 1px solid $color_table_border;
+        th:first-of-type,
+        td:first-of-type {
+            border-left: 1px solid $color_table_border;
+        }
+        th,
+        td {
+            border-right: 1px solid $color_table_border;
+        }
+        th {
+            padding: 3px 6px 4px 6px;
+            //padding: 5px 6px;
+            word-wrap: break-word;
+        }
+        td {
+            //padding: 3px 4px 4px 4px;
+            padding: 3px 6px 3px 6px;
+            word-wrap: break-word;
+        }
+    }
+
+    thead {
+        background: $color_table_th_bg;
+        tr > th,
+        tr > th > a {
+            /*
+            font-family: $font_table_heading !important;
+            font-size: $font_size_table_heading !important;
+            font-weight: $font_weight_table_heading !important;
+            line-height: $font_line_height_table_heading !important;
+            @include max-screen(720px) {
+                font-size: $font_size_table_heading !important;
+                line-height: $font_line_height_table_heading !important;
+            }
+            & > code,
+            & > code.highlighter-rouge {
+                font-family: $font_code;
+                font-size: $font_size_table_heading;
+                font-weight: bold;
+            }
+            */
+            @include use_font($font_table_heading, $font_size_table_heading, $font_weight_table_heading);
+        }
+    }
+
+    tbody {
+        tr > td {
+            p {
+                margin: 0;
+                &.label {
+                    margin: 0;
+                    white-space: nowrap !important;
+                }
+            }
+            a {
+                @include compact;
+            }
+            ul, ol {
+                list-style-type: square;
+                margin-bottom: 0;
+            }
+        }
+        tr > td,
+        tr > td > a {
+            /*
+            font-family: $font_table_data !important;
+            font-size: $font_size_table_data !important;
+            line-height: $font_line_height_table_data !important;
+            font-weight: $font_weight_table_data !important;
+            @include max-screen(720px) {
+                font-size: $font_size_table_data;
+                line-height: $font_line_height_table_data;
+            }
+            & > code,
+            & > code.highlighter-rouge {
+                font-family: $font_code;
+                font-size: $font_size_table_data;
+                font-weight: normal;
+            }
+            */
+            @include use_font($font_table_data, $font_size_table_data, $font_weight_table_data);
+        }
+    }
+}
+
+// Prevent superscript and subscript from affecting line height
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+}
+
+sup {
+    a {
+        border-bottom: none;
+    }
+    a::before {
+        content: " [fn";
+    }
+    a::after {
+        content: "] ";
+    }
+    color: $color_footnote_link;
+}
+
+sub {
+    top: 0.4em;
+}
+
+
+
+/* ------------------------------------------------------------------------- */
+/* Main                                                                      */
+/* ------------------------------------------------------------------------- */
+
+main {
+    width: 100%;
+    float: left;
+    background: $color_main_bg;
+    padding-bottom: 80px;
+    @media print {
+        padding-top: 0px;
+    }
+
+    @include min-screen(721px) {
+        padding-top: 40px;
+    }
+
+    @include max-screen(720px) {
+        padding-top: 5px;
+    }
+}
+
+section {
+    $sidebar_width_default: 280px;
+    $sidebar_left_width: 250px;
+    $sidebar_right_width: 310px;
+    $margin_hor: 10px;
+    $scrollbar_width: 10px;
+
+    &.column_left_sidebar {
+        display:block;
+        height: 100vh;
+    }
+
+    &.column_left_sidebar,
+    &.column_right_sidebar,
+    &.hub_column_main,
+    &.post_column_main,
+    &.page_column_main,
+    &.doc_column_main {
+        float: left;
+        font-family: $font_default;
+        margin: $margin_hor;
+    }
+
+    // For vivaldi which may have a panel on the left
+    // laptop width display size 1366 pixels less the width of the panel
+    @include min-screen(1024px + 1) {
+        $margins: calc(#{$margin_hor} * 6);
+        $content_width: calc(100% - #{$sidebar_left_width} - #{$sidebar_right_width} - #{$margins} - #{$scrollbar_width});
+        
+        &.column_left_sidebar {
+            width: $sidebar_left_width;
+        }
+        &.column_right_sidebar {
+            width: $sidebar_right_width;
+        }
+        &.hub_column_main,
+        &.post_column_main,
+        &.page_column_main,
+        &.doc_column_main {
+            width: $content_width;
+        }
+    }
+    
+    // Two columns
+    @include max-screen(1024px) {
+        $margins: calc(#{$margin_hor} * 4);
+        $content_width: calc(100% - #{$sidebar_left_width} - #{$margins} - #{$scrollbar_width});
+        
+        &.column_left_sidebar {
+            width: $sidebar_left_width;
+        }
+        &.column_right_sidebar {
+            $margin_left: calc(#{$sidebar_left_width} + #{$margins});
+            margin-left: $margin_left;
+            width: calc(#{$content_width} - #{$margin_hor});
+        }
+        &.hub_column_main,
+        &.post_column_main,
+        &.page_column_main,
+        &.doc_column_main {
+            width: $content_width;
+        }
+    }
+    
+    // Single column
+    @include max-screen(768px)  {
+        $margins: calc(#{$margin_hor} * 2);
+        $sidebar_width: calc(100% - #{$margins});
+        $content_width: calc(100% - #{$margins});
+        &.column_left_sidebar,
+        &.column_right_sidebar {
+            width: $sidebar_width;
+        }
+        &.hub_column_main,
+        &.post_column_main,
+        &.page_column_main,
+        &.doc_column_main {
+            width: $content_width;
+        }
+    }
+
+    &.post_column_main,
+    &.page_column_main,
+    &.doc_column_main {
+        margin-top: 15px;
+    }
+
+    &.column_left_sidebar,
+    &.column_right_sidebar,
+    &.post_column_main,
+    &.page_column_main,
+    &.hub_column_main,
+    &.doc_column_main {
+        @media print {
+            margin: 0;
+        }
+    }
+}
+
+
+
+/* ------------------------------------------------------------------------- */
+/* Left column                                                               */
+/* ------------------------------------------------------------------------- */
+
+section.column_left_sidebar {
+}
+
+
+
+/* ------------------------------------------------------------------------- */
+/* Right column                                                              */
+/* ------------------------------------------------------------------------- */
+
+section.column_right_sidebar {
+    $boxed: false;
+    @if $boxed == true {
+        border-radius: 3px;
+        background: $color_sidebar_bg;
+        padding: 12px 15px 15px 15px;
+    }
+    
+    @include max-screen(768px)  {
+        float: clear;
+        $margin-right: 10px;
+    }
+}
+
+
+#twitter_feed {
+    // Twitter container defines 10px padding on all sides
+    // We just offset to match our settings
+    padding: 0px 3px 2px 3px;
+    background: $color_sidebar_bg;
+    height: 400px;
+}
+
+
+
+/* ------------------------------------------------------------------------- */
+/* Bottom                                                                    */
+/* ------------------------------------------------------------------------- */
+
+#page_previous,
+#page_next {
+    width: 50%;
+
+    a {
+        @include set_font($font_heading, $font_size_default + 4, $color_primary);
+        line-height: 1.3em;
+        border-bottom: none;
+        text-shadow: 1px 1px 1px #000;
+        margin: 0;
+
+        &:hover {
+            color: $color_primary;
+        }
+    }
+
+    p.back_to_top a {
+        font-size: $font_size_default + 3;
+        text-shadow: none;
+    }
+
+    p i,
+    p em {
+        color: $color_text;
+    }
+}
+
+#page_previous {
+    float: left;
+}
+
+#page_next {
+    float: right;
+    text-align: right;
+    a, p {
+        text-align: right;
+    }
+}
+
+
+
+.list_style_none {
+    list-style-type: none;
+}
+
+.img_style_rounded {
+    border-radius: 3px;
+}
+
+.img_style_circle {
+    border-radius: 50%;
+}
+
+// ----------------------------------------------------------------------------
+// Margins
+// ----------------------------------------------------------------------------
+
+.margin_none {
+    margin: 0 0 0 0;
+}
+
+.margin_top_none {
+    margin-top: 0;
+}
+
+.margin_bottom_none {
+    margin-bottom: 0;
+}
+
+.top_margin_20 {
+    margin-top: 20px;
+}
+
+.top_margin_10 {
+    margin-top: 10px;
+}
+
+.bottom_margin_10 {
+    margin-bottom: 10px;
+}
+
+.bottom_margin_5 {
+    @include min-screen(720px + 1px) {
+        padding-bottom: 5px;
+    }
+    @include max-screen(720px) {
+        padding-bottom: 0px;
+    }
+}
+
+// ----------------------------------------------------------------------------
+// Paddings
+// ----------------------------------------------------------------------------
+
+.padding_none {
+    padding: 0 0 0 0;
+}
+
+.padding_top_none {
+    padding-top: 0;
+}
+
+.padding_left_none {
+    padding-left: 0px !important;
+}
+
+.top_padding_10 {
+    padding-top: 10px;
+}
+
+// ----------------------------------------------------------------------------
+// Font
+// ----------------------------------------------------------------------------
+
+.font_normal_weight {
+    font-weight: normal;
+}

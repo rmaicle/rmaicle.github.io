@@ -1,0 +1,279 @@
+section.doc_column_main {
+    @mixin bottom_margin {
+        margin: 0 0 12px 0;
+    }
+    
+    @include common_heading;
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 10px 0 0 0;
+    }
+    // Add vertical spacing after the bread crumbs
+    h1.title {
+        margin-top: 10px;
+        & > p,
+        & > p code,
+        & > p & code.highlighter-rouge {
+            font-weight: bold;
+            color: $color_page_title;
+        }
+    }
+ 
+    h5.bread_crumb,
+    h6.bread_crumb {
+        padding-top: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    h5.bread_crumb,
+    h6.bread_crumb,
+    h5.bread_crumb > a,
+    h6.bread_crumb > a {
+        font-family: $font_crumbs;
+        font-size: $font_size_crumbs;
+        font-weight: bold;
+        font-style: normal;
+        text-transform: uppercase;
+        line-height: $font_line_height_crumbs;
+        color: $color_primary;
+        border-bottom: none;
+    }
+    
+    .bread_crumb > a:hover {
+        border-bottom: none;
+    }
+
+    p.custom_heading_1 {
+        /*
+        font-size: $font_size_page_text + 2;
+        line-height: $font_line_height_page_text + 2;
+        & > code.highlighter-rouge {
+            font-size: $font_size_page_text + 1;
+            color: $color_page_title;
+        }
+        font-weight: bold;
+        color: $color_page_title;
+        @include max-screen(720px) {
+            font-size: $font_size_page_text + 2;
+            line-height: $font_line_height_page_text + 2;
+            & > code.highlighter-rouge {
+                font-size: $font_size_page_text + 1;
+            }
+        }
+        @media print {
+            font-size: $font_size_page_text + 2;
+            line-height: $font_line_height_page_text + 2;
+            & > code.highlighter-rouge {
+                font-size: $font_size_page_text + 1;
+            }
+        }
+        */
+        @include use_font($font_heading, $font_size_page_text + 2, bold);
+        @include use_color($color_page_title);
+    }
+    
+    p.custom_heading_2 {
+        /*
+        font-size: $font_size_page_text + 1;
+        line-height: $font_line_height_page_text;
+        & > code.highlighter-rouge {
+            font-size: $font_size_page_text;
+            color: $color_page_title;
+        }
+        font-weight: bold;
+        color: $color_page_title;
+        @include max-screen(720px) {
+            font-size: $font_size_page_text + 1;
+            line-height: $font_line_height_page_text + 1;
+            & > code.highlighter-rouge {
+                font-size: $font_size_page_text;
+            }
+        }
+        @media print {
+            font-size: $font_size_page_text + 1;
+            line-height: $font_line_height_page_text + 1;
+            & > code.highlighter-rouge {
+                font-size: $font_size_page_text;
+            }
+        }
+        */
+        @include use_font($font_heading, $font_size_page_text + 1, bold);
+        @include use_color($color_page_title);
+    }
+    
+    p {
+        margin: 12px 0 12px 0;
+    }
+    
+    p, li, dl, dt, dd, & > a {
+        /*
+        text-align: left;
+
+        @include set_font($font_doc_text, $font_size_doc_text, $color_page_text);
+        line-height: $font_line_height_doc_text;
+        font-weight: $font_weight_doc_text;
+        word-spacing: $font_word_spacing_doc_text;
+        
+
+        @include max-screen(720px) {
+            @include set_font($font_doc_text, $font_size_doc_text, $color_page_text);
+            line-height: $font_line_height_doc_text;
+        }
+        @media print {
+            @include set_font($font_doc_text, $font_size_doc_text, $color_page_text);
+        }
+
+        @include code_in_x($font_code, $font_size_doc_text - 1, $color_code_in_text, normal);
+        */
+        @include use_default_font($font_size_page_text);
+        @include use_code_font($font_size_page_text - 1);
+    }
+    
+    sup > a.footnote {
+        @include compact;
+        font-family: $font_footnote_link;
+        font-size: $font_size_footnote_link;
+        @include min-screen(720px + 1px) { font-size: $font_size_default_thin; }
+        @include max-screen(720px) { font-size: $font_size_default_thin - 1; }
+        line-height: $font_size_footnote_link;
+        color: $color_footnote_link;
+    }
+    
+    & > a:hover {
+        color: $color_link;
+    }
+    
+    ul, ol {
+        @include bottom_margin;
+        @include min-screen(720px + 1px) {
+            margin-right: 30px;
+        }
+        // sub-level
+        ul, ol {
+            padding-left: 18px;
+            
+        }
+    }
+    
+    // Markdown fix on unsorted list
+    // It is translated as ul li p wherein p should no be present.
+    // We just remove the extra spaces between p
+    ul li p {
+        margin-bottom: 0;
+    }
+    
+    // If a list follows a heading, which may be unusual, add top margin
+    h1 + ul,
+    h2 + ul,
+    h3 + ul,
+    h4 + ul,
+    h5 + ul,
+    h6 + ul,
+    h1 + ol,
+    h2 + ol,
+    h3 + ol,
+    h4 + ol,
+    h5 + ol,
+    h6 + ol,
+    h1 + dl,
+    h2 + dl,
+    h3 + dl,
+    h4 + dl,
+    h5 + dl,
+    h6 + dl,
+    h1 + figure.highlight,
+    h2 + figure.highlight,
+    h3 + figure.highlight,
+    h4 + figure.highlight,
+    h5 + figure.highlight,
+    h6 + figure.highlight,
+    h1 + div.highlighter-rouge,
+    h2 + div.highlighter-rouge,
+    h3 + div.highlighter-rouge,
+    h4 + div.highlighter-rouge,
+    h5 + div.highlighter-rouge,
+    h6 + div.highlighter-rouge
+    h1 + p.custom_heading_1,
+    h2 + p.custom_heading_1,
+    h3 + p.custom_heading_1,
+    h4 + p.custom_heading_1,
+    h5 + p.custom_heading_1,
+    h6 + p.custom_heading_1,
+    h1 + p.custom_heading_2,
+    h2 + p.custom_heading_2,
+    h3 + p.custom_heading_2,
+    h4 + p.custom_heading_2,
+    h5 + p.custom_heading_2,
+    h6 + p.custom_heading_2 {
+        margin-top: 12px;
+    }
+
+    li > table,
+    li > div.highlighter-rouge,
+    dd > div.highlighter-rouge {
+        margin-top: 12px;
+    }
+    li > table {
+        margin-bottom: 12px;
+    }
+    
+    dl {
+        margin: 0 20px 12px 20px;
+        & > dt {
+            color: $color_text;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        & > dd {
+            margin: 0 0 0 30px;
+            padding: 0 0 0.5em 0;
+            // A second dd item is enclosed between <p></p>
+            // We remove the top and bottom margin to make
+            // it consistent with the other dd elements.
+            & > p {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                & + p {
+                    margin-top: 8px;
+                }
+            }
+            & > ul {
+                @include set_margin_v(2px, 2px);
+            }
+            & > div.highlighter-rouge > pre.highlight {
+                margin-bottom: 0;
+            }
+            
+            & > dl {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    @include dl_as_table("width_50",  50px);
+    @include dl_as_table("width_100", 100px);
+    @include dl_as_table("width_150", 150px);
+    @include dl_as_table("width_200", 200px);
+    
+    div#post_bottom {
+        padding-top: 20px;
+    }
+
+    @import "layout_doc/meta";
+    @import "layout_doc/related";
+
+    @import "layout_doc/aside";
+    @import "layout_doc/blockquote";
+    @import "layout_doc/table";
+   
+    @import "layout_doc/video";
+
+    @import "layout_doc/code_block";
+    @import "layout_doc/syntax";
+    @import "layout_doc/footnotes";
+    
+    @import "layout_doc/tags";
+    @import "layout_doc/operations";
+}

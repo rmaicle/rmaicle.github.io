@@ -1,0 +1,44 @@
+<div id="datetime_section_container" class="section_container_wrapper">
+    <div class="container">
+        <div id="datetime_block" class="block">
+            <h1>Date and Time</h1>
+            <div class="entries">
+                <div class="entry">
+                    <p id="current_date" class="date"></p>
+                    <p id="current_time" class="time"></p>
+                </div>
+                {% if site.debug %}
+                <div class="entry">
+                    <p id="current_date_utc" class="date utc"></p>
+                    <p id="current_time_utc" class="time utc"></p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        const dateFormat = 'dddd D MMMM';
+        const timeFormat = 'hh:mm:ss a';
+
+        setInterval(function() {
+            var currentDate = $('#current_date');
+            var currentTime = $('#current_time');
+
+            var localTime = moment(moment.utc().toDate());
+            currentDate.text(localTime.format(dateFormat));
+            currentTime.text(localTime.format(timeFormat));
+
+            {% if site.debug %}
+            var currentDateUTC = $('#current_date_utc');
+            var currentTimeUTC = $('#current_time_utc');
+            var utcTime =moment.utc();
+            currentDateUTC.text(utcTime.format(dateFormat));
+            currentTimeUTC.text(utcTime.format(timeFormat));
+            {% endif %}
+
+        }, 1000);
+    });
+</script>

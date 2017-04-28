@@ -1,0 +1,161 @@
+$color_red:                     #ce1126;
+$color_blue:                    #0038a8;
+$color_yellow:                  #fcd116;
+
+$color_primary:                 #ffb90f;    // Dark Golden Rod 1
+//$color_primary:                 #B8860B;    // Dark Golden Rod
+//$color_primary:                 #EEAD0E;    // Dark Golden Rod 2
+$color_secondary:               #8B6914;    // Golden Rod 4
+
+// Background is the color of the footer background.
+// This avoids the footer from showing a different
+// color if the content of the page is shorter.
+$color_bg:                      #020003;
+$color_main_bg:                 #020003;    // vantablack
+$color_main_bg:                 #111111;
+$color_box:                     #eee;
+
+// Text
+$color_text:                    #b3b3b3;
+$color_text:                    #9a9a9a;
+$color_text_second:             #d3d3d3;
+
+// Link
+$color_link:			        $color_primary;
+$color_link_underline:	        $color_primary;
+
+// Heading
+$color_heading_text:            #aaa;
+$color_heading_text:            $color_text;
+
+// Header
+$color_header_title:            black;
+$color_header_title_tag:        black;
+$color_header_bg:               darken($color_main_bg, 0%);
+$color_header_border_top:       $color_primary;
+$color_header_border_bottom:    $color_main_bg;
+
+// Code
+$color_lineno:                  darken($color_text, 40%);
+$color_lineno_divider:          darken($color_text, 40%);
+$color_code:                    $color_text;
+$color_code_in_text:            $color_text;
+// Replace $color_code_in_text with this
+$color_code_span:               lighten($color_text, 10%);
+//$color_code_highlight:        #eeeeee;
+$color_code_bg:                 #0c0c0c;
+$color_syntax_bg:               #1a1a1a;
+
+// Table
+$color_table_border:            #333333;
+$color_table_th_bg:             #1f1f1f;
+
+// Horizontal line
+$color_hr_default:              $color_text;
+$color_hr_dark:                 #7a7a7a;
+$color_hr_darker:               #5a5a5a;
+
+// Blockquote
+$color_blockquote:              $color_text;
+$color_blockquote_bar:          lighten($color_main_bg, 5%);
+$color_blockquote_bg:           lighten($color_main_bg, 2%);
+
+$color_image_bg:                $color_bg;
+$color_image_attribution:       $color_text;
+
+// Specifics
+// -----------------------------------------------------------------------------
+
+// Navigation
+$color_nav_text:                $color_main_bg;
+$color_nav_bg:                  $color_primary;
+$color_nav_hover_text:          $color_primary;
+$color_nav_hover_bg:            $color_main_bg;
+
+// Search
+$color_search_text:             lighten($color_primary, 10%);
+$color_search_bg:               $color_main_bg;
+
+// Index page entries
+$color_index_entry_title:         $color_heading_text;
+$color_index_entry_date:          $color_text;
+$color_index_entry_excerpt:       $color_text;
+$color_index_entry_text:          $color_text;
+$color_index_entry_line:          #f0f0f0;
+$color_index_entry_background:    #fbfbfb;
+
+// Section container
+$color_container_line:          $color_primary;
+$color_container_text:          $color_bg;
+$color_container_bg:            $color_primary;
+
+// Section
+$color_section_line:            $color_bg;
+$color_section_label_text:      $color_text;
+$color_section_button_links:    darken($color_main_bg, 5%);
+$color_section_text:            $color_text_second;
+$color_section_bg:              darken($color_main_bg, 1.5%);
+
+// Page/Post
+$color_page_title:              $color_heading_text;
+$color_page_text:               $color_text;
+$color_page_syntax_text:        lighten($color_text, 10%);
+
+// Post tag
+$color_tag_text:                darken($color_text, 20%);
+$color_tag_bg:                  $color_bg;
+$color_tag_border:              lighten($color_tag_bg, 20%);
+
+// Footnote
+$color_footnote_link:           $color_secondary;
+
+// Sidebar
+$color_sidebar_label:           $color_primary;
+$color_sidebar_entry_title:     $color_text;
+$color_sidebar_entry_text:      $color_text;
+$color_sidebar_bg:              $color_bg;
+
+// Aside
+$color_aside_text:              $color_text;
+$color_aside_bg:                $color_header_bg;
+$color_aside_border:            $color_red - 100;
+
+// Quote
+$color_quote_character:         $color_primary;
+$color_quote_text:              $color_text;
+$color_quote_author:            $color_text;
+$color_quote_context:           $color_text;
+
+// Announcement
+// Rename as compact color style
+$color_announcement_title:      darken($color_text, 9%);
+$color_announcement_date:       $color_text;
+$color_announcement_text:       $color_text;
+
+// Info
+// Rename as compact color style
+$color_info_title:              darken($color_text, 9%);
+$color_info_date:               $color_text;
+$color_info_text:               $color_text;
+
+// Quotations
+$color_quotes_text:              $color_text;
+$color_quotes_author:            $color_text;
+$color_quotes_context:           $color_text;
+
+// News bit
+$color_news_bit_date:           lighten($color_text, 10%);
+
+// Footer
+$color_footer_text:             darken($color_text, 25%);
+$color_footer_link:             $color_link;
+$color_footer_bg:               $color_bg;
+$color_footer_border_top:       $color_primary;
+
+// Button links
+$color_button_text:             $color_secondary;
+$color_button_bg:               $color_main_bg;
+$color_button_border:           $color_secondary;
+$color_button_hover_text:       $color_main_bg;
+$color_button_hover_bg:         $color_primary;
+$color_button_hover_border:     $color_primary;

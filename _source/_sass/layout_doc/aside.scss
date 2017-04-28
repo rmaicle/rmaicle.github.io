@@ -1,0 +1,132 @@
+div.aside,
+div.aside_right,
+div.aside_left {
+    width: 35%;
+    padding: 5px 10px 5px 10px;
+
+    h1, h2, h3, h4, h5, h6 {
+        @include compact;
+    }
+
+    @include max-screen(720px) {
+        $font_size_page_title: $font_size_page_title - 10;
+        $font_line_height_page_title: $font_line_height_page_title - 6;
+        h1 { font-size: $font_size_page_title - 0; line-height: $font_line_height_page_title;     }
+        h2 { font-size: $font_size_page_title - 0; line-height: $font_line_height_page_title - 2; }
+        h3 { font-size: $font_size_page_title - 1; line-height: $font_line_height_page_title - 2; }
+        h4 { font-size: $font_size_page_title - 1; line-height: $font_line_height_page_title - 2; }
+        h5 { font-size: $font_size_page_title - 2; line-height: $font_line_height_page_title - 2; }
+        h6 { font-size: $font_size_page_title - 2; line-height: $font_line_height_page_title - 2; }
+    }
+
+    & > p,
+    & > p a {
+        margin: 0;
+        padding: 0;
+        font-family: $font_page_text;
+        font-size: $font_size_page_text;
+        color: $color_aside_text;
+        line-height: $font_line_height_page_text;
+    }
+
+    & > p.excerpt,
+    & > p.excerpt a {
+        margin-top: 0;
+        font-size: $font_size_page_text;
+        line-height: $font_line_height_page_text;
+        font-weight: bold;
+    }
+
+    & p:first-of-type,
+    & > a + p {
+        margin-top: 0;
+    }
+
+    h1.font_italic + p,
+    h2.font_italic + p,
+    h3.font_italic + p,
+    h4.font_italic + p,
+    h5.font_italic + p,
+    h6.font_italic + p,
+    p + p,
+    & div.video + p {
+        margin-top: 12px;
+    }
+
+    & > img,
+    & a > img {
+        width: 100%;
+    }
+    // no image link bottom border
+    & a {
+        border-bottom: none;
+    }
+
+    & > a {
+        border-bottom: none;
+    }
+
+    .font_bold {
+        font-weight: bold;
+    }
+    .font_italic {
+        font-style: italic;
+    }
+    
+    p.aside_italic {
+        font-style: italic;
+    }
+    p.aside_highlight {
+        //font-size: $font_size_page_text;
+        font-style: italic;
+        font-weight: bold;
+    }
+    p.aside_caption,
+    p.aside_caption > a {
+        font-size: $font_size_page_text - 4;
+        line-height: $font_size_page_text - 2;
+    }
+}
+
+div.aside,
+div.aside_right {
+    float: right;
+    margin-left: 10px;
+    border-right: 3px solid $color_aside_border;
+
+    h1, h2, h3, h4, h5, h6 {
+        text-align: right;
+    }
+
+    & > p,
+    & > p a {
+        text-align: right;
+    }
+}
+
+div.aside_left {
+    float: left;
+    margin-right: 10px;
+    border-left: 3px solid $color_aside_border;
+
+    h1, h2, h3, h4, h5, h6 {
+        text-align: left;
+    }
+
+    & > p,
+    & > p a {
+        text-align: left;
+    }
+}
+
+div.aside_right_left_align {
+    h1, h2, h3, h4, h5, h6,
+    & > p,
+    & > p a {
+        text-align: left;
+    }
+}
+
+div.aside_width_45 {
+    width: 45%;
+}

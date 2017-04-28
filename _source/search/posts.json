@@ -1,0 +1,21 @@
+---
+---
+
+{ "pages":
+[
+    {% if site.development %}{% for post in site.posts %}
+    { "title": "{{ post.title | strip_html | smartify | normalize_whitespace }}",
+      "date": "{{ post.date | date: site.data.format.date_only }}",
+      "excerpt": "{{ post.excerpt | strip_html | smartify | normalize_whitespace }}",
+      "tags": "{{ post.tags | join: ', ' }}",
+      "content": "{{ post.content | strip_html | smartify | normalize_whitespace | replace: '(laughter)', '' | replace: ' ●', '' }}",
+      "url": "{{ post.url | absolute_url }}" } {% unless forloop.last %},{% endunless %}
+    {% endfor %}{% else %}{% for post in site.posts limit: 13 %}
+    { "title": {{ post.title | strip_html | normalize_whitespace | jsonify }},
+      "date": "{{ post.date | date: site.data.format.date_only }}",
+      "excerpt": {{ post.excerpt | strip_html | normalize_whitespace | jsonify }},
+      "tags": "{{ post.tags | join: ', ' }}",
+      "content": {{ post.content | strip_html | normalize_whitespace | jsonify | replace: ' ●', '' }},
+      "url": "{{ post.url | absolute_url }}" } {% unless forloop.last %},{% endunless %}
+    {% endfor %}{% endif %}
+]}

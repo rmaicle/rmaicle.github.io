@@ -1,0 +1,44 @@
+{% comment %}
+Arguments:
+    - label
+    - posts
+    - limit
+
+Example:
+    {% assign posts = site.posts %}
+    {% assign max = 3 %}
+    {% include section_index.html label="Section Label" posts=posts limit=max %}
+{% endcomment %}
+
+{% include todo_list.html todo_data=include.todo_data %}
+
+{% assign show_items = "" | split: "" %}
+{% assign show_items = show_items | push: "date" %}
+{% assign show_items = show_items | push: "excerpt" %}
+{% assign show_items = show_items | push: "thumbnail" %}
+
+<div class="section_container_wrapper section_container_wrapper_border">
+    <h1>{{ include.label }}</h1>
+    <div class="section_container top_margin_10 bottom_margin_10">
+        <div class="block block_default_fonts">
+            <div class="entries">
+                {% for post in posts limit: include.limit %}
+                    {% assign title = post.title | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
+                <div class="index_entry">
+                    <a href="{{ post.url }}" class="no_underline">
+                        <span class="date">{{ post.date | date: site.data.format.short_date }}</span>&nbsp;&nbsp;-&nbsp;
+                        {{ title }}
+                        {% if post.video.source != nil %}&nbsp;&nbsp;<i class="fa fa-video-camera" aria-hidden="true"></i>{% endif %}
+                    </a>
+                    {% if site.debug %}
+                        {% assign excerpt = post.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
+                    <p class="excerpt">{{ excerpt }}{% if post.video.source != nil %} <i class="fa fa-video-camera" aria-hidden="true"></i>{% endif %}</p>
+                    <p class="category">Categories:&nbsp;{{ post.categories | join: ", "}}</p>
+                    <p class="tag">Tags:&nbsp;{{ post.tags | join: ", " }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div> <!-- end of entries -->
+        </div>
+    </div>
+</div> <!-- end of section_container_wrapper -->

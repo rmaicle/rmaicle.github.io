@@ -1,0 +1,185 @@
+
+form input#search_input {
+
+    background: $color_search_bg url('/images/search.png') no-repeat 6px 6px;
+    @include set_font($font_serif, $font_size_search, $color_search_text, bold);
+    
+    width: 500px;
+    @include max-screen(720px) {
+        width: 100%;
+    }
+    border: 1px solid $color_box;
+    padding: 4px 5px 5px 25px;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+
+    @include max-screen(720px) {
+        display: hidden;
+        background: none;
+    }
+}
+
+// Intentionally placed here to override the #search settings defined above
+#nav_top > div#search {
+    & > form input#search_input {
+        // Start input text slightly to the right of the image
+        // and center vertically
+        padding: 2px 5px 3px 25px;
+        margin: 0 5px 0 6px;
+        border: none;
+        border-width: 0;
+        border-style: none;
+        width: 300px;
+        height: 26px;
+        
+        &:focus {
+            //border: 1px solid $color_search_box_top;
+        }
+    }
+}
+
+#search {
+    @include max-screen(720px) {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+#search_section_container {
+    & > div.section_container {
+        & > div.container {
+            height: auto !important;
+            min-height: 90px !important;
+
+            width: 100%;
+            min-width: 100%;
+            & > p {
+                font-family: $font_default;
+                font-size: $font_size_default + 1;
+                line-height: $font_line_height_default + 1;
+                color: $color_text;
+            }
+        }
+    }
+    // Make padding equal to paragraph bottom padding
+    padding-bottom: 12px;
+}
+
+div#dt_search_posts {
+    margin-bottom: 20px;
+    
+    p, ul {
+        margin: 5px 0 0 0;
+    }
+    
+    p {
+        padding: 0;
+        font-family: $font_default;
+        font-size: $font_size_default;
+        line-height: $font_line_height_default;
+        @include max-screen(720px) {
+            font-size: $font_size_default + 2;
+            line-height: $font_line_height_default + 3;
+        }
+        color: $color_text;
+    }
+
+    div.search_feedback {
+    }
+    
+    div.search_results {
+        margin-top: 20px;
+        p {
+            margin: 0;
+        }
+        
+        & > ol {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-top: 5px;
+            & > div > a,
+            & > div > p > a {
+                @include block_entry_heading($font_index_title, $font_size_index_title, $color_index_entry_title);
+                line-height: $font_line_height_index_title;
+                @include max-screen(720px) {
+                    font-size: $font_size_index_title;
+                    line-height: $font_line_height_index_title;
+                }
+                padding-bottom: 2px;
+                border-bottom: none;
+                &:hover {
+                    color: $color_link;
+                }
+            }
+        }
+    }
+    
+    div#search_footer
+    {
+        margin: 30px 0 0 0;
+    }
+    
+    #search_footer_boxes
+    {
+        padding: 0;
+        margin: 0;
+        font: $font_size_default $font_default;
+    }
+    
+    #search_footer_boxes li
+    {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline;
+        display: inline-block;
+        cursor: pointer;
+
+        & > a,
+        &.current {
+            font-family: $font_hub_title;
+            font-size: $font_size_hub_title;
+            line-height: $font_line_height_hub_title + 2;
+            @include max-screen(720px) {
+                font-size: $font_size_hub_title + 2;
+                line-height: $font_line_height_hub_title + 3;
+            }
+            padding: 10px 17px 11px 17px;
+            @include max-screen(720px) {
+                padding: 8px 15px 9px 15px;
+            }
+            background-color: #fff;
+            border: 1px solid #e2e2e2;
+            border-radius: 2px;
+            color: #333;
+            margin-right: 7px;
+            text-decoration: none;
+            text-align: center;
+
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        &.current {
+            background: #f6f6f6;
+        }
+    }
+
+    #search_footer_boxes li a:hover
+    {
+         background: #f6f6f6;
+    }
+}

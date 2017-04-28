@@ -1,0 +1,26 @@
+div.post_operations {
+    @media print {
+        display: none;
+    }
+    margin-top: 20px;
+    ul {
+        padding: 0;
+        list-style-type: none;
+        li {
+            text-align: center;
+            // Display list items horizontally
+            display: inline;
+
+            padding: 0;
+            margin-right: 5px;
+            a {
+                @include button;
+                @include max-screen(480px) {
+                    & > span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

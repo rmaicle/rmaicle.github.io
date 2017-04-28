@@ -1,0 +1,67 @@
+[
+    {
+        "title":        "Home",
+        "url":          "/",
+        "index":        "no"
+    },
+    {
+        "title":        "All Posts",
+        "url":          "/post/",
+        "index":        "yes"
+    },
+    {
+        "title":        "",
+        "url":          ""
+    },
+    {
+        "title":        "C++",
+        "url":          "/post/cpp/",
+        "index":        "yes"
+    },
+    {
+        "title":        "D Language",
+        "url":          "/post/dlang/",
+        "index":        "yes"
+    },
+    {
+        "title":        "Database",
+        "url":          "/post/database/",
+        "index":        "yes"
+    },
+    {
+        "title":        "",
+        "url":          ""
+    },
+    {
+        "title":        "Linux",
+        "url":          "/post/linux/",
+        "index":        "yes"
+    },
+    {
+        "title":        "",
+        "url":          ""
+    },
+    {
+        "title":        "Jekyll",
+        "url":          "/post/jekyll/",
+        "index":        "yes"
+    },
+    {
+        "title":        "",
+        "url":          ""
+    },
+    {
+        "title":        "Others",
+        "url":          "/post/other/",
+        "index":        "yes"
+    },
+    {
+        "title":        "",
+        "url":          ""
+    },
+    {
+        "title":        "Duterte Quotes",
+        "url":          "/info/quote/",
+        "index":        "no"
+    },
+]

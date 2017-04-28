@@ -1,0 +1,82 @@
+// Since 'div.syntax' may have a 'pre' within
+// This will override the configuration above
+div.syntax {
+    @include bottom_margin;
+    padding: 5px 12px 4px 12px;
+    background: $color_syntax_bg;
+    border: 1px dotted $color_syntax_bg + 15;
+    border-left: 3px solid $color_syntax_bg + 15;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    pre.highlight {
+        color: $color_text;
+        background: $color_code_bg + 3;
+        border: 1px dotted $color_syntax_bg + 15;
+        border-left: 6px solid $color_syntax_bg + 18;
+        padding-left: 10px;
+    }
+    pre:first-child {
+        margin-top: 8px;
+    }
+    
+    p, a, li, dl, dt, dd {
+        text-align: left;
+
+        @incluse use_default_font();
+    }
+    
+    dl {
+        // Bottom margin takes into account that a paragraph may follow a definition list
+        margin: 0 15px 10px 15px;
+        dt {
+            color: $color_text;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        dd {
+            margin: 0 0 0 30px;
+            padding: 0 0 12px 0;
+            // A term definition may have a subsequent paragraph.
+            p {
+                text-align: left;
+                margin-bottom: 0px;
+            }
+            p + dl {
+                @include set_margin_v(12px, 0px);
+            }
+            pre {
+                margin: 12px 0px 12px 0px;
+            }
+
+            table {
+                @include set_margin_v(8px, 4px);
+                /*
+                border: 1px solid $color_table_border + 5;
+                th {
+                    @include set_font($font_table_heading, $font_size_table_heading, $color_text);
+                    line-height: $font_size_table_heading + 3;
+                    border: 1px solid $color_table_border + 5;
+                    padding: 5px 6px;
+                    background: $color_table_th_bg + 5;
+                }
+                td {
+                    @include set_font($font_table_data, $font_size_table_data, $color_text);
+                    line-height: $font_size_table_data + 3;
+                    border: 1px solid $color_table_border + 5;
+                    padding: 3px 6px 3px 6px;
+                }
+                */
+            }
+        }
+        
+        dd:last-child {
+            padding-bottom: 0;
+        }
+    }
+    
+    p:last-child {
+        margin-bottom: 8px;
+    }
+}

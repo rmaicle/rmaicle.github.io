@@ -1,0 +1,30 @@
+{% comment %}
+Arguments:
+    - posts
+    - show
+    - link_target_new_window - ["yes" | "no"]
+    - entry_class
+
+Example:
+    {% assign show_items = "" | split: "" %}
+    {% assign show_items = show_items | push: "date" %}
+    {% assign show_items = show_items | push: "excerpt" %}
+    {% assign show_items = show_items | push: "description" %}
+
+    {% assign posts = site.data.government.branch %}
+    {% include block_default.html posts=posts show=show_items link_target_new_window="yes" %}
+{% endcomment %}
+
+<div class="block block_default_fonts">
+    <div class="entries">
+        {% if include.posts.size > 0 %}
+            {% for post in include.posts %}
+        <div class="entry {% if include.entry_class %}{{ include.entry_class }}{% endif %}">
+                {% include block_entry.html post=post show=include.show %}
+        </div>
+            {% endfor %}
+        {% else %}
+            {% include no_posts.html %}
+        {% endif %}
+    </div>
+</div>

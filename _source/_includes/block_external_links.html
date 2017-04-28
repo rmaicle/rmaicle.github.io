@@ -1,0 +1,18 @@
+<div id="datetime_section_container" class="section_container_wrapper">
+    <div class="container">
+        <div id="links_block" class="block block_default_fonts">
+            <h1>External Links</h1>
+            <div class="entries compact">
+            <div class="index_entry">
+                {% for entry in site.data.links.reference %}
+                    {% if entry.name == "---" %}
+                <hr class="thin_line compact">
+                    {% else %}
+                <a href="{{ entry.url }}" class="no_underline" target="_blank">{{ entry.name }}</a><br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

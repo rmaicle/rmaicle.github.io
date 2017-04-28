@@ -1,0 +1,44 @@
+{% assign doc_url = page.url | replace: site.baseurl, '' | append: '.html' %}
+
+{% for item_ch in site.data.documentation.groups[include.doc_index].chapters %}
+    {% if item_ch.chapter == '---' %}
+        <hr class="thin compact darker">
+    {% else %}
+        <li><a href="{{ item_ch.link }}" {% if doc_url == item_ch.link %}class="current"{% endif %}>{{ item_ch.chapter }}</a></li>
+        {% if item_ch.sections != nil %}
+            <ol>
+            {% for item_sec in item_ch.sections %}
+                <li><a href="{{ item_sec.link }}" {% if doc_url == item_sec.link %}class="current"{% endif %}>{{ item_sec.section }}</a></li>
+                {% if item_sec.subsections != nil %}
+                    <ol>
+                    {% for item_subsec in item_sec.subsections %}
+                        <li><a href="{{ item_subsec.link }}" {% if doc_url == item_subsec.link %}class="current"{% endif %}>{{ item_subsec.subsection }}</a></li>
+                        {% if item_subsec.subsubsections != nil %}
+                            <ol>
+                            {% for item_subsubsec in item_subsec.subsubsections %}
+                                <li><a href="{{ item_subsubsec.link }}" {% if doc_url == item_subsubsec.link %}class="current"{% endif %}>{{ item_subsubsec.subsubsection }}</a></li>
+                                {% if item_subsubsec.paragraphs != nil %}
+                                <ol>
+                                {% for item_para in item_subsubsec.paragraphs %}
+                                    <li><a href="{{ item_para.link }}" {% if doc_url == item_para.link %}class="current"{% endif %}>{{ item_para.paragraph }}</a></li>
+                                    {% if item_para.subparagraphs != nil %}
+                                        <ol>
+                                        {% for item_subpara in item_para.subparagraphs %}
+                                            <li><a href="{{ item_subpara.link }}" {% if doc_url == item_subpara.link %}class="current"{% endif %}>{{ item_subpara.subparagraph }}</a></li>
+                                        {% endfor %}
+                                        </ol>
+                                    {% endif %}
+                                {% endfor %}
+                                </ol>
+                                {% endif %}
+                            {% endfor %}
+                            </ol>
+                        {% endif %}
+                    {% endfor %}
+                    </ol>
+                {% endif %}
+            {% endfor %}
+            </ol>
+        {% endif %}
+    {% endif %}
+{% endfor %}

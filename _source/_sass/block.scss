@@ -1,0 +1,250 @@
+// A block is a collection of one or multiple items.
+// Each item is a title, date and excerpt.
+div.block {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    float: left;
+
+    & > h1 {
+        font-family: $font_section_text;
+        font-size: $font_size_section_text;
+        @include max-screen(720px) {
+            font-size: $font_size_section_text;
+        }
+        font-weight: $font_weight_section_text;
+        color: $color_section_label_text;
+        text-align: left;
+        text-transform: uppercase;
+        margin: 0;
+        padding-top: 0px;
+        float: left;
+        display: inline;
+    }
+
+    div.links {
+        margin: 0 0 0 10px;
+        padding: 0;
+        float: right;
+        display: inline;
+    }
+
+    div.entries {
+        margin: 5px 0 0 0;
+        float: left;
+        display: inline-block;
+        width: 100%;
+        
+
+        p.no_entries {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        // Hub section list style entries
+        & > ul,
+        & > ol {
+            display: block;
+            margin-top: 0;
+            padding-left: 20px;
+            
+            &.list_style_none,
+            & > li {
+                padding-left: 0;
+                //margin-bottom: 10px;
+            }
+            
+            & > li.border_left {
+                // Width is less than 100% because of the left border and paddings
+                width: calc(100% - 15px);
+                border-left: 5px solid $color_hr_default;
+                padding-left: 10px;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                &:hover {
+                    border-left: 5px solid $color_link;
+                }
+            }
+
+            & > li.border_top_and_bottom {
+                width: 100%;
+                border-top: 1px dotted $color_hr_default;
+                &:last-of-type {
+                    border-bottom: 1px dotted $color_hr_default;
+                }
+                padding-top: 5px;
+                padding-bottom: 4px;
+            }
+            
+            & > li > p,
+            & > li > h2 > a > p {
+                margin: 0 !important;
+                padding: 0 !important;
+                display: inline;
+            }
+        }
+
+        & > div.entry,
+        & > div.index_entry {
+            width: 100%;
+            float: left;
+
+            & > img {
+                border-radius: 3px;
+                height: auto;
+                @include max-screen(480px) {
+                    float: right;
+                    margin-bottom: 3px;
+                    margin-left: 10px;
+                    width: 35%;
+                }
+                @include min-screen(480px + 1px) {
+                    float: left;
+                    margin-bottom: 10px;
+                    margin-right: 10px;
+                    width: 100%;
+                }
+            }
+            
+            // For date/time
+            p {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            // Used by ToC on the right sidebar
+            ul, ol {
+                padding-left: 22px;
+                li {
+                    @include set_margin_v;
+                    padding-left: 0;
+                }
+            }
+
+            a.no_underline {
+                border-bottom: none;
+                &:hover {
+                    border-bottom: 1px dotted $color_link_underline;
+                }
+            }
+        }
+
+        & > div.entry {
+            margin-top: 12px;
+        }
+    }
+    
+    & > div.top_border_thin {
+        border-top: 1px solid $color_section_line;
+    }
+    
+    div.compact {
+        margin: 0;
+    }
+}
+
+div.block_margin_top {
+    margin-top: 10px;
+}
+
+div.block_margin_bottom {
+    margin-bottom: 0px;
+}
+
+img.block_margin_right {
+    margin-right: 10px;
+}
+
+
+
+div.block_default_fonts > div.entries {
+    & > ul > li,
+    & > ol > li,
+    & > div.entry {
+    
+        & > h2 {
+            @include compact;
+            margin-bottom: 10px;
+        }
+
+        & > h2,
+        & > h2 > a {
+            @include use_font($font_hub_title, $font_size_hub_title, $font_weight_hub_title);
+            line-height: $font_line_height_hub_title;
+            @include use_code_font($font_size_hub_title + 1);
+            @include use_color($color_index_entry_title);
+        }
+
+        & > h2:hover {
+            &,
+            & > a,
+            & > a > code.highlighter-rouge {
+                border-bottom: none;
+                color: $color_link;
+            }
+        }
+        
+        & > h2.indexed {
+            font-weight: normal;
+            & > span {
+                // Using inline-block gives span a width
+                // Using table-cell shifts the items down 1 pixel when a:hover
+                // displays the bottom border line.
+                display: inline-block;
+                // Aligned up to six digits
+                min-width: 50px;
+            }
+        }
+    
+        & > p.date {
+            font-family: $font_hub_date;
+            font-size: $font_size_hub_date;
+            color: $color_index_entry_date;
+            line-height: $font_line_height_hub_date;
+            @include max-screen(720px) {
+                font-size: $font_size_hub_date;
+                line-height: $font_line_height_hub_date;
+            }
+        }
+
+        & > p.excerpt {
+            @include use_font($font_hub_excerpt, $font_size_hub_excerpt);
+            line-height: $font_line_height_hub_excerpt;
+            @include use_code_font($font_size_hub_excerpt + 1);
+            @include use_color($color_index_entry_excerpt);
+        }
+
+        & i.fa {
+            color: lighten($color_index_entry_excerpt, 40%);
+        }
+    }
+}
+
+div.block_default_fonts > div.entries {
+    & > div.index_entry {
+        & > a {
+            // Put date and post title in one line in the section list
+            display: inline;
+        }
+
+        & > a {
+            @include use_font($font_index_title, $font_size_index_title - 2, $font_weight_index_title);
+            line-height: $font_line_height_index_title;
+            @include use_code_font($font_size_index_title);
+            @include use_color($color_index_entry_title);
+            padding-bottom: 2px;
+        }
+        
+        & > a:hover,
+        & > a:hover > code,
+        & > a:hover > code.highlighter-rouge {
+            color: $color_link;
+            border-bottom: none !important;
+        }
+        
+        & > hr {
+            background: #333333;
+        }
+    }
+}

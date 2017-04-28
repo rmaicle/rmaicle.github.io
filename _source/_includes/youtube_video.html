@@ -1,0 +1,16 @@
+{% comment %}
+Arguments:
+    - video_id
+    - attribution
+
+Example:
+    {% include youtube_video.html video_id=page.video.source attribution=page.video.attribution %}
+{% endcomment %}
+
+<div class="video_container">
+    <p class="video_link"><span>Link to video:</span><br/><a href="https://www.youtube.com/watch?v={{ include.video_id }}">https://www.youtube.com/watch?v={{ include.video_id }}</a></p>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/{{ include.video_id }}" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
+    </div>
+    <p class="attribution">video by {{ include.attribution }}&nbsp;</p>
+</div>

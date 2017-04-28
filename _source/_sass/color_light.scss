@@ -1,0 +1,129 @@
+$color_red:                     #CE1126;
+$color_blue:                    #0038A8;
+$color_yellow:                  #FCD116;
+
+$color_primary:                 $color_red;
+$color_secondary:               $color_primary - 30;
+
+// Background is the color of the footer background.
+// This avoids the footer from showing a different
+// color if the content of the page is shorter.
+$color_bg:                      #dedddd;
+$color_main_bg:                 #ffffff;
+$color_box:                     #eee;
+
+// Text
+$color_text:                    lighten(black, 30%);
+
+// Link
+$color_link:			        $color_primary;
+$color_link_underline:	        $color_primary;
+
+// Heading
+$color_heading_text:            darken($color_text, 9%);
+
+// Header
+$color_header_title:            $color_text;
+$color_header_title_tag:        $color_text;
+$color_header_bg:               darken($color_main_bg, 0%);
+$color_header_border_top:       $color_primary;
+$color_header_border_bottom:    $color_main_bg;
+
+// Code
+$color_code:                    #a3a3a3;
+$color_code_highlight:          #eeeeee;
+$color_code_bg:                 #202020;
+$color_syntax_bg:               #2a2a2a;
+
+// Table
+$color_table_border:            #cccccc;
+$color_table_th_bg:             #efefef;
+
+// Horizontal line
+$color_hr_default:              #e7e7e7;
+$color_hr_dark:                 #404040;
+$color_hr_darker:               $color_bg;
+
+// Blockquote
+$color_blockquote:              $color_text;
+$color_blockquote_bar:          darken($color_main_bg, 7%);
+$color_blockquote_bg:           darken($color_main_bg, 2%);
+
+$color_image_bg:                $color_bg;
+$color_image_attribution:       $color_text;
+
+// Specifics
+// -----------------------------------------------------------------------------
+
+// Navigation
+$color_nav:                     $color_text;
+$color_nav_bg:                  $color_header_bg;
+
+// News Hub entries
+$color_hub_entry_title:         darken($color_text, 9%);
+$color_hub_entry_date:          darken($color_primary, 5%);
+$color_hub_entry_date:          $color_text;
+$color_hub_entry_excerpt:       $color_text;
+$color_hub_entry_text:          $color_text;
+$color_hub_entry_line:          #f0f0f0;
+$color_hub_entry_background:    #fbfbfb;
+
+// Page/Post
+$color_page_title:              $color_heading_text;
+$color_page_text:               $color_text;
+
+// Post tag
+$color_tag_text:                lighten($color_text, 10%);
+$color_tag_bg:                  #ededed;
+
+// Footnote
+$color_footnote_link:           darken($color_text, 20%);
+
+// Sidebar
+$color_sidebar_label:           $color_primary;
+$color_sidebar_entry_title:     $color_text;
+$color_sidebar_entry_text:      $color_text;
+$color_sidebar_bg:              $color_main_bg;
+
+// Aside
+$color_aside_text:              $color_text;
+$color_aside_bg:                $color_header_bg;
+$color_aside_border:            $color_red - 100;
+
+// Quote
+$color_quote_text:              $color_text;
+$color_quote_author:            $color_text;
+$color_quote_context:           $color_text;
+
+// Announcement
+// Rename as compact color style
+$color_announcement_title:      darken($color_text, 9%);
+$color_announcement_date:       $color_text;
+$color_announcement_text:       $color_text;
+
+// Info
+// Rename as compact color style
+$color_info_title:              darken($color_text, 9%);
+$color_info_date:               $color_text;
+$color_info_text:               $color_text;
+
+// Quotations
+$color_quotes_text:              $color_text;
+$color_quotes_author:            $color_text;
+$color_quotes_context:           $color_text;
+
+// News bit
+$color_news_bit_date:           lighten($color_text, 10%);
+
+// Footer
+$color_footer_text:             black;
+$color_footer_link:             $color_link;
+$color_footer_bg:               $color_bg;
+$color_footer_border_top:       $color_primary;
+
+// Button links
+$color_button_text:             $color_main_bg;
+$color_button_bg:               $color_primary;
+$color_button_hover_text:       $color_button_bg;
+$color_button_hover_bg:         $color_header_border_bottom;
+

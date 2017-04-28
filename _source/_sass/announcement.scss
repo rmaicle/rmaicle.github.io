@@ -1,0 +1,29 @@
+#announcement_section_container {
+    & > div.container {
+        @include min-screen(480px + 1px)  {
+            width: 50%;
+            max-width: 50%;
+        }
+        @include min-screen(768px + 1px)  {
+            width: 100%;
+            max-width: 100%;
+        }
+        @include max-screen(720px)  {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+    }
+}
+
+#announcements_block {
+    @media print {
+        display: none;
+    }
+    @include max-screen(720px) {
+        margin-top: 20px !important;
+        
+    }
+    height: 170px;
+    min-height: 170px;
+}

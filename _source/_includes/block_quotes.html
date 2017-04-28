@@ -1,0 +1,14 @@
+<div id="quotes_section_container" class="section_container_wrapper">
+    <div class="container">
+        <div id="random_quotes_block" class="block">
+            <div id="random_quotes" class="entries">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+var quoteTotal = {{ site.data.quotes.size }} ;
+var quoteIndex = Math.floor(Math.random() * quoteTotal);
+$('#random_quotes').load('/quotes.html div#quote_' + quoteIndex);
+</script>

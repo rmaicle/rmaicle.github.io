@@ -1,0 +1,47 @@
+{% comment %}
+Arguments:
+    - todo_data - TODO items from /data directory
+Example:
+    {% assign todo = site.data.news_peace_process %}
+    {% include todo_list.html todo_data=todo %}
+{% endcomment %}
+
+{% if site.debug %}
+<div class="section_container_wrapper section_container_wrapper_border">
+    <h1>TODO</h1>
+<div class="section_container top_margin_10 bottom_margin_10">
+<div class="block block_default_fonts">
+    <div class="entries">
+
+    {% for post in include.todo_data %}
+        <div class="entry">
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            <p class="date">{{ post.date | date: site.data.format.date_only }}</p>
+            <p class="excerpt">{{ post.excerpt }}</p>
+            <p class="category">Categories:&nbsp;{{ post.categories | join: ", "}}</p>
+            <p class="tag">Tags:&nbsp;{{ post.tags | join: ", " }}</p>
+        {% if post.link.size and post.link.size == 1 %}
+            <p>Link:&nbsp;<a href="{{ post.link[0].url }}" class="no_underline">{{ post.link[0].url }}</a></p>
+        {% else %}
+            <p>Links:</p>
+            <ul>
+            {% for linkitem in post.link %}
+                {% if linkitem.excerpt %}
+                <li><a href="{{ linkitem.url }}" class="no_underline">{{ linkitem.excerpt }}</a></li>
+                {% else %}
+                <li><a href="{{ linkitem.url }}" class="no_underline">{{ linkitem.url }}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        {% endif %}
+        </div>
+    {% else %}
+        <p class="no_entries">There are no pending TODO items.</p>
+    {% endfor %}
+
+    </div>
+</div>
+</div>
+</div>
+{% endif %}
+
