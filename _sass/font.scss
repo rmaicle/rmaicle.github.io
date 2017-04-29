@@ -2,7 +2,7 @@
 //@import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu:400,400i);
 //@import url(https://fonts.googleapis.com/css?family=Roboto:400,400i|Roboto+Condensed);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i);
-@import url(https://fonts.googleapis.com/css?family=Cutive+Mono:400);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i);
 
 @font-face {
     font-family:    'RM Courier';
@@ -10,17 +10,19 @@
                     url("../fonts/RMCourier-Regular.ttf");
 }
 
-$font_sans:                             "Source Sans Pro", "Roboto", "Ubuntu", sans;
+$font_sans:                             "Montserrat", "Source Sans Pro", "Roboto", "Ubuntu", sans;
 $font_sans_thin:                        "Roboto Condensed", "Ubuntu Condensed", sans;
 $font_serif:                            "Droid Serif", "Noto Serif", serif;
 $font_monospace:                        "RM Courier", "Cutive Mono", monospace;
 
 // Default
-$font_default:                          $font_sans;
-$font_size_default:                     15px;
+$font_default:                          $font_serif;
+$font_size_default:                     14px;
 $font_line_height_default:              1.5em;
+$font_line_height_default:              1.8em;
 $font_word_spacing_default:             0.20em;
 $font_word_spacing_default:             0.09em;
+$font_word_spacing_default:             0.05em;
 
 $font_default_thin:                     $font_sans_thin;
 $font_size_default_thin:                13px;
@@ -32,11 +34,11 @@ $font_size_heading:                     25px;   // Base of all heading tags
 $font_line_height_heading:              1.5em;
 
 $font_code:                             $font_monospace;
-$font_size_code:                        14px;
+$font_size_code:                        $font_size_default;
 $font_line_height_code:                 1.35em;
 
-$font_size_code_in_text:                $font_size_default + 5;
-$font_size_code_in_syntax:              $font_size_default + 3;
+$font_size_code_in_text:                $font_size_default;
+$font_size_code_in_syntax:              $font_size_default;
 
 
 
@@ -198,6 +200,9 @@ $font_line_height_page_date:            $font_line_height_default;
 $font_line_height_page_excerpt:         $font_line_height_default;
 $font_line_height_page_text:            $font_line_height_default;
 $font_line_height_page_text_in_syntax:  $font_line_height_default + 5;
+
+$font_weight_normal_page_text:          400;
+$font_weight_bold_page_text:            700;
 
 
 

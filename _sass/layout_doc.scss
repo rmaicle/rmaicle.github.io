@@ -45,59 +45,11 @@ section.doc_column_main {
     }
 
     p.custom_heading_1 {
-        /*
-        font-size: $font_size_page_text + 2;
-        line-height: $font_line_height_page_text + 2;
-        & > code.highlighter-rouge {
-            font-size: $font_size_page_text + 1;
-            color: $color_page_title;
-        }
-        font-weight: bold;
-        color: $color_page_title;
-        @include max-screen(720px) {
-            font-size: $font_size_page_text + 2;
-            line-height: $font_line_height_page_text + 2;
-            & > code.highlighter-rouge {
-                font-size: $font_size_page_text + 1;
-            }
-        }
-        @media print {
-            font-size: $font_size_page_text + 2;
-            line-height: $font_line_height_page_text + 2;
-            & > code.highlighter-rouge {
-                font-size: $font_size_page_text + 1;
-            }
-        }
-        */
         @include use_font($font_heading, $font_size_page_text + 2, bold);
         @include use_color($color_page_title);
     }
     
     p.custom_heading_2 {
-        /*
-        font-size: $font_size_page_text + 1;
-        line-height: $font_line_height_page_text;
-        & > code.highlighter-rouge {
-            font-size: $font_size_page_text;
-            color: $color_page_title;
-        }
-        font-weight: bold;
-        color: $color_page_title;
-        @include max-screen(720px) {
-            font-size: $font_size_page_text + 1;
-            line-height: $font_line_height_page_text + 1;
-            & > code.highlighter-rouge {
-                font-size: $font_size_page_text;
-            }
-        }
-        @media print {
-            font-size: $font_size_page_text + 1;
-            line-height: $font_line_height_page_text + 1;
-            & > code.highlighter-rouge {
-                font-size: $font_size_page_text;
-            }
-        }
-        */
         @include use_font($font_heading, $font_size_page_text + 1, bold);
         @include use_color($color_page_title);
     }
@@ -107,27 +59,9 @@ section.doc_column_main {
     }
     
     p, li, dl, dt, dd, & > a {
-        /*
-        text-align: left;
-
-        @include set_font($font_doc_text, $font_size_doc_text, $color_page_text);
-        line-height: $font_line_height_doc_text;
-        font-weight: $font_weight_doc_text;
-        word-spacing: $font_word_spacing_doc_text;
-        
-
-        @include max-screen(720px) {
-            @include set_font($font_doc_text, $font_size_doc_text, $color_page_text);
-            line-height: $font_line_height_doc_text;
-        }
-        @media print {
-            @include set_font($font_doc_text, $font_size_doc_text, $color_page_text);
-        }
-
-        @include code_in_x($font_code, $font_size_doc_text - 1, $color_code_in_text, normal);
-        */
-        @include use_default_font($font_size_page_text);
-        @include use_code_font($font_size_page_text - 1);
+        @include use_default_font($font_size_page_text, $font_weight_normal_page_text, $font_weight_bold_page_text);
+        @include use_code_font($font_size_code_in_text);
+        @include use_code_color($color_code_span);
     }
     
     sup > a.footnote {

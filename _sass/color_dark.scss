@@ -18,6 +18,7 @@ $color_box:                     #eee;
 // Text
 $color_text:                    #b3b3b3;
 $color_text:                    #9a9a9a;
+$color_text:                    #898989;
 $color_text_second:             #d3d3d3;
 
 // Link
@@ -39,9 +40,8 @@ $color_header_border_bottom:    $color_main_bg;
 $color_lineno:                  darken($color_text, 40%);
 $color_lineno_divider:          darken($color_text, 40%);
 $color_code:                    $color_text;
-$color_code_in_text:            $color_text;
 // Replace $color_code_in_text with this
-$color_code_span:               lighten($color_text, 10%);
+$color_code_span:               #cccccc;
 //$color_code_highlight:        #eeeeee;
 $color_code_bg:                 #0c0c0c;
 $color_syntax_bg:               #1a1a1a;

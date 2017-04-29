@@ -1,9 +1,9 @@
 
-@mixin use_font($font, $size: $font_size_default, $weight: normal, $style: normal) {
+@mixin use_font($font, $size: $font_size_default, $weight_normal: normal, $weight_bold: bold) {
     font-family: $font;
     font-size: $size;
-    font-weight: $weight;
-    font-style: $style;
+    font-weight: $weight_normal;
+    font-style: normal;
     -webkit-font-smoothing: antialiased;
     @include max-screen(720px) {
         font-size: $size - 1;
@@ -11,10 +11,13 @@
     @media print {
         font-size: $size + 3;
     }
+    & > strong {
+        font-weight: $weight_bold;
+    }
 }
 
-@mixin use_default_font($size: $font_size_default, $weight: normal, $style: normal) {
-    @include use_font($font_default, $size, $weight, $style);
+@mixin use_default_font($size: $font_size_default, $weight_normal: normal, $weight_bold: bold) {
+    @include use_font($font_default, $size, $weight_normal, $weight_bold);
     word-spacing: $font_word_spacing_default;
 }
 
@@ -27,7 +30,7 @@
     & > a > code,
     & > a > code.highlighter-rouge {
         font-family: $font_code;
-        font-size: $size - 1;
+        font-size: $size;
         font-weight: $weight;
         font-style: $style;
         background: none;
@@ -46,6 +49,15 @@
     color: $color;
     & code,
     & code.highlighter-rouge {
+        color: $color;
+    }
+}
+
+@mixin use_code_color($color) {
+    & > code,
+    & > code.highlighter-rouge,
+    & > a > code,
+    & > a > code.highlighter-rouge {
         color: $color;
     }
 }
@@ -387,13 +399,16 @@
         }
         
         dt {
-            @include use_code_font($font_size_page_text - 1);
+            @include use_code_font($font_size_code_in_text);
         }
         dt > a,
         dd > a {
             border-bottom: none;
-            &:hover {
-                border-bottom: none;
+            &:hover,
+            &:hover > code,
+            &:hover > code.highlighter-rouge {
+                color: $color_primary;
+                border-bottom: 1px dotted $color_primary;
             }
         }
     }

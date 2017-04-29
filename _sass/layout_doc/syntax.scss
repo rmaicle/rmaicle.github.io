@@ -23,7 +23,7 @@ div.syntax {
     p, a, li, dl, dt, dd {
         text-align: left;
 
-        @incluse use_default_font();
+        @include use_default_font();
     }
     
     dl {
