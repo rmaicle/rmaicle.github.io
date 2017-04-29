@@ -2,3 +2,7 @@
 	path = _posts
 	url = https://github.com/rmaicle/ghp_posts.git
     
+[submodule "docs"]
+	path = docs
+	url = https://github.com/rmaicle/ghp_docs.git
+	branch = master
