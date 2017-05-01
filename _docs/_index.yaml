@@ -1,0 +1,54 @@
+groups:
+groups:
+  - group: cpp
+    group_no: 1
+    title: C++
+  - group: dlang
+    group_no: 1
+    title: D Language
+  - group: ---
+  - group: git
+    group_no: 2
+    title: Git Manual 2.12.2
+    link: /doc/git/manual/
+    chapters:
+      - chapter: Overview
+        link:    /doc/git/manual/chapter_1
+      - chapter: Commands
+        link:    /doc/git/manual/chapter_2
+        sections:
+          - section: High-Level Commands (Porcelain)
+            link:    /doc/git/manual/ch2/section_1
+            subsections:
+              - subsection: Main Commands
+                link:       /doc/git/manual/ch2/sec1/subsection_1
+              - subsection: Ancillary Commands
+                link:       /doc/git/manual/ch2/sec1/subsection_2
+              - subsection: Interacting with Others
+                link:       /doc/git/manual/ch2/sec1/subsection_3
+          - section: Low-Level Commands (Plumbing)
+            link:    /doc/git/manual/ch2/section_2
+            subsections:
+              - subsection: Manipulation Commands
+                link:       /doc/git/manual/ch2/sec2/subsection_1
+              - subsection: Interrogation Commands
+                link:       /doc/git/manual/ch2/sec2/subsection_2
+              - subsection: Synching Repositories
+                link:       /doc/git/manual/ch2/sec2/subsection_3
+              - subsection: Internal Helper Commands
+                link:       /doc/git/manual/ch2/sec2/subsection_4
+          - section: Configuration Mechanism
+            link:    /doc/git/manual/ch2/section_3
+          - section: Identifier Terminology
+            link:    /doc/git/manual/ch2/section_4
+          - section: Symbolic Identifiers
+            link:    /doc/git/manual/ch2/section_5
+          - section: File/Directory Structure
+            link:    /doc/git/manual/ch2/section_6
+          - section: Terminology
+            link:    /doc/git/manual/ch2/section_7
+          - section: Environment Variables
+            link:    /doc/git/manual/ch2/section_8
+  - group: cmake
+    title: CMake
+    group_no: 2

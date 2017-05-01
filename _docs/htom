@@ -1,0 +1,49 @@
+# Convert HTML to markdown
+
+if [ $# -eq 0 ]; then
+    echo "No file argument specified. Aborting."
+    exit
+fi
+
+title="$1"
+filename="$1.md"
+filename="${filename//-/_}"
+
+pandoc -f html -t docbook -o tmp.xml "$1".html
+
+# ==================================
+# Preprocessing -Reformat section titles
+
+# Convert all EOL characters to Unix EOF character
+# asciidoc seemed to have messed it up.
+sed -i 's/\r//' tmp.xml
+
+# Make all definition list term a code span
+sed -ir '/<term>/ {N;N;s/\(<term>\)\n\(.*\)\n\(<\/term>\)/\1<literal>\2<\/literal>\3/}' tmp.xml
+
+# ==================================
+
+pandoc -f docbook -t markdown_github+blank_before_header+all_symbols_escapable+blank_before_blockquote+definition_lists+fenced_code_blocks+footnotes+pipe_tables+yaml_metadata_block -o "$filename" tmp.xml
+
+directory=`pwd`
+directory=${directory#*docs/}
+directory="/doc/"$directory"/"$filename
+directory=${directory%%.md}
+
+#echo "$directory"
+
+> x.md
+echo "---" >> x.md
+echo "title: $title" >> x.md
+echo "layout: documentation" >> x.md
+echo "categories: [documentation]" >> x.md
+echo "tags: [git]" >> x.md
+echo "draft: true" >> x.md
+echo "published: true" >> x.md
+echo "permalink: $directory" >> x.md
+echo "group: git" >> x.md
+echo "---" >> x.md
+echo "" >> x.md
+
+cat x.md "$filename" > tmp.md
+mv tmp.md "$filename"

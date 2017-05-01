@@ -1,0 +1,27 @@
+{% comment %}
+Acquire the documentation group index based on the
+current page yaml key 'group'
+
+This file must be in the '_include' directory or relatively
+soft linked in that directory with the name 'group_index.html'
+relative to this directory.
+
+In the _include directory:
+    ln -s ../documentations/_group_index.html group_index.html
+{% endcomment %}
+
+{% capture empty %}
+
+{% assign is_found = false %}
+{% assign group_index = 0 %}
+{% assign counter = 0 %}
+{% for item in site.data.documentation.groups %}
+    {% if item.group == page.group %}
+        {% assign is_found = true %}
+        {% assign group_index = counter %}
+        {% break %}
+    {% endif%}
+    {% assign counter = counter | plus: 1 %}
+{% endfor %}
+
+{% endcapture %}{% assign empty = nil %}

@@ -1,0 +1,82 @@
+# Convert asciidoc to markdown
+# https://tinyapps.org/blog/nix/201701240700_convert_asciidoc_to_markdown.html
+# 1. Convert asciidoc to docbook. The output file will be `foo.xml`.
+#     $ asciidoc -b docbook foo.adoc
+# 2. Convert docbook to markdown.
+#     $ pandoc -f docbook -t markdown_github foo.xml -o foo.md
+# * Unicode symbols were mangled in foo.md. Quick workaround:
+#     $ iconv -t utf-8 foo.xml | pandoc -f docbook -t markdown_strict | iconv -f utf-8 > foo.md
+# * Pandoc inserted hard line breaks at 80 characters. Removed like so:
+#     $ iconv -t utf-8 foo.xml | pandoc -f docbook -t markdown_strict --wrap=none | iconv -f utf-8 > foo.md
+
+if [ #@ -eq 0 ]; then
+    echo "No file argument specified. Aborting."
+    exit
+fi
+
+title="$1"
+filename="$1.md"
+filename="${filename//-/_}"
+
+asciidoc -b docbook -o tmp.xml "$1".txt
+
+# ==================================
+# Preprocessing -Reformat section titles
+
+# Convert all EOL characters to Unix EOF character
+# asciidoc seemed to have messed it up.
+sed -i 's/\r//' tmp.xml
+
+# Make all definition list term a code span
+sed -ir '/<term>/ {N;N;s/\(<term>\)\n\(.*\)\n\(<\/term>\)/\1<literal>\2<\/literal>\3/}' tmp.xml
+
+#cp -f tmp.xml pp.xml
+
+# ==================================
+
+pandoc -f docbook -t markdown_github+blank_before_header+all_symbols_escapable+blank_before_blockquote+definition_lists+fenced_code_blocks+footnotes+pipe_tables+yaml_metadata_block -o "$filename" tmp.xml
+
+# ==================================
+# Fix synopsis
+
+sed -ir 's/^> \{5\}/    /' "$filename"
+
+# ==================================
+
+#title=`cat $filename | sed q`
+#title=${title%%(*}
+
+directory=`pwd`
+directory=${directory#*docs/}
+directory="/doc/"$directory"/"$filename
+directory=${directory%%.md}
+
+echo "$directory"
+
+> x.md
+echo "---" >> x.md
+echo "title: $title" >> x.md
+echo "layout: documentation" >> x.md
+echo "categories: [documentation]" >> x.md
+echo "tags: [git]" >> x.md
+echo "draft: true" >> x.md
+echo "published: true" >> x.md
+echo "permalink: $directory" >> x.md
+echo "group: git" >> x.md
+echo "---" >> x.md
+echo "" >> x.md
+
+cat x.md "$filename" > tmp.md
+mv tmp.md "$filename"
+
+# ==================================
+# TODO: Collate links
+# ==================================
+
+echo "Output: $filename"
+
+rm -f tmp.xml
+rm -f tmp.html
+rm -f x.md
+rm -f *.mdn
+rm -f *.mdr
