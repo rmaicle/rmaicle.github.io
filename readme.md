@@ -11,17 +11,17 @@ server{
 
     listen 80;
     server_name [host];
-    
+
     root /var/www/[host];
     index index.php index.html;
-    
+
     # host error and access log
     access_log /var/log/nginx/[host].access.log;
     error_log /var/log/nginx/[host].error.log;
-    
+
     location / {
     }
-    
+
     # redirect server error pages to the static page /50x.html
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
