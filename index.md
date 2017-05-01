@@ -6,7 +6,7 @@ permalink: /
 ---
 
 <div class="section_container_wrapper section_container_wrapper_border">
-    <h1>Documentations</h1>
+    <h1>References</h1>
     <div class="section_container top_margin_10">
         {% for groupno in (1..3) %}
         <div class="container list_container">
