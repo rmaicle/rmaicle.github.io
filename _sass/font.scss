@@ -1,19 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i);
-//@import url(https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Ubuntu:400,400i);
-//@import url(https://fonts.googleapis.com/css?family=Roboto:400,400i|Roboto+Condensed);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i);
-
-@font-face {
-    font-family:    'RM Courier';
-    src:            local('RM Courier Regular'),
-                    url("../fonts/RMCourier-Regular.ttf");
-}
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400);
 
 $font_sans:                             "Montserrat", "Source Sans Pro", "Roboto", "Ubuntu", sans;
 $font_sans_thin:                        "Roboto Condensed", "Ubuntu Condensed", sans;
 $font_serif:                            "Droid Serif", "Noto Serif", serif;
-$font_monospace:                        "RM Courier", "Cutive Mono", monospace;
+$font_monospace:                        "Inconsolata", "Cutive Mono", monospace;
 
 // Default
 $font_default:                          $font_serif;
@@ -37,8 +30,8 @@ $font_code:                             $font_monospace;
 $font_size_code:                        $font_size_default;
 $font_line_height_code:                 1.35em;
 
-$font_size_code_in_text:                $font_size_default;
-$font_size_code_in_syntax:              $font_size_default;
+$font_size_code_in_text:                $font_size_default + 1;
+$font_size_code_in_syntax:              $font_size_default + 1;
 
 
 

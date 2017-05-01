@@ -172,7 +172,8 @@ div.block_default_fonts > div.entries {
         & > h2 > a {
             @include use_font($font_hub_title, $font_size_hub_title, $font_weight_hub_title);
             line-height: $font_line_height_hub_title;
-            @include use_code_font($font_size_hub_title + 1);
+            //@include use_code_font($font_size_hub_title + 1, );
+            @include use_code_font($font_size_code_in_text + 2, $font_weight_hub_title);
             @include use_color($color_index_entry_title);
         }
 
@@ -231,7 +232,7 @@ div.block_default_fonts > div.entries {
         & > a {
             @include use_font($font_index_title, $font_size_index_title - 2, $font_weight_index_title);
             line-height: $font_line_height_index_title;
-            @include use_code_font($font_size_index_title);
+            @include use_code_font($font_size_index_title, $font_weight_index_title);
             @include use_color($color_index_entry_title);
             padding-bottom: 2px;
         }
