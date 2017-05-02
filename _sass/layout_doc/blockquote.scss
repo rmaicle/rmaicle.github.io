@@ -10,33 +10,6 @@ blockquote {
     background: $color_blockquote_bg;
 
     p, a, li {
-        /*
-        @include set_font($font_blockquote, $font_size_blockquote + 4, $color_blockquote);
-        line-height: $font_size_blockquote + 8;
-
-        @include max-screen(720px) {
-            @include set_font($font_blockquote, $font_size_blockquote + 2, $color_blockquote);
-            line-height: $font_line_height_blockquote + 2;
-        }
-        @media print {
-            @include set_font($font_blockquote, $font_size_blockquote + 4, $color_blockquote);
-            line-height: $font_size_blockquote + 12;
-        }
-
-        word-spacing: $word_spacing_blockquote;
-        margin-bottom: 12px;
-
-        e {
-            font-style: normal;
-        }
-        a {
-            margin-bottom: 0px;
-            &:hover {
-                color: $color_link;
-                border-bottom: 1px dotted $color_link_underline;
-            }
-        }
-        */
         @include use_font($font_blockquote, $font_size_blockquote);
         font-style: $font_style_blockquote;
         @include use_color($color_blockquote);
