@@ -1,7 +1,18 @@
+// Whether code blocks have borders
+//   0 - no border
+//   > 0 - with border
+$codeblock_border: 1;
+
 // Rouge encloses source code blocks with line numbers
 // using {% highlight cpp %} within figure.highlight.
 figure.highlight {
     margin: 0 0 0 0;
+    @if $codeblock_border > 0 then {
+        & > pre {
+            border: 1px solid $color_code_border;
+            border-radius: 3px;
+        }
+    }
 }
 
 .highlight .lineno {
@@ -83,4 +94,8 @@ pre {
 // while div.highlighter-rouge is not.
 div.highlighter-rouge > pre {
     padding: 6px 12px 4px 12px;
+    @if $codeblock_border > 0 then {
+        border: 1px solid $color_code_border;
+        border-radius: 3px;
+    }
 }
