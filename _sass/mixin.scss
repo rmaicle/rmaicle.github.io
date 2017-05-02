@@ -6,10 +6,10 @@
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     @include max-screen(720px) {
-        font-size: $size - 1;
+        font-size: $size;
     }
     @media print {
-        font-size: $size + 3;
+        font-size: $size;
     }
     & > strong {
         font-weight: $weight_bold;
@@ -21,27 +21,61 @@
     word-spacing: $font_word_spacing_default;
 }
 
-@mixin use_code_font($size: $font_size_default, $weight: normal, $style: normal) {
+@mixin code_font_no_style() {
+    & > code,
+    & > code.highlighter-rouge,
+    & > em > code,
+    & > em > code.highlighter-rouge,
+    & > a > code,
+    & > a > code.highlighter-rouge {
+        background: none;
+        padding: 0 0 0 0;
+        margin-left: 0;
+        margin-right: 0;
+        border: none;
+    }
+}
+
+@mixin use_code_font($size: $font_size_default, $weight: normal, $style: 1) {
+    @include code_font_no_style;
     // Inline source codes are wrapped within code.highlighter-rouge class.
     // Also, there is an instance that a source code text is wrapped within
     // a link.
     & > code,
     & > code.highlighter-rouge,
+    & > em > code,
+    & > em > code.highlighter-rouge,
     & > a > code,
     & > a > code.highlighter-rouge {
         font-family: $font_code;
         font-size: $size;
         font-weight: $weight;
         font-style: $style;
-        background: none;
         -webkit-font-smoothing: antialiased;
-        padding: 0 0 0 0;
+        -webkit-hyphens: none;
+        -moz-hyphens:    none;
+        -ms-hyphens:     none;
+        hyphens:         none;
+        white-space: wrap;
+        overflow-wrap: normal;
+        @if $style > 0 {
+            background: $color_code_span_bg;
+            padding: 1px 5px 2px 4px;
+            margin-left: 1px;
+            margin-right: 1px;
+            border: 1px solid $color_code_span_border;
+            border-radius: 2px;
+        }
         @include max-screen(720px) {
-            font-size: $size - 1;
+            font-size: $size;
         }
         @media print {
-            font-size: $size + 3;
+            font-size: $size;
         }
+    }
+    & > em > code,
+    & > em > code.highlighter-rouge {
+        font-style: italic;
     }
 }
 

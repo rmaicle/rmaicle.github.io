@@ -45,12 +45,12 @@ section.doc_column_main {
     }
 
     p.custom_heading_1 {
-        @include use_font($font_heading, $font_size_page_text + 2, bold);
+        @include use_font($font_heading, $font_size_page_text + 2px, bold);
         @include use_color($color_page_title);
     }
     
     p.custom_heading_2 {
-        @include use_font($font_heading, $font_size_page_text + 1, bold);
+        @include use_font($font_heading, $font_size_page_text + 1px, bold);
         @include use_color($color_page_title);
     }
     
@@ -59,9 +59,15 @@ section.doc_column_main {
     }
     
     p, li, dl, dt, dd, & > a {
-        @include use_default_font($font_size_page_text, $font_weight_normal_page_text, $font_weight_bold_page_text);
-        @include use_code_font($font_size_code_in_text);
+        @include use_font($font_page_text, $font_size_page_text, $font_weight_normal_page_text, $font_weight_bold_page_text);
+        @include use_code_font($font_size_code_in_text, $font_weight_code_in_text);
         @include use_code_color($color_code_span);
+    }
+    // Override post title with code
+    // Override dt where it is code only
+    h1 > p,
+    dt {
+        @include code_font_no_style;
     }
     
     sup > a.footnote {

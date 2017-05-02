@@ -1,12 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i);
+//@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i);
 @import url(https://fonts.googleapis.com/css?family=Inconsolata:400);
+
+@font-face {
+    font-family:    'RM Courier';
+    src:            local('RM Courier Regular'),
+                    url("../fonts/RMCourier-Regular.ttf");
+}
 
 $font_sans:                             "Montserrat", "Source Sans Pro", "Roboto", "Ubuntu", sans;
 $font_sans_thin:                        "Roboto Condensed", "Ubuntu Condensed", sans;
 $font_serif:                            "Droid Serif", "Noto Serif", serif;
-$font_monospace:                        "Inconsolata", "Cutive Mono", monospace;
+$font_monospace:                        "RM Courier", "Inconsolata", "Cutive Mono", monospace;
 
 // Default
 $font_default:                          $font_serif;
@@ -27,11 +33,13 @@ $font_size_heading:                     25px;   // Base of all heading tags
 $font_line_height_heading:              1.5em;
 
 $font_code:                             $font_monospace;
-$font_size_code:                        $font_size_default;
+$font_size_code:                        $font_size_default + 1;
 $font_line_height_code:                 1.35em;
 
 $font_size_code_in_text:                $font_size_default + 1;
 $font_size_code_in_syntax:              $font_size_default + 1;
+
+$font_weight_code_in_text:              bold;
 
 
 
@@ -41,10 +49,10 @@ $font_size_code_in_syntax:              $font_size_default + 1;
 
 
 // Table
-$font_table_heading:                    $font_sans;
-$font_table_data:                       $font_sans;
-$font_size_table_heading:               $font_size_default - 1;
-$font_size_table_data:                  $font_size_default - 1;
+$font_table_heading:                    $font_sans_thin;
+$font_table_data:                       $font_sans_thin;
+$font_size_table_heading:               $font_size_default;
+$font_size_table_data:                  $font_size_default;
 $font_line_height_table_data:           $font_line_height_default;
 $font_line_height_table_heading:        $font_line_height_default;
 $font_weight_table_data:                normal;
@@ -53,9 +61,11 @@ $font_weight_table_heading:             bold;
 
 
 // Block Quote
-$font_blockquote:                       $font_default_thin;
-$font_size_blockquote:                  $font_size_default + 1;
+$font_blockquote:                       $font_default;
+$font_size_blockquote:                  $font_size_default;
 $font_line_height_blockquote:           $font_line_height_default;
+
+$font_style_blockquote:                 italic;
 
 
 
@@ -148,16 +158,16 @@ $font_hub_date:                         $font_heading;
 $font_hub_excerpt:                      $font_heading;
 $font_hub_text:                         $font_default;
 
-$font_size_hub_title:                   16px;
-$font_size_hub_date:                    $font_size_hub_title - 3;
-$font_size_hub_excerpt:                 $font_size_hub_title - 3;
-$font_size_hub_text:                    $font_size_hub_title - 3;
+$font_size_hub_title:                   14px;
+$font_size_hub_date:                    $font_size_hub_title - 2;
+$font_size_hub_excerpt:                 $font_size_hub_title - 2;
+$font_size_hub_text:                    $font_size_hub_title - 2;
 
 $font_line_height_hub_title:            1.3em;
 $font_line_height_hub_date:             1.3em;
-$font_line_height_hub_excerpt:          1.3em;
+$font_line_height_hub_excerpt:          1.5em;
 
-$font_weight_hub_title:                 normal;
+$font_weight_hub_title:                 bold;
 
 
 
@@ -231,12 +241,12 @@ $font_line_height_footnote:             16px;
 
 // Footer
 $font_footer:                           $font_serif;
-$font_size_footer:                      12px;
-$font_size_license:                     12px;
-$font_line_height_footer:               $font_line_height_default;
+$font_size_footer:                      11px;
+$font_size_license:                     11px;
+$font_line_height_footer:               1.3em;
 
 
 
 // Link buttons
-$font_button:                           $font_sans;
+$font_button:                           $font_sans_thin;
 $font_size_button:                      13px;
