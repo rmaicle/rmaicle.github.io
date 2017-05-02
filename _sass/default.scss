@@ -183,22 +183,6 @@ table {
         background: $color_table_th_bg;
         tr > th,
         tr > th > a {
-            /*
-            font-family: $font_table_heading !important;
-            font-size: $font_size_table_heading !important;
-            font-weight: $font_weight_table_heading !important;
-            line-height: $font_line_height_table_heading !important;
-            @include max-screen(720px) {
-                font-size: $font_size_table_heading !important;
-                line-height: $font_line_height_table_heading !important;
-            }
-            & > code,
-            & > code.highlighter-rouge {
-                font-family: $font_code;
-                font-size: $font_size_table_heading;
-                font-weight: bold;
-            }
-            */
             @include use_font($font_table_heading, $font_size_table_heading, $font_weight_table_heading);
             line-height: $font_line_height_table_heading;
             @include use_code_font($font_size_code_in_text, $font_weight_code_in_text, 0);
@@ -224,22 +208,6 @@ table {
         }
         tr > td,
         tr > td > a {
-            /*
-            font-family: $font_table_data !important;
-            font-size: $font_size_table_data !important;
-            line-height: $font_line_height_table_data !important;
-            font-weight: $font_weight_table_data !important;
-            @include max-screen(720px) {
-                font-size: $font_size_table_data;
-                line-height: $font_line_height_table_data;
-            }
-            & > code,
-            & > code.highlighter-rouge {
-                font-family: $font_code;
-                font-size: $font_size_table_data;
-                font-weight: normal;
-            }
-            */
             @include use_font($font_table_data, $font_size_table_data, $font_weight_table_data);
             line-height: $font_line_height_table_data;
             @include use_code_font($font_size_code_in_text, $font_weight_code_in_text, 0);
