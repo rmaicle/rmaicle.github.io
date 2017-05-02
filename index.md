@@ -29,7 +29,7 @@ permalink: /
     </div>
 </div>
 
-{% assign posts = site.posts %}
+{% assign posts = site.categories.post %}
 {% include section_index.html label="Latest" posts=posts limit=10 %}
 
 {% assign posts = site.categories.post %}
