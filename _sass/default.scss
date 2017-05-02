@@ -200,6 +200,8 @@ table {
             }
             */
             @include use_font($font_table_heading, $font_size_table_heading, $font_weight_table_heading);
+            line-height: $font_line_height_table_heading;
+            @include use_code_font($font_size_code_in_text, $font_weight_code_in_text, 0);
         }
     }
 
@@ -239,6 +241,8 @@ table {
             }
             */
             @include use_font($font_table_data, $font_size_table_data, $font_weight_table_data);
+            line-height: $font_line_height_table_data;
+            @include use_code_font($font_size_code_in_text, $font_weight_code_in_text, 0);
         }
     }
 }

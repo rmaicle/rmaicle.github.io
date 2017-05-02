@@ -33,13 +33,13 @@ $font_size_heading:                     25px;   // Base of all heading tags
 $font_line_height_heading:              1.5em;
 
 $font_code:                             $font_monospace;
-$font_size_code:                        $font_size_default + 1;
+$font_size_code:                        $font_size_default - 1;
 $font_line_height_code:                 1.35em;
 
-$font_size_code_in_text:                $font_size_default + 1;
-$font_size_code_in_syntax:              $font_size_default + 1;
+$font_size_code_in_text:                $font_size_default + 0;
+$font_size_code_in_syntax:              $font_size_default + 0;
 
-$font_weight_code_in_text:              bold;
+$font_weight_code_in_text:              normal;
 
 
 
@@ -53,8 +53,8 @@ $font_table_heading:                    $font_sans_thin;
 $font_table_data:                       $font_sans_thin;
 $font_size_table_heading:               $font_size_default;
 $font_size_table_data:                  $font_size_default;
-$font_line_height_table_data:           $font_line_height_default;
-$font_line_height_table_heading:        $font_line_height_default;
+$font_line_height_table_heading:        1.4em;
+$font_line_height_table_data:           1.4em;
 $font_weight_table_data:                normal;
 $font_weight_table_heading:             bold;
 

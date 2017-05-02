@@ -60,7 +60,7 @@
         overflow-wrap: normal;
         @if $style > 0 {
             background: $color_code_span_bg;
-            padding: 1px 5px 2px 4px;
+            padding: 3px 5px 2px 4px;
             margin-left: 1px;
             margin-right: 1px;
             border: 1px solid $color_code_span_border;
