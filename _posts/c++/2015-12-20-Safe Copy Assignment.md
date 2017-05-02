@@ -110,6 +110,6 @@ Articles related to _Argument Dependent Lookup_ (ADL) for user-defined type `swa
 Here is a short article by Scott Meyers related to move assignment using `swap` function.
 
 > More and more, I bump into people who, by default, want to implement move assignment in terms of swap.
-> This disturbs me,
+> This disturbs me...
 
 [The Drawbacks of Implementing Move Assignment in Terms of Swap](http://scottmeyers.blogspot.com/2014/06/the-drawbacks-of-implementing-move.html)
