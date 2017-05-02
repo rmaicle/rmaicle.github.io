@@ -1,6 +1,6 @@
 blockquote {
     border-left: 6px solid $color_blockquote_bar;
-    margin: 12px 0 12px 30px;
+    margin: 12px 0 12px 20px;
     @include max-screen(720px) {
         margin-left: 15px;
     }
@@ -38,6 +38,7 @@ blockquote {
         }
         */
         @include use_font($font_blockquote, $font_size_blockquote);
+        font-style: $font_style_blockquote;
         @include use_color($color_blockquote);
     }
     & > blockquote {
