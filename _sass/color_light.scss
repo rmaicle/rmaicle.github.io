@@ -1,6 +1,6 @@
-$color_red:                     #CE1126;
-$color_blue:                    #0038A8;
-$color_yellow:                  #FCD116;
+$color_red:                     #ce1126;
+$color_blue:                    #0038a8;
+$color_yellow:                  #fcd116;
 
 $color_primary:                 $color_red;
 $color_secondary:               $color_primary - 30;
@@ -13,7 +13,8 @@ $color_main_bg:                 #ffffff;
 $color_box:                     #eee;
 
 // Text
-$color_text:                    lighten(black, 30%);
+$color_text:                    #4b4b4b;
+$color_text_second:             #00ff00;
 
 // Link
 $color_link:			        $color_primary;
@@ -30,23 +31,31 @@ $color_header_border_top:       $color_primary;
 $color_header_border_bottom:    $color_main_bg;
 
 // Code
-$color_code:                    #a3a3a3;
-$color_code_highlight:          #eeeeee;
-$color_code_bg:                 #202020;
-$color_syntax_bg:               #2a2a2a;
+$color_lineno:                  darken($color_text, 40%);
+$color_lineno_divider:          darken($color_text, 40%);
+$color_code:                    $color_text;
+// Replace $color_code_in_text with this
+$color_code_span:               darken($color_text, 3%);
+$color_code_span_bg:            #f8f8f8;
+$color_code_span_border:        #e0e0e0;
+//$color_code_highlight:        #eeeeee;
+$color_code_border:             #e0e0e0;
+$color_code_bg:                 #f7f7f7;
+$color_syntax_bg:               #f7f7f7;
+$color_syntax_code_border:      #d9d9d9;
 
 // Table
-$color_table_border:            #cccccc;
-$color_table_th_bg:             #efefef;
+$color_table_border:            #c0c0c0;
+$color_table_th_bg:             #ebebeb;
 
 // Horizontal line
-$color_hr_default:              #e7e7e7;
-$color_hr_dark:                 #404040;
-$color_hr_darker:               $color_bg;
+$color_hr_default:              $color_text;
+$color_hr_dark:                 #7a7a7a;
+$color_hr_darker:               #5a5a5a;
 
 // Blockquote
 $color_blockquote:              $color_text;
-$color_blockquote_bar:          darken($color_main_bg, 7%);
+$color_blockquote_bar:          darken($color_main_bg, 5%);
 $color_blockquote_bg:           darken($color_main_bg, 2%);
 
 $color_image_bg:                $color_bg;
@@ -56,34 +65,54 @@ $color_image_attribution:       $color_text;
 // -----------------------------------------------------------------------------
 
 // Navigation
-$color_nav:                     $color_text;
-$color_nav_bg:                  $color_header_bg;
+$color_nav_text:                $color_main_bg;
+$color_nav_bg:                  $color_primary;
+$color_nav_hover_text:          $color_primary;
+$color_nav_hover_bg:            $color_main_bg;
 
-// News Hub entries
-$color_hub_entry_title:         darken($color_text, 9%);
-$color_hub_entry_date:          darken($color_primary, 5%);
-$color_hub_entry_date:          $color_text;
-$color_hub_entry_excerpt:       $color_text;
-$color_hub_entry_text:          $color_text;
-$color_hub_entry_line:          #f0f0f0;
-$color_hub_entry_background:    #fbfbfb;
+// Search
+$color_search_text:             lighten($color_primary, 10%);
+$color_search_bg:               $color_main_bg;
+
+// Index page entries
+$color_index_entry_title:         $color_heading_text;
+$color_index_entry_title:         $color_text;
+$color_index_entry_date:          $color_text;
+$color_index_entry_excerpt:       $color_text;
+$color_index_entry_text:          $color_text;
+$color_index_entry_line:          #f0f0f0;
+$color_index_entry_background:    #fbfbfb;
+
+// Section container
+$color_container_line:          $color_primary;
+$color_container_text:          $color_bg;
+$color_container_bg:            $color_primary;
+
+// Section
+$color_section_line:            $color_bg;
+$color_section_label_text:      $color_text;
+$color_section_button_links:    darken($color_main_bg, 5%);
+$color_section_text:            $color_text_second;
+$color_section_bg:              darken($color_main_bg, 1.5%);
 
 // Page/Post
 $color_page_title:              $color_heading_text;
 $color_page_text:               $color_text;
+$color_page_syntax_text:        lighten($color_text, 10%);
 
 // Post tag
-$color_tag_text:                lighten($color_text, 10%);
-$color_tag_bg:                  #ededed;
+$color_tag_text:                darken($color_text, 20%);
+$color_tag_bg:                  $color_bg;
+$color_tag_border:              $color_tag_text;
 
 // Footnote
-$color_footnote_link:           darken($color_text, 20%);
+$color_footnote_link:           $color_secondary;
 
 // Sidebar
 $color_sidebar_label:           $color_primary;
 $color_sidebar_entry_title:     $color_text;
 $color_sidebar_entry_text:      $color_text;
-$color_sidebar_bg:              $color_main_bg;
+$color_sidebar_bg:              $color_bg;
 
 // Aside
 $color_aside_text:              $color_text;
@@ -91,6 +120,7 @@ $color_aside_bg:                $color_header_bg;
 $color_aside_border:            $color_red - 100;
 
 // Quote
+$color_quote_character:         $color_primary;
 $color_quote_text:              $color_text;
 $color_quote_author:            $color_text;
 $color_quote_context:           $color_text;
@@ -116,14 +146,108 @@ $color_quotes_context:           $color_text;
 $color_news_bit_date:           lighten($color_text, 10%);
 
 // Footer
-$color_footer_text:             black;
+$color_footer_text:             darken($color_text, 25%);
 $color_footer_link:             $color_link;
 $color_footer_bg:               $color_bg;
 $color_footer_border_top:       $color_primary;
 
 // Button links
-$color_button_text:             $color_main_bg;
-$color_button_bg:               $color_primary;
-$color_button_hover_text:       $color_button_bg;
-$color_button_hover_bg:         $color_header_border_bottom;
+$color_button_text:             $color_secondary;
+$color_button_bg:               $color_main_bg;
+$color_button_border:           $color_secondary;
+$color_button_hover_text:       $color_main_bg;
+$color_button_hover_bg:         $color_primary;
+$color_button_hover_border:     $color_primary;
 
+// ====================================================
+
+/* .highlight { background: #ffffff; }
+/* .highlight .c { color: #999988; font-style: italic } /* Comment */
+/* .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+/* .highlight .k { font-weight: bold } /* Keyword */
+/* .highlight .o { font-weight: bold } /* Operator */
+/* .highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+/* .highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+/* .highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+/* .highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+/* .highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+/* .highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+/* .highlight .ge { font-style: italic } /* Generic.Emph */
+/* .highlight .gr { color: #aa0000 } /* Generic.Error */
+/* .highlight .gh { color: #999999 } /* Generic.Heading */
+/* .highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+/* .highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+/* .highlight .go { color: #888888 } /* Generic.Output */
+/* .highlight .gp { color: #555555 } /* Generic.Prompt */
+/* .highlight .gs { font-weight: bold } /* Generic.Strong */
+/* .highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+/* .highlight .gt { color: #aa0000 } /* Generic.Traceback */
+/* .highlight .kc { font-weight: bold } /* Keyword.Constant */
+/* .highlight .kd { font-weight: bold } /* Keyword.Declaration */
+/* .highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+/* .highlight .kr { font-weight: bold } /* Keyword.Reserved */
+/* .highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+/* .highlight .m { color: #009999 } /* Literal.Number */
+/* .highlight .s { color: #d14 } /* Literal.String */
+/* .highlight .na { color: #008080 } /* Name.Attribute */
+/* .highlight .nb { color: #0086B3 } /* Name.Builtin */
+/* .highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+/* .highlight .no { color: #008080 } /* Name.Constant */
+/* .highlight .ni { color: #800080 } /* Name.Entity */
+/* .highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+/* .highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+/* .highlight .nn { color: #555555 } /* Name.Namespace */
+/* .highlight .nt { color: #000080 } /* Name.Tag */
+/* .highlight .nv { color: #008080 } /* Name.Variable */
+/* .highlight .ow { font-weight: bold } /* Operator.Word */
+/* .highlight .w { color: #bbbbbb } /* Text.Whitespace */
+/* .highlight .mf { color: #009999 } /* Literal.Number.Float */
+/* .highlight .mh { color: #009999 } /* Literal.Number.Hex */
+/* .highlight .mi { color: #009999 } /* Literal.Number.Integer */
+/* .highlight .mo { color: #009999 } /* Literal.Number.Oct */
+/* .highlight .sb { color: #d14 } /* Literal.String.Backtick */
+/* .highlight .sc { color: #d14 } /* Literal.String.Char */
+/* .highlight .sd { color: #d14 } /* Literal.String.Doc */
+/* .highlight .s2 { color: #d14 } /* Literal.String.Double */
+/* .highlight .se { color: #d14 } /* Literal.String.Escape */
+/* .highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+/* .highlight .si { color: #d14 } /* Literal.String.Interpol */
+/* .highlight .sx { color: #d14 } /* Literal.String.Other */
+/* .highlight .sr { color: #009926 } /* Literal.String.Regex */
+/* .highlight .s1 { color: #d14 } /* Literal.String.Single */
+/* .highlight .ss { color: #990073 } /* Literal.String.Symbol */
+/* .highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+/* .highlight .vc { color: #008080 } /* Name.Variable.Class */
+/* .highlight .vg { color: #008080 } /* Name.Variable.Global */
+/* .highlight .vi { color: #008080 } /* Name.Variable.Instance */
+/* .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+.highlight .n   { color: #030303; text-shadow: none; }
+.highlight .c   { color: #00ac00; text-shadow: none; font-style: normal } /* Comment */
+.highlight .cp  { color: #CD96CD; text-shadow: none; font-weight: normal } /* Comment.Preproc */
+.highlight .c1  { color: #00ac00; text-shadow: none; font-style: normal } /* Comment.Single */
+.highlight .cs  { color: #00ac00; text-shadow: none; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .cm  { color: #00ac00; text-shadow: none; font-style: normal } /* Comment.Multiline */
+ 
+.highlight .kt  { color: #4169E1; text-shadow: none; font-weight: normal } /* Keyword.Type */
+.highlight .k   { color: #6189E1; text-shadow: none; font-weight: normal } /* Keyword (directive?) */
+ 
+.highlight .mi  { color: #CD7121; text-shadow: none; } /* Literal.Number.Integer */
+.highlight .mf  { color: #CD7121; text-shadow: none; } /* Literal.Number.Float */
+.highlight .mb  { color: #CD7121; text-shadow: none; } /* Literal.Number.Binary */
+.highlight .mh  { color: #CD7121; text-shadow: none; } /* Literal.Number.Binary */
+.highlight .nc  { color: #445588; text-shadow: none; text-decoration: none } /* Name.Class */
+.highlight .nf  { color: #030303; font-weight: none;  } /* Name.Function */
+
+.highlight .s   { color: #ABAB00; text-shadow: none; } /* Literal.String */
+.highlight .se  { color: #DEDE00; text-shadow: none; } /* Literal.String.Escape */
+
+.highlight .o   {                 text-shadow: none; } /* Operator */
+.highlight .p   {                 text-shadow: none; } /* Operator */
+.highlight .err { color: #030303; text-shadow: none; background-color: #202020 } /* Error */
+
+
+
+.highlight .go { color: #030303; } /* Generic.Output */
+.highlight .gp { color: #555555; } /* Generic.Prompt */
+.highlight .nv { color: #40ffff; } /* Name.Variable -- $ in shell */

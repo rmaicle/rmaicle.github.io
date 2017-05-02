@@ -4,16 +4,16 @@ div.syntax {
     @include bottom_margin;
     padding: 5px 12px 4px 12px;
     background: $color_syntax_bg;
-    border: 1px dotted $color_syntax_bg + 15;
-    border-left: 3px solid $color_syntax_bg + 15;
+    border: 1px dotted $color_syntax_code_border;
+    border-left: 3px solid $color_syntax_code_border;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 
     pre.highlight {
         color: $color_text;
-        background: $color_code_bg + 3;
-        border: 1px dotted $color_syntax_bg + 15;
-        border-left: 6px solid $color_syntax_bg + 18;
+        background: $color_syntax_bg - 5;
+        border: 1px dotted $color_syntax_code_border + 18;
+        border-left: 6px solid $color_syntax_code_border + 18;
         padding-left: 10px;
     }
     pre:first-child {
