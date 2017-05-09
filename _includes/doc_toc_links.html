@@ -1,6 +1,6 @@
 {% assign doc_url = page.url | replace: site.baseurl, '' | append: '.html' %}
 
-{% for item_ch in site.data.documentation.groups[include.doc_index].chapters %}
+{% for item_ch in site.data.index_docs.groups[include.doc_index].chapters %}
     {% if item_ch.chapter == '---' %}
         <hr class="thin compact darker">
     {% else %}

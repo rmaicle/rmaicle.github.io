@@ -1,15 +1,7 @@
 {% capture empty %}
-{% assign group_index = 0 %}
-{% assign counter = 0 %}
-{% for item in site.data.documentation.groups %}
-    {% if item.group == page.group %}
-        {% assign group_index = counter %}
-        {% break %}
-    {% endif%}
-    {% assign counter = counter | plus: 1 %}
-{% endfor %}
+{% include doc_group_index.html %}
 
-{% assign doc_title = site.data.documentation.groups[group_index].title %}
+{% assign doc_title = site.data.index_docs.groups[group_index].title %}
 {% endcapture %}{% assign empty = nil %}
 
 <section class="column_right_sidebar">

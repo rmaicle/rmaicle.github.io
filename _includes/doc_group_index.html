@@ -15,7 +15,7 @@ In the _include directory:
 {% assign is_found = false %}
 {% assign group_index = 0 %}
 {% assign counter = 0 %}
-{% for item in site.data.documentation.groups %}
+{% for item in site.data.index_docs.groups %}
     {% if item.group == page.group %}
         {% assign is_found = true %}
         {% assign group_index = counter %}
