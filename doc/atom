@@ -40,6 +40,7 @@ pandoc -f docbook -t markdown_github+blank_before_header+all_symbols_escapable+b
 # Fix synopsis
 
 sed -ir 's/^> \{5\}/    /' "$filename"
+sed -i 's/…/\.\.\./g' "$filename"
 
 # ==================================
 
