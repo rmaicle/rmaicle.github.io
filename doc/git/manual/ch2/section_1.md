@@ -11,11 +11,11 @@ group: git
 
 We separate the porcelain commands into the main commands and some ancillary user utilities.
 
-{% include group_index.html %}
+{% include doc_group_index.html %}
 Sub-Sections
 {:.custom_heading_2}
 <ol>
-{% for item in site.data.documentation.groups[group_index].chapters[1].sections[0].subsections %}
+{% for item in site.data.index_docs.groups[group_index].chapters[1].sections[0].subsections %}
     <li><a href="{{ item.link }}" class="no_underline">{{ item.subsection }}</a></li>
 {% endfor %}
 </ol>

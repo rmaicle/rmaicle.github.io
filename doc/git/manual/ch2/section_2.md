@@ -15,11 +15,11 @@ The interface (input, output, set of options and the semantics) to these low-lev
 
 The following description divides the low-level commands into commands that manipulate objects (in the repository, index, and working tree), commands that interrogate and compare objects, and commands that move objects and references between repositories.
 
-{% include group_index.html %}
+{% include doc_group_index.html %}
 Sub-Sections
 {:.custom_heading_2}
 <ol>
-{% for item in site.data.documentation.groups[group_index].chapters[1].sections[1].subsections %}
+{% for item in site.data.index_docs.groups[group_index].chapters[1].sections[1].subsections %}
     <li><a href="{{ item.link }}" class="no_underline">{{ item.subsection }}</a></li>
 {% endfor %}
 </ol>

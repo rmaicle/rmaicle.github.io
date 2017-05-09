@@ -11,11 +11,11 @@ group: git
 
 We divide Git into high level ("porcelain") commands and low level ("plumbing") commands.
 
-{% include group_index.html %}
+{% include doc_group_index.html %}
 Sections
 {:.custom_heading_2}
 <ol>
-{% for item in site.data.documentation.groups[group_index].chapters[1].sections %}
+{% for item in site.data.index_docs.groups[group_index].chapters[1].sections %}
     <li><a href="{{ item.link }}" class="no_underline">{{ item.section }}</a></li>
 {% endfor %}
 </ol>
