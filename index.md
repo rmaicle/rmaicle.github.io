@@ -13,7 +13,7 @@ permalink: /
             <div class="block block_default_fonts">
                 <div class="entries compact">
                 <div class="index_entry">
-                    {% assign groups = (site.data.docs_index.groups | where: 'group_no', groupno) %}
+                    {% assign groups = (site.data.index_docs.groups | where: 'group_no', groupno) %}
                     {% for doc in groups %}
                         {% if doc.group == "---" %}
                         <hr class="thin_line compact">
