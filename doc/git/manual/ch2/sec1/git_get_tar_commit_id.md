@@ -1,6 +1,6 @@
 ---
 title: git-get-tar-commit-id
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

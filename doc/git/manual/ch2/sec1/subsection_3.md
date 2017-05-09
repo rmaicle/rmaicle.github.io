@@ -1,6 +1,6 @@
 ---
 title: Interacting with Others
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

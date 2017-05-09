@@ -1,6 +1,6 @@
 ---
 title: High-Level Commands (Porcelain)
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

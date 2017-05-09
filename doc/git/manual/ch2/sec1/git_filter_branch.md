@@ -1,6 +1,6 @@
 ---
 title: git-filter-branch
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

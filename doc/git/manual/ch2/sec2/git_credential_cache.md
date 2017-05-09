@@ -1,6 +1,6 @@
 ---
 title: git-credential-cache
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

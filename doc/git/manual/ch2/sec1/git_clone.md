@@ -1,6 +1,6 @@
 ---
 title: git-clone
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

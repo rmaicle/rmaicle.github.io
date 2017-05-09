@@ -1,6 +1,6 @@
 ---
 title: git-rev-parse
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

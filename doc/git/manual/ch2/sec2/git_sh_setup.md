@@ -1,6 +1,6 @@
 ---
 title: git-sh-setup
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

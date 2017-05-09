@@ -1,6 +1,6 @@
 ---
 title: git-relink
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true
@@ -11,7 +11,7 @@ group: git
 
 ---
 title: git-relink
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true
@@ -22,7 +22,7 @@ group: git
 
 ---
 title: git-relink
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

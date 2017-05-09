@@ -4,7 +4,7 @@ author: Linus Torvalds
 version: 2.12.2
 date: 2016-08-12
 license: GNU General Public License
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

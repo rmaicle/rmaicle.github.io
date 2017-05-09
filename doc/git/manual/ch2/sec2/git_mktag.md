@@ -1,6 +1,6 @@
 ---
 title: git-mktag
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

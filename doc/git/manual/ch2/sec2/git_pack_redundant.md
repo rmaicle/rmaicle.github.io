@@ -1,6 +1,6 @@
 ---
 title: git-pack-redundant
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

@@ -1,6 +1,6 @@
 ---
 title: git-for-each-ref
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

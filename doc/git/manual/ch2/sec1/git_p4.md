@@ -1,6 +1,6 @@
 ---
 title: git-p4
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

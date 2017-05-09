@@ -1,6 +1,6 @@
 ---
 title: git-http-backend
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

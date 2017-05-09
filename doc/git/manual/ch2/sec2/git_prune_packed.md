@@ -1,6 +1,6 @@
 ---
 title: git-prune-packed
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

@@ -1,6 +1,6 @@
 ---
 title: Symbolic Identifiers
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

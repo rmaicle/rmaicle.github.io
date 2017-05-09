@@ -1,6 +1,6 @@
 ---
 title: git-fast-export
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

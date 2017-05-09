@@ -1,6 +1,6 @@
 ---
 title: git-update-server-info
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

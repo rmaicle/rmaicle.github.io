@@ -1,6 +1,6 @@
 ---
 title: git-check-mailmap
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

@@ -1,6 +1,6 @@
 ---
 title: git-interpret-trailers
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

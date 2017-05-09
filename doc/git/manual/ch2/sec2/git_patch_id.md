@@ -1,6 +1,6 @@
 ---
 title: git-patch-id
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

@@ -1,6 +1,6 @@
 ---
 title: git-hash-object
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

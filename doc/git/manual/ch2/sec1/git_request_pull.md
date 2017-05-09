@@ -1,6 +1,6 @@
 ---
 title: git-request-pull
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

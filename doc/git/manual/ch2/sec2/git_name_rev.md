@@ -1,6 +1,6 @@
 ---
 title: git-name-rev
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

@@ -1,6 +1,6 @@
 ---
 title: git-diff-tree
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

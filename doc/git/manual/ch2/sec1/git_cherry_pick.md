@@ -1,6 +1,6 @@
 ---
 title: git-cherry-pick
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true

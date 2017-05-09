@@ -1,6 +1,6 @@
 ---
 title: git-am
-layout: documentation
+layout: doc
 categories: [documentation]
 tags: [git]
 draft: true
