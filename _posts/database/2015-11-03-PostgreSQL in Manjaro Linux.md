@@ -28,6 +28,10 @@ related:
 
 First, I'm using a Manjaro Linux, an Arch-based Linux distro, where I wanted to run a [PostgreSQL](http://www.postgresql.org/) 9.4.5 local database for development.
 
+1. Database Server Setup
+2. PostgreSQL Version
+3. Connecting to the Database
+
 ## Database Server Setup
 
 ##### User &nbsp;`postgres`
@@ -103,6 +107,24 @@ The corresponding command to stop a running database server is
 
 ~~~
 $ sudo systemctl stop postgresql
+~~~
+
+##### Check Status of PostgreSQL Server
+
+PostgreSQL has a [utility](https://www.postgresql.org/docs/9.3/static/app-pg-isready.html) that checks the connection status of a PostgreSQL server.
+
+When the server has not been started the utility will have the following output.
+
+~~~
+$ pg_isready 
+/run/postgresql:5432 - no response
+~~~
+
+Otherwise,
+
+~~~
+$ pg_isready
+/run/postgresql:5432 - accepting connections
 ~~~
 
 ## PostgreSQL Version
