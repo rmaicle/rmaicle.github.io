@@ -52,22 +52,6 @@ div.syntax {
 
             table {
                 @include set_margin_v(8px, 4px);
-                /*
-                border: 1px solid $color_table_border + 5;
-                th {
-                    @include set_font($font_table_heading, $font_size_table_heading, $color_text);
-                    line-height: $font_size_table_heading + 3;
-                    border: 1px solid $color_table_border + 5;
-                    padding: 5px 6px;
-                    background: $color_table_th_bg + 5;
-                }
-                td {
-                    @include set_font($font_table_data, $font_size_table_data, $color_text);
-                    line-height: $font_size_table_data + 3;
-                    border: 1px solid $color_table_border + 5;
-                    padding: 3px 6px 3px 6px;
-                }
-                */
             }
         }
         

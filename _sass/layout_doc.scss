@@ -11,12 +11,6 @@ section.doc_column_main {
     // Add vertical spacing after the bread crumbs
     h1.title {
         margin-top: 10px;
-        & > p,
-        & > p code,
-        & > p & code.highlighter-rouge {
-            font-weight: bold;
-            color: $color_page_title;
-        }
     }
  
     h5.bread_crumb,
@@ -58,16 +52,18 @@ section.doc_column_main {
         margin: 12px 0 12px 0;
     }
     
-    p, li, dl, dt, dd, & > a {
+    & > p,
+    li,
+    li > p,
+    dd,
+    dd > p,
+    a {
         @include use_font($font_page_text, $font_size_page_text, $font_weight_normal_page_text, $font_weight_bold_page_text);
         @include use_code_font($font_size_code_in_text, $font_weight_code_in_text);
         @include use_code_color($color_code_span);
     }
-    // Override post title with code
-    // Override dt where it is code only
-    h1 > p,
     dt {
-        @include code_font_no_style;
+        @include use_code_font($font_size_code_in_text, bold, 0);
     }
     
     sup > a.footnote {

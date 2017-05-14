@@ -25,7 +25,7 @@ figure.highlight {
     text-shadow: none;
 }
 
-/* Make line numbers unselectable: excludes line numbers from copy-paste user ops */
+// Make line numbers unselectable: excludes line numbers from copy-paste user ops
 .highlight .lineno {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -33,10 +33,10 @@ figure.highlight {
 }
 .lineno::-moz-selection {
     background-color: transparent;
-} /* Mozilla specific */
+} // Mozilla specific
 .lineno::selection {
     background-color: transparent;
-} /* Other major browsers */
+} // Other major browsers
 
 pre {
     font-family: $font_code;

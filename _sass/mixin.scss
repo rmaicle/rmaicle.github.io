@@ -21,32 +21,12 @@
     word-spacing: $font_word_spacing_default;
 }
 
-@mixin code_font_no_style() {
-    & > code,
-    & > code.highlighter-rouge,
-    & > em > code,
-    & > em > code.highlighter-rouge,
-    & > a > code,
-    & > a > code.highlighter-rouge {
-        background: none;
-        padding: 0 0 0 0;
-        margin-left: 0;
-        margin-right: 0;
-        border: none;
-    }
-}
-
 @mixin use_code_font($size: $font_size_default, $weight: normal, $style: 1) {
-    @include code_font_no_style;
     // Inline source codes are wrapped within code.highlighter-rouge class.
     // Also, there is an instance that a source code text is wrapped within
     // a link.
     & > code,
-    & > code.highlighter-rouge,
-    & > em > code,
-    & > em > code.highlighter-rouge,
-    & > a > code,
-    & > a > code.highlighter-rouge {
+    & > code.highlighter-rouge {
         font-family: $font_code;
         font-size: $size;
         font-weight: $weight;
@@ -58,7 +38,13 @@
         hyphens:         none;
         white-space: wrap;
         overflow-wrap: normal;
-        @if $style > 0 {
+        @if $style == 0 {
+            background: none;
+            padding: 1px 0 2px 0;
+            margin-left: 0;
+            margin-right: 0;
+            border: none;
+        } @else if $style > 0 {
             background: $color_code_span_bg;
             padding: 3px 5px 2px 4px;
             margin-left: 1px;
@@ -72,10 +58,6 @@
         @media print {
             font-size: $size;
         }
-    }
-    & > em > code,
-    & > em > code.highlighter-rouge {
-        font-style: italic;
     }
 }
 
@@ -143,7 +125,7 @@
     h5 { font-size: $font_size_page_title - 7; line-height: $font_line_height_page_title - 7; }
     h6 { font-size: $font_size_page_title - 8; line-height: $font_line_height_page_title - 8; }
 
-    h1 > p code.highlighter-rouge,
+    h1 > p > code.highlighter-rouge,
     h1 code.highlighter-rouge,
     h2 code.highlighter-rouge,
     h3 code.highlighter-rouge,
@@ -154,7 +136,7 @@
         font-weight: bold;
     }
     
-    h1 > p code.highlighter-rouge,
+    h1 > p > code.highlighter-rouge,
     h1 code.highlighter-rouge { font-size: $font_size_page_title + 2; }
     h2 code.highlighter-rouge { font-size: $font_size_page_title - 3; }
     h3 code.highlighter-rouge { font-size: $font_size_page_title - 4; }
@@ -173,7 +155,7 @@
         h5 { font-size: $page_title_size - 5; line-height: $page_title_line_height - 5; }
         h6 { font-size: $page_title_size - 6; line-height: $page_title_line_height - 6; }
 
-        h1 > p code.highlighter-rouge,
+        h1 > p > code.highlighter-rouge,
         h1 code.highlighter-rouge { font-size: $page_title_size - 0; }
         h2 code.highlighter-rouge { font-size: $page_title_size - 2; }
         h3 code.highlighter-rouge { font-size: $page_title_size - 4; }
@@ -386,11 +368,11 @@
 }
 
 @mixin wrap {
-    white-space: pre-wrap; /* css-3 */
-    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    white-space: pre-wrap;      // css-3
+    white-space: -moz-pre-wrap; // Mozilla, since 1999
+    white-space: -pre-wrap;     // Opera 4-6
+    white-space: -o-pre-wrap;   // Opera 7
+    word-wrap: break-word;      // Internet Explorer 5.5+
 }
 
 @mixin print_copyright {
@@ -418,14 +400,14 @@
             clear: left;
             float: left;
             min-width: $term_width;
-            /* adjust the width; make sure the total of both is 100% */
+            // adjust the width; make sure the total of both is 100%
             padding: 0;
             margin: 0;
         }
         dd {
             float: left;
             width: calc(100% - #{$term_width});
-            /* adjust the width; make sure the total of both is 100% */
+            // adjust the width; make sure the total of both is 100%
             padding: 0;
             margin: 0;
             //hyphens: none;
@@ -433,13 +415,13 @@
             overflow-wrap: normal;
         }
         
-        dt {
-            @include use_code_font($font_size_code_in_text);
-        }
+        dt,
+        dt > a {
+            @include use_code_font($font_size_code_in_text, normal, 0);
+         }
         dt > a,
         dd > a {
             border-bottom: none;
-            &:hover,
             &:hover > code,
             &:hover > code.highlighter-rouge {
                 color: $color_primary;
