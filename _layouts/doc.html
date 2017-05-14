@@ -11,7 +11,7 @@ soft linked in that directory with the name 'documentation.html'
 relative to this directory.
 
 In the _layouts directory:
-    ln -s ../docs/_documentation.html documentation.html
+    ln -s ../documentations/_group_index.html documentation.html
 {% endcomment %}
 
 
@@ -20,7 +20,7 @@ In the _layouts directory:
 
 {% capture empty %}
 
-{% assign home_link = site.data.index_docs.groups[group_index].link %}
+{% assign home_link = site.data.index_docs.groups[group_index].subgroups[subgroup_index].link %}
 {% assign path_url = page.url | replace: site.baseurl, '' | remove_first: '/' | split: '/' %}
 
 {% assign chapter_no = 1000 %}
@@ -30,37 +30,37 @@ In the _layouts directory:
 {% assign paragraph_no = 1000 %}
 {% assign subparagraph_no = 1000 %}
 
-{% if path_url.size == 3 %}
+{% if path_url.size == 4 and path_url[3] != 'index' %}
     {% assign chapter_no = path_url[2] | replace: 'chapter_', '' | minus: 1 %}
-{% elsif path_url.size > 3 %}
+{% elsif path_url.size > 4 and path_url[3] != 'index' %}
     {% assign chapter_no = path_url[2] | replace: 'ch', '' | minus: 1 %}
 {% endif %}
 
-{% if path_url.size == 4 %}
+{% if path_url.size == 5 %}
     {% assign section_no = path_url[3] | replace: 'section_', '' | minus: 1 %}
-{% elsif path_url.size > 4 %}
+{% elsif path_url.size > 5 %}
     {% assign section_no = path_url[3] | replace: 'sec', '' | minus: 1 %}
 {% endif %}
 
-{% if path_url.size == 5 %}
+{% if path_url.size == 6 %}
     {% assign subsection_no = path_url[4] | replace: 'subsection_', '' | minus: 1 %}
-{% elsif path_url.size > 5 %}
+{% elsif path_url.size > 6 %}
     {% assign subsection_no = path_url[4] | replace: 'subsec', '' | minus: 1 %}
 {% endif %}
 
-{% if path_url.size == 6 %}
+{% if path_url.size == 7 %}
     {% assign subsubsection_no = path_url[5] | replace: 'subsubsection_', '' | minus: 1 %}
-{% elsif path_url.size > 6 %}
+{% elsif path_url.size > 7 %}
     {% assign subsubsection_no = path_url[5] | replace: 'subsubsec', '' | minus: 1 %}
 {% endif %}
 
-{% if path_url.size == 7 %}
+{% if path_url.size == 8 %}
     {% assign paragraph_no = path_url[6] | replace: 'paragraph_', '' | minus: 1 %}
-{% elsif path_url.size > 7 %}
+{% elsif path_url.size > 8 %}
     {% assign paragraph_no = path_url[6] | replace: 'para', '' | minus: 1 %}
 {% endif %}
 
-{% if path_url.size == 8 %}
+{% if path_url.size == 9 %}
     {% assign subparagraph_no = path_url[7] | replace: 'subparagraph_', '' | minus: 1 %}
 {% endif %}
 
@@ -78,53 +78,53 @@ In the _layouts directory:
 {% assign paragraph_link = '' %}
 {% assign subparagraph_link = '' %}
 
-{% assign chapter = site.data.index_docs.groups[group_index].chapters[chapter_no].chapter %}
-{% assign chapter_link = site.data.index_docs.groups[group_index].chapters[chapter_no].link %}
+{% assign chapter = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].chapter %}
+{% assign chapter_link = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].link %}
 {% if section_no < 1000 %}
-    {% assign section = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].section %}
-    {% assign section_link = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].link %}
+    {% assign section = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].section %}
+    {% assign section_link = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].link %}
 {% endif %}
 {% if subsection_no < 1000 %}
-    {% assign subsection = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsection %}
-    {% assign subsection_link = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].link %}
+    {% assign subsection = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsection %}
+    {% assign subsection_link = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].link %}
 {% endif %}
 {% if subsubsection_no < 1000 %}
-    {% assign subsubsection = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].subsubsection %}
-    {% assign subsubsection_link = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].link %}
+    {% assign subsubsection = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].subsubsection %}
+    {% assign subsubsection_link = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].link %}
 {% endif %}
 {% if paragraph_no < 1000 %}
-    {% assign paragraph = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].paragraph %}
-    {% assign paragraph_link = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].link %}
+    {% assign paragraph = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].paragraph %}
+    {% assign paragraph_link = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].link %}
 {% endif %}
 {% if subparagraph_no < 1000 %}
-    {% assign subparagraph = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].subparagraphs[subparagraph_no].subparagraph %}
-    {% assign subparagraph_link = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].subparagraphs[subparagraph_no].link %}
+    {% assign subparagraph = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].subparagraphs[subparagraph_no].subparagraph %}
+    {% assign subparagraph_link = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].subparagraphs[subparagraph_no].link %}
 {% endif %}
 
 {% assign doc_title = '' %}
 
-{% if path_url.size == 3 %}
-    {% assign doc_title = site.data.index_docs.groups[group_index].chapters[chapter_no].chapter %}
-{% endif %}
-
-{% if path_url.size == 4 %}
-    {% assign doc_title = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].section %}
+{% if path_url.size == 4 and path_url[3] != 'index' %}
+    {% assign doc_title = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].chapter %}
 {% endif %}
 
 {% if path_url.size == 5 %}
-    {% assign doc_title = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsection %}
+    {% assign doc_title = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].section %}
 {% endif %}
 
 {% if path_url.size == 6 %}
-    {% assign doc_title = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].subsubsection %}
+    {% assign doc_title = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsection %}
 {% endif %}
 
 {% if path_url.size == 7 %}
-    {% assign doc_title = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].paragraph %}
+    {% assign doc_title = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].subsubsection %}
 {% endif %}
 
 {% if path_url.size == 8 %}
-    {% assign doc_title = site.data.index_docs.groups[group_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].subparagraphs[subparagraph_no].subparagraph %}
+    {% assign doc_title = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].paragraph %}
+{% endif %}
+
+{% if path_url.size == 9 %}
+    {% assign doc_title = site.data.index_docs.groups[group_index].subgroups[subgroup_index].chapters[chapter_no].sections[section_no].subsections[subsection_no].subsubsections[subsubsection_no].paragraphs[paragraph_no].subparagraphs[subparagraph_no].subparagraph %}
 {% endif %}
 
 {% endcapture %}{% assign empty = nil %}
@@ -134,40 +134,48 @@ In the _layouts directory:
 {% include doc_left_sidebar.html %}
 
 <section class="doc_column_main">
-    {% if is_found == false %}
-        <p>Group not found: {{ page.group }}</p>
+    {% if page.debug %}
+    <p>Group:    {{ page.group }} - {{ group_index }}</p>
+    <p>Subgroup: {{ page.subgroup }} - {{ subgroup_index }}</p>
     {% endif %}
-    <h5 class="bread_crumb padding_top_none margin_bottom_none"><a href="{{ site.data.index_docs.groups[group_index].link }}">{{ site.data.index_docs.groups[group_index].title }}</a></h5>
-    <h6 class="bread_crumb padding_top_none margin_bottom_none">
-        <a href="{{ home_link }}">Home</a>
-        {% if path_url.size > 3 %}
+    {% if page.subgroup != null %}
+        <h5 class="bread_crumb padding_top_none margin_bottom_none">
+            <a href="{{ site.data.index_docs.groups[group_index].link }}">{{ site.data.index_docs.groups[group_index].title }}</a>
             <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
-            <a href="{{ chapter_link }}">{{ chapter }}</a>
-            {% if path_url.size > 4 %}
+            <a href="{{ site.data.index_docs.groups[group_index].subgroups[subgroup_index].link }}">{{ site.data.index_docs.groups[group_index].subgroups[subgroup_index].title }}</a>
+        </h5>
+        <h6 class="bread_crumb padding_top_none margin_bottom_none">
+            <a href="{{ home_link }}">Home</a>
+            {% if path_url.size > 4 and path_url[3] != 'index' %}
                 <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
-                <a href="{{ section_link }}">{{ section }}</a>
+                <a href="{{ chapter_link }}">{{ chapter }}</a>
                 {% if path_url.size > 5 %}
                     <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
-                    <a href="{{ subsection_link }}">{{ subsection }}</a>
+                    <a href="{{ section_link }}">{{ section }}</a>
                     {% if path_url.size > 6 %}
                         <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
-                        <a href="{{ subsubsection_link }}">{{ subsubsection }}</a>
+                        <a href="{{ subsection_link }}">{{ subsection }}</a>
                         {% if path_url.size > 7 %}
                             <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
-                            <a href="{{ paragraph_link }}">{{ paragraph }}</a>
+                            <a href="{{ subsubsection_link }}">{{ subsubsection }}</a>
+                            {% if path_url.size > 8 %}
+                                <span class="color_highlight">&nbsp;&bull;&nbsp;</span>
+                                <a href="{{ paragraph_link }}">{{ paragraph }}</a>
+                            {% endif %}
                         {% endif %}
                     {% endif %}
                 {% endif %}
             {% endif %}
-        {% endif %}
-    </h6>
+        </h6>
+    {% endif %}
     {% assign title = page.title | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
     <h1 class="title">{{ title }}{% if page.draft == true %}<span>(draft)</span>{% endif %}</h1>
-    {% if site.debug %}
+    {% if page.debug %}
         {% if page.title != doc_title %}
     <p>Title Mismatch</p>
     <p>Page Title:          {{ title }}.</p>
     <p>Documentation Title: {{ doc_title }}.</p>
+    <p>Path URL: {{ path_url | join: '/' }}</p>
         {% endif %}
     {% endif %}
     

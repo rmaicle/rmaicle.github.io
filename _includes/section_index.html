@@ -23,7 +23,13 @@ Example:
         <div class="block block_default_fonts">
             <div class="entries">
                 {% for post in posts limit: include.limit %}
-                    {% assign title = post.title | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
+                    {% if post.draft %}
+                    {% assign title = post.title | append: ' (draft)' %}
+                    {% else %}
+                    {% assign title = post.title %}
+                    {% endif %}
+                    
+                    {% assign title = title | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
                 <div class="index_entry">
                     <a href="{{ post.url }}" class="no_underline">
                         <span class="date">{{ post.date | date: site.data.format.short_date }}</span>&nbsp;&nbsp;-&nbsp;

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Convert asciidoc to markdown
 # https://tinyapps.org/blog/nix/201701240700_convert_asciidoc_to_markdown.html
 # 1. Convert asciidoc to docbook. The output file will be `foo.xml`.
@@ -9,14 +11,21 @@
 # * Pandoc inserted hard line breaks at 80 characters. Removed like so:
 #     $ iconv -t utf-8 foo.xml | pandoc -f docbook -t markdown_strict --wrap=none | iconv -f utf-8 > foo.md
 
-if [ #@ -eq 0 ]; then
+if [ $# -eq 0 ]; then
     echo "No file argument specified. Aborting."
+    exit
+fi
+
+if [ $# -lt 3 ]; then
+    echo "Missing arguments: group and subgroup"
     exit
 fi
 
 title="$1"
 filename="$1.md"
 filename="${filename//-/_}"
+group="$2"
+subgroup="$3"
 
 asciidoc -b docbook -o tmp.xml "$1".txt
 
@@ -63,7 +72,8 @@ echo "tags: [git]" >> x.md
 echo "draft: true" >> x.md
 echo "published: true" >> x.md
 echo "permalink: $directory" >> x.md
-echo "group: git" >> x.md
+echo "group: $group" >> x.md
+echo "subgroup: $subgroup" >> x.md
 echo "---" >> x.md
 echo "" >> x.md
 

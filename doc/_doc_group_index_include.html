@@ -1,6 +1,6 @@
 {% comment %}
-Acquire the documentation group index based on the
-current page yaml key 'group'
+Acquire the documentation group and subgroup indices based on the
+current page yaml key 'group' and 'subgroup'
 
 This file must be in the '_include' directory or relatively
 soft linked in that directory with the name 'group_index.html'
@@ -12,14 +12,26 @@ In the _include directory:
 
 {% capture empty %}
 
-{% assign is_found = false %}
+
 {% assign group_index = 0 %}
+{% assign subgroup_index = 0 %}
+
 {% assign counter = 0 %}
+{% assign subcounter = 0 %}
+
 {% for item in site.data.documentation.groups %}
     {% if item.group == page.group %}
-        {% assign is_found = true %}
         {% assign group_index = counter %}
+        
+        {% for item in site.data.documentation.groups[group_index].subgroups %}
+            {% if item.subgroup == page.subgroup %}
+                {% assign subgroup_index = subcounter %}
+            {% endif%}
+            {% assign subcounter = subcounter | plus: 1 %}
+        {% endfor %}
+        
         {% break %}
+        
     {% endif%}
     {% assign counter = counter | plus: 1 %}
 {% endfor %}

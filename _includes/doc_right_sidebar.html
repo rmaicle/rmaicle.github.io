@@ -1,7 +1,11 @@
+{% if page.subgroup != null %}
 {% capture empty %}
 {% include doc_group_index.html %}
 
-{% assign doc_title = site.data.index_docs.groups[group_index].title %}
+{% assign doc_title = site.data.index_docs.groups[group_index].title  %}
+{% assign doc_title = doc_title | append: '&nbsp;&bull;&nbsp;' %}
+{% assign doc_title = doc_title | append: site.data.index_docs.groups[group_index].subgroups[subgroup_index].title %}
+
 {% endcapture %}{% assign empty = nil %}
 
 <section class="column_right_sidebar">
@@ -12,7 +16,7 @@
                 <div class="entries">
                     <div class="entry">
                         <ol>
-                        {% include doc_toc_links.html doc_index = group_index %}
+                        {% include doc_toc_links.html doc_index = group_index doc_sub_index = subgroup_index %}
                         </ol>
                     </div>
                 </div>
@@ -20,3 +24,4 @@
         </div>
     </div>
 </section>
+{% endif %}

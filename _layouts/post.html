@@ -6,7 +6,11 @@ layout: default
 
 <section class="doc_column_main">
 
-    <h1>{{ page.title | markdownify }}</h1>
+    {% if page.draft %}
+    <h1 class="title">{{ page.title | append: ' (draft)' | markdownify }}</h1>
+    {% else %}
+    <h1 class="title">{{ page.title | markdownify }}</h1>
+    {% endif %}
     
     <!-- Meta information -->
     <!---------------------->
