@@ -14,6 +14,42 @@ groups:
       - subgroup: manual
         title: Manual
         link: /doc/git-2.13.0/manual/index
+        chapters:
+          - chapter: Commands
+            link:    /doc/git-2.13.0/manual/chapter_1
+            sections:
+              - section: High-Level Commands (Porcelain)
+                link:    /doc/git-2.13.0/manual/ch1/section_1
+                subsections:
+                  - subsection: Main Commands
+                    link:       /doc/git-2.13.0/manual/ch1/sec1/subsection_1
+                  - subsection: Ancillary Commands
+                    link:       /doc/git-2.13.0/manual/ch1/sec1/subsection_2
+                  - subsection: Interacting with Others
+                    link:       /doc/git-2.13.0/manual/ch1/sec1/subsection_3
+              - section: Low-Level Commands (Plumbing)
+                link:    /doc/git-2.13.0/manual/ch1/section_2
+                subsections:
+                  - subsection: Manipulation Commands
+                    link:       /doc/git-2.13.0/manual/ch1/sec2/subsection_1
+                  - subsection: Interrogation Commands
+                    link:       /doc/git-2.13.0/manual/ch1/sec2/subsection_2
+                  - subsection: Synching Repositories
+                    link:       /doc/git-2.13.0/manual/ch1/sec2/subsection_3
+                  - subsection: Internal Helper Commands
+                    link:       /doc/git-2.13.0/manual/ch1/sec2/subsection_4
+          - chapter: Configuration Mechanism
+            link:    /doc/git-2.13.0/manual/chapter_2
+          - chapter: Identifier Terminology
+            link:    /doc/git-2.13.0/manual/chapter_3
+          - chapter: Symbolic Identifiers
+            link:    /doc/git-2.13.0/manual/chapter_4
+          - chapter: File/Directory Structure
+            link:    /doc/git-2.13.0/manual/chapter_5
+          - chapter: Terminology
+            link:    /doc/git-2.13.0/manual/chapter_6
+          - chapter: Environment Variables
+            link:    /doc/git-2.13.0/manual/chapter_7
   - group: git-2.12.2
     group_no: 2
     title: Git 2.12.2
