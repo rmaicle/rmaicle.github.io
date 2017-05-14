@@ -24,6 +24,11 @@
         "index":        "yes"
     },
     {
+        "title":        "Git",
+        "url":          "/post/git/",
+        "index":        "yes"
+    },
+    {
         "title":        "Database",
         "url":          "/post/database/",
         "index":        "yes"

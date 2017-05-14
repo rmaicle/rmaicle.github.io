@@ -67,6 +67,8 @@ footer_one:
     url:  /posts/cpp/
   - name: D Language
     url:  /posts/d_language/
+  - name: Git
+    url:  /posts/git/
   - name: Database
     url:  /posts/database/
   - name: Linux
