@@ -1,0 +1,1 @@
+date -u --date="$current" +'%Y-%m-%dT%H:%M:%S%Z'
