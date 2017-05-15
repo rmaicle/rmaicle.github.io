@@ -5,6 +5,7 @@ excerpt: A custom terminal prompt in Linux for more highlight and information sp
 layout: post
 categories: [post, linux]
 tags: [terminal, git]
+draft: true
 published: true
 permalink: /posts/aB5XPo3nevy2wjV
 thumbnail:
@@ -23,7 +24,7 @@ videos:
 sources:
   - label: My Extravagant Zsh Prompt (Steve Losh)
     link:  http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
-  - label: article title (source)
+  - label: gitstuff/gitprompt.sh (jcgoble3)
     link:  https://github.com/jcgoble3/gitstuff/blob/master/gitprompt.sh
 related:
 ---
@@ -40,22 +41,19 @@ The prompt is divided into sections as the user/system, current directory and th
 
 The Bash escape sequence `\u` is expanded into the currently logged user and `\h` into hostname. 
 If a user `joe` is currently logged in the system at some host named `server` then `\u.\h` would be expanded as `joe.server`.
-Make the foreground color black and the background green `\e[30;42m`.
-We use the special character at the end but we have to invert the colors like `\e[32;49m\uE0B0`.
 
 ###### Current Directory
 
 ###### `git` Repository Info
 
+A smart mark at the end of the prompt:
 
-a smart mark at the end of the prompt:
-± for Git,
-☿ for Mercurial,
-‡ for Subversion,
-‡± for Git-Subversion,
-⌘ for Fossil,
-$ or % for a simple user, in red if you have sudo rights,
-a red # for the root user.
+* `±` for Git,
+* `☿` for Mercurial,
+* `‡` for Subversion,
+* `‡±` for Git-Subversion,
+* `⌘` for Fossil,
+* `$` or `%` for a simple user, in red if you have sudo rights, a red `#` for the root user.
 
 ~~~
 PS1='\e[30;42m \u.\h '$'\e[0;32m\uE0B0'$'\e[30;47m\uE0B0'$'\e[2;30;47m \w '$'\e[00;37m\uE0B0'$'$(git_prompt)'$'\n\e[00;32m\$\e[0m '
@@ -67,8 +65,12 @@ The following code has been scavenged from around the web and may or may not be 
 
 ## Colors
 
+Make the foreground color black and the background green `\e[30;42m`.
+We use the special character at the end but we have to invert the colors like `\e[32;49m\uE0B0`.
+
 ## Scripts
 
+~~~
 repo_type() {
     # http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
     git branch >/dev/null 2>/dev/null && echo '±' && return
@@ -124,5 +126,6 @@ git_prompt() {
 }
 
 PS1='\e[30;42m \u@\h '$'\e[0;32m\uE0B0'$'\e[30;47m\uE0B0'$'\e[2;30;47m \w '$'\e[00;37m\uE0B0'$'$(git_prompt)'$'\n\e[00;32m\$\e[0m '
+~~~
 
 &#x25cf;

@@ -93,7 +93,7 @@ struct ReturnValue {
     T value;
 };
 
-#define return_if(C, R)                  \
+#define return_if(C, R)                                \
     if (!!(C)) {                                        \
         namespace nuri = ::negerns::util::returnif;     \
         auto rv = nuri::ReturnValue<decltype(R)>(R);    \
