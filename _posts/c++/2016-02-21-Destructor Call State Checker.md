@@ -1,5 +1,5 @@
 ---
-title: Destructor Call State Checker
+title: Call State Checker
 date: 2016-02-21T21:02:13UTC
 excerpt: A state observer for querying simple function call execution state to help in debugging.
 layout: post
@@ -26,14 +26,10 @@ sources:
 related:
 ---
 
-I just came across a situation that I needed to test whether a class destructor was called or not.
-I came up with the following solution.
-Others may find the solution unnecessary because C++, since the 2011 standard, already have smart pointers.
-But in my scenario, the class is not instantiated in the heap.
+I came across a situation where I needed to test whether a member function was called.
 
-The idea is to use a _flag_.
-The flag is initially unset and the class destructor sets it.
-The test program must then have access to that flag to verify its state.
+I used a _flag_ which is initially unset which a concerned function sets.
+The test program must then have access to that flag to verify the state.
 
 {% highlight cpp linenos %}
 class Flag {
@@ -60,7 +56,7 @@ public:
 The `Flag` class holds the actual state, initially set to `false`, meaning our destructor is not yet called.
 The `CallFlag` class is a convenience class.
 
-The following code shows how it is used.
+The following code shows how it was used.
 
 {% highlight cpp linenos %}
 {%raw%}#{%endraw%}include <iostream>
@@ -76,10 +72,9 @@ int main()
     {
         A a;
         a.dtorFlag.set_ref(&flag);
-      	std::cout << std::boolalpha;
-        std::cout << flag.is_set() << std::endl;        // false
+        std::cout << std::boolalpha << flag.is_set() << std::endl;        // false
     }
-    std::cout << flag.is_set() << std::endl;            // true
+    std::cout << std::boolalpha << flag.is_set() << std::endl;            // true
 }
 {% endhighlight %}
 
@@ -87,8 +82,3 @@ int main()
 
 The above solution can be simplified using `boost::logic::tribool`.
 Which means the `Flag` class is no longer necessary.
-
-##### Afterthought
-
-
-Aside from destructors, this could also be used to with other functions as necessary.

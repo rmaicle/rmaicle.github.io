@@ -120,7 +120,7 @@ int is_odd(int n) {                         int is_odd(int n) {
 }                                           }
 {% endhighlight %}
 
-##### Thoughts
+##### Afterthoughts
 
 After looking at the code, there doesn't seem to be much to gain from a `return_if` construct.
 Except maybe from it's kind of easier to grasp the intent of the code.

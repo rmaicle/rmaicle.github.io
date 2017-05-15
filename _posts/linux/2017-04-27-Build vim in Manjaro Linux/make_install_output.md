@@ -505,3 +505,5 @@ cp gvimtutor /usr/bin/gvimtutor
 chmod 755 /usr/bin/gvimtutor
 make[1]: Leaving directory '/mnt/work/projects/_github/vim-compile/src'
 </pre>
+
+Back to [post](/posts/NgVX8g15ZMd29wZ/index)

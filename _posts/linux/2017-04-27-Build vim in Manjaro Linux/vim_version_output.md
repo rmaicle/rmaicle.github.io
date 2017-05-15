@@ -61,3 +61,5 @@ Linking: gcc -L. -Wl,-O1,--sort-common,--as-needed,-z,relro -fstack-protector -r
 -L/usr/local/lib -L/usr/lib/perl5/core_perl/CORE -lperl -lpthread -lnsl -ldl -lm -lcrypt
 -lutil -lc -L/usr/lib -ltclstub8.6 -ldl -lz -lpthread -lieee -lm
 </pre>
+
+Back to [post](/posts/NgVX8g15ZMd29wZ/index)

@@ -187,3 +187,5 @@ make[2]: Nothing to be done for 'converted'.
 make[2]: Leaving directory '/mnt/work/projects/_github/vim-compile/src/po'
 make[1]: Leaving directory '/mnt/work/projects/_github/vim-compile/src'
 </pre>
+
+Back to [post](/posts/NgVX8g15ZMd29wZ/index)
