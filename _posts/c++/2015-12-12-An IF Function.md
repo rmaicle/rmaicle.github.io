@@ -1,7 +1,10 @@
 ---
-title: An `if` Function
-date: 2017-04-15T13:45:13UTC
-excerpt: A fancy musing on a famous conditional statement present in almost every programming language and feeding my curiosity with a simple implementation of an `if` function in C++.
+title: An `if` Expression
+excerpt: A fancy musing on a famous conditional statement present in almost every programming language and feeding my curiosity with a simple implementation of an `if` expression in C++.
+date: 2015-12-12T13:45:13UTC
+updates:
+  - date: 2017-05-15T13:45:13UTC
+    message: Edits and corrections
 layout: post
 categories: [post, c++]
 tags: [thoughts]
@@ -27,9 +30,8 @@ related:
 ---
 
 A common use case for an `if` statement is to assign a value to a variable depending on a condition.
-The following is a simple example for the use case.
 
-{% highlight cpp linenos %}
+{% highlight cpp %}
 int a = 0;
 if (some_condition) {
     a = 1;
@@ -38,9 +40,9 @@ if (some_condition) {
 }
 {% endhighlight %}
 
-An `if` function will do the same thing but returning a value based on a condition.
+The following `if` expression will perform the same operation by returning a value based on a condition.
 
-{% highlight cpp linenos %}
+{% highlight cpp %}
 int a = if (some_condition) {
     return 1;
 } else {
@@ -48,10 +50,16 @@ int a = if (some_condition) {
 }
 {% endhighlight %}
 
-Yes, a ternary operator can do this but the difference is that the body of the `if` function could have multiple statements.
-With C++11, the same could be achieved using a `lambda`.
+The code above is a perfect scenario for the use of the `ternary operator`.
 
-{% highlight cpp linenos %}
+{% highlight cpp %}
+int a = ? (some_condition) : 1 : 2;
+{% endhighlight %}
+
+Using the `ternary operator` with multiple statements could make the syntax a bit messy.
+With C++11, the goal could be achieved using a `lambda` but with a bit of clutter too.
+
+{% highlight cpp %}
 int a = [=] {
     if (some_condition) {
         return 1;
@@ -61,15 +69,11 @@ int a = [=] {
 }();
 {% endhighlight %}
 
-One obvious difference is the syntax, of course.
-To unclutter it would require the use of the preprocessor macros so we can hide some syntax and make it look simpler.
-And everyone knows the problems associated with preprocessor macros.
-
 ## Using the Preprocessor
 
 If we dare to, we can take the previous code and apply the use of preprocessor macro.
 
-{% highlight cpp linenos %}
+{% highlight cpp %}
 int a = [=] { if (some_condition) {         int a = IFF (some_condition) {
         return 1;                               return 1;
     } else {                                } else {
@@ -78,64 +82,51 @@ int a = [=] { if (some_condition) {         int a = IFF (some_condition) {
 }();                                        END_IFF
 {% endhighlight %}
 
-And here is the preprocessor macro definitions as shown above.
-It is possible to include the curly brackets into the preprocessor macros but the code wouldn't look like normal C/C++ code.
+Here is the preprocessor macro definitions used above.
 
-{% highlight cpp linenos %}
+{% highlight cpp %}
 #define IFF(C)      [=] { if (!!(C))
 #efine END_IFF      }();
 {% endhighlight %}
 
 ### Variation One
 
-One possible variation is when the `else` block needs not be specified.
-There must be a way to specify that the function should return 2 if the condition is evaluated to `false`.
-But it will be awkward to write and confusing to read because of familiarity with the `if` statement.
-An `if` statement executes the following block if a condition is `true` and otherwise executes the `else` block if one is specified.
-In the code below, it reads, if some condition is true then return 2 else return 1.
-But the else block looks like it will be executed if the condition is true.
+When the return values are already known beforehand but some code needs to be executed depending on the condition.
+The following C++ code shows the scenario.
 
-{% highlight cpp linenos %}
-int a = IFF (some_condition, 2) {       // if some_condition is true then do
-    return 1;                           // this block else return 2.
-} END_IFF
+{% highlight cpp %}
+int a = 0;
+if (some_condition) {
+    a = 1;
+    // ... other code whe condition is true
+} else {
+    a = 2;
+    // ... other code whe condition is false
+}
 {% endhighlight %}
 
-The following code could be a solution:
+The C++ code above may be written as a variation of the `IFF` preprocessor macro.
 
-{% highlight cpp linenos %}
-#define IFF(C)      [=] { if (!!(C))
-#define END_IFF(R)  else { return R; }}();
-
-int a = IFF (some_condition) {          // if some_condition is true then do
-    return 1;                           // this block else return 2.
-} END_IFF (2)
-{% endhighlight %}
-
-### Variation Two
-
-Another variation is when the return values as the above are already known beforehand.
-It could be written as the following:
-
-{% highlight cpp linenos %}
-int a = IFF (some_condition, 1, 2) {    // specify return values
+{% highlight cpp %}
+int a = IFF (some_condition, 1, 2) {
     // code when condition is true
-    // return 1
 } else {
     // code when condition is false
-    // return 2
 } END_IFF
 {% endhighlight %}
 
-Possible preprocessor macro definitions:
+Line 1 tells us that when *some_condition* evaluates to `true`, it will return the first argument.
+Otherwise, the second argument is returned.
 
-{% highlight cpp linenos %}
+An implementation of the preprocessor macros.
+
+{% highlight cpp %}
 #define IFF(C, RT, RF)                      \
 [=] {                                       \
         bool b = !!(C);                     \
         decltype(RT) whenTrue = RT;         \
         decltype(RF) whenFalse = RF;        \
-        if (!!(C))
+        if (b)
 
 #define END_IFF                             \
         return b ? whenTrue : whenFalse;    \
@@ -145,4 +136,5 @@ Possible preprocessor macro definitions:
 ## Afterthoughts
 
 * Someone might misinterpret the `return` statement inside the IFF macro which returns only from the enclosing block.
+* Yes, the `END_IFF` is noise and would most probably at times be left out possibly because, intuitively, the closing curly bracket marks the end of the block.
 * If the lambda is not optimized then performance will suffer specially if it appears in performance critical sections.
