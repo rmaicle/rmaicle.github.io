@@ -50,6 +50,34 @@ groups:
             link:    /doc/git-2.13.0/manual/chapter_6
           - chapter: Environment Variables
             link:    /doc/git-2.13.0/manual/chapter_7
+      - subgroup: user_manual
+        title: User's Manual
+        link: /doc/git-2.13.0/user_manual/index
+        chapters:
+          - chapter: Repositories and Branches
+            link:    /doc/git-2.13.0/user_manual/chapter_1
+          - chapter: Exploring Git History
+            link:    /doc/git-2.13.0/user_manual/chapter_2
+          - chapter: Developing with Git
+            link:    /doc/git-2.13.0/user_manual/chapter_3
+          - chapter: Sharing Development with Others
+            link:    /doc/git-2.13.0/user_manual/chapter_4
+          - chapter: Rewriting History and Maintaining Patch Series
+            link:    /doc/git-2.13.0/user_manual/chapter_5
+          - chapter: Advanced Branch Management
+            link:    /doc/git-2.13.0/user_manual/chapter_6
+          - chapter: Git Concets
+            link:    /doc/git-2.13.0/user_manual/chapter_7
+          - chapter: Submodules
+            link:    /doc/git-2.13.0/user_manual/chapter_8
+          - chapter: Low-Level Git Operations
+            link:    /doc/git-2.13.0/user_manual/chapter_9
+          - chapter: Hacking Git
+            link:    /doc/git-2.13.0/user_manual/chapter_10
+          - chapter: Git Glossaryy
+            link:    /doc/git-2.13.0/user_manual/chapter_11
+          - chapter: Appendix A - Git Quick Reference
+            link:    /doc/git-2.13.0/user_manual/appendix_a
   - group: git-2.12.2
     group_no: 2
     title: Git 2.12.2
