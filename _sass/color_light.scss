@@ -238,6 +238,7 @@ $color_button_hover_border:     $color_primary;
 .highlight .mh  { color: #CD7121; text-shadow: none; }                                          // Literal.Number.Binary 
 .highlight .nc  { color: #445588; text-shadow: none; text-decoration: none }                    // Name.Class 
 .highlight .nf  { color: #030303; font-weight: none;  }                                         // Name.Function 
+.highlight .nv  { color: #007070 }                                                              // Name.Variable -- $ in shell
 
 .highlight .s   { color: #ABAB00; text-shadow: none; }                                          // Literal.String 
 .highlight .se  { color: #DEDE00; text-shadow: none; }                                          // Literal.String.Escape 
@@ -248,4 +249,3 @@ $color_button_hover_border:     $color_primary;
 
 .highlight .go { color: #030303; }                                                              // Generic.Output
 .highlight .gp { color: #555555; }                                                              // Generic.Prompt
-.highlight .nv { color: #40ffff; }                                                              // Name.Variable -- $ in shell
