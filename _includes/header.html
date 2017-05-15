@@ -21,11 +21,11 @@
             <a href="#"><span>≡</span><img src="{{ site.data.links.favicon }}"></a>
             <div class="dropdown_content_wrapper">
                 <div class="dropdown_content">
-                    {% for entry in site.data.links.navigation %}
-                        {% if entry.name == "---" %}
+                    {% for item in site.data.site_sections %}
+                        {% if item.title == "---" %}
                     <hr>
                         {% else %}
-                    <a href="{{ entry.url }}">{{ entry.name }}</a>
+                    <a href="{{ item.url }}">{{ item.title }}</a>
                         {% endif %}
                     {% endfor %}
                 

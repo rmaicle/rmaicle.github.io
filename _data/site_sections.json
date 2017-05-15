@@ -1,72 +1,28 @@
-[
-    {
-        "title":        "Home",
-        "url":          "/",
-        "index":        "no"
-    },
-    {
-        "title":        "All Posts",
-        "url":          "/post/",
-        "index":        "yes"
-    },
-    {
-        "title":        "",
-        "url":          ""
-    },
-    {
-        "title":        "C++",
-        "url":          "/post/cpp/",
-        "index":        "yes"
-    },
-    {
-        "title":        "D Language",
-        "url":          "/post/dlang/",
-        "index":        "yes"
-    },
-    {
-        "title":        "Git",
-        "url":          "/post/git/",
-        "index":        "yes"
-    },
-    {
-        "title":        "Database",
-        "url":          "/post/database/",
-        "index":        "yes"
-    },
-    {
-        "title":        "",
-        "url":          ""
-    },
-    {
-        "title":        "Linux",
-        "url":          "/post/linux/",
-        "index":        "yes"
-    },
-    {
-        "title":        "",
-        "url":          ""
-    },
-    {
-        "title":        "Jekyll",
-        "url":          "/post/jekyll/",
-        "index":        "yes"
-    },
-    {
-        "title":        "",
-        "url":          ""
-    },
-    {
-        "title":        "Others",
-        "url":          "/post/other/",
-        "index":        "yes"
-    },
-    {
-        "title":        "",
-        "url":          ""
-    },
-    {
-        "title":        "Duterte Quotes",
-        "url":          "/info/quote/",
-        "index":        "no"
-    },
-]
+- title: Home
+  url: /
+  index: false
+- title: All Posts
+  url: /posts/index.html
+  index: true
+- title: ---
+- title: C++
+  url: /posts/cpp/
+  index: true
+- title: D Language
+  url: /posts/dlang/
+  index: true
+- title: Git
+  url: /posts/git/
+  index: true
+- title: Database
+  url: /posts/database/
+  index: true
+- title: Linux
+  url: /posts/linux/
+  index: true
+- title: Jekyll
+  url: /posts/jekyll/
+  index: true
+- title: Uncategorized
+  url: /posts/other/
+  index: true

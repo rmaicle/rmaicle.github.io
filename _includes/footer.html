@@ -12,17 +12,18 @@
 
     <div id="footer_column_one">
         <ul>
-            {% for entry in site.data.links.footer_one %}
-                {% if entry.name == "---" %}
+            {% for item in site.data.site_sections %}
+                {% if item.title == "---" %}
             <hr class="thin compact darker">
                 {% else %}
-            <li><h2 class="font_normal_weight margin_none"><a href="{{ entry.url }}" class="no_underline">{{ entry.name }}</a></h2></li>
+            <li><h2 class="font_normal_weight margin_none"><a href="{{ item.url }}" class="no_underline">{{ item.title }}</a></h2></li>
                 {% endif %}
             {% endfor %}
         </ul>
     </div>
 
     <div id="footer_column_two">
+        {% comment %}
         <ul>
             {% for info in site.data.info_sections %}
                 {% if info.title == "" %}
@@ -36,6 +37,7 @@
                 {% endif %}
             {% endfor %}
         </ul>
+        {% endcomment %}
     </div>
 
     <div id="footer_column_three">
