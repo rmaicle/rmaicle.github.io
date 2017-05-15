@@ -72,7 +72,12 @@ function add_default {
     else
         echo "title: $1" >> $filename
     fi
+    echo "excerpt: " >> $filename
     echo "date: $current_iso8601" >> $filename
+    echo "updates:" >> $filename
+    echo "  - date: run currdate.sh" >> $filename
+    echo "    message: Edits and corrections" >> $filename
+    echo "layout: post" >> $filename
 }
 
 function add_empty {
@@ -108,10 +113,9 @@ function create_post {
 
         add_yaml_bar
         add_default "Post Title"
-        echo "excerpt: " >> $filename
-        echo "layout: post" >> $filename
         add_yaml_categories
         echo "tags: []" >> $filename
+        echo "draft: true" >> $filename
         if [ $# -eq 0 ]; then
             echo "published: true" >> $filename
         else
@@ -142,7 +146,7 @@ if [ $# -eq 0 ]; then
 fi
 
 case $1 in
-    -p | --post )       create_post draft
+    -p | --post )       create_post "draft"
                         exit
                         ;;
     -h | --help )       show_usage
