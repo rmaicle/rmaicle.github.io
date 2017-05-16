@@ -46,6 +46,11 @@ groups:
             link:    /doc/git-2.13.0/manual/chapter_4
           - chapter: File/Directory Structure
             link:    /doc/git-2.13.0/manual/chapter_5
+            sections:
+              - section: Git Repository Layout
+                link:    /doc/git-2.13.0/manual/ch5/section_1
+              - section: Git Hooks
+                link:    /doc/git-2.13.0/manual/ch5/section_2
           - chapter: Terminology
             link:    /doc/git-2.13.0/manual/chapter_6
           - chapter: Environment Variables
