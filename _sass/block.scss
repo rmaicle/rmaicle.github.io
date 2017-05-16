@@ -52,7 +52,12 @@ div.block {
             &.list_style_none,
             & > li {
                 padding-left: 0;
-                //margin-bottom: 10px;
+
+            }
+            
+            // Inner
+            ol {
+                padding-left: 20px;
             }
             
             & > li.border_left {
@@ -108,15 +113,16 @@ div.block {
             }
             
             // For date/time
-            p {
+            & > p {
                 margin: 0 !important;
                 padding: 0 !important;
             }
 
             // Used by ToC on the right sidebar
-            ul, ol {
-                padding-left: 22px;
-                li {
+            & > ul,
+            & > ol {
+                padding-left: 20px;
+                & > li {
                     @include set_margin_v;
                     padding-left: 0;
                 }

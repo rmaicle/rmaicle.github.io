@@ -14,11 +14,9 @@
             <div id="doc_toc_block" class="block">
                 <h1>{{ doc_title }}</h1>
                 <div class="entries">
-                    <div class="entry">
-                        <ol>
-                        {% include doc_toc_links.html doc_index = group_index doc_sub_index = subgroup_index %}
-                        </ol>
-                    </div>
+                    <ol>
+                    {% include doc_toc_links.html doc_index = group_index doc_sub_index = subgroup_index %}
+                    </ol>
                 </div>
             </div>
         </div>
