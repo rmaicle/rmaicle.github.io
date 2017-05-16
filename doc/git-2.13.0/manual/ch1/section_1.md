@@ -13,7 +13,7 @@ subgroup: manual
 We separate the porcelain commands into the main commands and some ancillary user utilities.
 
 {% include doc_group_index.html %}
-Sub-Sections
+Subsections
 {:.custom_heading_2}
 
 <p>{{ page.group }}</p>
