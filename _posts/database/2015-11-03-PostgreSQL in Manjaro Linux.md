@@ -1,7 +1,10 @@
 ---
 title: PostgreSQL in Manjaro Linux
-date: 2015-11-03T07:43:53UTC
 excerpt: Setting up a PostgreSQL in Manjaro Linux as development database.
+date: 2015-11-03T07:43:53UTC
+updates:
+  - date: 2017-05-18T19:19:01UTC
+    message: Edits and corrections
 layout: post
 categories: [post, database]
 tags: [postgresql, manjaro, linux]
@@ -136,7 +139,7 @@ One can check the PostgreSQL version from the operating system commandline inter
 
 ###### Server version
 
-{% highlight bash linenos %}
+{% highlight bash %}
 $ pg_config --version
 PostgreSQL 9.5.1
 $ postgres -V
@@ -145,7 +148,7 @@ postgres (PostgreSQL) 9.5.1
 
 ###### Client version
 
-{% highlight bash linenos %}
+{% highlight bash %}
 $ psql --version
 psql (PostgreSQL) 9.5.1
 {% endhighlight %}
@@ -155,7 +158,7 @@ psql (PostgreSQL) 9.5.1
 One can also query the database version from the PostgreSQL commandline client application.
 The database server must be running and one must be connected to it.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 $ psql -d postgres -U postgres -h localhost
 psql (9.5.1)
 Type "help" for help.
@@ -163,7 +166,7 @@ Type "help" for help.
 
 ###### SELECT version()
 
-{% highlight bash session linenos %}
+{% highlight bash session %}
 postgres=# SELECT version();
                                    version                                    
 ------------------------------------------------------------------------------
@@ -173,7 +176,7 @@ postgres=# SELECT version();
 
 ###### `server_version`
 
-{% highlight bash session linenos %}
+{% highlight bash session %}
 postgres=# SHOW server_version;
  server_version 
 ----------------
@@ -183,13 +186,12 @@ postgres=# SHOW server_version;
 
 ###### `server_version_num`
 
-{% highlight bash session linenos %}
+{% highlight bash session %}
 postgres=# SHOW server_version_num;
  server_version_num 
 --------------------
  90501
 (1 row)
-
 {% endhighlight %}
 
 ## Connecting to the Database
@@ -205,29 +207,58 @@ There are four (4) tab pages but focus will be in the Properties tab page.
 The Properties tab page have these information among others that will be useful when connecting to a database:
 
 * Name - name of the server
-* Host
-* Port
+* Host - host to connect to (or localhost)
+* Port - port to connect to (default is 5432)
 * Username
 * Password
 
 Creating a new server automatically creates a default database named `postgres`.
 
-I can connect to the database server using the following command:
+I can connect to the database server from the commandline.
 
 ~~~
 psql -d postgres -U postgres -h localhost
 ~~~
 
-##### Create New User
+Check the current logged in user.
 
-Create new user roles to connect to the database.
-Must be superuser otherwise the following error will result:
+{% highlight bash session %}
+postgres=# select current_user;
+ current_user 
+--------------
+ postgres
+(1 row)
+{% endhighlight %}
+
+Terminate the commandline session by typing `\quit`.
+See [https://www.postgresql.org/docs/9.2/static/app-psql.html](https://www.postgresql.org/docs/9.2/static/app-psql.html) for other `psql` arguments.
+
+##### Server Instrumentation
+
+If prompted to install the server instrumentation, just use the `create extension` command:
+
+~~~
+postgres=# create extension adminpack;
+CREATE EXTENSION
+~~~
+
+The command will install the `adminpack` extensionn that is found in `/usr/share/postgresql/extension`.
+
+##### Create Group Role
+
+Create group and user role.
+Make the user able to connect to the database.
 
 {% highlight bash session linenos %}
-$ psql -d sphere -U role_test -h localhost
-psql: FATAL: remaining connection slots are reserved for non-replication superuser
-      connections
+postgres=# create role sphere_users superuser;
+CREATE ROLE
+postgres=# create role user1 login;
+CREATE ROLE
+postgres=# grant sphere_users to user1;
+GRANT ROLE
 {% endhighlight %}
+
+##### ODBC
     
 I also need to be able to connect to the database via ODBC.
 I'm using unixODBC 2.3.4 which is available in Manjaro Linux.
