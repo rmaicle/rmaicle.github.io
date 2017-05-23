@@ -55,7 +55,7 @@ The last command brought me to `/var/lib/postgres`.
 
 ##### Database Initialization
 
-I need now to initialize the database storage area on disk, also called _database cluster_ in PostgreSQL and _catalog cluster_ in the SQL standard ([PostgreSQL 9.4.5 Documentation §17.2](http://www.postgresql.org/docs/9.4/interactive/creating-cluster.html)).
+The following command initializes the database storage area on disk; also called _database cluster_ in PostgreSQL and _catalog cluster_ in the SQL standard ([PostgreSQL 9.4.5 Documentation §17.2](http://www.postgresql.org/docs/9.4/interactive/creating-cluster.html)).
 
 {% highlight bash session %}
 $ initdb --locale en_PH.UTF-8 -E UTF8 -D '/var/lib/postgres/data'
@@ -88,8 +88,8 @@ LOG:  shutting down
 LOG:  database system is shut down
 {% endhighlight %}
 
-I tried the following command to run the database server in the backround as suggested in the documentation but I encountered an error.
-I will try to provide more information about this later on.
+The following command to run the database server in the background as suggested in the documentation produces an error.
+(More information about this in an update).
 
 {% highlight bash linenos %}
 $ postgres -D /var/lib/postgres/data/ >logfile 2>&1 &
@@ -97,8 +97,8 @@ $ postgres -D /var/lib/postgres/data/ >logfile 2>&1 &
 $ -bash: logfile: Permission denied
 {% endhighlight %}
 
-I prefer starting the database server with the `systemctl` command.
-The command runs the database server in the background so there is no need to keep an open console as when using the `postgres` command.
+The database server may be started using `systemctl`.
+It runs the database server in the background so there is no need to keep an open console as when using the `postgres` command.
 
 ~~~
 $ sudo systemctl start postgresql
@@ -259,9 +259,10 @@ GRANT ROLE
 {% endhighlight %}
 
 ##### ODBC
-    
-I also need to be able to connect to the database via ODBC.
-I'm using unixODBC 2.3.4 which is available in Manjaro Linux.
+
+One can also connect to the database via ODBC.
+[UnixODBC](www.unixodbc.org) 2.3.4 was released on 31 August 2015 and is available in Manjaro Linux.
+This [link](https://wiki.archlinux.org/index.php/Open_Database_Connectivity) talks about ODBC in Arch Linux.
 
 {% highlight bash session linenos %}
 $ cat /etc/odbcinst.ini 
