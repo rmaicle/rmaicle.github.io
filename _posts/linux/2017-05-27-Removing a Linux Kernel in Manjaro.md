@@ -63,7 +63,7 @@ distribution ----------------+
 * The 1 indicates bug fixing
 * \"MANJARO\" indicates the specific distribution
 
-## Removing Installed Kernels
+## Removing an Installed Kernel
 
 Where multiple kernels are present on your system, `pacman` can be used to remove them in the terminal.
 It may be necessary to delete three elements of the kernel in total to completely remove it:
@@ -116,6 +116,20 @@ Found Manjaro Linux (15.12) on /dev/sda3
 Found memtest86+ image: /boot/memtest86+/memtest.bin
 done
 (2/2) Arming ConditionNeedsUpdate...
+~~~
+
+To remove kernel headers:
+
+~~~
+$ sudo pacman -R linux318-headers
+error: target not found: linux318-headers
+~~~
+
+To remove kernel modules:
+
+~~~
+$ sudo pacman -R linux318-extramodules
+error: target not found: linux318-extramodules
 ~~~
 
 &#x25cf;
