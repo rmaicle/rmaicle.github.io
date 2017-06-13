@@ -245,7 +245,7 @@ $color_button_hover_border:     $color_primary;
 
 .highlight .o   {                 text-shadow: none; }                                          // Operator 
 .highlight .p   {                 text-shadow: none; }                                          // Operator 
-.highlight .err { color: #030303; text-shadow: none; background-color: #202020 }                // Error 
+.highlight .err { color: #030303; text-shadow: none; }                                          // Error 
 
 .highlight .go { color: #030303; }                                                              // Generic.Output
 .highlight .gp { color: #555555; }                                                              // Generic.Prompt
