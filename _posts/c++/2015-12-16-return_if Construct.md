@@ -1,7 +1,10 @@
 ---
 title: "`return_if` Construct"
-date: 2015-12-16T11:41:22UTC
 excerpt: Declarative return statement that probably isn't worth using.
+date: 2015-12-16T11:41:22UTC
+updates:
+  - date: 2017-06-03T08:22:38UTC
+    message: Edits and corrections
 layout: post
 categories: [post, c++]
 tags: [thoughts]
@@ -93,7 +96,7 @@ struct ReturnValue {
     T value;
 };
 
-#define return_if(C, R)                                \
+#define return_if(C, R)                                 \
     if (!!(C)) {                                        \
         namespace nuri = ::negerns::util::returnif;     \
         auto rv = nuri::ReturnValue<decltype(R)>(R);    \
@@ -139,4 +142,4 @@ When I see a `return_if` construct, I know right away without scrolling my eyes 
 There is also something to consider when using a `return_if` construct in a function whose return type is declared `decltype(auto)`.
 Here is [Scott Meyers' blog about C++14 `decltype(auto)`](http://scottmeyers.blogspot.com/2013/07/when-decltype-meets-auto.html).
 This is a topic on its own but I would like to mention it here since the construct above deals with return statements.
-For a simple case, a `decltype(auto)` function return type returns a reference when the return value is wrapped within parenthesis.
+A function return type declared as `decltype(auto)` will return a reference when the return value is wrapped within parenthesis.
