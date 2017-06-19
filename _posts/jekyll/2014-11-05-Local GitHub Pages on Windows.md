@@ -80,22 +80,22 @@ Installing the DevKit means _extracting_ the contents into a directory like `C:\
 * Extract the DevKit;
 * Initialize to bind the DevKit to the Ruby installation; `ruby dk.rb init`;
 
-    {% highlight console %}
+    ~~~
     C:\RubyDevKit>ruby dk.rb init
     [INFO] found RubyInstaller v2.1.4 at C:/Ruby21-x64
 
     Initialization complete! Please review and modify the auto-generated
     'config.yml' file to ensure it contains the root directories to all
     of the installed Rubies you want enhanced by the DevKit.
-    {% endhighlight %}
+    ~~~
 
 * Install the DevKit; `ruby dk.rb install`.
 
-    {% highlight console %}
+    ~~~
     C:\RubyDevKit>ruby dk.rb install
     [INFO] Updating convenience notice gem override for 'C:/Ruby21-x64'
     [INFO] Installing 'C:/Ruby21-x64/lib/ruby/site_ruby/devkit.rb'
-    {% endhighlight %}
+    ~~~
 
 If you moved your Ruby directory, you need to edit `config.yml` in the Ruby Development Kit directory to point to the new Ruby root directory. Also, you need to 're-install' the Ruby Development Kit by executing the following command to override the previous settings.
 
@@ -110,7 +110,7 @@ It is a package manager that makes versioning the Ruby software like Jekyll easi
 
 * Download and install Bundler; `gem install bundler`
 
-    {% highlight console %}
+    ~~~
     C:\Ruby21-x64>gem install bundler
     Fetching: bundler-1.7.4.gem (100%)
     Successfully installed bundler-1.7.4
@@ -118,25 +118,25 @@ It is a package manager that makes versioning the Ruby software like Jekyll easi
     Installing ri documentation for bundler-1.7.4
     Done installing documentation for bundler after 4 seconds
     1 gem installed
-    {% endhighlight %}
+    ~~~
 
 * Create an empty file named `Gemfile` in the local site repository and add the following two lines:
 
-    {% highlight console %}
+    ~~~
     source 'https://rubygems.org'
     gem 'github-pages'
-    {% endhighlight %}
+    ~~~
 
     We can just use the `echo` command and send it to the file through piping:
 
-    {% highlight console %}
+    ~~~
     d:\test.github.io>echo source 'https://rubygems.org' > Gemfile
     d:\test.github.io>echo gem 'github-pages' >> Gemfile
-    {% endhighlight %}
+    ~~~
 
 * Install required files for GitHub Pages; `bundle install`
 
-    {% highlight console %}
+    ~~~
     d:\test.github.io>bundle install
     DL is deprecated, please use Fiddle
     Fetching gem metadata from https://rubygems.org/.......
@@ -144,7 +144,7 @@ It is a package manager that makes versioning the Ruby software like Jekyll easi
     Your bundle is complete!
     Use `bundle show [gemname]` to see where a bundled gem is installed.
     ...
-    {% endhighlight %}
+    ~~~
 
 As mentioned, you can use `bundle show [gemname]` to see where a bundled gem is installed.
 If an error occurs, correct it and rerun `bundle install`.
