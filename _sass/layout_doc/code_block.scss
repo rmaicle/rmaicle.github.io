@@ -15,7 +15,7 @@ figure.highlight {
     }
 }
 
-.highlight .lineno {
+td.gutter.gl > pre.lineno {
     text-align: right;
     color: $color_lineno;
 	background: transparent;
