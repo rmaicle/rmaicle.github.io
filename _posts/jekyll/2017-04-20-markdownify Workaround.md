@@ -28,16 +28,13 @@ related:
 
 [Jekyll template filter] `markdownify` is used to convert a markdown-formatted text into HTML. The example used in the Jekyll website is:
 
-    {{ page.excerpt | markdownify }}
+    {% raw %}{{ page.excerpt | markdownify }}{% endraw %}
 
 Simple, right? I thought so too. What it did not mention is that `markdownify` wraps the source text within a `<p>` element. So that the result of the above code where the `page.excerpt` text for example is `excerpt text`:
 
     <p>excerpt text</p>
     
 I had created my template `.html` file usually wrapping YAML keys within HTML elements like the following code and was surprised at what I got.
-
-    <p class="excerpt">{{ page.excerpt | markdownify }}</p>
-    
 The above code was converted to (Jekyll 3.4.3 and github-pages 134):
 
     <p class="excerpt"></p>
@@ -47,9 +44,11 @@ I posted the issue I encountered in irc `#jekyll` but got no response maybe beca
 I needed a workaround to finish updating my GitHub Pages _site_.
 
 The following code shows the simplest and fastest workaround I did.
-    
-    {% assign excerpt = page.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
-    {{ excerpt | markdownify }}
+
+~~~
+{% raw %}{% assign excerpt = page.excerpt | markdownify | replace: '<p>', '' | replace: '</p>', '' %}
+{{ excerpt | markdownify }}{% endraw %}
+~~~
 
 Which produced the following output:
 
