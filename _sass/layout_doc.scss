@@ -66,6 +66,10 @@ section.doc_column_main {
         @include use_code_font($font_size_code_in_text, bold, 0);
     }
     
+    p > img {
+        width: 100%;
+    }
+    
     sup > a.footnote {
         @include compact;
         font-family: $font_footnote_link;

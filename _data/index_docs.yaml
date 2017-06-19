@@ -2,6 +2,10 @@ groups:
   - group: cpp
     group_no: 1
     title: C++
+  - group: cppcoreguidelines
+    group_no: 1
+    title: C++ Core Guidelines
+    link: /doc/cpp_core_guidelines/index
   - group: dlang
     group_no: 1
     title: D Language
