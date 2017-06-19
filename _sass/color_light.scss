@@ -32,7 +32,8 @@ $color_header_border_bottom:    $color_main_bg;
 
 // Code
 $color_lineno:                  darken($color_text, 40%);
-$color_lineno_divider:          darken($color_text, 40%);
+$color_lineno:                  #b0b0b0;
+$color_lineno_divider:          #b0b0b0;
 $color_code:                    $color_text;
 // Replace $color_code_in_text with this
 $color_code_span:               darken($color_text, 3%);
@@ -223,20 +224,20 @@ $color_button_hover_border:     $color_primary;
 // .highlight .il { color: #009999 }                                            // Literal.Number.Integer.Long 
 
 .highlight .n   { color: #030303; text-shadow: none; }
-.highlight .c   { color: #00ac00; text-shadow: none; font-style: normal }                       // Comment 
-.highlight .cp  { color: #CD00CD; text-shadow: none; font-weight: normal }                      // Comment.Preproc 
-.highlight .c1  { color: #00ac00; text-shadow: none; font-style: normal }                       // Comment.Single 
-.highlight .cs  { color: #00ac00; text-shadow: none; font-weight: bold; font-style: italic }    // Comment.Special 
-.highlight .cm  { color: #00ac00; text-shadow: none; font-style: normal }                       // Comment.Multiline 
+.highlight .c   { color: #008900; text-shadow: none; font-style: normal }                       // Comment 
+.highlight .cp  { color: #ab00ab; text-shadow: none; font-weight: normal }                      // Comment.Preproc 
+.highlight .c1  { color: #008900; text-shadow: none; font-style: normal }                       // Comment.Single 
+.highlight .cs  { color: #008900; text-shadow: none; font-weight: bold; font-style: italic }    // Comment.Special 
+.highlight .cm  { color: #008900; text-shadow: none; font-style: normal }                       // Comment.Multiline 
  
-.highlight .kt  { color: #4169E1; text-shadow: none; font-weight: normal }                      // Keyword.Type 
-.highlight .k   { color: #6189E1; text-shadow: none; font-weight: normal }                      // Keyword (directive?) 
+.highlight .kt  { color: #0000Ea; text-shadow: none; font-weight: normal }                      // Keyword.Type 
+.highlight .k   { color: #0000Ea; text-shadow: none; font-weight: normal }                      // Keyword (directive?) 
  
 .highlight .mi  { color: #CD7121; text-shadow: none; }                                          // Literal.Number.Integer 
 .highlight .mf  { color: #CD7121; text-shadow: none; }                                          // Literal.Number.Float 
 .highlight .mb  { color: #CD7121; text-shadow: none; }                                          // Literal.Number.Binary 
 .highlight .mh  { color: #CD7121; text-shadow: none; }                                          // Literal.Number.Binary 
-.highlight .nc  { color: #445588; text-shadow: none; text-decoration: none }                    // Name.Class 
+.highlight .nb  { color: #0086B3 }                                                              // Name.Builtin 
 .highlight .nf  { color: #030303; font-weight: none;  }                                         // Name.Function 
 .highlight .nv  { color: #007070 }                                                              // Name.Variable -- $ in shell
 
