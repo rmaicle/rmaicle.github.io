@@ -10,16 +10,16 @@ permalink: /posts/NgVX8g15ZMd29wZ/index
 thumbnail:
 image:
   layout: auto_width
-  source: 
-  attribution: 
+  source:
+  attribution:
 video:
-  source: 
-  attribution: 
+  source:
+  attribution:
   layout: top
 videos:
-  - source: 
-    attribution: 
-    layout: 
+  - source:
+    attribution:
+    layout:
 sources:
   - label: Building Vim from source (Valloric)
     link: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
@@ -105,14 +105,23 @@ $ sudo pacman -R vim
 ## Get the `vim` sources
 
 The `vim` sources is in [https://github.com/vim/vim.git](https://github.com/vim/vim.git).
-This is the only reason it was necessary to install `git`.
+
+The parameter `--depth 1` instructs `git` to download _only_ the latest revisions.
+A shallow clone only contains history truncated to the specified number of commits on the specified branch.
+Specifying `1` means history with only the latest commits.
+In the following command, the branch is implicitly the master branch.
 
 ~~~
 $ git clone --depth 1 https://github.com/vim/vim.git
 ~~~
 
-The command used is a "shallow clone".
-By providing the argument `--depth 1`, git is instructed to download _only_ the latest revision or the current HEAD of everything in the repository.
+If a specific `git` tag is preferred to be cloned, use[^update20190116]:
+
+~~~
+$ git clone --depth 1 --branch v8.1.0754 https://github.com/vim/vim.git
+~~~
+
+[^update20190116]: The command was added to this post after encountering the errors mentioned below.
 
 ## Build and Install
 
@@ -226,3 +235,74 @@ Command outputs for reference.
 * [make Output](/posts/NgVX8g15ZMd29wZ/make_output)
 * [make install Output](/posts/NgVX8g15ZMd29wZ/make_install_output)
 
+## Missing Library Files
+
+I have encounterd the following errors once I tried running `vim` again after some time of not using it.
+
+### Missing `libperl.so`
+
+After some time, I encountered the following error when executing `vim`:
+
+~~~
+vim: error while loading shared libraries: libperl.so:
+     cannot open shared object file: No such file or directory
+~~~
+
+A solution to the same question I had was answered in askubuntu site[^askubuntu].
+My system current have perl version 5.28 installed, `/usr/lib/perl5/5.28` and the library `libperl.so` could be found in `/usr/lib/perl5/5.28/core_perl/CORE`.
+
+Create a soft link to the library file and put the link in `/usr/lib` directory where `vim` could see it.
+
+~~~
+sudo ln -s "/usr/lib/perl5/5.28/core_perl/CORE/libperl.so" "/usr/lib/libperl.so"
+~~~
+
+### Missing `libruby.so.2.4`
+
+I encountered the next error:
+
+~~~
+vim: error while loading shared libraries: libruby.so.2.4:
+     cannot open shared object file: No such file or directory
+~~~
+
+[mshiltonj](https://github.com/mshiltonj) provided a solution[^githubrvm] and the following was his post:
+
+> I had this problem. But I got it to work.
+>
+> After cloning the vim repo, I followed the instructions here:
+>
+>     https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source
+>
+> After installing, I got the libruby.so.2.2 problem.
+>
+> I try to correct the problem by making sure the rvm ruby was not in my path.
+>
+>     sudo make uninstall
+>     rvm use system
+>     make clean
+>     ./configure [params from url above]
+>     sudo make install
+>
+> And it still had the libruby.so.2.2 problem.
+>
+> So I uninstalled and then recloned the repo and tried again, clean:
+>
+>     sudo make uninstall
+>     cd ..
+>     rm -rf vim
+>     git clone https://github.com/vim/vim.git
+>     cd vim
+>
+> And ran the above url's instructions again.
+>
+> It worked!
+>
+> I suspect make clean is not cleaning something it should be cleaning, or running configure while having an rvm ruby on your path will write some configuration information that doesn't get updated when you run it again when the rvm ruby has been removed from the path.
+>
+> Whichever, doing sudo make uninstall and the doing it again from a clean clone to the repo with the rvm ruby pre-emptively removed from the path worked for me. Good luck!
+
+I cloned a later version of `vim`, and proceeded with the installation procedureand it now works again.
+
+[^askubuntu]: Just create a shortcut. [https://askubuntu.com/a/749122](https://askubuntu.com/a/749122)
+[^githubrvm]: [https://github.com/rvm/rvm/issues/3339#issuecomment-168434888](https://github.com/rvm/rvm/issues/3339#issuecomment-168434888)
