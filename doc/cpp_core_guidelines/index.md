@@ -7663,7 +7663,7 @@ D a[] = {{1, 2}, {3, 4}, {5, 6}};
 B* p = a;     // bad: a decays to &a[0] which is converted to a B*
 p[1].x = 7;   // overwrite D[0].y
 
-use(a);       // bad: a decays to &a[0] which is converted to a B*{%raw%}
+use(a);       // bad: a decays to &a[0] which is converted to a B*{%endraw%}
 ~~~
 
 ##### Enforcement
